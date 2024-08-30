@@ -1,15 +1,11 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "./ui/button";
+import { NumericFormat } from "react-number-format";
 
 type Props = {};
 
@@ -26,7 +22,7 @@ export const AppSection = (props: Props) => {
   ];
 
   return (
-    <div className="max-w-[500px] w-full mx-auto">
+    <div className="w-full mx-auto flex flex-col md:grid md:grid-cols-2 gap-10">
       <Tabs defaultValue={tabs[0].value}>
         <TabsList className="grid grid-cols-2">
           {tabs.map((tab) => (
@@ -45,23 +41,47 @@ export const AppSection = (props: Props) => {
               <div className="flex flex-col gap-4">
                 <div className="space-y-1">
                   <Label htmlFor="monthly-income">Monthly income</Label>
-                  <Input
+                  <NumericFormat
+                    customInput={Input}
                     id="monthly-income"
                     placeholder="20000 KZT"
-                    type="number"
+                    thousandSeparator=","
                   />
                 </div>
+                <h4 className="text-lg font-semibold mt-4">
+                  Essential expenses / needs
+                </h4>
                 <div className="flex gap-2 items-end">
                   <div className="space-y-1">
                     <Label htmlFor="expense-name">Expense</Label>
-                    <Input id="expense-name" placeholder="Food" />
+                    <Input id="expense-name" placeholder="Food, rent, etc" />
                   </div>
                   <div className="space-y-1">
                     <Label htmlFor="expense-amount">Amount</Label>
-                    <Input
+                    <NumericFormat
+                      customInput={Input}
                       id="expense-amount"
                       placeholder="1000 KZT"
-                      type="number"
+                      thousandSeparator=","
+                    />
+                  </div>
+                  <Button>Add</Button>
+                </div>
+                <h4 className="text-lg font-semibold mt-4">
+                  Non-essential expenses / wants
+                </h4>
+                <div className="flex gap-2 items-end">
+                  <div className="space-y-1">
+                    <Label htmlFor="expense-name">Expense</Label>
+                    <Input id="expense-name" placeholder="Outings, etc" />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="expense-amount">Amount</Label>
+                    <NumericFormat
+                      customInput={Input}
+                      id="expense-amount"
+                      placeholder="1000 KZT"
+                      thousandSeparator=","
                     />
                   </div>
                   <Button>Add</Button>
@@ -72,49 +92,71 @@ export const AppSection = (props: Props) => {
         </TabsContent>
       </Tabs>
 
-      <Card className="mt-4">
+      <Card className="">
         <CardHeader>
           <h2 className="text-lg font-semibold">Results</h2>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <Label>Your monthly income:</Label>
             <p className="font-semibold">20000 KZT</p>
           </div>
-          <div className="flex items-start justify-between">
-            <Label>Essential expenses / needs (50%):</Label>
-            <ul className="text-sm">
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
+          <div className="flex flex-col items-start gap-2">
+            <div className="flex items-center justify-between w-full">
+              <Label>Essential expenses / needs (50%):</Label>
+              <p className="font-semibold">1000 KZT</p>
+            </div>
+            <ul className="text-sm w-full">
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
             </ul>
           </div>
 
-          <span className="text-red-400 font-semibold text-sm mb-4">
-            3000 KZT deficit
+          <span className="text-red-700 text-end font-semibold text-sm mb-4">
+            -3000 KZT
           </span>
 
-          <div className="flex items-start justify-between">
-            <Label>Wants (30%):</Label>
-            <ul className="text-sm">
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
+          <div className="flex flex-col gap-2 items-start justify-between">
+            <div className="flex items-center justify-between w-full">
+              <Label>Wants (30%):</Label>
+              <p className="font-semibold">1000 KZT</p>
+            </div>
+            <ul className="text-sm w-full">
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
+              <li className="flex items-center justify-between w-full">
+                <span>Food</span> <span>1000 KZT</span>
+              </li>
             </ul>
           </div>
-          <span className="text-green-400 font-semibold text-sm mb-4">
-            32000 KZT profit
+          <span className="text-green-700 text-end font-semibold text-sm mb-4">
+            +32000 KZT
           </span>
-          <div className="flex items-start justify-between">
-            <Label>Savings / investments (20%):</Label>
-            <ul className="text-sm">
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-              <li>Food: 1000 KZT</li>
-            </ul>
+          <div className="flex flex-col gap-2 items-start justify-between">
+            <div className="flex items-center justify-between w-full">
+              <Label>Savings / investments (20%):</Label>
+              <p className="font-semibold">1000 KZT</p>
+            </div>
+            <p className="text-sm">
+              Keep this money in your savings account or in your investments.
+            </p>
           </div>
         </CardContent>
       </Card>

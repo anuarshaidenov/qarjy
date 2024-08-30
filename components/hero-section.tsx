@@ -7,7 +7,7 @@ export const HeroSection = (props: Props) => {
   const t = useTranslations("home.hero");
 
   return (
-    <section className="py-16 overflow-hidden flex flex-col gap-3">
+    <section className="py-16 overflow-hidden flex flex-col gap-3 container">
       <h1 className="text-center text-2xl md:text-6xl font-bold">
         {t("title")}
       </h1>
