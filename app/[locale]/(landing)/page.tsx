@@ -1,7 +1,9 @@
-import { useTranslations } from 'next-intl';
+import { HeroSection } from '@/components/hero-section';
 
 export default function Home() {
-  const t = useTranslations('home.hero');
-
-  return <h1>{t('title')}</h1>;
+  return (
+    <>
+      <HeroSection />
+    </>
+  );
 }
