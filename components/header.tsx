@@ -1,5 +1,6 @@
 import { ModeToggle } from '@/components/mode-toggle';
 import Link from 'next/link';
+import { LocaleToggle } from './locale-toggle';
 
 type Props = {};
 
@@ -11,7 +12,10 @@ export const Header = (props: Props) => {
           qarjy
         </Link>
 
-        <ModeToggle />
+        <div className="flex gap-4 items-center">
+          <ModeToggle />
+          <LocaleToggle />
+        </div>
       </div>
     </header>
   );
