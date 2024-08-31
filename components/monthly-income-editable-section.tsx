@@ -33,6 +33,7 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
       </Label>
       <div className="shrink max-w-[180px] flex items-center gap-2">
         <NumericFormat
+          autoComplete="off"
           className="text-lg font-semibold"
           customInput={Input}
           id="monthly-income"

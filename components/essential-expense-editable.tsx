@@ -36,6 +36,7 @@ export const EssentialExpenseEditable = ({ expense }: Props) => {
           customInput={Input}
           onChange={handleChange}
           className="w-[120px]"
+          autoComplete="off"
         />
         <span className="flex group-hover:hidden text-lg">KZT</span>
         <Button

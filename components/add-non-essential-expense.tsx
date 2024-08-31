@@ -65,6 +65,7 @@ export const AddNonEssentialExpense = (props: Props) => {
             <FormItem className="space-y-1">
               <FormControl>
                 <Input
+                  autoComplete="off"
                   placeholder="Name"
                   className="shrink w-[120px]"
                   {...field}
@@ -81,6 +82,7 @@ export const AddNonEssentialExpense = (props: Props) => {
               <FormItem className="space-y-1">
                 <FormControl>
                   <NumericFormat
+                    autoComplete="off"
                     customInput={Input}
                     className="shrink w-[120px]"
                     placeholder="Amount"
