@@ -23,13 +23,13 @@ export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
 
   return (
     <div className="flex items-center w-full border-b pb-4">
-      <Label className="text-lg font-semibold grow" id="monthly-income">
+      <Label className="md:text-lg font-semibold grow" id="monthly-income">
         Your monthly income:
       </Label>
       <div className="shrink max-w-[180px] flex items-center gap-2">
         <NumericFormat
           autoComplete="off"
-          className="text-lg font-semibold"
+          className="md:text-lg font-semibold"
           customInput={Input}
           id="monthly-income"
           thousandSeparator=","

@@ -28,7 +28,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
       <CardHeader>
         <div className="flex items-start gap-2 justify-between">
           <SeventyFive1015BudgetTitle />
-          <div className="flex items-start gap-4">
+          <div className="hidden md:flex items-start gap-4">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
@@ -61,7 +61,9 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
         <div className="flex flex-col gap-4 pb-4 border-b">
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">
-              <Label className="text-lg font-semibold">Expenses (75%):</Label>
+              <Label className="md:text-lg font-semibold">
+                Expenses (75%):
+              </Label>
               <p className="font-semibold">
                 {formatNumberWithCommas(essentialsBudget)} KZT
               </p>
@@ -77,7 +79,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
             <Seventyfive1015AddExpense />
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">Remainder</span>
             <span
               className={cn("text-end font-semibold", {
                 "text-green-700": expensesDifference > 0,
@@ -90,7 +92,9 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
         </div>
         <div className="flex flex-col gap-2 items-start justify-between pb-4 border-b">
           <div className="flex items-center justify-between w-full">
-            <Label className="text-lg font-semibold">Cushion fund (10%):</Label>
+            <Label className="md:text-lg font-semibold">
+              Cushion fund (10%):
+            </Label>
             <p className="font-semibold">
               {formatNumberWithCommas(cushionFund)} KZT
             </p>
@@ -101,7 +105,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
         </div>
         <div className="flex flex-col gap-2 items-start justify-between pb-4">
           <div className="flex items-center justify-between w-full">
-            <Label className="text-lg font-semibold">
+            <Label className="md:text-lg font-semibold">
               Savings / investments (15%):
             </Label>
             <p className="font-semibold">

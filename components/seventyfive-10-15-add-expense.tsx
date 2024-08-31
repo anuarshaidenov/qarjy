@@ -57,17 +57,17 @@ export const Seventyfive1015AddExpense = (props: Props) => {
     <Form {...expensesForm}>
       <form
         onSubmit={expensesForm.handleSubmit(onExpensesSubmit)}
-        className="flex w-full items-center justify-between gap-2"
+        className="flex flex-col md:flex-row w-full items-center justify-between gap-2"
       >
         <FormField
           name="expenseName"
           render={({ field }) => (
-            <FormItem className="space-y-1">
+            <FormItem className="space-y-1 w-full md:w-auto">
               <FormControl>
                 <Input
                   autoComplete="off"
                   placeholder="Name"
-                  className="shrink w-[120px]"
+                  className="shrink w-full md:w-[120px]"
                   {...field}
                 />
               </FormControl>
@@ -75,16 +75,16 @@ export const Seventyfive1015AddExpense = (props: Props) => {
           )}
         />
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full md:w-auto">
           <FormField
             name="expenseAmount"
             render={({ field }) => (
-              <FormItem className="space-y-1">
+              <FormItem className="space-y-1 w-full md:w-auto">
                 <FormControl>
                   <NumericFormat
                     autoComplete="off"
                     customInput={Input}
-                    className="shrink w-[120px]"
+                    className="shrink w-full md:w-[120px]"
                     placeholder="Amount"
                     thousandSeparator=","
                     {...field}
