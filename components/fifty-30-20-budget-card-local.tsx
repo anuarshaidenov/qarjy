@@ -11,7 +11,7 @@ import {
 
 type Props = {};
 
-export const BudgetCardLocal = (props: Props) => {
+export const Fifty3020BudgetCardLocal = (props: Props) => {
   return (
     <Card className="">
       <CardHeader>
@@ -22,23 +22,23 @@ export const BudgetCardLocal = (props: Props) => {
               <Tooltip>
                 <TooltipTrigger>
                   <Button variant={"secondary"} size={"icon"}>
-                    <DownloadIcon />
+                    <UploadIcon />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Download</p>
+                  <p>Upload</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
-                  <Button variant={"secondary"} size={"icon"}>
-                    <UploadIcon />
+                  <Button size={"icon"}>
+                    <DownloadIcon />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Upload</p>
+                  <p>Download</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

@@ -15,6 +15,8 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
+import { Fifty2030Budget } from "@/types/fifty-20-30-budget";
+import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 
 const essentialsFormSchema = z.object({
   essentialExpenseName: z.string(),
@@ -29,6 +31,8 @@ const nonEssentialsFormSchema = z.object({
 type Props = {};
 
 export const Fifty2030Form = (props: Props) => {
+  const { budget, save503020budgetToLocalStorage, setBudget } = useFifty2030();
+
   const essentialsForm = useForm<z.infer<typeof essentialsFormSchema>>({
     resolver: zodResolver(essentialsFormSchema),
     defaultValues: {
@@ -51,10 +55,20 @@ export const Fifty2030Form = (props: Props) => {
       });
       return;
     }
-    console.log({
-      ...data,
-      essentialExpenseAmount: amount,
-    });
+
+    const budgetToSet: Fifty2030Budget = {
+      ...budget,
+      essentialExpenses: [
+        ...budget.essentialExpenses,
+        {
+          id: crypto.randomUUID(),
+          name: data.essentialExpenseName,
+          amount: amount,
+        },
+      ],
+    };
+    setBudget(budgetToSet);
+    save503020budgetToLocalStorage(budgetToSet);
   };
   const nonEssentialsForm = useForm<z.infer<typeof nonEssentialsFormSchema>>({
     resolver: zodResolver(nonEssentialsFormSchema),
@@ -74,10 +88,33 @@ export const Fifty2030Form = (props: Props) => {
       return;
     }
 
-    console.log({
-      ...data,
-      nonEssentialExpenseAmount: amount,
-    });
+    const budgetToSet: Fifty2030Budget = {
+      ...budget,
+      nonEssentialExpenses: [
+        ...budget.nonEssentialExpenses,
+        {
+          id: crypto.randomUUID(),
+          name: data.nonEssentialExpenseName,
+          amount: amount,
+        },
+      ],
+    };
+
+    setBudget(budgetToSet);
+    save503020budgetToLocalStorage(budgetToSet);
+  };
+
+  const handleMonthlyIncomeChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const amount = formatAmount(event.target.value);
+    const budgetToSet: Fifty2030Budget = {
+      ...budget,
+      monthlyIncome: amount,
+    };
+
+    setBudget(budgetToSet);
+    save503020budgetToLocalStorage(budgetToSet);
   };
 
   return (
@@ -94,6 +131,8 @@ export const Fifty2030Form = (props: Props) => {
               id="monthly-income"
               placeholder="20000 KZT"
               thousandSeparator=","
+              value={budget.monthlyIncome}
+              onChange={handleMonthlyIncomeChange}
             />
           </div>
           <h4 className="text-lg font-semibold mt-4">

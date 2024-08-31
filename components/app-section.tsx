@@ -1,8 +1,8 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BudgetCardLocal } from "./budget-card-local";
-import { Fifty2030Form } from "./fifty-20-30-form";
+import { Fifty3020BudgetCardLocal } from "./fifty-30-20-budget-card-local";
+import { Fifty2030Form } from "./fifty-30-20-form";
 
 type Props = {};
 
@@ -34,7 +34,7 @@ export const AppSection = (props: Props) => {
         </TabsContent>
       </Tabs>
 
-      <BudgetCardLocal />
+      <Fifty3020BudgetCardLocal />
     </div>
   );
 };

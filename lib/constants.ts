@@ -1,3 +1,5 @@
 export const LOCALES = ["en", "kz"];
 
-export const LOCALHOST_KEYS = {};
+export const LOCALSTORAGE_KEYS = {
+  fifty3020budget: "fifty3020budget",
+};
