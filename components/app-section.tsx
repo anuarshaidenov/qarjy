@@ -24,7 +24,7 @@ export const AppSection = (props: Props) => {
 
   return (
     <BudgetContextProvider>
-      <div className="w-full mx-auto flex flex-col md:grid md:grid-cols-2 gap-10">
+      <div className="w-full mx-auto flex flex-col gap-10 max-w-[600px]">
         <Tabs defaultValue={tabs[0].value}>
           <TabsList className="grid grid-cols-2">
             {tabs.map((tab) => (
@@ -35,11 +35,12 @@ export const AppSection = (props: Props) => {
           </TabsList>
 
           <TabsContent value="503020">
-            <Fifty2030Form />
+            <Fifty3020BudgetCardLocal />
+          </TabsContent>
+          <TabsContent value="751015">
+            <Fifty3020BudgetCardLocal />
           </TabsContent>
         </Tabs>
-
-        <Fifty3020BudgetCardLocal />
       </div>
     </BudgetContextProvider>
   );

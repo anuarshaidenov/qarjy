@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
+import { MonthlyIncomeEditableSection } from "./monthly-income-editable-section";
 
 type Props = {};
 
@@ -58,13 +59,8 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="flex flex-col gap-8 overflow-scroll max-h-[400px]">
-        <div className="flex items-center justify-between w-full border-b pb-4">
-          <Label className="text-lg font-semibold">Your monthly income:</Label>
-          <p className="font-semibold">
-            {formatNumberWithCommas(budget.monthlyIncome || 0)} KZT
-          </p>
-        </div>
+      <CardContent className="flex flex-col gap-8 ">
+        <MonthlyIncomeEditableSection />
         <div className="flex flex-col gap-4 pb-4 border-b">
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">

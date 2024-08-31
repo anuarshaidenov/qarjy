@@ -16,9 +16,6 @@ export const Header = (props: Props) => {
         <nav>
           <ul className="flex items-center gap-4">
             <li>
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li>
               <Link href={"/about"}>How to use</Link>
             </li>
             <li>
