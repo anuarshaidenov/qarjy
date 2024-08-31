@@ -5,6 +5,7 @@ import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
 import { formatAmount } from "@/lib/utils";
+import { LOCALSTORAGE_KEYS } from "@/lib/constants";
 
 type Props = {};
 
@@ -16,10 +17,16 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
   ) => {
     const amount = formatAmount(event.target.value);
 
-    setBudget({
+    const newBudget = {
       ...budget,
       monthlyIncome: amount,
-    });
+    };
+
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
   };
 
   return (

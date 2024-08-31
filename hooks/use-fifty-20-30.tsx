@@ -1,7 +1,8 @@
 import { BudgetContext } from "@/components/fifty-30-20-budget-context-provider";
+import { LOCALSTORAGE_KEYS } from "@/lib/constants";
 import { calculatePecentageBasedOnIncome } from "@/lib/utils";
 import { EssentialExpense } from "@/types/fifty-20-30-budget";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const calculateExpensesDifference = (income: number, expenses: number[]) => {
   return income - expenses.reduce((total, expense) => total + expense, 0);
@@ -41,7 +42,7 @@ export const useFifty2030 = () => {
     );
     if (!expense) return;
 
-    setBudget({
+    const newBudget = {
       ...budget,
       essentialExpenses: budget.essentialExpenses.map((expense) => {
         if (expense.id === id) {
@@ -52,7 +53,12 @@ export const useFifty2030 = () => {
         }
         return expense;
       }),
-    });
+    };
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
   };
 
   const handleEditNonEssentialExpenseById = (id: string, amount?: number) => {
@@ -61,7 +67,7 @@ export const useFifty2030 = () => {
     );
     if (!expense) return;
 
-    setBudget({
+    const newBudget = {
       ...budget,
       nonEssentialExpenses: budget.nonEssentialExpenses.map((expense) => {
         if (expense.id === id) {
@@ -72,25 +78,40 @@ export const useFifty2030 = () => {
         }
         return expense;
       }),
-    });
+    };
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
   };
 
   const handleDeleteEssentialExpenseById = (id: string) => {
-    setBudget({
+    const newBudget = {
       ...budget,
       essentialExpenses: budget.essentialExpenses.filter(
         (expense) => expense.id !== id
       ),
-    });
+    };
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
   };
 
   const handleDeleteNonEssentialExpenseById = (id: string) => {
-    setBudget({
+    const newBudget = {
       ...budget,
       nonEssentialExpenses: budget.nonEssentialExpenses.filter(
         (expense) => expense.id !== id
       ),
-    });
+    };
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
   };
 
   const handleAddEssentialExpense = (expense: EssentialExpense) => {
@@ -106,6 +127,15 @@ export const useFifty2030 = () => {
       ],
     });
   };
+
+  useEffect(() => {
+    const storedBudget = localStorage.getItem(
+      LOCALSTORAGE_KEYS.fifty3020budget
+    );
+    if (storedBudget) {
+      setBudget(JSON.parse(storedBudget));
+    }
+  }, []);
 
   return {
     budget,

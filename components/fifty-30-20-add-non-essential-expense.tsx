@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { formatAmount } from "@/lib/utils";
+import { LOCALSTORAGE_KEYS } from "@/lib/constants";
 
 const nonEssentialsFormSchema = z.object({
   nonEssentialExpenseName: z.string(),
@@ -37,7 +38,7 @@ export const AddNonEssentialExpense = (props: Props) => {
       return;
     }
 
-    setBudget({
+    const newBudget = {
       ...budget,
       nonEssentialExpenses: [
         ...budget.nonEssentialExpenses,
@@ -47,7 +48,13 @@ export const AddNonEssentialExpense = (props: Props) => {
           amount: amount,
         },
       ],
-    });
+    };
+
+    setBudget(newBudget);
+    localStorage.setItem(
+      LOCALSTORAGE_KEYS.fifty3020budget,
+      JSON.stringify(newBudget)
+    );
 
     nonEssentialsForm.reset();
     nonEssentialsForm.setFocus("nonEssentialExpenseName");
