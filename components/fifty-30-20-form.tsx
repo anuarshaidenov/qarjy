@@ -15,8 +15,8 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import { Fifty2030Budget } from "@/types/fifty-20-30-budget";
-import { useFifty2030 } from "@/hooks/use-fifty-20-30";
+import { useContext } from "react";
+import { BudgetContext } from "./budget-context-provider";
 
 const essentialsFormSchema = z.object({
   essentialExpenseName: z.string(),
@@ -31,7 +31,7 @@ const nonEssentialsFormSchema = z.object({
 type Props = {};
 
 export const Fifty2030Form = (props: Props) => {
-  const { budget, save503020budgetToLocalStorage, setBudget } = useFifty2030();
+  const { budget, setBudget } = useContext(BudgetContext);
 
   const essentialsForm = useForm<z.infer<typeof essentialsFormSchema>>({
     resolver: zodResolver(essentialsFormSchema),
@@ -56,7 +56,7 @@ export const Fifty2030Form = (props: Props) => {
       return;
     }
 
-    const budgetToSet: Fifty2030Budget = {
+    setBudget({
       ...budget,
       essentialExpenses: [
         ...budget.essentialExpenses,
@@ -66,9 +66,10 @@ export const Fifty2030Form = (props: Props) => {
           amount: amount,
         },
       ],
-    };
-    setBudget(budgetToSet);
-    save503020budgetToLocalStorage(budgetToSet);
+    });
+
+    essentialsForm.reset();
+    essentialsForm.setFocus("essentialExpenseName");
   };
   const nonEssentialsForm = useForm<z.infer<typeof nonEssentialsFormSchema>>({
     resolver: zodResolver(nonEssentialsFormSchema),
@@ -88,7 +89,7 @@ export const Fifty2030Form = (props: Props) => {
       return;
     }
 
-    const budgetToSet: Fifty2030Budget = {
+    setBudget({
       ...budget,
       nonEssentialExpenses: [
         ...budget.nonEssentialExpenses,
@@ -98,23 +99,21 @@ export const Fifty2030Form = (props: Props) => {
           amount: amount,
         },
       ],
-    };
+    });
 
-    setBudget(budgetToSet);
-    save503020budgetToLocalStorage(budgetToSet);
+    nonEssentialsForm.reset();
+    nonEssentialsForm.setFocus("nonEssentialExpenseName");
   };
 
   const handleMonthlyIncomeChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const amount = formatAmount(event.target.value);
-    const budgetToSet: Fifty2030Budget = {
+
+    setBudget({
       ...budget,
       monthlyIncome: amount,
-    };
-
-    setBudget(budgetToSet);
-    save503020budgetToLocalStorage(budgetToSet);
+    });
   };
 
   return (
@@ -131,7 +130,7 @@ export const Fifty2030Form = (props: Props) => {
               id="monthly-income"
               placeholder="20000 KZT"
               thousandSeparator=","
-              value={budget.monthlyIncome}
+              value={budget?.monthlyIncome}
               onChange={handleMonthlyIncomeChange}
             />
           </div>
