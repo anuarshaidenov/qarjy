@@ -1,4 +1,4 @@
-import { BudgetContext } from "@/components/budget-context-provider";
+import { BudgetContext } from "@/components/fifty-30-20-budget-context-provider";
 import { EssentialExpense } from "@/types/fifty-20-30-budget";
 import { useContext } from "react";
 

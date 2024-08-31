@@ -16,7 +16,7 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { useContext } from "react";
-import { BudgetContext } from "./budget-context-provider";
+import { BudgetContext } from "./fifty-30-20-budget-context-provider";
 
 const essentialsFormSchema = z.object({
   essentialExpenseName: z.string(),

@@ -1,12 +1,7 @@
-"use client";
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Fifty3020BudgetCardLocal } from "./fifty-30-20-budget-card";
-import { Fifty2030Form } from "./fifty-30-20-form";
-import { useState } from "react";
-import { Fifty2030Budget } from "@/types/fifty-20-30-budget";
-import { createContext } from "react";
-import { BudgetContextProvider } from "./budget-context-provider";
+import { BudgetContextProvider } from "./fifty-30-20-budget-context-provider";
+import { SeventyFive1015BudgetCard } from "./seventyfive-10-15-budget-card";
 
 type Props = {};
 
@@ -38,7 +33,7 @@ export const AppSection = (props: Props) => {
             <Fifty3020BudgetCardLocal />
           </TabsContent>
           <TabsContent value="751015">
-            <Fifty3020BudgetCardLocal />
+            <SeventyFive1015BudgetCard />
           </TabsContent>
         </Tabs>
       </div>

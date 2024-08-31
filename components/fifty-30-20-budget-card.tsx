@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/tooltip";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
-import { MonthlyIncomeEditableSection } from "./monthly-income-editable-section";
-import { EssentialExpenseEditable } from "./essential-expense-editable";
-import { NonEssentialExpenseEditable } from "./non-essential-expense-editable";
-import { AddEssentialExpense } from "./add-essential-expense";
-import { AddNonEssentialExpense } from "./add-non-essential-expense";
+import { MonthlyIncomeEditableSection } from "./fifty-30-20-monthly-income-editable-section";
+import { EssentialExpenseEditable } from "./fifty-30-20-essential-expense-editable";
+import { NonEssentialExpenseEditable } from "./fifty-30-20-non-essential-expense-editable";
+import { AddEssentialExpense } from "./fifty-30-20-add-essential-expense";
+import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense";
 
 type Props = {};
 
