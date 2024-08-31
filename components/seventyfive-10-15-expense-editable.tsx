@@ -1,26 +1,42 @@
-import { formatAmount } from "@/lib/utils";
-import { EssentialExpense } from "@/types/fifty-20-30-budget";
-import React from "react";
-import { Input } from "./ui/input";
+"use client";
+
+import { Expense } from "@/types/seventyfive-10-15-budget";
 import { NumericFormat } from "react-number-format";
-import { useFifty2030 } from "@/hooks/use-fifty-20-30";
+import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { CircleBackslashIcon } from "@radix-ui/react-icons";
+import { formatAmount } from "@/lib/utils";
+import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
 
 type Props = {
-  expense: EssentialExpense;
+  expense: Expense;
 };
 
-export const EssentialExpenseEditable = ({ expense }: Props) => {
-  const { handleEditEssentialExpenseById, handleDeleteEssentialExpenseById } =
-    useFifty2030();
+export const Seventyfive1015ExpenseEditable = ({ expense }: Props) => {
+  const { budget, setBudget } = useSeventyFive1015();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount = formatAmount(e.target.value);
-    handleEditEssentialExpenseById(expense.id, amount);
+
+    setBudget({
+      ...budget,
+      expenses: budget.expenses.map((e) => {
+        if (e.id === expense.id) {
+          return {
+            ...e,
+            amount,
+          };
+        }
+        return e;
+      }),
+    });
   };
 
   const handleDelete = () => {
-    handleDeleteEssentialExpenseById(expense.id);
+    setBudget({
+      ...budget,
+      expenses: budget.expenses.filter((e) => e.id !== expense.id),
+    });
   };
 
   return (

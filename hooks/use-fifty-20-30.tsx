@@ -1,16 +1,10 @@
 import { BudgetContext } from "@/components/fifty-30-20-budget-context-provider";
+import { calculatePecentageBasedOnIncome } from "@/lib/utils";
 import { EssentialExpense } from "@/types/fifty-20-30-budget";
 import { useContext } from "react";
 
 const calculateExpensesDifference = (income: number, expenses: number[]) => {
   return income - expenses.reduce((total, expense) => total + expense, 0);
-};
-
-const calculatePecentageBasedOnIncome = (
-  income: number,
-  percentage: number
-) => {
-  return (income * percentage) / 100;
 };
 
 export const useFifty2030 = () => {

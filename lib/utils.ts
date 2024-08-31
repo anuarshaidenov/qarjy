@@ -12,3 +12,10 @@ export function formatNumberWithCommas(x: number) {
 export const formatAmount = (amount: string) => {
   return parseInt(amount.split(",").join("")) || 0;
 };
+
+export const calculatePecentageBasedOnIncome = (
+  income: number,
+  percentage: number
+) => {
+  return (income * percentage) / 100;
+};

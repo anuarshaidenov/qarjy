@@ -1,20 +1,19 @@
 "use client";
 
+import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
+import { formatAmount } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
-import { formatAmount } from "@/lib/utils";
 
 type Props = {};
 
-export const MonthlyIncomeEditableSection = (props: Props) => {
-  const { budget, setBudget } = useFifty2030();
+export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
+  const { budget, setBudget } = useSeventyFive1015();
 
-  const handleMonthlyIncomeChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const amount = formatAmount(event.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const amount = formatAmount(e.target.value);
 
     setBudget({
       ...budget,
@@ -35,7 +34,7 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
           id="monthly-income"
           thousandSeparator=","
           value={budget?.monthlyIncome}
-          onChange={handleMonthlyIncomeChange}
+          onChange={handleChange}
         />
         <span>KZT</span>
       </div>
