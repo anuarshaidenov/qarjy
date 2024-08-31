@@ -40,6 +40,26 @@ export const useFifty2030 = () => {
     budget.nonEssentialExpenses.map((expense) => expense.amount || 0)
   );
 
+  const handleEditExpenseById = (id: string, amount?: number) => {
+    const expense = budget.essentialExpenses.find(
+      (expense) => expense.id === id
+    );
+    if (!expense) return;
+
+    setBudget({
+      ...budget,
+      essentialExpenses: budget.essentialExpenses.map((expense) => {
+        if (expense.id === id) {
+          return {
+            ...expense,
+            amount: amount,
+          };
+        }
+        return expense;
+      }),
+    });
+  };
+
   return {
     budget,
     setBudget,
@@ -48,5 +68,6 @@ export const useFifty2030 = () => {
     essentialsBudget,
     nonEssentialsBudget,
     investmentsBudget,
+    handleEditExpenseById,
   };
 };

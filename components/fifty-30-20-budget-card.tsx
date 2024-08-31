@@ -13,6 +13,7 @@ import {
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { MonthlyIncomeEditableSection } from "./monthly-income-editable-section";
+import { ExpenseEditable } from "./expense-editable";
 
 type Props = {};
 
@@ -73,15 +74,10 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             </div>
             <ul className="text-sm w-full">
               {budget.essentialExpenses.map((essentialExpense) => (
-                <li
+                <ExpenseEditable
                   key={essentialExpense.id}
-                  className="flex items-center justify-between w-full"
-                >
-                  <span>{essentialExpense.name}</span>{" "}
-                  <span>
-                    {formatNumberWithCommas(essentialExpense.amount || 0)} KZT
-                  </span>
-                </li>
+                  expense={essentialExpense}
+                />
               ))}
             </ul>
           </div>

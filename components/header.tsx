@@ -18,11 +18,6 @@ export const Header = (props: Props) => {
             <li>
               <Link href={"/about"}>How to use</Link>
             </li>
-            <li>
-              <Button asChild>
-                <Link href={"/signup"}>Sign up</Link>
-              </Button>
-            </li>
           </ul>
         </nav>
 
