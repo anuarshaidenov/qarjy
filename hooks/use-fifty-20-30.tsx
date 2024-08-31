@@ -1,4 +1,5 @@
 import { BudgetContext } from "@/components/budget-context-provider";
+import { EssentialExpense } from "@/types/fifty-20-30-budget";
 import { useContext } from "react";
 
 const calculateExpensesDifference = (income: number, expenses: number[]) => {
@@ -98,6 +99,20 @@ export const useFifty2030 = () => {
     });
   };
 
+  const handleAddEssentialExpense = (expense: EssentialExpense) => {
+    setBudget({
+      ...budget,
+      essentialExpenses: [
+        ...budget.essentialExpenses,
+        {
+          id: crypto.randomUUID(),
+          name: expense.name,
+          amount: expense.amount,
+        },
+      ],
+    });
+  };
+
   return {
     budget,
     setBudget,
@@ -110,5 +125,6 @@ export const useFifty2030 = () => {
     handleEditNonEssentialExpenseById,
     handleDeleteEssentialExpenseById,
     handleDeleteNonEssentialExpenseById,
+    handleAddEssentialExpense,
   };
 };

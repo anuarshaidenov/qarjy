@@ -15,6 +15,8 @@ import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { MonthlyIncomeEditableSection } from "./monthly-income-editable-section";
 import { EssentialExpenseEditable } from "./essential-expense-editable";
 import { NonEssentialExpenseEditable } from "./non-essential-expense-editable";
+import { AddEssentialExpense } from "./add-essential-expense";
+import { AddNonEssentialExpense } from "./add-non-essential-expense";
 
 type Props = {};
 
@@ -81,6 +83,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 />
               ))}
             </ul>
+            <AddEssentialExpense />
           </div>
 
           <div className="w-full flex items-center justify-between">
@@ -112,6 +115,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 />
               ))}
             </ul>
+            <AddNonEssentialExpense />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="text-lg font-semibold">Remainder</span>

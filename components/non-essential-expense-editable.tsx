@@ -37,15 +37,15 @@ export const NonEssentialExpenseEditable = ({ expense }: Props) => {
       <span>{expense.name}</span>
       <div className="flex shrink grow-0 items-center gap-2">
         <NumericFormat
-          suffix=" KZT"
           value={expense.amount || ""}
           thousandSeparator=","
           customInput={Input}
           onChange={handleChange}
           className="w-[120px]"
         />
+        <span className="flex group-hover:hidden text-lg">KZT</span>
         <Button
-          className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+          className="shrink-0 hidden group-hover:flex transition-opacity"
           variant={"destructive"}
           size={"icon"}
           onClick={handleDelete}
