@@ -64,7 +64,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 Expenses (75%):
               </Label>
-              <p className="font-semibold">
+              <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(essentialsBudget)} KZT
               </p>
             </div>
@@ -81,7 +81,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">Remainder</span>
             <span
-              className={cn("text-end font-semibold", {
+              className={cn("text-end shrink-0 font-semibold", {
                 "text-green-700": expensesDifference > 0,
                 "text-destructive": expensesDifference < 0,
               })}
@@ -95,7 +95,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
             <Label className="md:text-lg font-semibold">
               Cushion fund (10%):
             </Label>
-            <p className="font-semibold">
+            <p className="font-semibold shrink-0">
               {formatNumberWithCommas(cushionFund)} KZT
             </p>
           </div>
@@ -108,7 +108,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
             <Label className="md:text-lg font-semibold">
               Savings / investments (15%):
             </Label>
-            <p className="font-semibold">
+            <p className="font-semibold shrink-0">
               {formatNumberWithCommas(savings)} KZT
             </p>
           </div>

@@ -72,7 +72,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 Essential expenses / needs (50%):
               </Label>
-              <p className="font-semibold">
+              <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(essentialsBudget)} KZT
               </p>
             </div>
@@ -90,7 +90,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">Remainder</span>
             <span
-              className={cn("text-end font-semibold", {
+              className={cn("text-end font-semibold shrink-0", {
                 "text-green-700": essentialsDifference > 0,
                 "text-destructive": essentialsDifference < 0,
               })}
@@ -104,7 +104,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="flex flex-col gap-2 items-start justify-between">
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">Wants (30%):</Label>
-              <p className="font-semibold">
+              <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(nonEssentialsBudget)} KZT
               </p>
             </div>
@@ -121,7 +121,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">Remainder</span>
             <span
-              className={cn("text-end font-semibold", {
+              className={cn("text-end font-semibold shrink-0", {
                 "text-green-700": nonEssentialsDifference > 0,
                 "text-destructive": nonEssentialsDifference < 0,
               })}
@@ -136,7 +136,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <Label className="md:text-lg font-semibold">
               Savings / investments (20%):
             </Label>
-            <p className="font-semibold">
+            <p className="font-semibold shrink-0">
               {formatNumberWithCommas(investmentsBudget)} KZT
             </p>
           </div>
