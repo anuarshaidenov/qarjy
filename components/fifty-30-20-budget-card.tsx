@@ -13,7 +13,8 @@ import {
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { MonthlyIncomeEditableSection } from "./monthly-income-editable-section";
-import { ExpenseEditable } from "./expense-editable";
+import { EssentialExpenseEditable } from "./essential-expense-editable";
+import { NonEssentialExpenseEditable } from "./non-essential-expense-editable";
 
 type Props = {};
 
@@ -31,7 +32,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <h2 className="text-xl font-semibold">September budget</h2>
+          <h2 className="text-2xl font-semibold">September budget</h2>
           <div className="flex items-start gap-4">
             <TooltipProvider>
               <Tooltip>
@@ -74,7 +75,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             </div>
             <ul className="text-sm w-full">
               {budget.essentialExpenses.map((essentialExpense) => (
-                <ExpenseEditable
+                <EssentialExpenseEditable
                   key={essentialExpense.id}
                   expense={essentialExpense}
                 />
@@ -87,7 +88,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <span
               className={cn("text-end font-semibold", {
                 "text-green-700": essentialsDifference > 0,
-                "text-red-700": essentialsDifference < 0,
+                "text-destructive": essentialsDifference < 0,
               })}
             >
               {formatNumberWithCommas(essentialsDifference)} KZT
@@ -105,16 +106,10 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             </div>
             <ul className="text-sm w-full">
               {budget.nonEssentialExpenses.map((nonEssentialExpense) => (
-                <li
+                <NonEssentialExpenseEditable
                   key={nonEssentialExpense.id}
-                  className="flex items-center justify-between w-full"
-                >
-                  <span>{nonEssentialExpense.name}</span>{" "}
-                  <span>
-                    {formatNumberWithCommas(nonEssentialExpense.amount || 0)}{" "}
-                    KZT
-                  </span>
-                </li>
+                  expense={nonEssentialExpense}
+                />
               ))}
             </ul>
           </div>
@@ -123,7 +118,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <span
               className={cn("text-end font-semibold", {
                 "text-green-700": nonEssentialsDifference > 0,
-                "text-red-700": nonEssentialsDifference < 0,
+                "text-destructive": nonEssentialsDifference < 0,
               })}
             >
               {formatNumberWithCommas(nonEssentialsDifference)} KZT

@@ -36,7 +36,6 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
           className="text-lg font-semibold"
           customInput={Input}
           id="monthly-income"
-          placeholder="20000 KZT"
           thousandSeparator=","
           value={budget?.monthlyIncome}
           onChange={handleMonthlyIncomeChange}
