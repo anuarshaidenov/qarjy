@@ -1,6 +1,6 @@
 export type Fifty2030Budget = {
   id: string;
-  monthlyIncome: number;
+  monthlyIncome?: number;
   essentialExpenses: EssentialExpense[];
   nonEssentialExpenses: NonEssentialExpense[];
   savings: number;
@@ -9,11 +9,11 @@ export type Fifty2030Budget = {
 export type EssentialExpense = {
   id: string;
   name: string;
-  amount: number;
+  amount?: number;
 };
 
 export type NonEssentialExpense = {
   id: string;
   name: string;
-  amount: number;
+  amount?: number;
 };
