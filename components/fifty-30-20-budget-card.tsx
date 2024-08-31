@@ -34,7 +34,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
   return (
     <Card className="h-full">
       <CardHeader>
-        <div className="flex items-start justify-between">
+        <div className="flex items-start justify-between gap-2">
           <Fifty3020BudgetTitle />
           <div className="flex items-start gap-4">
             <TooltipProvider>

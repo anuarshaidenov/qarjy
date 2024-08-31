@@ -26,7 +26,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
   return (
     <Card className="h-full">
       <CardHeader>
-        <div className="flex items-start justify-between">
+        <div className="flex items-start gap-2 justify-between">
           <SeventyFive1015BudgetTitle />
           <div className="flex items-start gap-4">
             <TooltipProvider>
@@ -99,7 +99,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
             Keep this money in case of unexpected expenses.
           </p>
         </div>
-        <div className="flex flex-col gap-2 items-start justify-between pb-4 border-b">
+        <div className="flex flex-col gap-2 items-start justify-between pb-4">
           <div className="flex items-center justify-between w-full">
             <Label className="text-lg font-semibold">
               Savings / investments (15%):

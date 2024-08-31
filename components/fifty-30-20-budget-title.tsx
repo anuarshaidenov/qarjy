@@ -20,7 +20,7 @@ export const Fifty3020BudgetTitle = (props: Props) => {
     <Input
       value={budget?.title}
       onChange={handleChange}
-      className="text-2xl font-semibold w-1/2"
+      className="text-2xl font-semibold"
     ></Input>
   );
 };
