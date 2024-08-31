@@ -15,6 +15,7 @@ import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
 import { Seventyfive1015ExpenseEditable } from "./seventyfive-10-15-expense-editable";
 import { Seventyfive1015AddExpense } from "./seventyfive-10-15-add-expense";
+import { SeventyFive1015BudgetTitle } from "./seventyfive-10-15-budget-title";
 
 type Props = {};
 
@@ -26,7 +27,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <h2 className="text-2xl font-semibold">September budget</h2>
+          <SeventyFive1015BudgetTitle />
           <div className="flex items-start gap-4">
             <TooltipProvider>
               <Tooltip>

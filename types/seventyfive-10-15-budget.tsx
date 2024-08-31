@@ -4,6 +4,7 @@ export type SeventyFive1015Budget = {
   expenses: Expense[];
   cushionFund: number;
   savings: number;
+  title: string;
 };
 
 export type Expense = {

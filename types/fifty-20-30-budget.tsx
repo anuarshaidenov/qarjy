@@ -4,6 +4,7 @@ export type Fifty2030Budget = {
   essentialExpenses: EssentialExpense[];
   nonEssentialExpenses: NonEssentialExpense[];
   savings: number;
+  title: string;
 };
 
 export type EssentialExpense = {

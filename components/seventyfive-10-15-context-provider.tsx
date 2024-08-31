@@ -9,6 +9,7 @@ type Props = {
 
 const initialBudget: SeventyFive1015Budget = {
   id: crypto.randomUUID(),
+  title: "September Budget",
   monthlyIncome: 1000000,
   expenses: [
     {

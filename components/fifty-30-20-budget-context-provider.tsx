@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 
 const initialBudget: Fifty2030Budget = {
   id: crypto.randomUUID(),
+  title: "September Budget",
   monthlyIncome: 1000000,
   essentialExpenses: [
     {

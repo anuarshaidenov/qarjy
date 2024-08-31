@@ -17,6 +17,7 @@ import { EssentialExpenseEditable } from "./fifty-30-20-essential-expense-editab
 import { NonEssentialExpenseEditable } from "./fifty-30-20-non-essential-expense-editable";
 import { AddEssentialExpense } from "./fifty-30-20-add-essential-expense";
 import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense";
+import { Fifty3020BudgetTitle } from "./fifty-30-20-budget-title";
 
 type Props = {};
 
@@ -34,7 +35,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <h2 className="text-2xl font-semibold">September budget</h2>
+          <Fifty3020BudgetTitle />
           <div className="flex items-start gap-4">
             <TooltipProvider>
               <Tooltip>
