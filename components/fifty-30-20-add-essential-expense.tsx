@@ -57,17 +57,17 @@ export const AddEssentialExpense = (props: Props) => {
     <Form {...essentialsForm}>
       <form
         onSubmit={essentialsForm.handleSubmit(onEssentialsSubmit)}
-        className="flex w-full items-center justify-between gap-2"
+        className="flex md:flex-row flex-col w-full items-center justify-between gap-2"
       >
         <FormField
           name="essentialExpenseName"
           render={({ field }) => (
-            <FormItem className="space-y-1">
+            <FormItem className="space-y-1 w-full md:w-auto">
               <FormControl>
                 <Input
                   autoComplete="off"
                   placeholder="Name"
-                  className="shrink w-[120px]"
+                  className="shrink w-full md:w-[120px]"
                   {...field}
                 />
               </FormControl>
@@ -75,16 +75,16 @@ export const AddEssentialExpense = (props: Props) => {
           )}
         />
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 w-full md:w-auto">
           <FormField
             name="essentialExpenseAmount"
             render={({ field }) => (
-              <FormItem className="space-y-1">
+              <FormItem className="space-y-1 w-full md:w-auto">
                 <FormControl>
                   <NumericFormat
                     autoComplete="off"
                     customInput={Input}
-                    className="shrink w-[120px]"
+                    className="shrink w-full md:w-[120px]"
                     placeholder="Amount"
                     thousandSeparator=","
                     {...field}

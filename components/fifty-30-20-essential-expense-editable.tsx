@@ -35,12 +35,14 @@ export const EssentialExpenseEditable = ({ expense }: Props) => {
           thousandSeparator=","
           customInput={Input}
           onChange={handleChange}
-          className="w-[120px]"
+          className="md:w-[120px] w-[80px]"
           autoComplete="off"
         />
-        <span className="flex group-hover:hidden text-lg">KZT</span>
+        <span className="md:flex hidden md:group-hover:hidden text-lg">
+          KZT
+        </span>
         <Button
-          className="shrink-0 hidden group-hover:flex transition-opacity"
+          className="shrink-0 md:hidden group-hover:flex transition-opacity"
           variant={"destructive"}
           size={"icon"}
           onClick={handleDelete}

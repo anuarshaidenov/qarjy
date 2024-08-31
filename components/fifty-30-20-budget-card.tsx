@@ -36,7 +36,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <Fifty3020BudgetTitle />
-          <div className="flex items-start gap-4">
+          <div className="md:flex hidden items-start gap-4">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
@@ -69,7 +69,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
         <div className="flex flex-col gap-4 pb-4 border-b">
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">
-              <Label className="text-lg font-semibold">
+              <Label className="md:text-lg font-semibold">
                 Essential expenses / needs (50%):
               </Label>
               <p className="font-semibold">
@@ -88,7 +88,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           </div>
 
           <div className="w-full flex items-center justify-between">
-            <span className="text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">Remainder</span>
             <span
               className={cn("text-end font-semibold", {
                 "text-green-700": essentialsDifference > 0,
@@ -103,7 +103,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
         <div className="flex flex-col gap-4 border-b pb-4">
           <div className="flex flex-col gap-2 items-start justify-between">
             <div className="flex items-center justify-between w-full">
-              <Label className="text-lg font-semibold">Wants (30%):</Label>
+              <Label className="md:text-lg font-semibold">Wants (30%):</Label>
               <p className="font-semibold">
                 {formatNumberWithCommas(nonEssentialsBudget)} KZT
               </p>
@@ -119,7 +119,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <AddNonEssentialExpense />
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">Remainder</span>
             <span
               className={cn("text-end font-semibold", {
                 "text-green-700": nonEssentialsDifference > 0,
@@ -133,7 +133,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
 
         <div className="flex flex-col gap-2 items-start justify-between">
           <div className="flex items-center justify-between w-full">
-            <Label className="text-lg font-semibold">
+            <Label className="md:text-lg font-semibold">
               Savings / investments (20%):
             </Label>
             <p className="font-semibold">
