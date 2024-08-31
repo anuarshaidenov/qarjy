@@ -10,8 +10,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useContext } from "react";
-import { BudgetContext } from "./budget-context-provider";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 
@@ -31,7 +29,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <h2 className="text-lg font-semibold">September budget</h2>
+          <h2 className="text-xl font-semibold">September budget</h2>
           <div className="flex items-start gap-4">
             <TooltipProvider>
               <Tooltip>
@@ -95,7 +93,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="w-full flex items-center justify-between">
             <span className="text-lg font-semibold">Remainder</span>
             <span
-              className={cn("text-end font-semibold text-sm mb-4", {
+              className={cn("text-end font-semibold", {
                 "text-green-700": essentialsDifference > 0,
                 "text-red-700": essentialsDifference < 0,
               })}
@@ -131,7 +129,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="w-full flex items-center justify-between">
             <span className="text-lg font-semibold">Remainder</span>
             <span
-              className={cn("text-end font-semibold text-sm mb-4", {
+              className={cn("text-end font-semibold", {
                 "text-green-700": nonEssentialsDifference > 0,
                 "text-red-700": nonEssentialsDifference < 0,
               })}

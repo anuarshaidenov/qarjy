@@ -15,16 +15,6 @@ const calculatePecentageBasedOnIncome = (
 export const useFifty2030 = () => {
   const { budget, setBudget } = useContext(BudgetContext);
 
-  const essentialsDifference = calculateExpensesDifference(
-    budget.monthlyIncome || 0,
-    budget.essentialExpenses.map((expense) => expense.amount || 0)
-  );
-
-  const nonEssentialsDifference = calculateExpensesDifference(
-    budget.monthlyIncome || 0,
-    budget.nonEssentialExpenses.map((expense) => expense.amount || 0)
-  );
-
   const essentialsBudget = calculatePecentageBasedOnIncome(
     budget.monthlyIncome || 0,
     50
@@ -38,6 +28,16 @@ export const useFifty2030 = () => {
   const investmentsBudget = calculatePecentageBasedOnIncome(
     budget.monthlyIncome || 0,
     20
+  );
+
+  const essentialsDifference = calculateExpensesDifference(
+    essentialsBudget,
+    budget.essentialExpenses.map((expense) => expense.amount || 0)
+  );
+
+  const nonEssentialsDifference = calculateExpensesDifference(
+    nonEssentialsBudget,
+    budget.nonEssentialExpenses.map((expense) => expense.amount || 0)
   );
 
   return {
