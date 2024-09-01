@@ -112,7 +112,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
         <CardHeader></CardHeader>
         <CardContent>
           <div className="flex flex-col gap-2 items-start justify-between">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-start justify-between w-full">
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.503020.savings.title")}
               </Label>
