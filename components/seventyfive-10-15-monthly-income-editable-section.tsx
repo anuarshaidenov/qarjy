@@ -10,15 +10,17 @@ import { NumericFormat } from "react-number-format";
 type Props = {};
 
 export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
-  const { budget, setBudget } = useSeventyFive1015();
+  const { budget, setBudget, setBudgetToLocalStorage } = useSeventyFive1015();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount = formatAmount(e.target.value);
 
-    setBudget({
+    const newBudget = {
       ...budget,
       monthlyIncome: amount,
-    });
+    };
+    setBudget(newBudget);
+    setBudgetToLocalStorage(newBudget);
   };
 
   return (
