@@ -18,6 +18,7 @@ import { NonEssentialExpenseEditable } from "./fifty-30-20-non-essential-expense
 import { AddEssentialExpense } from "./fifty-30-20-add-essential-expense";
 import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense";
 import { Fifty3020BudgetTitle } from "./fifty-30-20-budget-title";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -30,6 +31,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
     nonEssentialsDifference,
     investmentsBudget,
   } = useFifty2030();
+  const t = useTranslations("home.app.tab-content.503020");
 
   return (
     <Card className="h-full">
@@ -70,7 +72,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">
-                Essential expenses / needs (50%):
+                {t("essential-expenses")}
               </Label>
               <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(essentialsBudget)} KZT
@@ -88,7 +90,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
           </div>
 
           <div className="w-full flex items-center justify-between">
-            <span className="md:text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">{t("remainder")}</span>
             <span
               className={cn("text-end font-semibold shrink-0", {
                 "text-green-700": essentialsDifference > 0,
@@ -103,7 +105,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
         <div className="flex flex-col gap-4 border-b pb-4">
           <div className="flex flex-col gap-2 items-start justify-between">
             <div className="flex items-center justify-between w-full">
-              <Label className="md:text-lg font-semibold">Wants (30%):</Label>
+              <Label className="md:text-lg font-semibold">{t("wants")}</Label>
               <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(nonEssentialsBudget)} KZT
               </p>
@@ -119,7 +121,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <AddNonEssentialExpense />
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="md:text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">{t("remainder")}</span>
             <span
               className={cn("text-end font-semibold shrink-0", {
                 "text-green-700": nonEssentialsDifference > 0,
@@ -134,15 +136,13 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
         <div className="flex flex-col gap-2 items-start justify-between">
           <div className="flex items-center justify-between w-full">
             <Label className="md:text-lg font-semibold">
-              Savings / investments (20%):
+              {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
               {formatNumberWithCommas(investmentsBudget)} KZT
             </p>
           </div>
-          <p className="text-sm">
-            Keep this money in your savings account or in your investments.
-          </p>
+          <p className="text-sm">{t("savings.sub-title")}</p>
         </div>
       </CardContent>
     </Card>

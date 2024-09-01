@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { formatAmount } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const expensesFormSchema = z.object({
   expenseName: z.string(),
@@ -56,6 +57,8 @@ export const Seventyfive1015AddExpense = (props: Props) => {
     expensesForm.setFocus("expenseName");
   };
 
+  const t = useTranslations("home.app.tab-content.751015");
+
   return (
     <Form {...expensesForm}>
       <form
@@ -69,7 +72,7 @@ export const Seventyfive1015AddExpense = (props: Props) => {
               <FormControl>
                 <Input
                   autoComplete="off"
-                  placeholder="Name"
+                  placeholder={t("add-expenses.placeholder-title")}
                   className="shrink w-full md:w-[120px]"
                   {...field}
                 />
@@ -88,7 +91,7 @@ export const Seventyfive1015AddExpense = (props: Props) => {
                     autoComplete="off"
                     customInput={Input}
                     className="shrink w-full md:w-[120px]"
-                    placeholder="Amount"
+                    placeholder={t("add-expenses.placeholder-amount")}
                     thousandSeparator=","
                     {...field}
                   />

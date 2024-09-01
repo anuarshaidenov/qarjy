@@ -1,9 +1,99 @@
 {
   "home": {
     "hero": {
-      "title": "Budgeting is finally easy.",
-      "subtitle": "Estimate your monthly expenses and see how your budget will change over time.",
-      "button": "See how it works"
+      "title": "Budgeting Made Simple",
+      "subtitle": "Enter your income, see your budget, and take control of your finances with ease.",
+      "button": "Learn how it works"
+    },
+    "app": {
+      "tab-list": {
+        "503020": "50-30-20 Rule",
+        "751015": "75-10-15 Rule"
+      },
+      "tab-content": {
+        "503020": {
+          "monthly-income": "Enter your monthly income",
+          "essential-expenses": "Essential expenses (50%)",
+          "remainder": "Remaining balance",
+          "wants": "Wants (30%)",
+          "add-essentials": {
+            "placeholder-title": "Title",
+            "placeholder-amount": "Amount"
+          },
+          "savings": {
+            "title": "Savings & Investments (20%)",
+            "sub-title": "Set this money aside for savings or investments."
+          }
+        },
+        "751015": {
+          "monthly-income": "Enter your monthly income",
+          "expenses": "Total expenses (75%)",
+          "remainder": "Remaining balance",
+          "cushion-fund": {
+            "title": "Cushion Fund (10%)",
+            "sub-title": "Save this for unexpected expenses."
+          },
+          "add-expenses": {
+            "placeholder-title": "Title",
+            "placeholder-amount": "Amount"
+          },
+          "savings": {
+            "title": "Savings & Investments (15%)",
+            "sub-title": "Set this money aside for savings or investments."
+          }
+        }
+      }
+    },
+    "how-it-works": {
+      "title": "How It Works",
+      "tab-list": {
+        "503020": "50-30-20 Rule",
+        "751015": "75-10-15 Rule"
+      },
+      "steps": {
+        "503020": {
+          "step-1": {
+            "title": "Step 1: Enter your monthly income",
+            "description": "Add your total income for the month, including salary or any other sources."
+          },
+          "step-2": {
+            "title": "Step 2: Add your essential expenses",
+            "description": "Record your necessary expenses like rent, bills, and groceries."
+          },
+          "step-3": {
+            "title": "Step 3: Add your wants",
+            "description": "Enter non-essential expenses such as entertainment, shopping, and subscriptions."
+          },
+          "step-4": {
+            "title": "Step 4: Set the savings aside",
+            "description": "Set aside some of your income for savings or investments."
+          },
+          "step-5": {
+            "title": "Step 5: Start budgeting and tracking",
+            "description": "Let us help you manage your money and track your progress with a personalized dashboard.",
+            "button": "Get Started"
+          }
+        },
+        "751015": {
+          "step-1": {
+            "title": "Step 1: Enter your monthly income",
+            "description": "Add your total income for the month, including salary or any other sources."
+          },
+          "step-2": {
+            "title": "Step 2: Add your expenses",
+            "description": "Record all your expenses, essential or non-essential, in the 'Expenses' section."
+          },
+          "step-3": {
+            "title": "Step 3: Add non-essential expenses",
+            "description": "List any additional discretionary spending like outings, clothes, or subscriptions."
+          },
+          "step-4": {
+            "title": "Step 4: Start budgeting and tracking",
+            "description": "Monitor your spending and savings with our easy-to-use dashboard.",
+            "button": "Get Started"
+          }
+        }
+      }
     }
   }
 }

@@ -1,12 +1,12 @@
-import { useTranslations } from "next-intl";
 import { AppSection } from "./app-section";
 import { Button } from "./ui/button";
 import { Link } from "@/navigation";
+import { getTranslations } from "next-intl/server";
 
 type Props = {};
 
-export const HeroSection = (props: Props) => {
-  const t = useTranslations("home.hero");
+export const HeroSection = async (props: Props) => {
+  const t = await getTranslations("home.hero");
 
   return (
     <section className="py-16 overflow-hidden flex flex-col items-center gap-3 container">

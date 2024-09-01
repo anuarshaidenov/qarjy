@@ -1,3 +1,5 @@
+"use client";
+
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
@@ -9,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { formatAmount } from "@/lib/utils";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 const essentialsFormSchema = z.object({
   essentialExpenseName: z.string(),
@@ -60,6 +63,8 @@ export const AddEssentialExpense = (props: Props) => {
     essentialsForm.setFocus("essentialExpenseName");
   };
 
+  const t = useTranslations("home.app.tab-content.503020.add-essentials");
+
   return (
     <Form {...essentialsForm}>
       <form
@@ -73,7 +78,7 @@ export const AddEssentialExpense = (props: Props) => {
               <FormControl>
                 <Input
                   autoComplete="off"
-                  placeholder="Name"
+                  placeholder={t("placeholder-title")}
                   className="shrink w-full md:w-[120px]"
                   {...field}
                 />
@@ -92,7 +97,7 @@ export const AddEssentialExpense = (props: Props) => {
                     autoComplete="off"
                     customInput={Input}
                     className="shrink w-full md:w-[120px]"
-                    placeholder="Amount"
+                    placeholder={t("placeholder-amount")}
                     thousandSeparator=","
                     {...field}
                   />

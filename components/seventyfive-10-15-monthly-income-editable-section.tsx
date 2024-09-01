@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -23,10 +24,12 @@ export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
     setBudgetToLocalStorage(newBudget);
   };
 
+  const t = useTranslations("home.app.tab-content.751015");
+
   return (
     <div className="flex items-center w-full border-b pb-4">
       <Label className="md:text-lg font-semibold grow" id="monthly-income">
-        Your monthly income:
+        {t("monthly-income")}
       </Label>
       <div className="shrink max-w-[180px] flex items-center gap-2">
         <NumericFormat

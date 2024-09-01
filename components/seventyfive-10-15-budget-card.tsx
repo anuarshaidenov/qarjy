@@ -16,12 +16,15 @@ import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
 import { Seventyfive1015ExpenseEditable } from "./seventyfive-10-15-expense-editable";
 import { Seventyfive1015AddExpense } from "./seventyfive-10-15-add-expense";
 import { SeventyFive1015BudgetTitle } from "./seventyfive-10-15-budget-title";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const SeventyFive1015BudgetCard = (props: Props) => {
   const { budget, essentialsBudget, cushionFund, savings, expensesDifference } =
     useSeventyFive1015();
+
+  const t = useTranslations("home.app.tab-content.751015");
 
   return (
     <Card className="h-full">
@@ -62,7 +65,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">
-                Expenses (75%):
+                {t("expenses")}
               </Label>
               <p className="font-semibold shrink-0">
                 {formatNumberWithCommas(essentialsBudget)} KZT
@@ -79,7 +82,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
             <Seventyfive1015AddExpense />
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="md:text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">{t("remainder")}</span>
             <span
               className={cn("text-end shrink-0 font-semibold", {
                 "text-green-700": expensesDifference > 0,
@@ -93,28 +96,24 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
         <div className="flex flex-col gap-2 items-start justify-between pb-4 border-b">
           <div className="flex items-center justify-between w-full">
             <Label className="md:text-lg font-semibold">
-              Cushion fund (10%):
+              {t("cushion-fund.title")}
             </Label>
             <p className="font-semibold shrink-0">
               {formatNumberWithCommas(cushionFund)} KZT
             </p>
           </div>
-          <p className="text-sm">
-            Keep this money in case of unexpected expenses.
-          </p>
+          <p className="text-sm">{t("cushion-fund.sub-title")}</p>
         </div>
         <div className="flex flex-col gap-2 items-start justify-between pb-4">
           <div className="flex items-center justify-between w-full">
             <Label className="md:text-lg font-semibold">
-              Savings / investments (15%):
+              {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
               {formatNumberWithCommas(savings)} KZT
             </p>
           </div>
-          <p className="text-sm">
-            Keep this money in your savings account or in your investments.
-          </p>
+          <p className="text-sm">{t("savings.sub-title")}</p>
         </div>
       </CardContent>
     </Card>

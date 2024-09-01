@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { formatAmount } from "@/lib/utils";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 const nonEssentialsFormSchema = z.object({
   nonEssentialExpenseName: z.string(),
@@ -60,6 +61,8 @@ export const AddNonEssentialExpense = (props: Props) => {
     nonEssentialsForm.setFocus("nonEssentialExpenseName");
   };
 
+  const t = useTranslations("home.app.tab-content.503020.add-essentials");
+
   return (
     <Form {...nonEssentialsForm}>
       <form
@@ -73,7 +76,7 @@ export const AddNonEssentialExpense = (props: Props) => {
               <FormControl>
                 <Input
                   autoComplete="off"
-                  placeholder="Name"
+                  placeholder={t("placeholder-title")}
                   className="shrink w-full md:w-[120px]"
                   {...field}
                 />
@@ -92,7 +95,7 @@ export const AddNonEssentialExpense = (props: Props) => {
                     autoComplete="off"
                     customInput={Input}
                     className="shrink w-full md:w-[120px]"
-                    placeholder="Amount"
+                    placeholder={t("placeholder-amount")}
                     thousandSeparator=","
                     {...field}
                   />

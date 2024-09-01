@@ -2,6 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 import { ReactNode } from "react";
 
@@ -10,21 +11,22 @@ type Props = {
   seventyfive1015content: ReactNode;
 };
 
-const tabs = [
-  {
-    value: "503020",
-    name: "50-30-20 Rule",
-  },
-  {
-    value: "751015",
-    name: "75-10-15 Rule",
-  },
-];
-
 export const HowItWorksWrapper = ({
   fifty3020content,
   seventyfive1015content,
 }: Props) => {
+  const t = useTranslations("home.how-it-works");
+  const tabs = [
+    {
+      value: "503020",
+      name: t("tab-list.503020"),
+    },
+    {
+      value: "751015",
+      name: t("tab-list.751015"),
+    },
+  ];
+
   return (
     <Tabs
       defaultValue={

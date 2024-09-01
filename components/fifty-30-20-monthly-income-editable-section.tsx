@@ -6,11 +6,13 @@ import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
 import { formatAmount } from "@/lib/utils";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const MonthlyIncomeEditableSection = (props: Props) => {
   const { budget, setBudget } = useFifty2030();
+  const t = useTranslations("home.app.tab-content.503020");
 
   const handleMonthlyIncomeChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -32,7 +34,7 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
   return (
     <div className="flex items-center w-full border-b pb-4">
       <Label className="md:text-lg font-semibold grow" id="monthly-income">
-        Your monthly income:
+        {t("monthly-income")}
       </Label>
       <div className="shrink max-w-[180px] flex items-center gap-2">
         <NumericFormat
