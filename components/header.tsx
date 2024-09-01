@@ -9,7 +9,7 @@ export const Header = (props: Props) => {
     <header className="">
       <div className="container py-4 flex items-center justify-between">
         <Link className="text-xl font-mono" href={"/"}>
-          qarjy
+          💸 qarjy
         </Link>
 
         <div className="flex gap-4 items-center">
