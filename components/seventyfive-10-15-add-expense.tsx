@@ -19,7 +19,7 @@ const expensesFormSchema = z.object({
 type Props = {};
 
 export const Seventyfive1015AddExpense = (props: Props) => {
-  const { budget, setBudget } = useSeventyFive1015();
+  const { budget, setBudget, setBudgetToLocalStorage } = useSeventyFive1015();
 
   const expensesForm = useForm<z.infer<typeof expensesFormSchema>>({
     resolver: zodResolver(expensesFormSchema),
@@ -38,7 +38,7 @@ export const Seventyfive1015AddExpense = (props: Props) => {
       return;
     }
 
-    setBudget({
+    const newBudget = {
       ...budget,
       expenses: [
         ...budget.expenses,
@@ -48,7 +48,10 @@ export const Seventyfive1015AddExpense = (props: Props) => {
           amount: amount,
         },
       ],
-    });
+    };
+
+    setBudget(newBudget);
+    setBudgetToLocalStorage(newBudget);
     expensesForm.reset();
     expensesForm.setFocus("expenseName");
   };

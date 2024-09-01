@@ -13,12 +13,12 @@ type Props = {
 };
 
 export const Seventyfive1015ExpenseEditable = ({ expense }: Props) => {
-  const { budget, setBudget } = useSeventyFive1015();
+  const { budget, setBudget, setBudgetToLocalStorage } = useSeventyFive1015();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount = formatAmount(e.target.value);
 
-    setBudget({
+    const newBudget = {
       ...budget,
       expenses: budget.expenses.map((e) => {
         if (e.id === expense.id) {
@@ -29,14 +29,19 @@ export const Seventyfive1015ExpenseEditable = ({ expense }: Props) => {
         }
         return e;
       }),
-    });
+    };
+
+    setBudget(newBudget);
+    setBudgetToLocalStorage(newBudget);
   };
 
   const handleDelete = () => {
-    setBudget({
+    const newBudget = {
       ...budget,
       expenses: budget.expenses.filter((e) => e.id !== expense.id),
-    });
+    };
+    setBudget(newBudget);
+    setBudgetToLocalStorage(newBudget);
   };
 
   return (

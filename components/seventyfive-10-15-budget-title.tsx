@@ -7,13 +7,15 @@ import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
 type Props = {};
 
 export const SeventyFive1015BudgetTitle = (props: Props) => {
-  const { budget, setBudget } = useSeventyFive1015();
+  const { budget, setBudget, setBudgetToLocalStorage } = useSeventyFive1015();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setBudget({
+    const newBudget = {
       ...budget,
       title: e.target.value,
-    });
+    };
+    setBudget(newBudget);
+    setBudgetToLocalStorage(newBudget);
   };
 
   return (
