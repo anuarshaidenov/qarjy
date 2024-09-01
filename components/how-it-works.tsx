@@ -9,7 +9,10 @@ export const HowItWorks = async (props: Props) => {
   const t = await getTranslations("home.how-it-works");
 
   return (
-    <section id="how-it-works" className="py-16 container min-h-screen">
+    <section
+      id="how-it-works"
+      className="py-16 container min-h-screen max-w-[800px] mx-auto"
+    >
       <h2 className="text-3xl font-semibold text-center mb-10">{t("title")}</h2>
       <HowItWorksWrapper
         fifty3020content={<Fifty2030HowItWorks />}

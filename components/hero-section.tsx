@@ -15,7 +15,7 @@ export const HeroSection = async (props: Props) => {
       </h1>
       <p className="text-center text-xl">{t("subtitle")}</p>
 
-      <Button variant={"secondary"} className="mb-10" asChild>
+      <Button className="mb-10" asChild>
         <Link href={"#how-it-works"}>{t("button")}</Link>
       </Button>
 
