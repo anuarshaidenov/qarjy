@@ -1,7 +1,8 @@
 {
   "home": {
     "hero": {
-      "title": "Budgeting Made Simple",
+      "title-highlight": "Budgeting",
+      "title": "Made Simple",
       "subtitle": "Enter your income, see your budget, and take control of your finances with ease.",
       "button": "Learn how it works"
     },
