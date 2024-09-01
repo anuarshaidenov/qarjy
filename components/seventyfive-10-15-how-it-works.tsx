@@ -81,7 +81,7 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
         <CardHeader></CardHeader>
         <CardContent>
           <div className="flex flex-col gap-2 items-start justify-between pb-4 border-b">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-start justify-between w-full">
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.751015.cushion-fund.title")}
               </Label>
@@ -92,7 +92,7 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
             </p>
           </div>
           <div className="flex flex-col gap-2 items-start justify-between py-4">
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-start justify-between w-full">
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.751015.savings.title")}
               </Label>
