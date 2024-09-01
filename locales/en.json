@@ -1,8 +1,9 @@
 {
   "home": {
     "hero": {
-      "title": "Budgeting is finally effortless.",
-      "subtitle": "Estimate your monthly expenses and see how your budget will change over time."
+      "title": "Budgeting is finally easy.",
+      "subtitle": "Estimate your monthly expenses and see how your budget will change over time.",
+      "button": "See how it works"
     }
   }
 }

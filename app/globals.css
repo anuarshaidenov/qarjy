@@ -81,4 +81,9 @@
   *::-webkit-scrollbar-thumb:hover {
     @apply bg-foreground/50 transition-colors;
   }
+
+  html,
+  body {
+    @apply scroll-smooth;
+  }
 }

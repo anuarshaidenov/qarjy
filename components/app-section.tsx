@@ -41,7 +41,6 @@ export const AppSection = (props: Props) => {
             </TabsTrigger>
           ))}
         </TabsList>
-
         <TabsContent value="503020">
           <Fifty3020BudgetContextProvider>
             <Fifty3020BudgetCardLocal />
