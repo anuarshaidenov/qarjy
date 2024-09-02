@@ -38,7 +38,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <Fifty3020BudgetTitle />
-          <div className="md:flex hidden items-start gap-4">
+          <div className="hidden items-start gap-4">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
@@ -75,7 +75,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 {t("essential-expenses")}
               </Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(essentialsBudget)} KZT
+                {formatNumberWithCommas(essentialsBudget)} ₸
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -97,7 +97,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 "text-destructive": essentialsDifference < 0,
               })}
             >
-              {formatNumberWithCommas(essentialsDifference)} KZT
+              {formatNumberWithCommas(essentialsDifference)} ₸
             </span>
           </div>
         </div>
@@ -107,7 +107,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">{t("wants")}</Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(nonEssentialsBudget)} KZT
+                {formatNumberWithCommas(nonEssentialsBudget)} ₸
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -128,7 +128,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 "text-destructive": nonEssentialsDifference < 0,
               })}
             >
-              {formatNumberWithCommas(nonEssentialsDifference)} KZT
+              {formatNumberWithCommas(nonEssentialsDifference)} ₸
             </span>
           </div>
         </div>
@@ -139,7 +139,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
               {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(investmentsBudget)} KZT
+              {formatNumberWithCommas(investmentsBudget)} ₸
             </p>
           </div>
           <p className="text-sm">{t("savings.sub-title")}</p>

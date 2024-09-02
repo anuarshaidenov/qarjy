@@ -38,9 +38,7 @@ export const EssentialExpenseEditable = ({ expense }: Props) => {
           className="md:w-[120px] w-[80px]"
           autoComplete="off"
         />
-        <span className="md:flex hidden md:group-hover:hidden text-lg">
-          KZT
-        </span>
+        <span className="md:flex hidden md:group-hover:hidden text-lg">₸</span>
         <Button
           className="shrink-0 md:hidden group-hover:flex transition-opacity"
           variant={"destructive"}

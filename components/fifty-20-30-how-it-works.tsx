@@ -35,7 +35,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
                 id="monthly-income"
                 value={"1,000,000"}
               />
-              <span>KZT</span>
+              <span>₸</span>
             </div>
           </div>
         </CardContent>
@@ -116,7 +116,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.503020.savings.title")}
               </Label>
-              <p className="font-semibold shrink-0">20,000 KZT</p>
+              <p className="font-semibold shrink-0">20,000 ₸</p>
             </div>
             <p className="text-sm">
               {t("app.tab-content.503020.savings.sub-title")}

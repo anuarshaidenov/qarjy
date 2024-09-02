@@ -35,7 +35,7 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
                 id="monthly-income"
                 value={"1,000,000"}
               />
-              <span>KZT</span>
+              <span>₸</span>
             </div>
           </div>
         </CardContent>
@@ -85,7 +85,7 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.751015.cushion-fund.title")}
               </Label>
-              <p className="font-semibold shrink-0">40,000 KZT</p>
+              <p className="font-semibold shrink-0">40,000 ₸</p>
             </div>
             <p className="text-sm">
               {t("app.tab-content.751015.cushion-fund.sub-title")}
@@ -96,7 +96,7 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 {t("app.tab-content.751015.savings.title")}
               </Label>
-              <p className="font-semibold shrink-0">60,000 KZT</p>
+              <p className="font-semibold shrink-0">60,000 ₸</p>
             </div>
             <p className="text-sm">
               {t("app.tab-content.751015.savings.sub-title")}
