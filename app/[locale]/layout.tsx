@@ -1,4 +1,4 @@
-import type { Viewport } from "next";
+import type { Viewport, Metadata } from "next";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -40,7 +40,7 @@ export async function generateMetadata({
             alt: "Qarjy Қосымшасының Скриншоты",
           },
         ],
-        locale: "en_US, kk_KZ",
+        locale: "kk_KZ",
         type: "website",
       },
       twitter: {
@@ -52,7 +52,7 @@ export async function generateMetadata({
         images: ["og-image.png"],
       },
       robots: "index, follow",
-    };
+    } as Metadata;
   }
 
   return {
@@ -84,7 +84,7 @@ export async function generateMetadata({
           alt: "Qarjy App Screenshot",
         },
       ],
-      locale: "en_US, kk_KZ",
+      locale: "en_US",
       type: "website",
     },
     twitter: {
@@ -96,7 +96,7 @@ export async function generateMetadata({
       images: ["og-image.png"],
     },
     robots: "index, follow",
-  };
+  } as Metadata;
 }
 
 export const viewport: Viewport = {
