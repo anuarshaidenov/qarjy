@@ -130,7 +130,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
       <p className="md:text-lg">
         {t("how-it-works.steps.503020.step-5.description")}
       </p>
-      <Button>{t("how-it-works.steps.503020.step-5.button")}</Button>
+      <Button disabled>{t("how-it-works.steps.503020.step-5.button")}</Button>
     </div>
   );
 };
