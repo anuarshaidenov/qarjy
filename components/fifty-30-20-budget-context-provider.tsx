@@ -1,6 +1,7 @@
 "use client";
 
 import { Fifty2030Budget } from "@/types/fifty-20-30-budget";
+import { useTranslations } from "next-intl";
 import { createContext, useState } from "react";
 
 const initialBudget: Fifty2030Budget = {
@@ -42,7 +43,27 @@ export const BudgetContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [budget, setBudget] = useState<Fifty2030Budget>(initialBudget);
+  const t = useTranslations("home.app.tab-content.503020.app-data");
+
+  const newBudget: Fifty2030Budget = {
+    ...initialBudget,
+    title: t("title"),
+    essentialExpenses: [
+      ...initialBudget.essentialExpenses.map((expense, i) => ({
+        ...expense,
+        name: i < 2 ? t(`item-${i + 1}`) : expense.name,
+      })),
+    ],
+    nonEssentialExpenses: [
+      ...initialBudget.nonEssentialExpenses.map((expense) => ({
+        ...expense,
+        name: t(`item-3`),
+      })),
+    ],
+  };
+
+  const [budget, setBudget] = useState<Fifty2030Budget>(newBudget);
+
   return (
     <BudgetContext.Provider value={{ budget, setBudget }}>
       {children}
