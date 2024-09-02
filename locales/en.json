@@ -16,22 +16,22 @@
           "monthly-income": "Enter your monthly income",
           "essential-expenses": "Essential expenses (50%)",
           "remainder": "Remaining balance",
-          "wants": "Wants (30%)",
+          "wants": "Wants",
           "add-essentials": {
             "placeholder-title": "Title",
             "placeholder-amount": "Amount"
           },
           "savings": {
-            "title": "Savings & Investments (20%)",
+            "title": "Savings & Investments",
             "sub-title": "Set this money aside for savings or investments."
           }
         },
         "751015": {
           "monthly-income": "Enter your monthly income",
-          "expenses": "Total expenses (75%)",
+          "expenses": "Total expenses",
           "remainder": "Remaining balance",
           "cushion-fund": {
-            "title": "Cushion Fund (10%)",
+            "title": "Cushion Fund",
             "sub-title": "Save this for unexpected expenses."
           },
           "add-expenses": {
@@ -39,7 +39,7 @@
             "placeholder-amount": "Amount"
           },
           "savings": {
-            "title": "Savings & Investments (15%)",
+            "title": "Savings & Investments",
             "sub-title": "Set this money aside for savings or investments."
           }
         }
