@@ -54,42 +54,42 @@
       "steps": {
         "503020": {
           "step-1": {
-            "title": "Step 1: Enter your monthly income",
+            "title": "Enter your monthly income",
             "description": "Add your total income for the month, including salary or any other sources."
           },
           "step-2": {
-            "title": "Step 2: Add your essential expenses",
+            "title": "Add your essential expenses",
             "description": "Record your necessary expenses like rent, bills, and groceries."
           },
           "step-3": {
-            "title": "Step 3: Add your wants",
+            "title": "Add your wants",
             "description": "Enter non-essential expenses such as entertainment, shopping, and subscriptions."
           },
           "step-4": {
-            "title": "Step 4: Set the savings aside",
+            "title": "Set the savings aside",
             "description": "Set aside some of your income for savings or investments."
           },
           "step-5": {
-            "title": "Step 5: Start budgeting and tracking",
+            "title": "Start budgeting and tracking",
             "description": "Let us help you manage your money and track your progress with a personalized dashboard.",
             "button": "Coming soon"
           }
         },
         "751015": {
           "step-1": {
-            "title": "Step 1: Enter your monthly income",
+            "title": "Enter your monthly income",
             "description": "Add your total income for the month, including salary or any other sources."
           },
           "step-2": {
-            "title": "Step 2: Add your expenses",
+            "title": "Add your expenses",
             "description": "Record all your expenses, essential or non-essential, in the 'Expenses' section."
           },
           "step-3": {
-            "title": "Step 3: Add non-essential expenses",
+            "title": "Add non-essential expenses",
             "description": "List any additional discretionary spending like outings, clothes, or subscriptions."
           },
           "step-4": {
-            "title": "Step 4: Start budgeting and tracking",
+            "title": "Start budgeting and tracking",
             "description": "Monitor your spending and savings with our easy-to-use dashboard.",
             "button": "Coming soon"
           }
