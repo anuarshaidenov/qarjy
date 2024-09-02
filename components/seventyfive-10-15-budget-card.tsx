@@ -31,7 +31,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
       <CardHeader>
         <div className="flex items-start gap-2 justify-between">
           <SeventyFive1015BudgetTitle />
-          <div className="hidden md:flex items-start gap-4">
+          <div className="hidden items-start gap-4">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
@@ -68,7 +68,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
                 {t("expenses")}
               </Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(essentialsBudget)} KZT
+                {formatNumberWithCommas(essentialsBudget)} ₸
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -89,7 +89,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
                 "text-destructive": expensesDifference < 0,
               })}
             >
-              {formatNumberWithCommas(expensesDifference)} KZT
+              {formatNumberWithCommas(expensesDifference)} ₸
             </span>
           </div>
         </div>
@@ -99,7 +99,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               {t("cushion-fund.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(cushionFund)} KZT
+              {formatNumberWithCommas(cushionFund)} ₸
             </p>
           </div>
           <p className="text-sm">{t("cushion-fund.sub-title")}</p>
@@ -110,7 +110,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(savings)} KZT
+              {formatNumberWithCommas(savings)} ₸
             </p>
           </div>
           <p className="text-sm">{t("savings.sub-title")}</p>

@@ -128,7 +128,7 @@ export const Fifty2030Form = (props: Props) => {
             <NumericFormat
               customInput={Input}
               id="monthly-income"
-              placeholder="20000 KZT"
+              placeholder="20000 ₸"
               thousandSeparator=","
               value={budget?.monthlyIncome}
               onChange={handleMonthlyIncomeChange}
@@ -161,7 +161,7 @@ export const Fifty2030Form = (props: Props) => {
                     <FormControl>
                       <NumericFormat
                         customInput={Input}
-                        placeholder="1000 KZT"
+                        placeholder="1000 ₸"
                         thousandSeparator=","
                         {...field}
                       />
@@ -201,7 +201,7 @@ export const Fifty2030Form = (props: Props) => {
                     <FormControl>
                       <NumericFormat
                         customInput={Input}
-                        placeholder="1000 KZT"
+                        placeholder="1000 ₸"
                         thousandSeparator=","
                         {...field}
                       />

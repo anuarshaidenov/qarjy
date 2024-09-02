@@ -46,7 +46,7 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
           value={budget?.monthlyIncome}
           onChange={handleMonthlyIncomeChange}
         />
-        <span>KZT</span>
+        <span>₸</span>
       </div>
     </div>
   );
