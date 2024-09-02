@@ -1,6 +1,7 @@
 "use client";
 
 import { SeventyFive1015Budget } from "@/types/seventyfive-10-15-budget";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {
@@ -30,14 +31,30 @@ const initialBudget: SeventyFive1015Budget = {
 export const BudgetContext = React.createContext<{
   budget: SeventyFive1015Budget;
   setBudget: React.Dispatch<React.SetStateAction<SeventyFive1015Budget>>;
-}>({
-  budget: initialBudget,
-  setBudget: () => {},
-});
+}>(
+  (() => {
+    return {
+      budget: initialBudget,
+      setBudget: () => {},
+    };
+  })()
+);
 
 export const BudgetContextProvider = ({ children }: Props) => {
-  const [budget, setBudget] =
-    React.useState<SeventyFive1015Budget>(initialBudget);
+  const t = useTranslations("home.app.tab-content.751015.app-data");
+
+  const newBudget = {
+    ...initialBudget,
+    title: t("title"),
+    expenses: [
+      ...initialBudget.expenses.map((expense, i) => ({
+        ...expense,
+        name: t("item-" + (i + 1)) as string,
+      })),
+    ],
+  };
+
+  const [budget, setBudget] = React.useState<SeventyFive1015Budget>(newBudget);
 
   return (
     <BudgetContext.Provider value={{ budget, setBudget }}>

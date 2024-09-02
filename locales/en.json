@@ -24,6 +24,12 @@
           "savings": {
             "title": "Savings & Investments",
             "sub-title": "Set this money aside for savings or investments."
+          },
+          "app-data": {
+            "title": "September Budget",
+            "item-1": "Rent",
+            "item-2": "Groceries",
+            "item-3": "netflix"
           }
         },
         "751015": {
@@ -41,6 +47,11 @@
           "savings": {
             "title": "Savings & Investments",
             "sub-title": "Set this money aside for savings or investments."
+          },
+          "app-data": {
+            "title": "September Budget",
+            "item-1": "rent",
+            "item-2": "groceries"
           }
         }
       }
