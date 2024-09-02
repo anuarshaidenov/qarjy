@@ -57,7 +57,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Qarjy - Simple Budgeting App',
+    title: 'Qarjy - Simple, Free Budgeting App',
     description:
       'Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.',
     keywords: [
@@ -74,9 +74,9 @@ export async function generateMetadata({
     openGraph: {
       title: 'Qarjy - Manage Your Finances Easily',
       description:
-        'Take control of your financial future with our easy-to-use budgeting app. Track your income, expenses, and savings all in one place.',
+        'Take control of your financial future with our easy-to-use, absolutely free budgeting app. Track your income, expenses, and savings all in one place.',
       url: 'https://qarjy.site',
-      siteName: 'Qarjy - Simple Budgeting App',
+      siteName: 'Qarjy - Simple, Free Budgeting App',
       images: [
         {
           url: 'og-image.png',
@@ -90,9 +90,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Qarjy - Manage Your Finances Easily',
+      title: 'Qarjy - Manage Your Finances Easily, For Free',
       description:
-        'A simple way to plan your budget and manage your money effectively. Try our budgeting app today!',
+        'A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!',
       creator: '@anuarnyi',
       images: ['og-image.png'],
     },
