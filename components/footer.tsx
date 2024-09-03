@@ -5,14 +5,14 @@ type Props = {};
 
 export const Footer = (props: Props) => {
   return (
-    <footer>
-      <div className="container w-full py-20 flex items-start gap-8 flex-wrap justify-between border-b border-t">
+    <footer className="mt-20">
+      <div className="container w-full py-10 md:py-20 flex items-start gap-8 flex-wrap justify-between border-b border-t">
         <Logo />
 
         <nav className="flex items-start gap-8 flex-wrap">
           <ul className="flex flex-col gap-4">
             <li>
-              <h4 className="text-lg font-semibold">About</h4>
+              <h4 className="md:text-lg font-semibold">About</h4>
             </li>
             <li>
               <Link
@@ -25,7 +25,7 @@ export const Footer = (props: Props) => {
           </ul>
           <ul className="flex flex-col gap-4">
             <li>
-              <h4 className="text-lg font-semibold">Get Help</h4>
+              <h4 className="md:text-lg font-semibold">Get Help</h4>
             </li>
             <li>
               <Link
