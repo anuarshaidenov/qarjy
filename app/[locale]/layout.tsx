@@ -114,10 +114,10 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale}>
+    <html className="min-h-screen" lang={params.locale}>
       <body
         className={cn(
-          'min-h-screen flex flex-col font-sans',
+          'h-full flex flex-col font-sans',
           GeistSans.variable,
           GeistMono.variable
         )}
