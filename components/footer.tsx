@@ -16,7 +16,7 @@ export const Footer = (props: Props) => {
               <h4 className="md:text-lg font-semibold">About</h4>
             </li>
             <li>
-              <Button asChild variant={"link"}>
+              <Button asChild variant={"link"} className="p-0">
                 <Link href={"#how-it-works"}>How it works</Link>
               </Button>
             </li>
@@ -26,7 +26,7 @@ export const Footer = (props: Props) => {
               <h4 className="md:text-lg font-semibold">Get Help</h4>
             </li>
             <li>
-              <Button asChild variant={"link"}>
+              <Button asChild variant={"link"} className="p-0">
                 <Link href={"mailto:anuarshaidenov@gmail.com"}>Contact us</Link>
               </Button>
             </li>
