@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 type Props = {
@@ -9,6 +10,7 @@ const LandingLayout = (props: Props) => {
     <>
       <Header />
       <main className="h-full grow">{props.children}</main>
+      <Footer />
     </>
   );
 };
