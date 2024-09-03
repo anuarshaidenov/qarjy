@@ -1,5 +1,6 @@
 import { Link } from "@/navigation";
 import { Logo } from "./logo";
+import { Button } from "./ui/button";
 
 type Props = {};
 
@@ -15,12 +16,9 @@ export const Footer = (props: Props) => {
               <h4 className="md:text-lg font-semibold">About</h4>
             </li>
             <li>
-              <Link
-                href={"#how-it-works"}
-                className="text-sm transition-opacity hover:opacity-70"
-              >
-                How it works
-              </Link>
+              <Button asChild variant={"link"}>
+                <Link href={"#how-it-works"}>How it works</Link>
+              </Button>
             </li>
           </ul>
           <ul className="flex flex-col gap-4">
@@ -28,12 +26,9 @@ export const Footer = (props: Props) => {
               <h4 className="md:text-lg font-semibold">Get Help</h4>
             </li>
             <li>
-              <Link
-                href={"mailto:anuarshaidenov@gmail.com"}
-                className="text-sm transition-opacity hover:opacity-70"
-              >
-                Contact us
-              </Link>
+              <Button asChild variant={"link"}>
+                <Link href={"mailto:anuarshaidenov@gmail.com"}>Contact us</Link>
+              </Button>
             </li>
           </ul>
         </nav>
