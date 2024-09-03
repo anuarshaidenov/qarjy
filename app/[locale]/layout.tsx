@@ -1,5 +1,5 @@
 import type { Viewport, Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import { GeistSans } from 'geist/font/sans';
@@ -114,10 +114,10 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html className="min-h-screen" lang={params.locale}>
+    <html lang={params.locale}>
       <body
         className={cn(
-          'h-full flex flex-col font-sans',
+          'min-h-screen flex flex-col font-sans',
           GeistSans.variable,
           GeistMono.variable
         )}
