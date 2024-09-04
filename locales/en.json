@@ -114,7 +114,11 @@
     "back-button": "Home"
   },
   "dashboard": {
-    "button": "Dashboard"
+    "button": "Dashboard",
+    "home": {
+      "title": "Thanks for joining us!❤️ The dashboard is coming soon",
+      "button": "Go home"
+    }
   },
   "header": {
     "cta": "Get started"
