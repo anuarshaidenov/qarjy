@@ -7,11 +7,15 @@ import { headers } from "next/headers";
 export const signUpWithGoogle = async () => {
   const header = headers();
   const host = header.get("x-forwarded-host");
+  const isLocalEnv = process.env.NODE_ENV === "development";
   const supabase = createClient();
+
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `http://${host}/auth/callback`,
+      redirectTo: isLocalEnv
+        ? `http://${host}/auth/callback`
+        : `https://${host}/auth/callback`,
     },
   });
 

@@ -110,6 +110,7 @@
   },
   "signup": {
     "title": "Sign Up",
-    "button": "Signup with Google"
+    "button": "Signup with Google",
+    "back-button": "Home"
   }
 }

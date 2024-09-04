@@ -115,6 +115,7 @@
   },
   "signup": {
     "title": "Тіркелу",
-    "button": "Google"
+    "button": "Google арқылы тіркеліңіз",
+    "back-button": "Үйге қайт"
   }
 }
