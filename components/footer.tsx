@@ -6,8 +6,8 @@ type Props = {};
 
 export const Footer = (props: Props) => {
   return (
-    <footer className="mt-20">
-      <div className="container w-full py-10 md:py-20 flex items-start gap-8 flex-wrap justify-between border-b border-t">
+    <footer className="mt-20 border-b border-t">
+      <div className="container w-full py-10 md:py-20 flex items-start gap-8 flex-wrap justify-between">
         <Logo />
 
         <nav className="flex items-start gap-8 flex-wrap">
