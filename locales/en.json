@@ -107,5 +107,9 @@
         }
       }
     }
+  },
+  "signup": {
+    "title": "Sign Up",
+    "button": "Signup with Google"
   }
 }

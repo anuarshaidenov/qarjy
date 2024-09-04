@@ -112,5 +112,9 @@
         }
       }
     }
+  },
+  "signup": {
+    "title": "Тіркелу",
+    "button": "Google"
   }
 }
