@@ -107,5 +107,20 @@
         }
       }
     }
+  },
+  "signup": {
+    "title": "Sign Up",
+    "button": "Signup with Google",
+    "back-button": "Home"
+  },
+  "dashboard": {
+    "button": "Dashboard",
+    "home": {
+      "title": "Thanks for joining us!❤️ The dashboard is coming soon",
+      "button": "Go home"
+    }
+  },
+  "header": {
+    "cta": "Get started"
   }
 }
