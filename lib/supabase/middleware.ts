@@ -29,5 +29,9 @@ export async function updateSession(
     data: { user },
   } = await supabase.auth.getUser();
 
+  if (request.nextUrl.pathname.includes("/dashboard") && !user) {
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+
   return response;
 }

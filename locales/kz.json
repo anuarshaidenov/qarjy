@@ -117,5 +117,11 @@
     "title": "Тіркелу",
     "button": "Google арқылы тіркеліңіз",
     "back-button": "Үйге қайт"
+  },
+  "dashboard": {
+    "button": "Тақта"
+  },
+  "header": {
+    "cta": "Тіркеліңіз"
   }
 }
