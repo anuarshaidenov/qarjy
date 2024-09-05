@@ -14,6 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ModeToggle } from "@/components/mode-toggle";
 
 type Props = {
   children: React.ReactNode;
@@ -56,10 +57,11 @@ const DashboardLayout = ({ children }: Props) => {
           </nav>
           <nav className="mt-auto grid gap-1 p-2">
             <LocaleToggle />
+            <ModeToggle />
 
             <form action={signOut}>
               <Tooltip>
-                <TooltipTrigger>
+                <TooltipTrigger asChild>
                   <Button
                     variant="ghost"
                     size="icon"
