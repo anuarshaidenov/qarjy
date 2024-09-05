@@ -26,14 +26,6 @@ export async function generateMetadata({
     },
     title: t("metadata.title"),
     description: t("metadata.description"),
-    keywords: [
-      t("metadata.keywords[0]"),
-      t("metadata.keywords[1]"),
-      t("metadata.keywords[2]"),
-      t("metadata.keywords[3]"),
-      t("metadata.keywords[4]"),
-      t("metadata.keywords[5]"),
-    ],
     authors: [
       {
         name: t("metadata.authors[0].name"),
