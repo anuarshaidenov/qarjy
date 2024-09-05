@@ -118,6 +118,9 @@
     "home": {
       "title": "Thanks for joining us!❤️ The dashboard is coming soon",
       "button": "Go home"
+    },
+    "all-budgets": {
+      "title": "All budgets"
     }
   },
   "header": {
@@ -142,7 +145,10 @@
       "investments"
     ],
     "authors": [
-      { "name": "Anuar Shaidenov", "url": "https://anuarshaidenov.vercel.app/" }
+      {
+        "name": "Anuar Shaidenov",
+        "url": "https://anuarshaidenov.vercel.app/"
+      }
     ],
     "openGraph": {
       "title": "Qarjy - Manage Your Finances Easily",
@@ -165,7 +171,9 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   }

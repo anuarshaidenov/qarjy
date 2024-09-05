@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { BudgetCard } from "@/components/budget-card";
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -8,14 +7,16 @@ type Props = {};
 async function DashboardPage({}: Props) {
   const t = await getTranslations();
   return (
-    <section className="container py-20">
-      <div className="flex text-center items-center flex-col gap-4">
-        <h1 className="md:text-5xl text-lg font-mono">
-          {t("dashboard.home.title")}
-        </h1>
-        <Button asChild size={"lg"}>
-          <Link href={"/"}>{t("dashboard.home.button")}</Link>
-        </Button>
+    <section className="py-4 md:py-8 px-2 md:px-4 container flex flex-col gap-4">
+      <h1 className="text-xl md:text-5xl font-bold">
+        {t("dashboard.all-budgets.title")}
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
+        <BudgetCard />
+        <BudgetCard />
+        <BudgetCard />
+        <BudgetCard />
+        <BudgetCard />
       </div>
     </section>
   );
