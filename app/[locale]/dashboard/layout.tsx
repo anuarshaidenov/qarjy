@@ -76,11 +76,13 @@ const DashboardLayout = ({ children }: Props) => {
             </form>
           </nav>
         </aside>
-        <div className="flex flex-col">
+        <div className="flex flex-col overflow-hidden">
           <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
             <h1 className="text-xl font-semibold font-mono">💸 qarjy</h1>
           </header>
-          <main className="grid flex-1 overflow-auto p-4">{children}</main>
+          <main className="grid flex-1 p-4 grow overflow-scroll">
+            {children}
+          </main>
         </div>
       </div>
     </TooltipProvider>
