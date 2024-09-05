@@ -14,6 +14,14 @@ export async function generateMetadata({
   if (params.locale === "kz") {
     return {
       metadataBase: new URL("https://qarjy.site"),
+      alternates: {
+        canonical: "/",
+        languages: {
+          kz: "/kz",
+          en: "/en",
+        },
+      },
+
       title: "Qarjy - Жай Бюджетті Жоспарлау Қосымшасы",
       description:
         "Қаржыңызды біздің интуитивті бюджетті жоспарлау құралы арқылы оңай басқарыңыз. Шығындарыңызды, жинақтарыңызды және инвестицияларыңызды икемді әдістер арқылы қадағалаңыз.",
