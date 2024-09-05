@@ -5,65 +5,15 @@ import { cn } from "@/lib/utils";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 
 export async function generateMetadata({
   params,
 }: Readonly<{ params: { locale: string } }>) {
-  if (params.locale === "kz") {
-    return {
-      metadataBase: new URL("https://qarjy.site"),
-      alternates: {
-        canonical: "/",
-        languages: {
-          kz: "/kz",
-          en: "/en",
-        },
-      },
-
-      title: "Qarjy - Жай Бюджетті Жоспарлау Қосымшасы",
-      description:
-        "Қаржыңызды біздің интуитивті бюджетті жоспарлау құралы арқылы оңай басқарыңыз. Шығындарыңызды, жинақтарыңызды және инвестицияларыңызды икемді әдістер арқылы қадағалаңыз.",
-      keywords: [
-        "бюджетті жоспарлау қосымшасы",
-        "жеке қаржы",
-        "ақша басқару",
-        "шығындарды қадағалау",
-        "жинақтар",
-        "инвестициялар",
-      ],
-      authors: [
-        { name: "Anuar Shaidenov", url: "https://anuarshaidenov.vercel.app/" },
-      ],
-      openGraph: {
-        title: "Qarjy - Қаржыңызды Оңай Басқарыңыз",
-        description:
-          "Қаржылық болашағыңызды біздің пайдалануға ыңғайлы бюджетті жоспарлау қосымшамызбен бақылауға алыңыз. Табыс, шығындар және жинақтарды бір жерден бақылаңыз.",
-        url: "https://qarjy.site",
-        siteName: "Qarjy - Жай Бюджетті Жоспарлау Қосымшасы",
-        images: [
-          {
-            url: "og-image.png",
-            width: 1200,
-            height: 630,
-            alt: "Qarjy Қосымшасының Скриншоты",
-          },
-        ],
-        locale: "kk_KZ",
-        type: "website",
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "Qarjy - Қаржыңызды Оңай Басқарыңыз",
-        description:
-          "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
-        creator: "@anuarnyi",
-        images: ["og-image.png"],
-      },
-      robots: "index, follow",
-    } as Metadata;
-  }
+  const t = await getTranslations({
+    locale: params.locale,
+  });
 
   return {
     metadataBase: new URL("https://qarjy.site"),
@@ -74,42 +24,42 @@ export async function generateMetadata({
         en: "/en",
       },
     },
-    title: "Qarjy - Simple, Free Budgeting App",
-    description:
-      "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",
+    title: t("metadata.title"),
+    description: t("metadata.description"),
     keywords: [
-      "budgeting app",
-      "personal finance",
-      "money management",
-      "expense tracking",
-      "savings",
-      "investments",
+      t("metadata.keywords[0]"),
+      t("metadata.keywords[1]"),
+      t("metadata.keywords[2]"),
+      t("metadata.keywords[3]"),
+      t("metadata.keywords[4]"),
+      t("metadata.keywords[5]"),
     ],
     authors: [
-      { name: "Anuar Shaidenov", url: "https://anuarshaidenov.vercel.app/" },
+      {
+        name: t("metadata.authors[0].name"),
+        url: t("metadata.authors[0].url"),
+      },
     ],
     openGraph: {
-      title: "Qarjy - Manage Your Finances Easily",
-      description:
-        "Take control of your financial future with our easy-to-use, absolutely free budgeting app. Track your income, expenses, and savings all in one place.",
-      url: "https://qarjy.site",
-      siteName: "Qarjy - Simple, Free Budgeting App",
+      title: t("metadata.openGraph.title"),
+      description: t("metadata.openGraph.description"),
+      url: t("metadata.openGraph.url"),
+      siteName: t("metadata.openGraph.siteName"),
       images: [
         {
           url: "og-image.png",
           width: 1200,
           height: 630,
-          alt: "Qarjy App Screenshot",
+          alt: t("metadata.openGraph.images[0].alt"),
         },
       ],
-      locale: "en_US",
+      locale: params.locale,
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Qarjy - Manage Your Finances Easily, For Free",
-      description:
-        "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
+      title: t("metadata.twitter.title"),
+      description: t("metadata.twitter.description"),
       creator: "@anuarnyi",
       images: ["og-image.png"],
     },
