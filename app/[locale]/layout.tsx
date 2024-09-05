@@ -16,20 +16,12 @@ export async function generateMetadata({
   });
 
   return {
-    metadataBase: new URL("https://qarjy.site"),
-    alternates: {
-      canonical: "/",
-      languages: {
-        kz: "/kz",
-        en: "/en",
-      },
-    },
     title: t("metadata.title"),
     description: t("metadata.description"),
     authors: [
       {
-        name: t("metadata.authors[0].name"),
-        url: t("metadata.authors[0].url"),
+        name: "Anuar Shaidenov",
+        url: "https://anuarshaidenov.vercel.app/",
       },
     ],
     openGraph: {
@@ -42,7 +34,7 @@ export async function generateMetadata({
           url: "og-image.png",
           width: 1200,
           height: 630,
-          alt: t("metadata.openGraph.images[0].alt"),
+          alt: "Qarjy app screen",
         },
       ],
       locale: params.locale,
