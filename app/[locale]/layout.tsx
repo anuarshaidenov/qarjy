@@ -66,6 +66,14 @@ export async function generateMetadata({
   }
 
   return {
+    metadataBase: new URL("https://qarjy.site"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        kz: "/kz",
+        en: "/en",
+      },
+    },
     title: "Qarjy - Simple, Free Budgeting App",
     description:
       "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",

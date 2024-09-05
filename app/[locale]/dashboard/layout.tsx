@@ -1,4 +1,4 @@
-import { Home, LifeBuoy, LogOut, Settings2, SquareUser } from "lucide-react";
+import { Home, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
