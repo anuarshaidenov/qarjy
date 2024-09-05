@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 
 export const signUpWithGoogle = async () => {
   const header = headers();
-  const host = header.get("x-forwarded-host");
+  const host = header.get("host");
   const isLocalEnv = process.env.NODE_ENV === "development";
   const supabase = createClient();
 

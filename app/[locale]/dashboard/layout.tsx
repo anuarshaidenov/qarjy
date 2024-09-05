@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Link } from "@/navigation";
 import { signOut } from "@/actions/sign-out";
+import { LocaleToggle } from "@/components/locale-toggle";
 
 type Props = {
   children: React.ReactNode;
@@ -56,6 +57,14 @@ const DashboardLayout = ({ children }: Props) => {
             </Tooltip> */}
           </nav>
           <nav className="mt-auto grid gap-1 p-2">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <LocaleToggle />
+              </TooltipTrigger>
+              <TooltipContent side="right" sideOffset={5}>
+                Logout
+              </TooltipContent>
+            </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
                 <form action={signOut}>
