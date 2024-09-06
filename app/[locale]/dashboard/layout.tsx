@@ -77,7 +77,7 @@ const DashboardLayout = ({ children }: Props) => {
             </form>
           </nav>
         </aside>
-        <div className="flex flex-col h-screen overflow-hidden">
+        <div className="flex flex-col h-[100vh-env(safe-area-inset-top)] overflow-hidden">
           <header className="flex h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
             <Logo />
             <nav className="md:hidden flex items-center gap-4">
