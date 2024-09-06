@@ -22,6 +22,8 @@ export const Header = async (props: Props) => {
         <Logo />
 
         <div className="flex gap-4 items-center">
+          <ModeToggle />
+          <LocaleToggle />
           {(!user || !!error) && (
             <Button asChild>
               <Link href={"/signup"}>{t("header.cta")}</Link>
@@ -32,8 +34,6 @@ export const Header = async (props: Props) => {
               <Link href={"/dashboard"}>{t("dashboard.button")}</Link>
             </Button>
           )}
-          <ModeToggle />
-          <LocaleToggle />
         </div>
       </div>
     </header>

@@ -1,7 +1,7 @@
 type Props = {};
 
 function MonthlyBudgetPage({}: Props) {
-  return <div>MonthlyBudgetPage</div>;
+  return <section className="h-full">MonthlyBudgetPage</section>;
 }
 
 export default MonthlyBudgetPage;
