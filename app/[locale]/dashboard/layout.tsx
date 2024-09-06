@@ -96,7 +96,7 @@ const DashboardLayout = ({ children }: Props) => {
               </form>
             </nav>
           </header>
-          <main className="grid flex-1 grow">{children}</main>
+          <main className="h-full">{children}</main>
           <footer className="md:hidden bg-background sticky bottom-0 left-0 border-t">
             <div className="container py-2 flex items-center justify-center gap-4">
               <nav className="flex items-center gap-4">
