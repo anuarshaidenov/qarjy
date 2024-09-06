@@ -15,6 +15,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Logo } from "@/components/logo";
 
 type Props = {
   children: React.ReactNode;
@@ -76,9 +77,9 @@ const DashboardLayout = ({ children }: Props) => {
             </form>
           </nav>
         </aside>
-        <div className="flex flex-col overflow-hidden">
+        <div className="flex flex-col h-screen overflow-hidden">
           <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
-            <h1 className="text-xl font-semibold font-mono">💸 qarjy</h1>
+            <Logo />
           </header>
           <main className="grid flex-1 grow overflow-y-scroll">{children}</main>
           <footer className="md:hidden border-t">
