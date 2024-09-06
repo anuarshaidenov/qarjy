@@ -13,7 +13,7 @@ type Props = {};
 export const BudgetCard = (props: Props) => {
   return (
     <Link href="/dashboard/monthly-budget">
-      <Card className="hover:bg-foreground/20 transition-colors">
+      <Card className="md:hover:bg-foreground/20 transition-colors">
         <CardHeader>
           <CardTitle>September Budget</CardTitle>
         </CardHeader>
