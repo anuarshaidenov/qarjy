@@ -17,12 +17,13 @@ export type DashboardActiveLinkProps = {
     name: string;
     href: string;
   };
+  className?: string;
 };
 
 export const DashboardActiveLink = forwardRef<
   HTMLButtonElement,
   DashboardActiveLinkProps
->(({ route }, ref) => {
+>(({ route, className }, ref) => {
   const pathname = usePathname();
 
   const isActive = pathname === route.href;
@@ -32,9 +33,13 @@ export const DashboardActiveLink = forwardRef<
       ref={ref}
       variant="ghost"
       size="icon"
-      className={cn("rounded-lg", {
-        "bg-accent text-accent-foreground": isActive,
-      })}
+      className={cn(
+        "rounded-lg",
+        {
+          "bg-accent text-accent-foreground": isActive,
+        },
+        className
+      )}
       aria-label={route.name}
       asChild
     >

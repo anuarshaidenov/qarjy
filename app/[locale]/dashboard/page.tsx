@@ -7,8 +7,8 @@ type Props = {};
 async function DashboardPage({}: Props) {
   const t = await getTranslations();
   return (
-    <section className="py-4 md:py-8 px-2 md:px-4 container flex flex-col gap-4">
-      <h1 className="text-xl md:text-5xl font-bold">
+    <section className="py-8 px-4 container flex flex-col gap-4">
+      <h1 className="text-3xl md:text-5xl font-bold">
         {t("dashboard.all-budgets.title")}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">

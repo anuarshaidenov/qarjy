@@ -25,19 +25,19 @@ const DashboardLayout = ({ children }: Props) => {
     {
       href: "/dashboard",
       name: "Dashboard",
-      icon: <DashboardIcon className="size-5" />,
+      icon: <DashboardIcon className="size-6 md:size-5" />,
     },
     {
       href: "/dashboard/monthly-budget",
       name: "Monthly Budget",
-      icon: <Calendar className="size-5" />,
+      icon: <Calendar className="size-6 md:size-5" />,
     },
   ];
 
   return (
     <TooltipProvider>
-      <div className="grid h-screen w-full pl-[53px]">
-        <aside className="inset-y fixed  left-0 z-20 flex h-full flex-col border-r">
+      <div className="grid h-screen w-full md:pl-[53px]">
+        <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
           <div className="border-b p-2">
             <Button variant="outline" size="icon" aria-label="Home" asChild>
               <Link href={"/"}>
@@ -80,7 +80,40 @@ const DashboardLayout = ({ children }: Props) => {
           <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
             <h1 className="text-xl font-semibold font-mono">💸 qarjy</h1>
           </header>
-          <main className="grid flex-1 grow overflow-scroll">{children}</main>
+          <main className="grid flex-1 grow overflow-y-scroll">{children}</main>
+          <footer className="md:hidden border-t">
+            <div className="container py-2 flex items-center justify-center gap-4">
+              <nav className="flex items-center gap-4">
+                {links.map((link) => (
+                  <DashboardActiveLink
+                    className="h-12 w-12"
+                    key={link.href}
+                    route={link}
+                  />
+                ))}
+              </nav>
+              <nav className="flex items-center gap-4">
+                <LocaleToggle />
+                <ModeToggle />
+
+                <form action={signOut}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="h-12 w-12"
+                        aria-label="Help"
+                      >
+                        <LogOut className="size-6 md:size-5" />
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">Sign Out</TooltipContent>
+                  </Tooltip>
+                </form>
+              </nav>
+            </div>
+          </footer>
         </div>
       </div>
     </TooltipProvider>
