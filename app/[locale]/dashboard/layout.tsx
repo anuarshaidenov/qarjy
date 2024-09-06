@@ -78,8 +78,23 @@ const DashboardLayout = ({ children }: Props) => {
           </nav>
         </aside>
         <div className="flex flex-col h-[calc(100vh-env(safe-area-inset-top))] overflow-hidden">
-          <header className="sticky top-0 z-10 flex h-[53px] items-center gap-1 border-b bg-background px-4">
+          <header className="sticky top-0 z-10 flex h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
             <Logo />
+            <nav className="md:hidden flex items-center gap-4">
+              <LocaleToggle />
+              <ModeToggle />
+
+              <form action={signOut}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button variant="ghost" size="icon" aria-label="Help">
+                      <LogOut className="size-5" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent side="right">Sign Out</TooltipContent>
+                </Tooltip>
+              </form>
+            </nav>
           </header>
           <main className="grid flex-1 grow overflow-y-scroll">{children}</main>
           <footer className="md:hidden border-t">
@@ -92,26 +107,6 @@ const DashboardLayout = ({ children }: Props) => {
                     route={link}
                   />
                 ))}
-              </nav>
-              <nav className="flex items-center gap-4">
-                <LocaleToggle />
-                <ModeToggle />
-
-                <form action={signOut}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className="h-12 w-12"
-                        aria-label="Help"
-                      >
-                        <LogOut className="size-6 md:size-5" />
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent side="right">Sign Out</TooltipContent>
-                  </Tooltip>
-                </form>
               </nav>
             </div>
           </footer>
