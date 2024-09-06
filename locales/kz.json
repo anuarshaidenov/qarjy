@@ -126,6 +126,9 @@
     },
     "all-budgets": {
       "title": "Барлық бюджеттер"
+    },
+    "monthly-budget": {
+      "title": "Айлық бюджет"
     }
   },
   "header": {

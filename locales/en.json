@@ -121,6 +121,9 @@
     },
     "all-budgets": {
       "title": "All budgets"
+    },
+    "monthly-budget": {
+      "title": "Monthly budget"
     }
   },
   "header": {
