@@ -77,8 +77,8 @@ const DashboardLayout = ({ children }: Props) => {
             </form>
           </nav>
         </aside>
-        <div className="flex flex-col h-[100vh-env(safe-area-inset-top)] overflow-hidden">
-          <header className="flex h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
+        <div className="">
+          <header className="flex sticky z-10 left-0 w-full top-0 h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
             <Logo />
             <nav className="md:hidden flex items-center gap-4">
               <LocaleToggle />
@@ -96,8 +96,8 @@ const DashboardLayout = ({ children }: Props) => {
               </form>
             </nav>
           </header>
-          <main className="grid flex-1 grow overflow-y-scroll">{children}</main>
-          <footer className="md:hidden border-t">
+          <main className="grid flex-1 grow">{children}</main>
+          <footer className="md:hidden bg-background sticky bottom-0 left-0 border-t">
             <div className="container py-2 flex items-center justify-center gap-4">
               <nav className="flex items-center gap-4">
                 {links.map((link) => (
