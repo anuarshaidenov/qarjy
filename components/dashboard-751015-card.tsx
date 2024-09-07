@@ -6,6 +6,7 @@ import { NumericFormat } from "./ui/numeric-format";
 import { Button } from "./ui/button";
 import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Dashboard751015CardTitle } from "./dashboard-751015-title";
+import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 
 type Props = {};
 
@@ -23,12 +24,7 @@ export const Dashboard751015Card = (props: Props) => {
             Monthly Income
           </Label>
           <div className="shrink max-w-[180px] flex items-center gap-2">
-            <NumericFormat
-              autoComplete="off"
-              className="md:text-lg font-semibold"
-              id="monthly-income"
-              thousandSeparator=","
-            />
+            <DashboardMonthlyIncome />
             <span>₸</span>
           </div>
         </div>

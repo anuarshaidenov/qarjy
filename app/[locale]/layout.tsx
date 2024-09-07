@@ -8,6 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 import { QueryClientProvider } from "@/components/query-client-provider";
+import { Toaster } from "@/components/ui/toaster";
 
 export async function generateMetadata({
   params,
@@ -84,6 +85,7 @@ export default async function RootLayout({
             <QueryClientProvider>{children}</QueryClientProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Toaster />
         <Analytics />
       </body>
     </html>
