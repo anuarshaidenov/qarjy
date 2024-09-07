@@ -10,6 +10,7 @@ import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Dashboard503020Title } from "./dashboard-504020-title";
 import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 import { DashboardEssentialExpenses } from "./dashboard-essential-expenses";
+import { Dashboard503020AddEssentialExpense } from "./dashboard-503020-add-essential-expense";
 
 type Props = {};
 
@@ -38,26 +39,7 @@ export const Dashboard503020Card = (props: Props) => {
               <p className="font-semibold shrink-0">2133131 ₸</p>
             </div>
             <DashboardEssentialExpenses />
-            <form className="flex md:flex-row flex-col w-full items-center justify-between gap-2">
-              <Input
-                autoComplete="off"
-                placeholder={"Title"}
-                className="shrink w-full md:w-[120px]"
-              />
-
-              <div className="flex items-center gap-2 w-full md:w-auto">
-                <NumericFormat
-                  autoComplete="off"
-                  className="shrink w-full md:w-[120px]"
-                  placeholder={"Amount"}
-                  thousandSeparator=","
-                />
-
-                <Button size={"icon"} className="shrink-0">
-                  <PlusIcon />
-                </Button>
-              </div>
-            </form>
+            <Dashboard503020AddEssentialExpense />
           </div>
 
           <div className="w-full flex items-center justify-between">
