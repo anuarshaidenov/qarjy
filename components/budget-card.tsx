@@ -36,7 +36,7 @@ export const BudgetCard = ({ current }: Props) => {
               Current
             </CardDescription>
           ) : (
-            <CardDescription className="text-green-700 opacity-0">
+            <CardDescription className="text-green-700 hidden md:block opacity-0">
               Not current
             </CardDescription>
           )}
