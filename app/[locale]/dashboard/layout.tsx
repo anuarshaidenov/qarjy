@@ -16,12 +16,15 @@ import {
 } from "@/components/ui/tooltip";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Logo } from "@/components/logo";
+import { getLatestBudgetId } from "@/actions/get-latest-budget-id";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const DashboardLayout = ({ children }: Props) => {
+const DashboardLayout = async ({ children }: Props) => {
+  const latestBudgetId = await getLatestBudgetId();
+
   const links: DashboardLink[] = [
     {
       href: "/dashboard",
@@ -29,7 +32,7 @@ const DashboardLayout = ({ children }: Props) => {
       icon: <DashboardIcon className="size-6 md:size-5" />,
     },
     {
-      href: "/dashboard/monthly-budget",
+      href: "/dashboard/monthly-budget/" + latestBudgetId,
       name: "Monthly Budget",
       icon: <Calendar className="size-6 md:size-5" />,
     },

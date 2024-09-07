@@ -1,11 +1,15 @@
-import { AppSection } from "@/components/app-section";
+import { getBudgetById } from "@/actions/get-budget-by-id";
 import { DashboardApp } from "@/components/dashboard-app";
 import { getTranslations } from "next-intl/server";
 
-type Props = {};
+type Props = {
+  params: { id: string };
+};
 
-async function MonthlyBudgetPage({}: Props) {
+async function MonthlyBudgetPage({ params: { id } }: Props) {
   const t = await getTranslations();
+  const budget = await getBudgetById(id);
+  console.log({ budget });
 
   return (
     <section className="h-full">
