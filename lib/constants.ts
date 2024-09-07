@@ -34,3 +34,8 @@ export const currencies = [
     name: "United Arab Emirates Dirham",
   },
 ];
+
+export const QUERY_KEYS = {
+  BUDGET: "budget",
+  BUDGETS: "budgets",
+};

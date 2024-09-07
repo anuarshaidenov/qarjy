@@ -1,13 +1,16 @@
-import { getBudgets } from "@/actions/get-budgets";
+"use client";
+
 import { BudgetCard } from "@/components/budget-card";
-import { getTranslations } from "next-intl/server";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useGetBudgets } from "@/hooks/use-get-budgets";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type Props = {};
 
-async function DashboardPage({}: Props) {
-  const t = await getTranslations();
-  const budgets = await getBudgets();
+function DashboardPage({}: Props) {
+  const t = useTranslations();
+  const { data, isLoading } = useGetBudgets();
 
   return (
     <section className="py-8 px-4 container flex flex-col gap-4">
@@ -15,7 +18,17 @@ async function DashboardPage({}: Props) {
         {t("dashboard.all-budgets.title")}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
-        {budgets.map((budget) => (
+        {isLoading && !data && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+        )}
+        {data?.map((budget) => (
           <BudgetCard key={budget.id} budget={budget} />
         ))}
       </div>

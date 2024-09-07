@@ -1,10 +1,11 @@
+import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
 import { Budget } from "@/types/budget";
 import { useQuery } from "@tanstack/react-query";
 
 export const useGetBudgetById = ({ id }: { id: string }) => {
   return useQuery({
-    queryKey: ["budget", id],
+    queryKey: [QUERY_KEYS.BUDGET, id],
     queryFn: () => {
       return getBudgetByIdClient(id);
     },

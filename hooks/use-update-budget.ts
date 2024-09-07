@@ -1,3 +1,4 @@
+import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
 import { Expense } from "@/types/budget";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -8,7 +9,7 @@ export const useUpdateBudget = () => {
   return useMutation({
     mutationFn: (params: UpdateBudgetParams) => updateBudget(params),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["budgets"] });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
     },
   });
 };
