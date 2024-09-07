@@ -6,23 +6,12 @@ import { BudgetContextProvider as Fifty3020BudgetContextProvider } from "./fifty
 import { SeventyFive1015BudgetCard } from "./seventyfive-10-15-budget-card";
 import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from "./seventyfive-10-15-context-provider";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
-import { useTranslations } from "next-intl";
+import { useMethodTabs } from "@/hooks/useMethodTabs";
 
 type Props = {};
 
 export const AppSection = (props: Props) => {
-  const t = useTranslations("home.app");
-
-  const tabs = [
-    {
-      value: "503020",
-      name: t("tab-list.503020"),
-    },
-    {
-      value: "751015",
-      name: t("tab-list.751015"),
-    },
-  ];
+  const tabs = useMethodTabs();
 
   return (
     <div className="w-full mx-auto flex flex-col gap-10 max-w-[600px]">

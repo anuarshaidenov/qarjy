@@ -9,7 +9,7 @@ async function MonthlyBudgetPage({}: Props) {
 
   return (
     <section className="h-full">
-      <div className="py-8 px-4 container flex flex-col gap-4">
+      <div className="py-8 px-4 container flex flex-col gap-8">
         <h1 className="text-3xl md:text-5xl font-bold">
           {t("dashboard.monthly-budget.title")}
         </h1>
