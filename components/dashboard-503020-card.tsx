@@ -1,3 +1,5 @@
+"use client";
+
 import { Label } from "@radix-ui/react-label";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Input } from "./ui/input";
@@ -5,6 +7,7 @@ import { NumericFormat } from "./ui/numeric-format";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
+import { Dashboard503020Title } from "./dashboard-504020-title";
 
 type Props = {};
 
@@ -12,10 +15,7 @@ export const Dashboard503020Card = (props: Props) => {
   return (
     <Card>
       <CardHeader>
-        <Input
-          className="md:text-2xl font-semibold"
-          placeholder={"Budget title"}
-        />
+        <Dashboard503020Title />
       </CardHeader>
       <CardContent className="flex flex-col gap-8">
         <div className="flex items-center w-full border-b pb-4">

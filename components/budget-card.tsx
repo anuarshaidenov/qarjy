@@ -30,9 +30,6 @@ export const BudgetCard = ({ budget }: Props) => {
                 {formatNumberWithCommas(budget.monthlyIncome)}
               </span>
             </p>
-            <p>
-              Remaining balance: <span className="font-bold">1,000,000</span>
-            </p>
           </div>
         </CardContent>
         <CardFooter>

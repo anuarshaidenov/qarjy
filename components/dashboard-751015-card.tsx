@@ -5,6 +5,7 @@ import { Input } from "./ui/input";
 import { NumericFormat } from "./ui/numeric-format";
 import { Button } from "./ui/button";
 import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
+import { Dashboard751015CardTitle } from "./dashboard-751015-title";
 
 type Props = {};
 
@@ -13,10 +14,7 @@ export const Dashboard751015Card = (props: Props) => {
     <Card className="h-full">
       <CardHeader>
         <div className="flex items-start gap-2 justify-between">
-          <Input
-            placeholder="Budget title"
-            className="md:text-2xl font-semibold"
-          ></Input>
+          <Dashboard751015CardTitle />
         </div>
       </CardHeader>
       <CardContent className="flex flex-col gap-8">

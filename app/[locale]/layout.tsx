@@ -7,6 +7,7 @@ import { GeistMono } from "geist/font/mono";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
+import { QueryClientProvider } from "@/components/query-client-provider";
 
 export async function generateMetadata({
   params,
@@ -80,7 +81,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <QueryClientProvider>{children}</QueryClientProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
         <Analytics />
