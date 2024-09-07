@@ -35,7 +35,7 @@ export const DashboardMonthlyIncome = (props: Props) => {
   }, [data]);
 
   if (isLoading) {
-    return <Skeleton className="h-9" />;
+    return <Skeleton className="h-9 inline-block" />;
   }
 
   return (

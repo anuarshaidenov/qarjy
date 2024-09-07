@@ -18,19 +18,18 @@ function DashboardPage({}: Props) {
         {t("dashboard.all-budgets.title")}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
-        {isLoading && !data && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-            <Skeleton />
-          </div>
+        {isLoading ? (
+          <>
+            <Skeleton className="h-[134px]" />
+            <Skeleton className="h-[134px]" />
+            <Skeleton className="h-[134px]" />
+            <Skeleton className="h-[134px]" />
+            <Skeleton className="h-[134px]" />
+            <Skeleton className="h-[134px]" />
+          </>
+        ) : (
+          data?.map((budget) => <BudgetCard key={budget.id} budget={budget} />)
         )}
-        {data?.map((budget) => (
-          <BudgetCard key={budget.id} budget={budget} />
-        ))}
       </div>
     </section>
   );
