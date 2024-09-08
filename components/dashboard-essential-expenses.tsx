@@ -3,6 +3,8 @@ import { useParams } from "next/navigation";
 import { DashboardEssentialExpense } from "./dashboard-essential-expense";
 import { Skeleton } from "./ui/skeleton";
 import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
+import { useExpensesSum } from "./expenses-sum-provider";
+import { useEffect } from "react";
 
 type Props = {};
 
@@ -12,6 +14,12 @@ export const DashboardEssentialExpenses = (props: Props) => {
     params.id as string,
     "essential"
   );
+  const { setEssentialExpensesSum } = useExpensesSum();
+  useEffect(() => {
+    setEssentialExpensesSum(
+      data?.reduce((sum, expense) => sum + expense.amount, 0) || 0
+    );
+  }, [data]);
 
   if (isLoading) {
     return (

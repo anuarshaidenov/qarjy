@@ -14,6 +14,9 @@ async function MonthlyBudgetPage({ params: { id } }: Props) {
         <h1 className="text-3xl md:text-5xl font-bold">
           {t("dashboard.monthly-budget.title")}
         </h1>
+        <p className="text-muted-foreground">
+          {t("dashboard.monthly-budget.subtitle")}
+        </p>
 
         <DashboardApp />
       </div>

@@ -104,6 +104,7 @@ const DashboardLayout = ({ children }: Props) => {
                     route={link}
                   />
                 ))}
+                <DashboardLatestBudgetLink />
               </nav>
             </div>
           </footer>

@@ -44,8 +44,12 @@ export const calculate15SavingsBasedOnIncome = (income: number) => {
   return income * 0.15;
 };
 
+export const calculateEssentialsRemainder = (spent: number, income: number) => {
+  return income - spent;
+};
+
 export const getCurrentMonthName = () => {
-  const date = new Date(); // 2009-11-10
+  const date = new Date();
   const month = date.toLocaleString("default", { month: "long" });
 
   return month;

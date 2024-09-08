@@ -10,6 +10,7 @@ import { Dashboard503020AddNonEssentialExpense } from "./dashboard-503020-add-no
 import { DashboardEssenialExpensesAmount } from "./dashboard-essential-expenses-amount";
 import { DashboardNonEssenialExpensesAmount } from "./dashboard-non-essential-expenses-amount";
 import { Dashboard20SavingsAmount } from "./dashboard-20-savings-amount";
+import { DashboardEssentialsRemainder } from "./dashboard-essentials-remainder";
 
 type Props = {};
 
@@ -43,9 +44,7 @@ export const Dashboard503020Card = (props: Props) => {
 
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">Remainder</span>
-            <span className={cn("text-end font-semibold shrink-0")}>
-              313131331 ₸
-            </span>
+            <DashboardEssentialsRemainder />
           </div>
         </div>
 

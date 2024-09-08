@@ -21,7 +21,7 @@ export const DashboardLatestBudgetLink = (props: Props) => {
   return (
     <Tooltip key={link.href}>
       <TooltipTrigger>
-        <DashboardActiveLink route={link} />
+        <DashboardActiveLink route={link} className="h-12 w-12 md:w-9 md:h-9" />
       </TooltipTrigger>
       <TooltipContent side="right">{link.name}</TooltipContent>
     </Tooltip>

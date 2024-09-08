@@ -120,10 +120,12 @@
       "button": "Go home"
     },
     "all-budgets": {
-      "title": "All budgets"
+      "title": "All budgets",
+      "description": "New budgets will be added at the beginning of each month. All you need to do is keep track and update your budgets."
     },
     "monthly-budget": {
-      "title": "Monthly budget"
+      "title": "Monthly budget",
+      "subtitle": "This is your current monthly budget. Choose the method that best suits you. "
     }
   },
   "header": {
@@ -174,7 +176,9 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
