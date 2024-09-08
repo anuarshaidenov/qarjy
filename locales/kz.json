@@ -114,8 +114,8 @@
     }
   },
   "signup": {
-    "title": "Тіркелу",
-    "button": "Google арқылы тіркеліңіз",
+    "title": "Кіру",
+    "button": "Google арқылы кіріңіз",
     "back-button": "Үйге қайт"
   },
   "dashboard": {
@@ -179,9 +179,7 @@
       "title": "Qarjy - Қаржыңызды Оңай Басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },

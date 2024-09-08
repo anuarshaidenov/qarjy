@@ -109,8 +109,8 @@
     }
   },
   "signup": {
-    "title": "Sign Up",
-    "button": "Signup with Google",
+    "title": "Sign in",
+    "button": "Sign in with Google",
     "back-button": "Go home"
   },
   "dashboard": {
@@ -174,9 +174,7 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
