@@ -19,3 +19,27 @@ export const calculatePecentageBasedOnIncome = (
 ) => {
   return (income * percentage) / 100;
 };
+
+export const calculateEssentialExpensesBasedOnIncome = (income: number) => {
+  return income * 0.5;
+};
+
+export const calculateNonEssentialExpensesBasedOnIncome = (income: number) => {
+  return income * 0.3;
+};
+
+export const calculate20SavingsBasedOnIncome = (income: number) => {
+  return income * 0.2;
+};
+
+export const calculateOverallExpensesBasedOnIncome = (income: number) => {
+  return income * 0.75;
+};
+
+export const calculateCushionFundBasedOnIncome = (income: number) => {
+  return income * 0.1;
+};
+
+export const calculate15SavingsBasedOnIncome = (income: number) => {
+  return income * 0.15;
+};

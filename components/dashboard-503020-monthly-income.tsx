@@ -8,6 +8,7 @@ import { useUpdateBudget } from "@/hooks/use-update-budget";
 import { useDebouncedCallback } from "use-debounce";
 import { Skeleton } from "./ui/skeleton";
 import { formatAmount } from "@/lib/utils";
+import { useMonthlyIncome } from "./monthly-income-context-provider";
 
 type Props = {};
 
@@ -17,7 +18,7 @@ export const DashboardMonthlyIncome = (props: Props) => {
     id: params.id as string,
   });
   const { mutate } = useUpdateBudget();
-  const [monthlyIncome, setMonthlyIncome] = useState(0);
+  const { monthlyIncome, setMonthlyIncome } = useMonthlyIncome();
   const debouncedMonthlyIncome = useDebouncedCallback((value) => {
     if (!data) {
       return;

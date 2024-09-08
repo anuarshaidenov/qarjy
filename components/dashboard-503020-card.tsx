@@ -1,5 +1,3 @@
-"use client";
-
 import { Label } from "@radix-ui/react-label";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { cn } from "@/lib/utils";
@@ -9,6 +7,9 @@ import { DashboardEssentialExpenses } from "./dashboard-essential-expenses";
 import { Dashboard503020AddEssentialExpense } from "./dashboard-503020-add-essential-expense";
 import { DashboardNonEssentialExpenses } from "./dashboard-non-essential-expenses";
 import { Dashboard503020AddNonEssentialExpense } from "./dashboard-503020-add-non-essential-expense";
+import { DashboardEssenialExpensesAmount } from "./dashboard-essential-expenses-amount";
+import { DashboardNonEssenialExpensesAmount } from "./dashboard-non-essential-expenses-amount";
+import { Dashboard20SavingsAmount } from "./dashboard-20-savings-amount";
 
 type Props = {};
 
@@ -34,7 +35,7 @@ export const Dashboard503020Card = (props: Props) => {
               <Label className="md:text-lg font-semibold">
                 Essential expenses
               </Label>
-              <p className="font-semibold shrink-0">2133131 ₸</p>
+              <DashboardEssenialExpensesAmount />
             </div>
             <DashboardEssentialExpenses />
             <Dashboard503020AddEssentialExpense />
@@ -52,7 +53,7 @@ export const Dashboard503020Card = (props: Props) => {
           <div className="flex flex-col gap-2 items-start justify-between">
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">Non essential</Label>
-              <p className="font-semibold shrink-0">2133131 ₸</p>
+              <DashboardNonEssenialExpensesAmount />
             </div>
             <DashboardNonEssentialExpenses />
 
@@ -74,7 +75,7 @@ export const Dashboard503020Card = (props: Props) => {
         <div className="flex flex-col gap-2 items-start justify-between">
           <div className="flex items-center justify-between w-full">
             <Label className="md:text-lg font-semibold">Savings</Label>
-            <p className="font-semibold shrink-0">313131331 ₸</p>
+            <Dashboard20SavingsAmount />
           </div>
           <p className="text-sm">Descriptione</p>
         </div>

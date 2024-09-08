@@ -62,7 +62,7 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
           control={form.control}
           name={"title"}
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="space-y-1 w-full md:w-auto">
               <FormControl>
                 <Input
                   autoComplete="off"
@@ -81,7 +81,7 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
             control={form.control}
             name={"amount"}
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="space-y-1 w-full md:w-auto">
                 <FormControl>
                   <NumericFormat
                     autoComplete="off"
