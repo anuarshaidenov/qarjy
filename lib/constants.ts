@@ -40,4 +40,5 @@ export const QUERY_KEYS = {
   BUDGETS: "budgets",
   EXPENSES: "expenses",
   MONTHLY_INCOME: "monthlyIncome",
+  LATEST_BUDGET_ID: "latestBudgetId",
 };

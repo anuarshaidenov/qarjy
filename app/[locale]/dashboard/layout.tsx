@@ -1,4 +1,4 @@
-import { Calendar, Home, LogOut } from "lucide-react";
+import { Home, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { signOut } from "@/actions/sign-out";
@@ -16,25 +16,18 @@ import {
 } from "@/components/ui/tooltip";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Logo } from "@/components/logo";
-import { getLatestBudgetId } from "@/actions/get-latest-budget-id";
+import { DashboardLatestBudgetLink } from "@/components/dashboard-latest-budget-link";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const DashboardLayout = async ({ children }: Props) => {
-  const latestBudgetId = await getLatestBudgetId();
-
+const DashboardLayout = ({ children }: Props) => {
   const links: DashboardLink[] = [
     {
       href: "/dashboard",
       name: "Dashboard",
       icon: <DashboardIcon className="size-6 md:size-5" />,
-    },
-    {
-      href: "/dashboard/monthly-budget/" + latestBudgetId,
-      name: "Monthly Budget",
-      icon: <Calendar className="size-6 md:size-5" />,
     },
   ];
 
@@ -58,6 +51,7 @@ const DashboardLayout = async ({ children }: Props) => {
                 <TooltipContent side="right">{link.name}</TooltipContent>
               </Tooltip>
             ))}
+            <DashboardLatestBudgetLink />
           </nav>
           <nav className="mt-auto grid gap-1 p-2">
             <LocaleToggle />
