@@ -1,5 +1,5 @@
 import {
-  calculateEssentialsRemainder,
+  calculateExpensesRemainder,
   calculateNonEssentialExpensesBasedOnIncome,
   cn,
   formatNumberWithCommas,
@@ -16,7 +16,7 @@ export const DashboardNonEssentialsRemainder = (props: Props) => {
     monthlyIncome as number
   );
 
-  const remainder = calculateEssentialsRemainder(
+  const remainder = calculateExpensesRemainder(
     nonEssentialExpensesSum as number,
     nonEssentialExpensesAmount as number
   );

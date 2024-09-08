@@ -1,6 +1,7 @@
 import {
-  calculateEssentialExpensesBasedOnIncome,
   calculateExpensesRemainder,
+  calculateNonEssentialExpensesBasedOnIncome,
+  calculateOverallExpensesBasedOnIncome,
   cn,
   formatNumberWithCommas,
 } from "@/lib/utils";
@@ -9,16 +10,16 @@ import { useExpensesSum } from "./expenses-sum-provider";
 
 type Props = {};
 
-export const DashboardEssentialsRemainder = (props: Props) => {
+export const DashboardOverallExpensesRemainder = (props: Props) => {
   const { monthlyIncome } = useMonthlyIncome();
-  const { essentialExpensesSum } = useExpensesSum();
-  const essentialExpensesAmount = calculateEssentialExpensesBasedOnIncome(
+  const { overallExpensesSum } = useExpensesSum();
+  const overallExpensesAmount = calculateOverallExpensesBasedOnIncome(
     monthlyIncome as number
   );
 
   const remainder = calculateExpensesRemainder(
-    essentialExpensesSum as number,
-    essentialExpensesAmount as number
+    overallExpensesSum as number,
+    overallExpensesAmount as number
   );
 
   return (

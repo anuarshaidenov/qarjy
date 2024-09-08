@@ -44,7 +44,7 @@ export const calculate15SavingsBasedOnIncome = (income: number) => {
   return income * 0.15;
 };
 
-export const calculateEssentialsRemainder = (spent: number, income: number) => {
+export const calculateExpensesRemainder = (spent: number, income: number) => {
   return income - spent;
 };
 

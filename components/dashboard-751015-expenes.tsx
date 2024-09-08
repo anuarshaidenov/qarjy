@@ -10,6 +10,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { formatAmount } from "@/lib/utils";
 import { useUpdateExpense } from "@/hooks/use-update-expense";
 import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
+import { useExpensesSum } from "./expenses-sum-provider";
 
 type Props = {};
 
@@ -19,6 +20,12 @@ export const Dashboard751015Expenses = (props: Props) => {
     params.id as string,
     "overall"
   );
+  const { setOverallExpensesSum } = useExpensesSum();
+  useEffect(() => {
+    setOverallExpensesSum(
+      data?.reduce((sum, expense) => sum + expense.amount, 0) || 0
+    );
+  }, [data]);
 
   if (isLoading) {
     return (
