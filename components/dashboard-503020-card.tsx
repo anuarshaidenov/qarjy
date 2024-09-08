@@ -11,6 +11,7 @@ import { Dashboard503020Title } from "./dashboard-504020-title";
 import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 import { DashboardEssentialExpenses } from "./dashboard-essential-expenses";
 import { Dashboard503020AddEssentialExpense } from "./dashboard-503020-add-essential-expense";
+import { DashboardNonEssentialExpenses } from "./dashboard-non-essential-expenses";
 
 type Props = {};
 
@@ -56,27 +57,7 @@ export const Dashboard503020Card = (props: Props) => {
               <Label className="md:text-lg font-semibold">Non essential</Label>
               <p className="font-semibold shrink-0">2133131 ₸</p>
             </div>
-            <ul className="text-sm w-full">
-              <li className="flex items-center py-1 justify-between w-full group">
-                <span>Netflix</span>
-                <div className="flex shrink grow-0 items-center gap-2">
-                  <NumericFormat
-                    thousandSeparator=","
-                    className="md:w-[120px] w-[80px]"
-                  />
-                  <span className="md:flex hidden md:group-hover:hidden text-lg">
-                    ₸
-                  </span>
-                  <Button
-                    className="shrink-0 md:hidden md:group-hover:flex transition-opacity"
-                    variant={"destructive"}
-                    size={"icon"}
-                  >
-                    <CircleBackslashIcon />
-                  </Button>
-                </div>
-              </li>
-            </ul>
+            <DashboardNonEssentialExpenses />
 
             <form className="flex flex-col md:flex-row w-full items-center justify-between gap-2">
               <Input

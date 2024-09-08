@@ -2,14 +2,23 @@ import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
 import { Expense } from "@/types/budget";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useToast } from "./use-toast";
 
 export const useUpdateBudget = () => {
   const queryClient = useQueryClient();
+  const { toast } = useToast();
 
   return useMutation({
     mutationFn: (params: UpdateBudgetParams) => updateBudget(params),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error updating budget",
+        description: error.message,
+        variant: "destructive",
+      });
     },
   });
 };

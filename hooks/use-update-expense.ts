@@ -1,30 +1,25 @@
-import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
 
-export const useAddExpense = () => {
-  const queryClient = useQueryClient();
+export const useUpdateExpense = () => {
   const { toast } = useToast();
 
   return useMutation({
     mutationFn: ({
-      budgetId,
+      expenseId,
       name,
       amount,
       type,
     }: {
-      budgetId: string;
+      expenseId: string;
       name: string;
       amount: number;
       type: "essential" | "non-essential" | "overall";
-    }) => addExpense(budgetId, name, amount, type),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
-    },
+    }) => updateExpense(expenseId, name, amount, type),
     onError: (error) => {
       toast({
-        title: "Error adding expense",
+        title: "Error updating expense",
         description: error.message,
         variant: "destructive",
       });
@@ -32,8 +27,8 @@ export const useAddExpense = () => {
   });
 };
 
-export async function addExpense(
-  budgetId: string,
+export async function updateExpense(
+  expenseId: string,
   name: string,
   amount: number,
   type: "essential" | "non-essential" | "overall"
@@ -42,18 +37,16 @@ export async function addExpense(
 
   const { data, error } = await supabase
     .from("expenses")
-    .insert([
-      {
-        budget_id: budgetId,
-        name,
-        amount,
-        type, // essential or non-essential
-      },
-    ])
-    .single(); // We expect only one record to be inserted
+    .update({
+      name,
+      amount,
+      type, // essential or non-essential
+    })
+    .eq("id", expenseId)
+    .single(); // We expect only one record to be updated
 
   if (error) {
-    console.error("Error adding expense:", error);
+    console.error("Error updating expense:", error);
     return { success: false, error };
   }
 

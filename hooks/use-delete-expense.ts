@@ -1,9 +1,11 @@
 import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useToast } from "./use-toast";
 
 export const useDeleteExpense = () => {
   const queryClient = useQueryClient();
+  const { toast } = useToast();
 
   return useMutation({
     mutationFn: ({
@@ -15,6 +17,13 @@ export const useDeleteExpense = () => {
     }) => deleteExpense(budgetId, expenseId),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
+    },
+    onError: (error) => {
+      toast({
+        title: "Error deleting expense",
+        description: error.message,
+        variant: "destructive",
+      });
     },
   });
 };
