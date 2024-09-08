@@ -1,5 +1,7 @@
+import { addBudget } from "@/api/create-budget";
 import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
+import { getCurrentMonthName } from "@/lib/utils";
 import { Budget } from "@/types/budget";
 import { useQuery } from "@tanstack/react-query";
 
@@ -46,7 +48,40 @@ export async function getBudgets(
     throw new Error(error.message);
   }
 
-  const budgets: Budget[] = data.map((budget) => {
+  let newData = data;
+
+  if (!data.length) {
+    const currentMonth = getCurrentMonthName();
+
+    await addBudget({
+      title: currentMonth + " Budget",
+      monthlyIncome: 1000000,
+    });
+
+    const { data: updatedData, error } = await supabase
+      .from("budgets")
+      .select(
+        `
+      id, 
+      title, 
+      monthly_income, 
+      savings, 
+      cushion_fund,
+      expenses(id, name, amount, type)
+    `
+      )
+      .eq("user_id", userId) // Filter by user_id
+      .order(sortBy, { ascending: sortDirection === "asc" });
+
+    if (error) {
+      console.error("Error fetching budgets:", error);
+      throw new Error(error.message);
+    }
+
+    newData = [...updatedData];
+  }
+
+  const budgets: Budget[] = newData.map((budget) => {
     const essentialExpenses = budget.expenses.filter(
       (expense) => expense.type === "essential"
     );

@@ -23,7 +23,9 @@ export const signUpWithGoogle = async () => {
     throw error;
   }
 
-  if (data.url) {
-    redirect(data.url); // use the redirect API for your server framework
+  if (!data.url) {
+    throw new Error("No redirect URL provided");
   }
+
+  redirect(data.url); // use the redirect API for your server framework
 };

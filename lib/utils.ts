@@ -43,3 +43,10 @@ export const calculateCushionFundBasedOnIncome = (income: number) => {
 export const calculate15SavingsBasedOnIncome = (income: number) => {
   return income * 0.15;
 };
+
+export const getCurrentMonthName = () => {
+  const date = new Date(); // 2009-11-10
+  const month = date.toLocaleString("default", { month: "long" });
+
+  return month;
+};
