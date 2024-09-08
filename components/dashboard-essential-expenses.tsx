@@ -1,4 +1,5 @@
-import { useGetBudgetById } from "@/hooks/use-get-budget-by-id";
+"use client";
+
 import { useParams } from "next/navigation";
 import { DashboardEssentialExpense } from "./dashboard-essential-expense";
 import { Skeleton } from "./ui/skeleton";
