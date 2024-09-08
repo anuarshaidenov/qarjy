@@ -25,7 +25,7 @@ const formSchema = z.object({
 
 type Props = {};
 
-export const Dashboard503020AddEssentialExpense = (props: Props) => {
+export const Dashboard503020AddNonEssentialExpense = (props: Props) => {
   const params = useParams();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -37,12 +37,13 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
   const { mutate, isPending } = useAddExpense();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
     mutate(
       {
         budgetId: params.id as string,
         name: values.title,
         amount: formatAmount(values.amount),
-        type: "essential",
+        type: "non-essential",
       },
       {
         onSuccess: () => {

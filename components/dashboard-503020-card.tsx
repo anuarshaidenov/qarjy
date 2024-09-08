@@ -2,16 +2,13 @@
 
 import { Label } from "@radix-ui/react-label";
 import { Card, CardContent, CardHeader } from "./ui/card";
-import { Input } from "./ui/input";
-import { NumericFormat } from "./ui/numeric-format";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Dashboard503020Title } from "./dashboard-504020-title";
 import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 import { DashboardEssentialExpenses } from "./dashboard-essential-expenses";
 import { Dashboard503020AddEssentialExpense } from "./dashboard-503020-add-essential-expense";
 import { DashboardNonEssentialExpenses } from "./dashboard-non-essential-expenses";
+import { Dashboard503020AddNonEssentialExpense } from "./dashboard-503020-add-non-essential-expense";
 
 type Props = {};
 
@@ -59,26 +56,7 @@ export const Dashboard503020Card = (props: Props) => {
             </div>
             <DashboardNonEssentialExpenses />
 
-            <form className="flex flex-col md:flex-row w-full items-center justify-between gap-2">
-              <Input
-                autoComplete="off"
-                placeholder={"Title"}
-                className="shrink w-full md:w-[120px]"
-              />
-
-              <div className="flex items-center gap-2 w-full md:w-auto">
-                <NumericFormat
-                  autoComplete="off"
-                  className="shrink w-full md:w-[120px]"
-                  placeholder={"Amount"}
-                  thousandSeparator=","
-                />
-
-                <Button size={"icon"} className="shrink-0">
-                  <PlusIcon />
-                </Button>
-              </div>
-            </form>
+            <Dashboard503020AddNonEssentialExpense />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">Remainder</span>
