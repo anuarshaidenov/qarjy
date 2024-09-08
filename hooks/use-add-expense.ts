@@ -2,6 +2,7 @@ import { QUERY_KEYS } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
+import { verifyBudgetOwnership } from "@/api/verify-budget-ownership";
 
 export const useAddExpense = () => {
   const queryClient = useQueryClient();
@@ -39,6 +40,17 @@ export async function addExpense(
   type: "essential" | "non-essential" | "overall"
 ) {
   const supabase = createClient();
+  const { data: userData } = await supabase.auth.getUser();
+
+  if (!userData.user) {
+    throw new Error("You must be logged in to add an expense.");
+  }
+
+  // Verify ownership of the budget
+  const isOwner = await verifyBudgetOwnership(userData.user?.id, budgetId);
+  if (!isOwner) {
+    throw new Error("You do not have permission to modify this budget.");
+  }
 
   const { data, error } = await supabase
     .from("expenses")
@@ -54,7 +66,7 @@ export async function addExpense(
 
   if (error) {
     console.error("Error adding expense:", error);
-    return { success: false, error };
+    throw new Error(error.message);
   }
 
   return { success: true, expense: data };

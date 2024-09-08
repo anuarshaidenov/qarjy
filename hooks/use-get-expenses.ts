@@ -18,6 +18,14 @@ export async function getExpensesByTypeAndBudgetId(
   type: "essential" | "non-essential" | "overall"
 ): Promise<Expense[]> {
   const supabase = createClient();
+  const { data: userData, error: authError } = await supabase.auth.getUser();
+
+  if (authError || !userData?.user) {
+    console.error("Error fetching user:", authError);
+    throw new Error(
+      "User not authenticated. Please log in to access your budget."
+    );
+  }
 
   const { data, error } = await supabase
     .from("expenses")

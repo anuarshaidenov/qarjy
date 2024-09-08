@@ -14,9 +14,18 @@ export async function getBudgets(
   sortBy = "created_at",
   sortDirection: "asc" | "desc" = "desc"
 ) {
-  console.log(sortBy, sortDirection);
   const supabase = createClient();
 
+  // Get the authenticated user
+  const { data: userData, error: authError } = await supabase.auth.getUser();
+
+  if (authError) {
+    throw new Error(authError.message);
+  }
+
+  const userId = userData.user.id;
+
+  // Query to get budgets belonging to the authenticated user
   const { data, error } = await supabase
     .from("budgets")
     .select(
@@ -29,11 +38,12 @@ export async function getBudgets(
       expenses(id, name, amount, type)
     `
     )
+    .eq("user_id", userId) // Filter by user_id
     .order(sortBy, { ascending: sortDirection === "asc" });
 
   if (error) {
     console.error("Error fetching budgets:", error);
-    throw error;
+    throw new Error(error.message);
   }
 
   const budgets: Budget[] = data.map((budget) => {
