@@ -2,7 +2,6 @@ import React from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -10,12 +9,15 @@ import {
 import { Link } from "@/navigation";
 import { Budget } from "@/types/budget";
 import { formatNumberWithCommas } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 type Props = {
   budget: Budget;
 };
 
 export const BudgetCard = ({ budget }: Props) => {
+  const t = useTranslations();
+
   return (
     <Link href={"/dashboard/monthly-budget/" + budget.id}>
       <Card className="hover:border-foreground/50 transition-colors">
@@ -25,7 +27,7 @@ export const BudgetCard = ({ budget }: Props) => {
         <CardContent className="text-sm">
           <div className="space-y-1">
             <p>
-              Monthly income:{" "}
+              {t("budget-card.monthly-income")}:{" "}
               <span className="font-bold">
                 {formatNumberWithCommas(budget.monthlyIncome)}
               </span>

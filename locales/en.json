@@ -189,12 +189,17 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
   "tab-list": {
     "503020": "50-30-20 Rule",
     "751015": "75-10-15 Rule"
+  },
+  "budget-card": {
+    "monthly-income": "Monthly income"
   }
 }
