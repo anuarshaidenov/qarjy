@@ -1,6 +1,5 @@
 import { Label } from "@radix-ui/react-label";
 import { Card, CardContent, CardHeader } from "./ui/card";
-import { cn } from "@/lib/utils";
 import { Dashboard503020Title } from "./dashboard-504020-title";
 import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 import { DashboardEssentialExpenses } from "./dashboard-essential-expenses";
@@ -12,10 +11,13 @@ import { DashboardNonEssenialExpensesAmount } from "./dashboard-non-essential-ex
 import { Dashboard20SavingsAmount } from "./dashboard-20-savings-amount";
 import { DashboardEssentialsRemainder } from "./dashboard-essentials-remainder";
 import { DashboardNonEssentialsRemainder } from "./dashboard-non-essentials-remainder";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
 export const Dashboard503020Card = (props: Props) => {
+  const t = useTranslations();
+
   return (
     <Card>
       <CardHeader>
@@ -24,7 +26,7 @@ export const Dashboard503020Card = (props: Props) => {
       <CardContent className="flex flex-col gap-8">
         <div className="flex items-center w-full border-b pb-4">
           <Label className="md:text-lg font-semibold grow" id="monthly-income">
-            Monthly Income
+            {t("dashboard.app.monthly-income")}
           </Label>
           <div className="shrink max-w-[180px] flex items-center gap-2">
             <DashboardMonthlyIncome />
@@ -35,7 +37,7 @@ export const Dashboard503020Card = (props: Props) => {
           <div className="flex flex-col items-start gap-2">
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">
-                Essential expenses
+                {t("dashboard.app.essential-expenses")}
               </Label>
               <DashboardEssenialExpensesAmount />
             </div>
@@ -44,7 +46,9 @@ export const Dashboard503020Card = (props: Props) => {
           </div>
 
           <div className="w-full flex items-center justify-between">
-            <span className="md:text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">
+              {t("dashboard.app.remainder")}
+            </span>
             <DashboardEssentialsRemainder />
           </div>
         </div>
@@ -52,7 +56,9 @@ export const Dashboard503020Card = (props: Props) => {
         <div className="flex flex-col gap-4 border-b pb-4">
           <div className="flex flex-col gap-2 items-start justify-between">
             <div className="flex items-center justify-between w-full">
-              <Label className="md:text-lg font-semibold">Non essential</Label>
+              <Label className="md:text-lg font-semibold">
+                {t("dashboard.app.non-essential-expenses")}
+              </Label>
               <DashboardNonEssenialExpensesAmount />
             </div>
             <DashboardNonEssentialExpenses />
@@ -60,17 +66,21 @@ export const Dashboard503020Card = (props: Props) => {
             <Dashboard503020AddNonEssentialExpense />
           </div>
           <div className="w-full flex items-center justify-between">
-            <span className="md:text-lg font-semibold">Remainder</span>
+            <span className="md:text-lg font-semibold">
+              {t("dashboard.app.remainder")}
+            </span>
             <DashboardNonEssentialsRemainder />
           </div>
         </div>
 
         <div className="flex flex-col gap-2 items-start justify-between">
           <div className="flex items-center justify-between w-full">
-            <Label className="md:text-lg font-semibold">Savings</Label>
+            <Label className="md:text-lg font-semibold">
+              {t("dashboard.app.20-savings")}
+            </Label>
             <Dashboard20SavingsAmount />
           </div>
-          <p className="text-sm">Descriptione</p>
+          <p className="text-sm">{t("dashboard.app.20-savings-description")}</p>
         </div>
       </CardContent>
     </Card>

@@ -126,6 +126,19 @@
     "monthly-budget": {
       "title": "Monthly budget",
       "subtitle": "This is your current monthly budget. Choose the method that best suits you. "
+    },
+    "app": {
+      "monthly-income": "Monthly income",
+      "overall-expenses": "Expenses",
+      "remainder": "Remainder",
+      "cushion-fund": "Cushion fund",
+      "cushion-fund-description": "Save this for unexpected expenses.",
+      "15-savings": "Savings",
+      "15-savings-description": "Set this money aside for savings or investments.",
+      "essential-expenses": "Essential expenses",
+      "non-essential-expenses": "Non essential expenses (wants)",
+      "20-savings": "Savings & investments",
+      "20-savings-description": "Set this money aside for savings or investments."
     }
   },
   "header": {
@@ -176,9 +189,7 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },

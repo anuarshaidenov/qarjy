@@ -17,6 +17,7 @@ import {
 import { useAddExpense } from "@/hooks/use-add-expense";
 import { useParams } from "next/navigation";
 import { formatAmount } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   title: z.string().max(14, "Title is too long").min(1, "Title is required"),
@@ -52,6 +53,8 @@ export const Dashboard751015AddExpense = (props: Props) => {
     );
   }
 
+  const t = useTranslations();
+
   return (
     <Form {...form}>
       <form
@@ -66,7 +69,9 @@ export const Dashboard751015AddExpense = (props: Props) => {
               <FormControl>
                 <Input
                   autoComplete="off"
-                  placeholder={"Title"}
+                  placeholder={t(
+                    "home.app.tab-content.503020.add-essentials.placeholder-title"
+                  )}
                   className="shrink w-full md:w-[120px]"
                   {...field}
                 />
@@ -86,7 +91,9 @@ export const Dashboard751015AddExpense = (props: Props) => {
                   <NumericFormat
                     autoComplete="off"
                     className="shrink w-full md:w-[120px]"
-                    placeholder={"Amount"}
+                    placeholder={t(
+                      "home.app.tab-content.503020.add-essentials.placeholder-amount"
+                    )}
                     thousandSeparator=","
                     {...field}
                   />
