@@ -6,26 +6,30 @@ import { useQuery } from "@tanstack/react-query";
 export const useGetBudgets = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.BUDGETS],
-    queryFn: getBudgets,
+    queryFn: () => getBudgets(),
   });
 };
 
-export async function getBudgets() {
+export async function getBudgets(
+  sortBy = "created_at",
+  sortDirection: "asc" | "desc" = "desc"
+) {
+  console.log(sortBy, sortDirection);
   const supabase = createClient();
-  const userResponse = await supabase.auth.getUser();
 
-  if (!userResponse.data.user) {
-    throw new Error("User not authenticated");
-  }
-
-  const { data, error } = await supabase.from("budgets").select(`
-          id, 
-          title, 
-          monthly_income, 
-          savings, 
-          cushion_fund,
-          expenses(id, name, amount, type)
-        `);
+  const { data, error } = await supabase
+    .from("budgets")
+    .select(
+      `
+      id, 
+      title, 
+      monthly_income, 
+      savings, 
+      cushion_fund,
+      expenses(id, name, amount, type)
+    `
+    )
+    .order(sortBy, { ascending: sortDirection === "asc" });
 
   if (error) {
     console.error("Error fetching budgets:", error);

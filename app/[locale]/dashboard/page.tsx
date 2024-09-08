@@ -13,7 +13,7 @@ function DashboardPage({}: Props) {
   const { data, isLoading } = useGetBudgets();
 
   return (
-    <section className="py-8 px-4 container flex flex-col gap-4">
+    <section className="py-8 px-4 container flex flex-col gap-8">
       <h1 className="text-3xl md:text-5xl font-bold">
         {t("dashboard.all-budgets.title")}
       </h1>
