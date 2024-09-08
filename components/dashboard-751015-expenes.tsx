@@ -1,22 +1,24 @@
 "use client";
 
-import { useGetBudgetById } from "@/hooks/use-get-budget-by-id";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { Expense } from "@/types/seventyfive-10-15-budget";
-import { Budget } from "@/types/budget";
 import { DashboardExpense } from "./ui/dashboard-expense";
 import { useDeleteExpense } from "@/hooks/use-delete-expense";
 import { useDebouncedCallback } from "use-debounce";
 import { formatAmount } from "@/lib/utils";
 import { useUpdateExpense } from "@/hooks/use-update-expense";
+import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 
 type Props = {};
 
 export const Dashboard751015Expenses = (props: Props) => {
   const params = useParams();
-  const { data, isLoading } = useGetBudgetById({ id: params?.id as string });
+  const { data, isLoading } = useGetExpensesByTypeAndBudgetId(
+    params.id as string,
+    "overall"
+  );
 
   if (isLoading) {
     return (
@@ -31,11 +33,11 @@ export const Dashboard751015Expenses = (props: Props) => {
 
   return (
     <ul className="text-sm w-full">
-      {data?.expenses.map((expense) => (
+      {data?.map((expense) => (
         <Dashboard751015Expense
           key={expense.id}
           expense={expense}
-          budget={data}
+          budgetId={params.id as string}
         />
       ))}
     </ul>
@@ -44,10 +46,10 @@ export const Dashboard751015Expenses = (props: Props) => {
 
 const Dashboard751015Expense = ({
   expense,
-  budget,
+  budgetId,
 }: {
   expense: Expense;
-  budget: Budget;
+  budgetId: string;
 }) => {
   const [amount, setAmount] = useState(0);
   const { mutate: updateExpense, isPending: isUpdatingBudget } =
@@ -76,7 +78,7 @@ const Dashboard751015Expense = ({
       title={expense.name}
       onDeleteClick={() =>
         deleteExpense({
-          budgetId: budget.id,
+          budgetId: budgetId,
           expenseId: expense.id,
         })
       }

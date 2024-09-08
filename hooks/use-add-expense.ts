@@ -20,7 +20,7 @@ export const useAddExpense = () => {
       type: "essential" | "non-essential" | "overall";
     }) => addExpense(budgetId, name, amount, type),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
     },
     onError: (error) => {
       toast({

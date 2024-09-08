@@ -1,7 +1,7 @@
 "use client";
 
 import { DashboardExpense } from "./ui/dashboard-expense";
-import { Budget, Expense } from "@/types/budget";
+import { Expense } from "@/types/budget";
 import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { formatAmount } from "@/lib/utils";
@@ -10,10 +10,10 @@ import { useUpdateExpense } from "@/hooks/use-update-expense";
 
 type Props = {
   expense: Expense;
-  budget: Budget;
+  budgetId: string;
 };
 
-export const DashboardEssentialExpense = ({ expense, budget }: Props) => {
+export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
   const [amount, setAmount] = useState(0);
   const { mutate: updateExpense } = useUpdateExpense();
   const { mutate: deleteExpense, isPending: isDeletingExpense } =
@@ -45,7 +45,7 @@ export const DashboardEssentialExpense = ({ expense, budget }: Props) => {
       }}
       onDeleteClick={() => {
         deleteExpense({
-          budgetId: budget.id,
+          budgetId: budgetId,
           expenseId: expense.id,
         });
       }}

@@ -38,4 +38,5 @@ export const currencies = [
 export const QUERY_KEYS = {
   BUDGET: "budget",
   BUDGETS: "budgets",
+  EXPENSES: "expenses",
 };

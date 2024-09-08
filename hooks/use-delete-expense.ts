@@ -16,7 +16,7 @@ export const useDeleteExpense = () => {
       expenseId: string;
     }) => deleteExpense(budgetId, expenseId),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.BUDGET] });
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
     },
     onError: (error) => {
       toast({

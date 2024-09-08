@@ -1,9 +1,11 @@
 import { createClient } from "@/lib/supabase/client";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
+import { QUERY_KEYS } from "@/lib/constants";
 
 export const useUpdateExpense = () => {
   const { toast } = useToast();
+  const queryClient = useQueryClient();
 
   return useMutation({
     mutationFn: ({
@@ -17,6 +19,9 @@ export const useUpdateExpense = () => {
       amount: number;
       type: "essential" | "non-essential" | "overall";
     }) => updateExpense(expenseId, name, amount, type),
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
+    },
     onError: (error) => {
       toast({
         title: "Error updating expense",
