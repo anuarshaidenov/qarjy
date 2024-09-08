@@ -45,12 +45,15 @@ async function getBudgetByIdClient(id: string) {
   const nonEssentialExpenses = data.expenses.filter(
     (expense) => expense.type === "non-essential"
   );
+  const overallExpenses = data.expenses.filter(
+    (expense) => expense.type === "overall"
+  );
 
   const budget: Budget = {
     id: data.id,
     title: data.title,
     monthlyIncome: data.monthly_income,
-    expenses: data.expenses.map((exp) => ({
+    expenses: overallExpenses.map((exp) => ({
       id: exp.id,
       name: exp.name,
       amount: exp.amount,

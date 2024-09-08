@@ -7,6 +7,8 @@ import { Button } from "./ui/button";
 import { CircleBackslashIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Dashboard751015CardTitle } from "./dashboard-751015-title";
 import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
+import { Dashboard751015AddExpense } from "./dashboard-751015-add-expense";
+import { Dashboard751015Expenses } from "./dashboard-751015-expenes";
 
 type Props = {};
 
@@ -34,49 +36,9 @@ export const Dashboard751015Card = (props: Props) => {
               <Label className="md:text-lg font-semibold">Expenses</Label>
               <p className="font-semibold shrink-0">133313 ₸</p>
             </div>
-            <ul className="text-sm w-full">
-              <li className="flex items-center py-1 justify-between w-full group">
-                <span>Food</span>
-                <div className="flex shrink grow-0 items-center  gap-2">
-                  <NumericFormat
-                    thousandSeparator=","
-                    className="md:w-[120px] w-[80px]"
-                    autoComplete="off"
-                  />
-                  <span className="md:flex hidden md:group-hover:hidden text-lg">
-                    ₸
-                  </span>
-                  <Button
-                    className="shrink-0 md:hidden md:group-hover:flex transition-opacity"
-                    variant={"destructive"}
-                    size={"icon"}
-                  >
-                    <CircleBackslashIcon />
-                  </Button>
-                </div>
-              </li>
-            </ul>
+            <Dashboard751015Expenses />
 
-            <form className="flex flex-col md:flex-row w-full items-center justify-between gap-2">
-              <Input
-                autoComplete="off"
-                placeholder={"Title"}
-                className="shrink w-full md:w-[120px]"
-              />
-
-              <div className="flex items-center gap-2 w-full md:w-auto">
-                <NumericFormat
-                  autoComplete="off"
-                  className="shrink w-full md:w-[120px]"
-                  placeholder={"Amount"}
-                  thousandSeparator=","
-                />
-
-                <Button size={"icon"} className="shrink-0">
-                  <PlusIcon />
-                </Button>
-              </div>
-            </form>
+            <Dashboard751015AddExpense />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">{"Remainder"}</span>

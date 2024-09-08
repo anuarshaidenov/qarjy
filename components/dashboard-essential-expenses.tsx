@@ -23,7 +23,11 @@ export const DashboardEssentialExpenses = (props: Props) => {
   return (
     <ul className="text-sm w-full">
       {data?.essentialExpenses.map((expense) => (
-        <DashboardEssentialExpense expense={expense} budget={data} />
+        <DashboardEssentialExpense
+          key={expense.id}
+          expense={expense}
+          budget={data}
+        />
       ))}
     </ul>
   );

@@ -12,6 +12,11 @@ export const useGetBudgets = () => {
 
 export async function getBudgets() {
   const supabase = createClient();
+  const userResponse = await supabase.auth.getUser();
+
+  if (!userResponse.data.user) {
+    throw new Error("User not authenticated");
+  }
 
   const { data, error } = await supabase.from("budgets").select(`
           id, 
@@ -24,7 +29,7 @@ export async function getBudgets() {
 
   if (error) {
     console.error("Error fetching budgets:", error);
-    return [];
+    throw error;
   }
 
   const budgets: Budget[] = data.map((budget) => {
