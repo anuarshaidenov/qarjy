@@ -1,16 +1,16 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export function formatNumberWithCommas(x: number) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 export const formatAmount = (amount: string) => {
-  return parseInt(amount.split(",").join("")) || 0;
+  return parseInt(amount.split(',').join('')) || 0;
 };
 
 export const calculatePecentageBasedOnIncome = (
@@ -50,7 +50,17 @@ export const calculateExpensesRemainder = (spent: number, income: number) => {
 
 export const getCurrentMonthName = () => {
   const date = new Date();
-  const month = date.toLocaleString("default", { month: "long" });
+  const month = date.toLocaleString('default', { month: 'long' });
 
   return month;
+};
+
+export const getMonthFromDate = (date: Date) => {
+  const month = date.toLocaleString('default', { month: 'long' });
+  return month;
+};
+
+export const getYearFromDate = (date: Date) => {
+  const year = date.toLocaleString('default', { year: 'numeric' });
+  return year;
 };
