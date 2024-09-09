@@ -41,7 +41,7 @@ export const DashboardApp = (props: Props) => {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <Dashboard503020Card />
               <ComingSoonCard
-                className="w-full h-full bg-foreground/20"
+                className="w-full md:h-full bg-foreground/20"
                 title={t("dashboard.coming-soon")}
               />
             </div>
@@ -50,7 +50,7 @@ export const DashboardApp = (props: Props) => {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <Dashboard751015Card />
               <ComingSoonCard
-                className="w-full h-full bg-foreground/20"
+                className="w-full md:h-full bg-foreground/20"
                 title={t("dashboard.coming-soon")}
               />
             </div>
