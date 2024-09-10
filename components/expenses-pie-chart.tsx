@@ -39,19 +39,27 @@ export const ExpensesPieChart = (props: Props) => {
     return data?.reduce((acc, curr) => acc + curr.amount, 0);
   }, [data]);
 
-  const chartConfig = data?.reduce((acc: ChartConfig, item) => {
-    acc[item.name] = {
-      label: item.name,
-    };
-    return acc;
-  }, {}) as ChartConfig;
+  const chartConfig = useMemo(
+    () =>
+      data?.reduce((acc: ChartConfig, item) => {
+        acc[item.name] = {
+          label: item.name,
+        };
+        return acc;
+      }, {}) as ChartConfig,
+    [data]
+  );
 
-  const dataWithFill = data?.map((item, index) => {
-    return {
-      ...item,
-      fill: "hsl(" + Math.floor(Math.random() * 360) + ", 70%, 50%)",
-    };
-  });
+  const dataWithFill = useMemo(
+    () =>
+      data?.map((item, index) => {
+        return {
+          ...item,
+          fill: "hsl(" + Math.floor(Math.random() * 360) + ", 70%, 50%)",
+        };
+      }),
+    [data]
+  );
 
   const t = useTranslations();
 
