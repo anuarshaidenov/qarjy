@@ -59,13 +59,20 @@ export const ExpensesPieChart = (props: Props) => {
     <Card>
       <CardHeader>
         <CardTitle>{props.title || t("expenses-pie-chart.title")}</CardTitle>
-        <CardDescription>
-          {props.subtitle || t("expenses-pie-chart.subtitle")}
-        </CardDescription>
+        {!!data?.length && (
+          <CardDescription>
+            {props.subtitle || t("expenses-pie-chart.subtitle")}
+          </CardDescription>
+        )}
+        {!data?.length && (
+          <CardDescription className="py-4">
+            {t("expenses-pie-chart.no-expenses")}
+          </CardDescription>
+        )}
       </CardHeader>
       <CardContent>
         {isLoading && <Skeleton className="h-[300px] md:h-[290px]" />}
-        {!isLoading && (
+        {!isLoading && !!dataWithFill && (
           <>
             <ChartContainer
               config={chartConfig}
@@ -127,11 +134,6 @@ export const ExpensesPieChart = (props: Props) => {
               ))}
             </ul>
           </>
-        )}
-        {!data?.length && (
-          <CardDescription className="py-4">
-            {t("expenses-pie-chart.no-expenses")}
-          </CardDescription>
         )}
       </CardContent>
     </Card>
