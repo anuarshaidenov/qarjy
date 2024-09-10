@@ -202,5 +202,11 @@
   },
   "budget-card": {
     "monthly-income": "Monthly income"
+  },
+  "expenses-pie-chart": {
+    "no-expenses": "Add expenses to see your stats.",
+    "total": "Total expenses.",
+    "subtitle": "Overview of your expenses.",
+    "title": "Expenses"
   }
 }
