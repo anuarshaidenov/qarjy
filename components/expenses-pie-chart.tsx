@@ -72,7 +72,7 @@ export const ExpensesPieChart = (props: Props) => {
       </CardHeader>
       <CardContent>
         {isLoading && <Skeleton className="h-[300px] md:h-[290px]" />}
-        {!isLoading && !!dataWithFill && (
+        {!isLoading && !!dataWithFill?.length && (
           <>
             <ChartContainer
               config={chartConfig}
