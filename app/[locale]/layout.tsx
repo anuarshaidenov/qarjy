@@ -46,7 +46,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("metadata.twitter.title"),
       description: t("metadata.twitter.description"),
-      creator: "@anuarnyi",
+      creator: "anuarnyi",
       images: ["og-image.png"],
     },
     robots: "index, follow",
