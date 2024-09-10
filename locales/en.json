@@ -138,7 +138,11 @@
       "essential-expenses": "Essential expenses",
       "non-essential-expenses": "Non essential expenses (wants)",
       "20-savings": "Savings & investments",
-      "20-savings-description": "Set this money aside for savings or investments."
+      "20-savings-description": "Set this money aside for savings or investments.",
+      "stats": {
+        "essential-expenses-title": "Essential expenses",
+        "non-essential-expenses-title": "Non-essential expenses"
+      }
     },
     "coming-soon": "Stats are coming soon."
   },

@@ -143,7 +143,11 @@
       "essential-expenses": "Негізгі шығындар",
       "non-essential-expenses": "Қалаулар",
       "20-savings": "Жинақтар және Инвестициялар",
-      "20-savings-description": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз."
+      "20-savings-description": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз.",
+      "stats": {
+        "essential-expenses-title": "Маңызды шығындар",
+        "non-essential-expenses-title": "Маңызды емес шығындар"
+      }
     },
     "coming-soon": "Статистика жақында шығады."
   },
