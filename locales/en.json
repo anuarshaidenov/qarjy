@@ -83,7 +83,7 @@
           "step-5": {
             "title": "Start budgeting and tracking",
             "description": "Let us help you manage your money and track your progress with a personalized dashboard.",
-            "button": "Coming soon"
+            "button": "Get started"
           }
         },
         "751015": {
@@ -102,7 +102,7 @@
           "step-4": {
             "title": "Start budgeting and tracking",
             "description": "Monitor your spending and savings with our easy-to-use dashboard.",
-            "button": "Coming soon"
+            "button": "Get started"
           }
         }
       }
@@ -194,9 +194,7 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 type Props = {};
 
@@ -110,7 +111,11 @@ export const Seventyfive1015HowItWorks = async (props: Props) => {
       <p className="md:text-lg">
         {t("how-it-works.steps.751015.step-4.description")}
       </p>
-      <Button disabled>{t("how-it-works.steps.751015.step-4.button")}</Button>
+      <Button asChild>
+        <Link href={"/signup"}>
+          {t("how-it-works.steps.751015.step-4.button")}
+        </Link>
+      </Button>
     </div>
   );
 };
