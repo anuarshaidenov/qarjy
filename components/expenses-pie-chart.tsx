@@ -52,12 +52,15 @@ export const ExpensesPieChart = (props: Props) => {
 
   const dataWithFill = useMemo(
     () =>
-      data?.map((item, index) => {
-        return {
-          ...item,
-          fill: `hsl(var(--chart-${(index % 5) + 1}))`,
-        };
-      }),
+      data
+        ?.map((item, index) => {
+          return {
+            ...item,
+            fill: `hsl(var(--chart-${(index % 5) + 1}))`,
+          };
+        })
+        .filter((item) => item.amount > 0)
+        .sort((a, b) => b.amount - a.amount),
     [data]
   );
 
