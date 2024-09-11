@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "./ui/card";
 import { Button } from "./ui/button";
 import { PlusIcon } from "@radix-ui/react-icons";
 import { getTranslations } from "next-intl/server";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 type Props = {};
 
@@ -132,7 +132,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
         {t("how-it-works.steps.503020.step-5.description")}
       </p>
       <Button asChild>
-        <Link href="signup">
+        <Link href="dashboard">
           {t("how-it-works.steps.503020.step-5.button")}
         </Link>
       </Button>
