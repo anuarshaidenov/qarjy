@@ -132,7 +132,7 @@ export const Fifty2030HowItWorks = async (props: Props) => {
         {t("how-it-works.steps.503020.step-5.description")}
       </p>
       <Button asChild>
-        <Link href="dashboard">
+        <Link href="/dashboard">
           {t("how-it-works.steps.503020.step-5.button")}
         </Link>
       </Button>
