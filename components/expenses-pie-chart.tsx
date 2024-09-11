@@ -55,7 +55,7 @@ export const ExpensesPieChart = (props: Props) => {
       data?.map((item, index) => {
         return {
           ...item,
-          fill: "hsl(" + Math.floor(Math.random() * 360) + ", 70%, 50%)",
+          fill: `hsl(var(--chart-${(index % 5) + 1}))`,
         };
       }),
     [data]
