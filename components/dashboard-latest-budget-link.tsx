@@ -11,7 +11,7 @@ type Props = {};
 export const DashboardLatestBudgetLink = (props: Props) => {
   const { data: budgetId, isLoading } = useGetLatestBudgetId();
   const link = {
-    name: "Latest Budget",
+    name: "Current Budget",
     href: "/dashboard/monthly-budget/" + budgetId,
     icon: <Calendar className="size-6 md:size-5" />,
   };
