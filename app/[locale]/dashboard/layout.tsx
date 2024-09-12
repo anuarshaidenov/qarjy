@@ -37,7 +37,7 @@ const DashboardLayout = ({ children }: Props) => {
         <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
           <div className="border-b p-2">
             <Button variant="outline" size="icon" aria-label="Home" asChild>
-              <Link href={"/"}>
+              <Link href={"/dashboard"}>
                 <Home className="size-5" />
               </Link>
             </Button>
@@ -76,7 +76,7 @@ const DashboardLayout = ({ children }: Props) => {
         </aside>
         <div className="">
           <header className="flex sticky z-10 left-0 w-full top-0 h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
-            <Logo />
+            <Logo href="/dashboard" />
             <nav className="md:hidden flex items-center gap-4">
               <LocaleToggle />
               <ModeToggle />
