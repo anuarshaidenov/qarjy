@@ -39,7 +39,7 @@ export async function generateMetadata({
           alt: "Qarjy app screen",
         },
       ],
-      locale: params.locale,
+      locale: params.locale === "kz" ? "kk" : params.locale,
       type: "website",
     },
     twitter: {
@@ -67,7 +67,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={params.locale}>
+    <html lang={params.locale === "kz" ? "kk" : params.locale}>
       <body
         className={cn(
           "min-h-screen flex flex-col font-sans",
