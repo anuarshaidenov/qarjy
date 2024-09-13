@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Fifty3020BudgetCardLocal } from "./fifty-30-20-budget-card";
-import { BudgetContextProvider as Fifty3020BudgetContextProvider } from "./fifty-30-20-budget-context-provider";
-import { SeventyFive1015BudgetCard } from "./seventyfive-10-15-budget-card";
-import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from "./seventyfive-10-15-context-provider";
-import { LOCALSTORAGE_KEYS } from "@/lib/constants";
-import { useMethodTabs } from "@/hooks/useMethodTabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Fifty3020BudgetCardLocal } from './fifty-30-20-budget-card';
+import { BudgetContextProvider as Fifty3020BudgetContextProvider } from './fifty-30-20-budget-context-provider';
+import { SeventyFive1015BudgetCard } from './seventyfive-10-15-budget-card';
+import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from './seventyfive-10-15-context-provider';
+import { LOCALSTORAGE_KEYS } from '@/lib/constants';
+import { useMethodTabs } from '@/hooks/useMethodTabs';
 
 type Props = {};
 
@@ -17,7 +17,7 @@ export const AppSection = (props: Props) => {
     <div className="w-full mx-auto flex flex-col gap-10 max-w-[600px]">
       <Tabs
         defaultValue={
-          localStorage.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
+          localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
         }
       >
         <TabsList className="grid grid-cols-2">
