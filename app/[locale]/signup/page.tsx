@@ -10,8 +10,8 @@ type Props = {
 };
 
 const LoginPage = async (props: Props) => {
-  const t = await getTranslations();
   unstable_setRequestLocale(props.params.locale);
+  const t = await getTranslations();
 
   return (
     <main className="h-screen">
