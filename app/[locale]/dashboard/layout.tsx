@@ -1,35 +1,38 @@
-import { Home, LogOut } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/navigation";
-import { signOut } from "@/actions/sign-out";
-import { LocaleToggle } from "@/components/locale-toggle";
-import { DashboardIcon } from "@radix-ui/react-icons";
+import { Home, LogOut } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/navigation';
+import { signOut } from '@/actions/sign-out';
+import { LocaleToggle } from '@/components/locale-toggle';
+import { DashboardIcon } from '@radix-ui/react-icons';
 import {
   DashboardActiveLink,
   DashboardLink,
-} from "@/components/dashboard-active-link";
+} from '@/components/dashboard-active-link';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Logo } from "@/components/logo";
-import { DashboardLatestBudgetLink } from "@/components/dashboard-latest-budget-link";
+} from '@/components/ui/tooltip';
+import { ModeToggle } from '@/components/mode-toggle';
+import { Logo } from '@/components/logo';
+import { DashboardLatestBudgetLink } from '@/components/dashboard-latest-budget-link';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 type Props = {
   children: React.ReactNode;
+  params: { locale: string };
 };
 
-const DashboardLayout = ({ children }: Props) => {
+const DashboardLayout = ({ children, params }: Props) => {
   const links: DashboardLink[] = [
     {
-      href: "/dashboard",
-      name: "Dashboard",
+      href: '/dashboard',
+      name: 'Dashboard',
       icon: <DashboardIcon className="size-6 md:size-5" />,
     },
   ];
+  unstable_setRequestLocale(params.locale);
 
   return (
     <TooltipProvider>
@@ -37,7 +40,7 @@ const DashboardLayout = ({ children }: Props) => {
         <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
           <div className="border-b p-2">
             <Button variant="outline" size="icon" aria-label="Home" asChild>
-              <Link href={"/dashboard"}>
+              <Link href={'/dashboard'}>
                 <Home className="size-5" />
               </Link>
             </Button>
