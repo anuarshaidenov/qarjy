@@ -5,10 +5,20 @@ import { cn } from '@/lib/utils';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from 'next-intl/server';
 import { Analytics } from '@vercel/analytics/react';
 import { QueryClientProvider } from '@/components/query-client-provider';
 import { Toaster } from '@/components/ui/toaster';
+
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({
   params,
@@ -65,6 +75,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const messages = await getMessages();
+  unstable_setRequestLocale(params.locale);
 
   return (
     <html lang={params.locale === 'kz' ? 'kk' : params.locale}>
