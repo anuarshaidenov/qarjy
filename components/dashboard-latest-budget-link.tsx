@@ -14,6 +14,14 @@ export const DashboardLatestBudgetLink = (props: Props) => {
     name: "Current Budget",
     href: "/dashboard/monthly-budget/" + budgetId,
     icon: <Calendar className="size-6 md:size-5" />,
+    tooltip: (
+      <span className="flex items-center gap-2">
+        Current Budget{" "}
+        <span className="bg-muted rounded size-4 text-white flex items-center justify-center">
+          c
+        </span>
+      </span>
+    ),
   };
 
   if (isLoading) return <Skeleton className="h-9 w-9" />;
@@ -23,7 +31,7 @@ export const DashboardLatestBudgetLink = (props: Props) => {
       <TooltipTrigger>
         <DashboardActiveLink route={link} className="h-12 w-12 md:w-9 md:h-9" />
       </TooltipTrigger>
-      <TooltipContent side="right">{link.name}</TooltipContent>
+      <TooltipContent side="right">{link.tooltip}</TooltipContent>
     </Tooltip>
   );
 };

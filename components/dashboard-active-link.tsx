@@ -9,6 +9,7 @@ export type DashboardLink = {
   icon: ReactNode;
   name: string;
   href: string;
+  tooltip?: ReactNode;
 };
 
 export type DashboardActiveLinkProps = {
