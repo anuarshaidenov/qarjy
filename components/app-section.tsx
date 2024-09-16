@@ -7,27 +7,32 @@ import { SeventyFive1015BudgetCard } from "./seventyfive-10-15-budget-card";
 import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from "./seventyfive-10-15-context-provider";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
 import { useMethodTabs } from "@/hooks/useMethodTabs";
+import { useEffect, useState } from "react";
 
 type Props = {};
 
 export const AppSection = (props: Props) => {
   const tabs = useMethodTabs();
 
-  if (!localStorage) return null;
+  const [tabValue, setTabValue] = useState(tabs[0].value);
+
+  useEffect(() => {
+    if (!localStorage) return;
+    setTabValue(
+      localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
+    );
+  }, [tabs]);
 
   return (
     <div className="w-full mx-auto flex flex-col gap-10 max-w-[600px]">
-      <Tabs
-        defaultValue={
-          localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
-        }
-      >
+      <Tabs value={tabValue}>
         <TabsList className="grid grid-cols-2">
           {tabs.map((tab) => (
             <TabsTrigger
-              onClick={() =>
-                localStorage.setItem(LOCALSTORAGE_KEYS.currentTab, tab.value)
-              }
+              onClick={() => {
+                localStorage.setItem(LOCALSTORAGE_KEYS.currentTab, tab.value);
+                setTabValue(tab.value);
+              }}
               key={tab.value}
               value={tab.value}
             >
