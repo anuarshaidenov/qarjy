@@ -7,30 +7,33 @@ import { Dashboard751015Card } from './dashboard-751015-card';
 import { LOCALSTORAGE_KEYS } from '@/lib/constants';
 import { MonthlyIncomeProvider } from './monthly-income-context-provider';
 import { ExpensesSumProvider } from './expenses-sum-provider';
-import { useTranslations } from 'next-intl';
 import { Dashboard751015Stats } from './dashboard-751015-stats';
 import { Dashboard503020Stats } from './dashboard-503020-stats';
+import { useEffect, useState } from 'react';
 
 type Props = {};
 
 export const DashboardApp = (props: Props) => {
   const tabs = useMethodTabs();
-  const t = useTranslations();
+  const [tabValue, setTabValue] = useState(tabs[0].value);
+  useEffect(() => {
+    if (!localStorage) return;
+    setTabValue(
+      localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
+    );
+  }, [tabs]);
 
   return (
     <MonthlyIncomeProvider>
       <ExpensesSumProvider>
-        <Tabs
-          defaultValue={
-            localStorage.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
-          }
-        >
+        <Tabs value={tabValue}>
           <TabsList className="grid grid-cols-2">
             {tabs.map((tab) => (
               <TabsTrigger
-                onClick={() =>
-                  localStorage.setItem(LOCALSTORAGE_KEYS.currentTab, tab.value)
-                }
+                onClick={() => {
+                  localStorage.setItem(LOCALSTORAGE_KEYS.currentTab, tab.value);
+                  setTabValue(tab.value);
+                }}
                 key={tab.value}
                 value={tab.value}
               >
