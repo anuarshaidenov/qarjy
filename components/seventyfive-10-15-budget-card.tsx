@@ -1,14 +1,6 @@
 "use client";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
-import { Button } from "./ui/button";
-import { DownloadIcon, UploadIcon } from "@radix-ui/react-icons";
 import { Seventyfive1015MonthlyIncomeEditableSection } from "./seventyfive-10-15-monthly-income-editable-section";
 import { Label } from "./ui/label";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
@@ -31,32 +23,6 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
       <CardHeader>
         <div className="flex items-start gap-2 justify-between">
           <SeventyFive1015BudgetTitle />
-          <div className="hidden items-start gap-4">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Button variant={"secondary"} size={"icon"}>
-                    <UploadIcon />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upload</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Button size={"icon"}>
-                    <DownloadIcon />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Download</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
         </div>
       </CardHeader>
       <CardContent className="flex flex-col gap-8">

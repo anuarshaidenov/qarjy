@@ -2,14 +2,6 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Button } from "./ui/button";
-import { DownloadIcon, UploadIcon } from "@radix-ui/react-icons";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { MonthlyIncomeEditableSection } from "./fifty-30-20-monthly-income-editable-section";
@@ -38,32 +30,6 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <Fifty3020BudgetTitle />
-          <div className="hidden items-start gap-4">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Button variant={"secondary"} size={"icon"}>
-                    <UploadIcon />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Upload</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Button size={"icon"}>
-                    <DownloadIcon />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Download</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
         </div>
       </CardHeader>
       <CardContent className="flex flex-col gap-8 ">

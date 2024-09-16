@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Fifty3020BudgetCardLocal } from './fifty-30-20-budget-card';
-import { BudgetContextProvider as Fifty3020BudgetContextProvider } from './fifty-30-20-budget-context-provider';
-import { SeventyFive1015BudgetCard } from './seventyfive-10-15-budget-card';
-import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from './seventyfive-10-15-context-provider';
-import { LOCALSTORAGE_KEYS } from '@/lib/constants';
-import { useMethodTabs } from '@/hooks/useMethodTabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Fifty3020BudgetCardLocal } from "./fifty-30-20-budget-card";
+import { BudgetContextProvider as Fifty3020BudgetContextProvider } from "./fifty-30-20-budget-context-provider";
+import { SeventyFive1015BudgetCard } from "./seventyfive-10-15-budget-card";
+import { BudgetContextProvider as SeventyFive1015BudgetContextProvider } from "./seventyfive-10-15-context-provider";
+import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { useMethodTabs } from "@/hooks/useMethodTabs";
 
 type Props = {};
 
