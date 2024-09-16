@@ -3,6 +3,7 @@ import { AppSection } from "./app-section";
 import { Button } from "./ui/button";
 import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 
 type Props = {};
 interface ItemProps {
@@ -66,7 +67,9 @@ export const HeroSection = async (props: Props) => {
         <Link href={"#how-it-works"}>{t("button")}</Link>
       </Button>
 
-      <AppSection />
+      <Suspense fallback={null}>
+        <AppSection />
+      </Suspense>
     </section>
   );
 };

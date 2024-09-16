@@ -1,6 +1,9 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { HeaderSkeleton } from "@/components/header-skeleton";
+import { HomepageSkeleton } from "@/components/homepage-skeleton";
+import { unstable_setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -12,8 +15,12 @@ const LandingLayout = (props: Props) => {
 
   return (
     <>
-      <Header />
-      <main className="h-full grow">{props.children}</main>
+      <Suspense fallback={<HeaderSkeleton />}>
+        <Header />
+      </Suspense>
+      <Suspense fallback={<HomepageSkeleton />}>
+        <main className="h-full grow">{props.children}</main>
+      </Suspense>
       <Footer />
     </>
   );

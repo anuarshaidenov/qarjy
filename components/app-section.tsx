@@ -13,6 +13,8 @@ type Props = {};
 export const AppSection = (props: Props) => {
   const tabs = useMethodTabs();
 
+  if (!localStorage) return null;
+
   return (
     <div className="w-full mx-auto flex flex-col gap-10 max-w-[600px]">
       <Tabs
