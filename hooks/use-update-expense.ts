@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
 import { QUERY_KEYS } from "@/lib/constants";
+import axios from "axios";
 
 export const useUpdateExpense = () => {
   const { toast } = useToast();
@@ -18,7 +19,7 @@ export const useUpdateExpense = () => {
       name: string;
       amount: number;
       type: "essential" | "non-essential" | "overall";
-    }) => updateExpense(expenseId, name, amount, type),
+    }) => axios.put("/api/expenses/update", { expenseId, name, amount, type }),
     onSettled: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
     },
@@ -31,29 +32,3 @@ export const useUpdateExpense = () => {
     },
   });
 };
-
-export async function updateExpense(
-  expenseId: string,
-  name: string,
-  amount: number,
-  type: "essential" | "non-essential" | "overall"
-) {
-  const supabase = createClient();
-
-  const { data, error } = await supabase
-    .from("expenses")
-    .update({
-      name,
-      amount,
-      type, // essential or non-essential
-    })
-    .eq("id", expenseId)
-    .single(); // We expect only one record to be updated
-
-  if (error) {
-    console.error("Error updating expense:", error);
-    return { success: false, error };
-  }
-
-  return { success: true, expense: data };
-}
