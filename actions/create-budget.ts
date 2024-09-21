@@ -10,18 +10,33 @@ interface CreateBudgetParams {
   nonEssentialExpenses: Expense[];
 }
 
-export async function createBudget({
+export async function addBudget({
   title,
   monthlyIncome,
-  savings,
-  cushionFund,
-  essentialExpenses,
-  nonEssentialExpenses,
-}: CreateBudgetParams) {
+  savings = 0,
+  cushionFund = 0,
+}: {
+  title: string;
+  monthlyIncome: number;
+  savings?: number;
+  cushionFund?: number;
+}) {
   const supabase = createClient();
 
-  // Insert the new budget into the budgets table
-  const { data: budgetData, error: budgetError } = await supabase
+  // Get the authenticated user
+  const { data: userData, error: authError } = await supabase.auth.getUser();
+
+  if (authError || !userData?.user) {
+    console.error("Error fetching user:", authError);
+    throw new Error(
+      "User not authenticated. Please log in to create a budget."
+    );
+  }
+
+  const userId = userData.user.id;
+
+  // Insert the new budget associated with the authenticated user
+  const { data, error } = await supabase
     .from("budgets")
     .insert([
       {
@@ -29,41 +44,15 @@ export async function createBudget({
         monthly_income: monthlyIncome,
         savings,
         cushion_fund: cushionFund,
+        user_id: userId,
       },
     ])
-    .select("*")
-    .single(); // Retrieves the inserted budget
+    .single(); // Return the inserted row
 
-  if (budgetError) {
-    console.error("Error creating budget:", budgetError);
-    return null;
+  if (error) {
+    console.error("Error adding new budget:", error);
+    throw new Error("Failed to create a budget. Please try again later.");
   }
 
-  const budgetId = budgetData.id;
-
-  // Combine essential and non-essential expenses into a single array
-  const expenses = [
-    ...essentialExpenses.map((exp) => ({
-      ...exp,
-      type: "essential",
-      budget_id: budgetId,
-    })),
-    ...nonEssentialExpenses.map((exp) => ({
-      ...exp,
-      type: "non-essential",
-      budget_id: budgetId,
-    })),
-  ];
-
-  // Insert the expenses associated with this budget
-  const { error: expensesError } = await supabase
-    .from("expenses")
-    .insert(expenses);
-
-  if (expensesError) {
-    console.error("Error creating expenses:", expensesError);
-    return null;
-  }
-
-  return budgetData;
+  return data;
 }
