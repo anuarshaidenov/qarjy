@@ -8,6 +8,7 @@ import {
 import { NumericFormat } from "./ui/numeric-format";
 import { useMemo, useState } from "react";
 import { useMonthlyIncome } from "./monthly-income-context-provider";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -19,6 +20,8 @@ export const SavingsEstimate15 = (props: Props) => {
     return calculate15SavingsBasedOnIncome(monthlyIncome as number) * value;
   }, [monthlyIncome, value]);
 
+  const t = useTranslations();
+
   return (
     <Card>
       <CardContent className="h-52 pt-10 flex flex-col gap-8 items-center justify-center">
@@ -26,13 +29,13 @@ export const SavingsEstimate15 = (props: Props) => {
           {formatNumberWithCommas(savingsAmount)} ₸
         </h2>
         <div className="flex flex-wrap gap-4 text-sm items-center">
-          <p className="shrink-0">✨ Is how much you&apos;d save in</p>
+          <p className="shrink-0">✨{t("dashboard.savings-estimate-left")}</p>
           <NumericFormat
             className="w-8 h-8 block p-0 pl-1"
             value={value}
             onChange={(e) => setValue(Number(e.target.value))}
           />
-          <p>months ✨</p>
+          <p>{t("dashboard.savings-estimate-right")} ✨</p>
         </div>
       </CardContent>
     </Card>

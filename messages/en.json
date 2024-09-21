@@ -144,7 +144,9 @@
         "non-essential-expenses-title": "Non-essential expenses"
       }
     },
-    "coming-soon": "Stats are coming soon."
+    "coming-soon": "Stats are coming soon.",
+    "savings-estimate-left": "Is how much you'd save in",
+    "savings-estimate-right": "months"
   },
   "header": {
     "cta": "Get started"
@@ -194,7 +196,9 @@
       "title": "Qarjy - Manage Your Finances Easily, For Free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
