@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
-import { Budget, Expense } from "@/types/budget";
+import { Expense } from "@/types/budget";
 
-interface UpdateBudgetParams {
+export interface UpdateBudgetParams {
   id: string;
   title: string;
   monthlyIncome: number;
