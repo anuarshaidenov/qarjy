@@ -1,8 +1,6 @@
 import { QUERY_KEYS } from "@/lib/constants";
-import { createClient } from "@/lib/supabase/client";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
-import { verifyBudgetOwnership } from "@/api/verify-budget-ownership";
 import axios from "axios";
 
 export const useDeleteExpense = () => {
