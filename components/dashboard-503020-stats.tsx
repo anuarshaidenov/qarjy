@@ -2,6 +2,7 @@
 
 import { ExpensesPieChart } from "./expenses-pie-chart";
 import { useTranslations } from "next-intl";
+import { SavingsEstimate20 } from "./savings-estimate-20";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ export const Dashboard503020Stats = (props: Props) => {
         expenseType="non-essential"
         title={t("dashboard.app.stats.non-essential-expenses-title")}
       />
+      <SavingsEstimate20 />
     </div>
   );
 };
