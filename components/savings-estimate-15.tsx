@@ -31,7 +31,7 @@ export const SavingsEstimate15 = (props: Props) => {
         <div className="flex flex-wrap gap-4 text-sm items-center">
           <p className="shrink-0">✨{t("dashboard.savings-estimate-left")}</p>
           <NumericFormat
-            className="w-8 h-8 block p-0 pl-1"
+            className="w-8 h-8 block p-0 pl-2"
             value={value}
             onChange={(e) => setValue(Number(e.target.value))}
           />
