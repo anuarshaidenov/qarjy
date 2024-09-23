@@ -50,7 +50,7 @@ const DashboardLayout = ({ children, params }: Props) => {
           <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
             <div className="border-b p-2">
               <Button variant="outline" size="icon" aria-label="Home" asChild>
-                <Link href={"/dashboard"}>
+                <Link href={"/"}>
                   <Home className="size-5" />
                 </Link>
               </Button>
