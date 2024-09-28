@@ -193,7 +193,9 @@
       "title": "qarjy - қаржыңызды оңай басқарыңыз",
       "description": "бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -209,5 +211,12 @@
     "total": "jalpy şyğyndar.",
     "subtitle": "şyğyndaryñyzğa şolu.",
     "title": "şyğyndar"
+  },
+  "footer": {
+    "about-us": "туралы",
+    "how-it-works": "qalay jumıs isteydi",
+    "get-help": "kömek alıñız",
+    "contact-us": "bızben habarlasyñy",
+    "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy"
   }
 }

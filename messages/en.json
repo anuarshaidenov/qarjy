@@ -196,7 +196,9 @@
       "title": "qarjy - manage your finances easily, for free",
       "description": "a simple way to plan your budget and manage your money effectively and for free. try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -212,5 +214,12 @@
     "total": "total expenses.",
     "subtitle": "overview of your expenses.",
     "title": "expenses"
+  },
+  "footer": {
+    "about-us": "about",
+    "how-it-works": "how it works",
+    "get-help": "get help",
+    "contact-us": "contact us",
+    "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy"
   }
 }
