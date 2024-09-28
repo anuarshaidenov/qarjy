@@ -1,6 +1,5 @@
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
-import { HeaderSkeleton } from "@/components/header-skeleton";
+import { Header, HeaderSkeleton } from "@/components/header";
 import { HomepageSkeleton } from "@/components/homepage-skeleton";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";

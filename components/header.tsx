@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { Link } from "@/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getTranslations } from "next-intl/server";
+import { Skeleton } from "./ui/skeleton";
 
 type Props = {};
 
@@ -34,6 +35,23 @@ export const Header = async (props: Props) => {
               <Link href={"/dashboard"}>{t("dashboard.button")}</Link>
             </Button>
           )}
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export const HeaderSkeleton = () => {
+  return (
+    <header className="">
+      <div className="container py-4 flex items-center justify-between">
+        <Logo />
+
+        <div className="flex gap-4 items-center">
+          <ModeToggle />
+          <LocaleToggle />
+
+          <Skeleton className="h-[36px] w-[80px]" />
         </div>
       </div>
     </header>
