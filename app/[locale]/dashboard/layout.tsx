@@ -97,6 +97,7 @@ const DashboardLayout = ({ children, params }: Props) => {
                 <nav className="md:hidden flex items-center gap-4">
                   <LocaleToggle />
                   <ModeToggle />
+                  <CurrencySelector />
 
                   <form action={signOut}>
                     <Tooltip>

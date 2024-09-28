@@ -23,7 +23,7 @@ export const CurrencySelector = (props: Props) => {
           <span className="sr-only">Toggle currency</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" side="right">
+      <DropdownMenuContent align="center" side="bottom">
         {currencies.map((currency) => (
           <DropdownMenuItem
             key={currency.code}
