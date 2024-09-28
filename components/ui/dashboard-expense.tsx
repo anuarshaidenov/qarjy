@@ -6,6 +6,7 @@ import { NumericFormatProps } from "react-number-format";
 
 type Props = {
   title: string;
+  currencySymbol?: string;
   inputProps: NumericFormatProps;
   onDeleteClick: () => void;
   disabled?: boolean;
@@ -22,7 +23,9 @@ export const DashboardExpense = (props: Props) => {
           autoComplete="off"
           {...props.inputProps}
         />
-        <span className="md:flex hidden md:group-hover:hidden text-lg">₸</span>
+        <span className="md:flex hidden md:group-hover:hidden text-lg">
+          {props.currencySymbol || "₸"}
+        </span>
         <Button
           className="shrink-0 md:hidden group-hover:flex transition-opacity"
           variant={"destructive"}

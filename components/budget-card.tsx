@@ -10,6 +10,7 @@ import { Link } from "@/navigation";
 import { Budget } from "@/types/budget";
 import { formatNumberWithCommas } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "./currency-provider";
 
 type Props = {
   budget: Budget;
@@ -17,6 +18,7 @@ type Props = {
 
 export const BudgetCard = ({ budget }: Props) => {
   const t = useTranslations();
+  const { currency } = useCurrency();
 
   return (
     <Link href={"/dashboard/monthly-budget/" + budget.id}>
@@ -29,7 +31,7 @@ export const BudgetCard = ({ budget }: Props) => {
             <p>
               {t("budget-card.monthly-income")}:{" "}
               <span className="font-bold">
-                {formatNumberWithCommas(budget.monthlyIncome)}
+                {formatNumberWithCommas(budget.monthlyIncome)} {currency.symbol}
               </span>
             </p>
           </div>

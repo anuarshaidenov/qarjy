@@ -9,6 +9,7 @@ import { NumericFormat } from "./ui/numeric-format";
 import { useMemo, useState } from "react";
 import { useMonthlyIncome } from "./monthly-income-context-provider";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
@@ -21,12 +22,13 @@ export const SavingsEstimate15 = (props: Props) => {
   }, [monthlyIncome, value]);
 
   const t = useTranslations();
+  const { currency } = useCurrency();
 
   return (
     <Card>
       <CardContent className="h-52 pt-10 flex flex-col gap-8 items-center justify-center">
         <h2 className="font-bold text-green-700 text-3xl sm:text-5xl">
-          {formatNumberWithCommas(savingsAmount)} ₸
+          {formatNumberWithCommas(savingsAmount)} {currency.symbol}
         </h2>
         <div className="flex flex-wrap gap-4 text-sm items-center">
           <p className="shrink-0">✨{t("dashboard.savings-estimate-left")}</p>

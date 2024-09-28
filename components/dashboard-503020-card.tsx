@@ -12,11 +12,13 @@ import { Dashboard20SavingsAmount } from "./dashboard-20-savings-amount";
 import { DashboardEssentialsRemainder } from "./dashboard-essentials-remainder";
 import { DashboardNonEssentialsRemainder } from "./dashboard-non-essentials-remainder";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
 export const Dashboard503020Card = (props: Props) => {
   const t = useTranslations();
+  const { currency } = useCurrency();
 
   return (
     <Card>
@@ -30,7 +32,7 @@ export const Dashboard503020Card = (props: Props) => {
           </Label>
           <div className="shrink max-w-[180px] flex items-center gap-2">
             <DashboardMonthlyIncome />
-            <span>₸</span>
+            <span>{currency.symbol}</span>
           </div>
         </div>
         <div className="flex flex-col gap-4 pb-4 border-b">

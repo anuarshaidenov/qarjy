@@ -7,6 +7,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { formatAmount } from "@/lib/utils";
 import { useDeleteExpense } from "@/hooks/use-delete-expense";
 import { useUpdateExpense } from "@/hooks/use-update-expense";
+import { useCurrency } from "./currency-provider";
 
 type Props = {
   expense: Expense;
@@ -31,9 +32,11 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
   useEffect(() => {
     setAmount(expense.amount || 0);
   }, [expense]);
+  const { currency } = useCurrency();
 
   return (
     <DashboardExpense
+      currencySymbol={currency.symbol}
       title={expense.name}
       inputProps={{
         value: amount,

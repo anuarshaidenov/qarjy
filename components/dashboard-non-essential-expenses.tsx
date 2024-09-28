@@ -11,6 +11,7 @@ import { formatAmount } from "@/lib/utils";
 import { useUpdateExpense } from "@/hooks/use-update-expense";
 import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 import { useExpensesSum } from "./expenses-sum-provider";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
@@ -79,9 +80,11 @@ const DashboardNonEssentialExpense = ({
   useEffect(() => {
     setAmount(expense.amount || 0);
   }, [expense]);
+  const { currency } = useCurrency();
 
   return (
     <DashboardExpense
+      currencySymbol={currency.symbol}
       title={expense.name}
       onDeleteClick={() =>
         deleteExpense({
