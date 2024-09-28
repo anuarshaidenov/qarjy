@@ -175,11 +175,11 @@
         "url": "https://anuarshaidenov.vercel.app/"
       }
     ],
-    "opengraph": {
+    "openGraph": {
       "title": "qarjy - manage your finances easily",
       "description": "take control of your financial future with our easy-to-use, absolutely free budgeting app. track your income, expenses, and savings all in one place.",
-      "url": "https://qarjy.site",
-      "sitename": "qarjy - simple, free budgeting app",
+      "url": "https://qarjy.site/en",
+      "siteName": "qarjy - simple, free budgeting app",
       "images": [
         {
           "url": "og-image.png",
@@ -196,9 +196,7 @@
       "title": "qarjy - manage your finances easily, for free",
       "description": "a simple way to plan your budget and manage your money effectively and for free. try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },

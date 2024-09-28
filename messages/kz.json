@@ -172,11 +172,11 @@
         "url": "https://anuarshaidenov.vercel.app/"
       }
     ],
-    "opengraph": {
+    "openGraph": {
       "title": "qarjy - qarjyñyzdy oñai basqaryñyz",
       "description": "qarjylyq bolaşağyñyzdy bızdıñ paidalanuğa yñğaily büdjettı josparlau qosymşamyzben baqylauğa alyñyz. tabys, şyğyndar jäne jinaqtardy bır jerden baqylañyz.",
-      "url": "https://qarjy.site",
-      "sitename": "qarjy - jai büdjettı josparlau qosymşasy",
+      "url": "https://qarjy.site/kz",
+      "siteName": "qarjy - jai büdjettı josparlau qosymşasy",
       "images": [
         {
           "url": "og-image.png",

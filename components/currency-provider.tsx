@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { currencies, LOCALSTORAGE_KEYS } from "@/lib/constants";
 
@@ -26,14 +26,17 @@ export const useCurrency = () => {
 export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [currency, setCurrency] = useState<Currency>(
-    JSON.parse(localStorage.getItem(LOCALSTORAGE_KEYS.currency) || "null") ||
-      currencies[0]
-  );
+  const [currency, setCurrency] = useState<Currency>(currencies[0]);
+
+  useEffect(() => {
+    const storedCurrency = localStorage.getItem(LOCALSTORAGE_KEYS.currency);
+    if (storedCurrency) {
+      setCurrency(JSON.parse(storedCurrency));
+    }
+  }, []);
 
   const setCurrencyHandler = (currency: Currency) => {
     setCurrency(currency);
-    console.log(currency);
     localStorage.setItem(LOCALSTORAGE_KEYS.currency, JSON.stringify(currency));
   };
 
