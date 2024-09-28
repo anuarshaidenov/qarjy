@@ -1,10 +1,10 @@
 {
   "home": {
     "hero": {
-      "title-highlight": "Бюджетті",
-      "title": "жоспарлау оңай",
-      "subtitle": "Табысыңызды енгізіп, бюджеттіңізді көріңіз және қаржыңызды басқаруды жеңілдетіңіз.",
-      "button": "Қалай жұмыс істейтінін көріңіз"
+      "title-highlight": "Büdjettı",
+      "title": "josparlau oñai",
+      "subtitle": "Tabysyñyzdy engızıp, büdjettıñızdı körıñız jäne qarjyñyzdy basqarudy jeñıldetıñız.",
+      "button": "Qalai jūmys ısteitının körıñız"
     },
     "app": {
       "751015": {
@@ -13,148 +13,148 @@
         }
       },
       "tab-list": {
-        "503020": "50-30-20 Ережесі",
-        "751015": "75-10-15 Ережесі"
+        "503020": "50-30-20 Erejesı",
+        "751015": "75-10-15 Erejesı"
       },
       "tab-content": {
         "503020": {
-          "monthly-income": "Айлық табысыңызды енгізіңіз",
-          "essential-expenses": "Негізгі шығындар",
-          "remainder": "Қалған қаражат",
-          "wants": "Қалаулар",
+          "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+          "essential-expenses": "Negızgı şyğyndar",
+          "remainder": "Qalğan qarajat",
+          "wants": "Qalaular",
           "add-essentials": {
-            "placeholder-title": "Атауы",
-            "placeholder-amount": "Сомасы"
+            "placeholder-title": "Atauy",
+            "placeholder-amount": "Somasy"
           },
           "savings": {
-            "title": "Жинақтар және Инвестициялар",
-            "sub-title": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз."
+            "title": "Jinaqtar jäne İnvestisialar",
+            "sub-title": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
           },
           "app-data": {
-            "title": "Қыркүйек бюджеті",
-            "item-1": "пәтер",
-            "item-2": "азық-түлік",
+            "title": "Qyrküiek büdjetı",
+            "item-1": "päter",
+            "item-2": "azyq-tülık",
             "item-3": "netflix"
           }
         },
         "751015": {
-          "monthly-income": "Айлық табысыңызды енгізіңіз",
-          "expenses": "Жалпы шығындар",
-          "remainder": "Қалған қаражат",
+          "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+          "expenses": "Jalpy şyğyndar",
+          "remainder": "Qalğan qarajat",
           "cushion-fund": {
-            "title": "Резерв қоры",
-            "sub-title": "Күтпеген шығындарға арналған ақшаны сақтаңыз."
+            "title": "Rezerv qory",
+            "sub-title": "Kütpegen şyğyndarğa arnalğan aqşany saqtañyz."
           },
           "add-expenses": {
-            "placeholder-title": "Атауы",
-            "placeholder-amount": "Сомасы"
+            "placeholder-title": "Atauy",
+            "placeholder-amount": "Somasy"
           },
           "savings": {
-            "title": "Жинақтар және Инвестициялар",
-            "sub-title": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз."
+            "title": "Jinaqtar jäne İnvestisialar",
+            "sub-title": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
           },
           "app-data": {
-            "title": "Қыркүйек бюджеті",
-            "item-1": "пәтер",
-            "item-2": "азық-түлік"
+            "title": "Qyrküiek büdjetı",
+            "item-1": "päter",
+            "item-2": "azyq-tülık"
           }
         }
       }
     },
     "how-it-works": {
-      "title": "Мұны әр айдың басында жасаңыз",
+      "title": "Mūny är aidyñ basynda jasañyz",
       "tab-list": {
-        "503020": "50-30-20 Ережесі",
-        "751015": "75-10-15 Ережесі"
+        "503020": "50-30-20 Erejesı",
+        "751015": "75-10-15 Erejesı"
       },
       "steps": {
         "503020": {
           "step-1": {
-            "title": "Айлық табысыңызды енгізіңіз",
-            "description": "Айлық жалақыңызды немесе басқа табыс көздерін енгізіңіз."
+            "title": "Ailyq tabysyñyzdy engızıñız",
+            "description": "Ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
           },
           "step-2": {
-            "title": "Негізгі шығындарды енгізіңіз",
-            "description": "Үйге төлем, коммуналдық қызметтер, азық-түлік сияқты негізгі шығындарыңызды енгізіңіз."
+            "title": "Negızgı şyğyndardy engızıñız",
+            "description": "Üige tölem, komunaldyq qyzmetter, azyq-tülık siaqty negızgı şyğyndaryñyzdy engızıñız."
           },
           "step-3": {
-            "title": "Қалауларды енгізіңіз",
-            "description": "Көңіл көтеру, киім-кешек, жазылымдар сияқты қажет емес шығындарды енгізіңіз."
+            "title": "Qalaulardy engızıñız",
+            "description": "Köñıl köteru, kiım-keşek, jazylymdar siaqty qajet emes şyğyndardy engızıñız."
           },
           "step-4": {
-            "title": "Жинақтарға ақша бөліңіз",
-            "description": "Табысыңыздың бір бөлігін жинаққа немесе инвестицияға бөліңіз."
+            "title": "Jinaqtarğa aqşa bölıñız",
+            "description": "Tabysyñyzdyñ bır bölıgın jinaqqa nemese investisiağa bölıñız."
           },
           "step-5": {
-            "title": "Бюджетті құра бастаңыз және қадағалаңыз",
-            "description": "Ақшаңызды басқаруға көмектесеміз және жеке бақылау тақтасында прогресті бақылауға мүмкіндік береміз.",
-            "button": "Бастау"
+            "title": "Büdjettı qūra bastañyz jäne qadağalañyz",
+            "description": "Aqşañyzdy basqaruğa kömektesemız jäne jeke baqylau taqtasynda progrestı baqylauğa mümkındık beremız.",
+            "button": "Bastau"
           }
         },
         "751015": {
           "step-1": {
-            "title": "Айлық табысыңызды енгізіңіз",
-            "description": "Айлық жалақыңызды немесе басқа табыс көздерін енгізіңіз."
+            "title": "Ailyq tabysyñyzdy engızıñız",
+            "description": "Ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
           },
           "step-2": {
-            "title": "Шығындарыңызды енгізіңіз",
-            "description": "Барлық шығындарыңызды, негізгі немесе негізгі емес болсын, енгізіңіз."
+            "title": "Şyğyndaryñyzdy engızıñız",
+            "description": "Barlyq şyğyndaryñyzdy, negızgı nemese negızgı emes bolsyn, engızıñız."
           },
           "step-3": {
-            "title": "Қалауларды енгізіңіз",
-            "description": "Көңіл көтеру, киім-кешек немесе жазылымдар сияқты шығындарды енгізіңіз."
+            "title": "Qalaulardy engızıñız",
+            "description": "Köñıl köteru, kiım-keşek nemese jazylymdar siaqty şyğyndardy engızıñız."
           },
           "step-4": {
-            "title": "Бюджетті құра бастаңыз және қадағалаңыз",
-            "description": "Біздің бақылау тақтасын пайдаланып, шығындарыңыз бен жинақтарыңызды бақылаңыз.",
-            "button": "Бастау"
+            "title": "Büdjettı qūra bastañyz jäne qadağalañyz",
+            "description": "Bızdıñ baqylau taqtasyn paidalanyp, şyğyndaryñyz ben jinaqtaryñyzdy baqylañyz.",
+            "button": "Bastau"
           }
         }
       }
     }
   },
   "signup": {
-    "title": "Кіру",
-    "button": "Google арқылы кіріңіз",
-    "back-button": "Үйге қайт"
+    "title": "Kıru",
+    "button": "Google arqyly kırıñız",
+    "back-button": "Üige qait"
   },
   "dashboard": {
-    "button": "Тақта",
+    "button": "Taqta",
     "home": {
-      "title": "Бізге қосылғаныңыз үшін рахмет!❤️ Бақылау тақтасы жақында келеді",
-      "button": "Үйге қайт"
+      "title": "Bızge qosylğanyñyz üşın rahmet!❤️ Baqylau taqtasy jaqynda keledı",
+      "button": "Üige qait"
     },
     "all-budgets": {
-      "title": "Барлық бюджеттер",
-      "description": "Жаңа бюджеттер әр айдың басында қосылады. Сізге тек бюджеттеріңізді қадағалап, жаңарту қажет."
+      "title": "Barlyq büdjetter",
+      "description": "Jaña büdjetter är aidyñ basynda qosylady. Sızge tek büdjetterıñızdı qadağalap, jañartu qajet."
     },
     "monthly-budget": {
-      "title": "Айлық бюджет",
-      "subtitle": "Бұл сіздің қазіргі айлық бюджетіңіз. Сізге ең қолайлы әдісті таңдаңыз."
+      "title": "Ailyq büdjet",
+      "subtitle": "Būl sızdıñ qazırgı ailyq büdjetıñız. Sızge eñ qolaily ädıstı tañdañyz."
     },
     "app": {
-      "monthly-income": "Айлық табысыңызды енгізіңіз",
-      "overall-expenses": "Жалпы шығындар",
-      "remainder": "Қалған қаражат",
-      "cushion-fund": "Резерв қоры",
-      "cushion-fund-description": "Күтпеген шығындарға арналған ақшаны сақтаңыз.",
-      "15-savings": "Жинақтар және Инвестициялар",
-      "15-savings-description": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз.",
-      "essential-expenses": "Негізгі шығындар",
-      "non-essential-expenses": "Қалаулар",
-      "20-savings": "Жинақтар және Инвестициялар",
-      "20-savings-description": "Бұл ақшаны жинаққа немесе инвестицияға қалдырыңыз.",
+      "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+      "overall-expenses": "Jalpy şyğyndar",
+      "remainder": "Qalğan qarajat",
+      "cushion-fund": "Rezerv qory",
+      "cushion-fund-description": "Kütpegen şyğyndarğa arnalğan aqşany saqtañyz.",
+      "15-savings": "Jinaqtar jäne İnvestisialar",
+      "15-savings-description": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
+      "essential-expenses": "Negızgı şyğyndar",
+      "non-essential-expenses": "Qalaular",
+      "20-savings": "Jinaqtar jäne İnvestisialar",
+      "20-savings-description": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
       "stats": {
-        "essential-expenses-title": "Маңызды шығындар",
-        "non-essential-expenses-title": "Маңызды емес шығындар"
+        "essential-expenses-title": "Mañyzdy şyğyndar",
+        "non-essential-expenses-title": "Mañyzdy emes şyğyndar"
       }
     },
-    "coming-soon": "Статистика жақында шығады.",
+    "coming-soon": "Statistika jaqynda şyğady.",
     "savings-estimate-left": " ",
-    "savings-estimate-right": "айда үнемдейсіз"
+    "savings-estimate-right": "aida ünemdeisız"
   },
   "header": {
-    "cta": "Тіркеліңіз"
+    "cta": "Tırkelıñız"
   },
   "metadata": {
     "alternates": {
@@ -164,16 +164,8 @@
         "en": "/en"
       }
     },
-    "title": "Qarjy - Жай Бюджетті Жоспарлау Қосымшасы",
-    "description": "Қаржыңызды біздің интуитивті бюджетті жоспарлау құралы арқылы оңай басқарыңыз. Шығындарыңызды, жинақтарыңызды және инвестицияларыңызды икемді әдістер арқылы қадағалаңыз.",
-    "keywords": [
-      "бюджетті жоспарлау қосымшасы",
-      "жеке қаржы",
-      "ақша басқару",
-      "шығындарды қадағалау",
-      "жинақтар",
-      "инвестициялар"
-    ],
+    "title": "Qarjy - Jai Büdjettı Josparlau Qosymşasy",
+    "description": "Qarjyñyzdy bızdıñ intuitivtı büdjettı josparlau qūraly arqyly oñai basqaryñyz. Şyğyndaryñyzdy, jinaqtaryñyzdy jäne investisialaryñyzdy ikemdı ädıster arqyly qadağalañyz.",
     "authors": [
       {
         "name": "Anuar Shaidenov",
@@ -181,10 +173,10 @@
       }
     ],
     "openGraph": {
-      "title": "Qarjy - Қаржыңызды Оңай Басқарыңыз",
-      "description": "Қаржылық болашағыңызды біздің пайдалануға ыңғайлы бюджетті жоспарлау қосымшамызбен бақылауға алыңыз. Табыс, шығындар және жинақтарды бір жерден бақылаңыз.",
+      "title": "Qarjy - Qarjyñyzdy Oñai Basqaryñyz",
+      "description": "Qarjylyq bolaşağyñyzdy bızdıñ paidalanuğa yñğaily büdjettı josparlau qosymşamyzben baqylauğa alyñyz. Tabys, şyğyndar jäne jinaqtardy bır jerden baqylañyz.",
       "url": "https://qarjy.site",
-      "siteName": "Qarjy - Жай Бюджетті Жоспарлау Қосымшасы",
+      "siteName": "Qarjy - Jai Büdjettı Josparlau Qosymşasy",
       "images": [
         {
           "url": "og-image.png",
@@ -201,9 +193,7 @@
       "title": "Qarjy - Қаржыңызды Оңай Басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
@@ -215,9 +205,9 @@
     "monthly-income": "Айлық табыс"
   },
   "expenses-pie-chart": {
-    "no-expenses": "Статистикаңызды көру үшін шығындарды қосыңыз.",
-    "total": "Жалпы шығындар.",
-    "subtitle": "Шығындарыңызға шолу.",
-    "title": "Шығындар"
+    "no-expenses": "Statistikañyzdy köru üşın şyğyndardy qosyñyz.",
+    "total": "Jalpy şyğyndar.",
+    "subtitle": "Şyğyndaryñyzğa şolu.",
+    "title": "Şyğyndar"
   }
 }
