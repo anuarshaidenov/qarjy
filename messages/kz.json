@@ -62,7 +62,7 @@
       }
     },
     "how-it-works": {
-      "title": "mūny är aidyñ basynda jasañyz",
+      "title": "mūny är aidyñ basynda jasañyz.",
       "tab-list": {
         "503020": "50-30-20 erejesı",
         "751015": "75-10-15 erejesı"
@@ -228,5 +228,10 @@
     "description-4": "oñai oqylatyn diagramalarmen mañyzdy jäne mañyzdy emes şyğyndaryñyzdy elestetıñız. aqşañyzdyñ qaida ketıp jatqany turaly tüsınık alyñyz jäne qysqartylatyn aimaqtardy anyqtañyz.",
     "description-5": "jeke maqsatty baqylau arqyly qarjylyq armandaryñyzğa tezırek qol jetkızıñız.",
     "description-6": "6 ai ışınde belgılı bır somany ünemdeu siaqty qarjylyq maqsattar qoiyñyz jäne ülgerımıñızdı qadağalañyz. Motivasiada bolyñyz jäne maqsattaryñyzğa qanşalyqty jaqyn ekenıñızdı körıñız."
+  },
+  "cta-section": {
+    "title": "endı baqylau taqtasynan bastaiyq.",
+    "description": "bügın qarjyñyzdy baqylauğa alyñyz! qarapaiym qūralymyzben büdjetıñızdı oñai jäne tiımdı josparlaudy bastañyz.",
+    "button": "bastau"
   }
 }

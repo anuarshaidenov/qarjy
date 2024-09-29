@@ -303,7 +303,6 @@ const Charts = async () => {
                         <path
                           cx={145}
                           cy={145}
-                          name="vape"
                           strokeWidth={5}
                           stroke="#fff"
                           fill="hsl(var(--chart-3))"
@@ -328,7 +327,7 @@ const Charts = async () => {
                         <path
                           cx={145}
                           cy={145}
-                          name="outing w eska"
+                          name="outing w friends"
                           strokeWidth={5}
                           stroke="#fff"
                           fill="hsl(var(--chart-4))"
@@ -495,16 +494,9 @@ const Charts = async () => {
             <li className="flex items-center gap-2">
               <div
                 className="h-3 w-3 rounded-full"
-                style={{ backgroundColor: "hsl(var(--chart-3))" }}
-              />
-              <span>vape</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <div
-                className="h-3 w-3 rounded-full"
                 style={{ backgroundColor: "hsl(var(--chart-4))" }}
               />
-              <span>outing w eska</span>
+              <span>outing w friends</span>
             </li>
             <li className="flex items-center gap-2">
               <div
