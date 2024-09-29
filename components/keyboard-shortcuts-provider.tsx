@@ -21,7 +21,7 @@ export const KeyboardShortcutsProvider = (props: Props) => {
     router.push("/dashboard/monthly-budget/" + budgetId);
   };
 
-  useKey("c", navigateToCurrentMonthBudget);
+  useKey("c", navigateToCurrentMonthBudget, undefined, [budgetId]);
   useKey("d", navigateToDashboardHome);
 
   return <>{props.children}</>;

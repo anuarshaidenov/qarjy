@@ -36,7 +36,7 @@ const DashboardLayout = ({ children, params }: Props) => {
       tooltip: (
         <span className="flex items-center gap-2">
           Dashboard{" "}
-          <span className="bg-muted rounded size-4 text-white flex items-center justify-center">
+          <span className="bg-muted rounded size-4 text-muted-foreground flex items-center justify-center">
             d
           </span>
         </span>

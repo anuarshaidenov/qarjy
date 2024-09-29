@@ -17,7 +17,7 @@ export const DashboardLatestBudgetLink = (props: Props) => {
     tooltip: (
       <span className="flex items-center gap-2">
         Current Budget{" "}
-        <span className="bg-muted rounded size-4 text-white flex items-center justify-center">
+        <span className="bg-muted rounded size-4 text-muted-foreground flex items-center justify-center">
           c
         </span>
       </span>
