@@ -193,7 +193,9 @@
       "title": "qarjy - қаржыңызды оңай басқарыңыз",
       "description": "бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -216,5 +218,15 @@
     "get-help": "kömek alıñız",
     "contact-us": "bızben habarlasyñy",
     "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy"
+  },
+  "dashboard-section": {
+    "title": "baqylau taqtasynan bastañyz.",
+    "subtitle": "tegın.",
+    "description": "intuitivtı ai saiynğy şolu arqyly qarjyñyzdy oñai baqylañyz.",
+    "description-2": "ai saiyn büdjetıñızdı avtomatty türde qadağalap, basqaryñyz. ai saiynğy kırısterıñızdı, şyğyndaryñyzdy jäne jinaqtaryñyzdy bır jerden körıñız.",
+    "description-3": "anyq jäne qysqa körnekı körınıster negızdelgen şeşımder qabyldauğa kömektesedı.",
+    "description-4": "oñai oqylatyn diagramalarmen mañyzdy jäne mañyzdy emes şyğyndaryñyzdy elestetıñız. aqşañyzdyñ qaida ketıp jatqany turaly tüsınık alyñyz jäne qysqartylatyn aimaqtardy anyqtañyz.",
+    "description-5": "jeke maqsatty baqylau arqyly qarjylyq armandaryñyzğa tezırek qol jetkızıñız.",
+    "description-6": "6 ai ışınde belgılı bır somany ünemdeu siaqty qarjylyq maqsattar qoiyñyz jäne ülgerımıñızdı qadağalañyz. Motivasiada bolyñyz jäne maqsattaryñyzğa qanşalyqty jaqyn ekenıñızdı körıñız."
   }
 }

@@ -1,3 +1,4 @@
+import { DashboardSection } from "@/components/dashboard-section";
 import { HeroSection } from "@/components/hero-section";
 import { HowItWorks } from "@/components/how-it-works";
 import { unstable_setRequestLocale } from "next-intl/server";
@@ -11,6 +12,7 @@ export default function Home({
     <>
       <HeroSection />
       <HowItWorks />
+      <DashboardSection />
     </>
   );
 }

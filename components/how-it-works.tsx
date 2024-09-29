@@ -13,7 +13,9 @@ export const HowItWorks = async (props: Props) => {
       id="how-it-works"
       className="py-16 container min-h-screen max-w-[800px] mx-auto"
     >
-      <h2 className="text-3xl font-semibold text-center mb-10">{t("title")}</h2>
+      <h2 className="text-3xl md:text-5xl font-semibold text-center mb-10">
+        {t("title")}.
+      </h2>
       <HowItWorksWrapper
         fifty3020content={<Fifty2030HowItWorks />}
         seventyfive1015content={<Seventyfive1015HowItWorks />}

@@ -196,7 +196,9 @@
       "title": "qarjy - manage your finances easily, for free",
       "description": "a simple way to plan your budget and manage your money effectively and for free. try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -219,5 +221,15 @@
     "get-help": "get help",
     "contact-us": "contact us",
     "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy"
+  },
+  "dashboard-section": {
+    "title": "get started with your dashboard.",
+    "subtitle": "it's free.",
+    "description": "effortlessly stay on top of your finances with an intuitive monthly overview.",
+    "description-2": "automatically track and manage your budget each month. View your monthly income, expenses, and savings all in one place.",
+    "description-3": "clear and concise visual representations help you make informed decisions.",
+    "description-4": "visualize your essential and non-essential expenses with easy-to-read charts. Gain insights into where your money is going and identify areas to cut back.",
+    "description-5": "achieve your financial dreams faster with personalized goal tracking.",
+    "description-6": "set financial goals, like saving a specific amount in 6 months, and track your progress. Stay motivated and see how close you are to reaching your targets."
   }
 }
