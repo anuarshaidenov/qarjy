@@ -8,17 +8,9 @@ export const DashboardSection = async (props: Props) => {
 
   return (
     <section className="container py-32 flex flex-col gap-32">
-      <h2 className="text-3xl md:text-5xl font-semibold text-center">
-        {t("dashboard-section.title")} <br /> {t("dashboard-section.subtitle")}
-        <span className="text-green-800">
-          {t("dashboard-section.subtitle-highlight")}
-        </span>
-        .
-      </h2>
-
       <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  ">
+        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+          <h3 className="text-3xl md:text-5xl font-bold  ">
             {t("dashboard-section.description")}
           </h3>
           <p className="text-muted-foreground font-mono">
@@ -29,8 +21,8 @@ export const DashboardSection = async (props: Props) => {
         <DashboardBudgets />
       </div>
       <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  ">
+        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+          <h3 className="text-3xl md:text-5xl font-bold  ">
             {t("dashboard-section.description-3")}
           </h3>
           <p className="text-muted-foreground font-mono">
@@ -41,8 +33,8 @@ export const DashboardSection = async (props: Props) => {
         <Charts />
       </div>
       <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  ">
+        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+          <h3 className="text-3xl md:text-5xl font-bold  ">
             {t("dashboard-section.description-5")}
           </h3>
           <p className="text-muted-foreground font-mono">
