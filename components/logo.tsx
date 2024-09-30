@@ -9,7 +9,7 @@ type Props = {
 
 export const Logo = ({ className = "", href = "/" }: Props) => {
   return (
-    <Link className={cn("text-xl ", className)} href={href}>
+    <Link className={cn("text-xl font-mono", className)} href={href}>
       💸 qarjy
     </Link>
   );
