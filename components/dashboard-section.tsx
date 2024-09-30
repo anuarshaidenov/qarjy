@@ -10,14 +10,18 @@ export const DashboardSection = async (props: Props) => {
     <section className="container py-32 flex flex-col gap-32">
       <h2 className="text-3xl md:text-5xl font-semibold text-center">
         {t("dashboard-section.title")} <br /> {t("dashboard-section.subtitle")}
+        <span className="text-green-800">
+          {t("dashboard-section.subtitle-highlight")}
+        </span>
+        .
       </h2>
 
       <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  font-mono">
+          <h3 className="text-2xl md:text-3xl font-bold  ">
             {t("dashboard-section.description")}
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground font-mono">
             {t("dashboard-section.description-2")}
           </p>
         </div>
@@ -26,10 +30,10 @@ export const DashboardSection = async (props: Props) => {
       </div>
       <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  font-mono">
+          <h3 className="text-2xl md:text-3xl font-bold  ">
             {t("dashboard-section.description-3")}
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground font-mono">
             {t("dashboard-section.description-4")}
           </p>
         </div>
@@ -38,10 +42,10 @@ export const DashboardSection = async (props: Props) => {
       </div>
       <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold  font-mono">
+          <h3 className="text-2xl md:text-3xl font-bold  ">
             {t("dashboard-section.description-5")}
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground font-mono">
             {t("dashboard-section.description-6")}
           </p>
         </div>
@@ -60,7 +64,7 @@ const DashboardBudgets = async () => {
         <h1 className="text-3xl md:text-5xl font-bold">
           {t("dashboard.all-budgets.title")}
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground font-mono">
           {t("dashboard.all-budgets.description")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
@@ -128,7 +132,7 @@ const Charts = async () => {
           <h3 className="font-semibold leading-none tracking-tight">
             {t("expenses-pie-chart.title")}
           </h3>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground font-mono">
             {t("expenses-pie-chart.subtitle")}
           </p>
         </div>

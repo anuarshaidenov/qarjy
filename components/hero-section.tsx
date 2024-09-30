@@ -60,7 +60,7 @@ export const HeroSection = async (props: Props) => {
         <span className=""> {t("title")}.</span>
       </h1>
 
-      <p className="text-center text-xl">{t("subtitle")}</p>
+      <p className="text-center text-xl font-mono">{t("subtitle")}</p>
 
       <Button className="mb-10" asChild>
         <Link href={"#how-it-works"}>{t("button")}</Link>

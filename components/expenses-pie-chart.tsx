@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useGetExpensesByTypeAndBudgetId } from '@/hooks/use-get-expenses';
+import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 import {
   Card,
   CardContent,
@@ -8,24 +8,24 @@ import {
   CardTitle,
   CardFooter,
   CardDescription,
-} from './ui/card';
-import { useParams } from 'next/navigation';
+} from "./ui/card";
+import { useParams } from "next/navigation";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from '@/components/ui/chart';
-import { Label, Pie, PieChart } from 'recharts';
-import { useMemo } from 'react';
-import { formatNumberWithCommas } from '@/lib/utils';
-import { Skeleton } from './ui/skeleton';
-import { useTranslations } from 'next-intl';
+} from "@/components/ui/chart";
+import { Label, Pie, PieChart } from "recharts";
+import { useMemo } from "react";
+import { formatNumberWithCommas } from "@/lib/utils";
+import { Skeleton } from "./ui/skeleton";
+import { useTranslations } from "next-intl";
 
 type Props = {
   title?: string;
   subtitle?: string;
-  expenseType: 'essential' | 'non-essential' | 'overall';
+  expenseType: "essential" | "non-essential" | "overall";
 };
 
 export const ExpensesPieChart = (props: Props) => {
@@ -70,15 +70,15 @@ export const ExpensesPieChart = (props: Props) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{props.title || t('expenses-pie-chart.title')}</CardTitle>
+        <CardTitle>{props.title || t("expenses-pie-chart.title")}</CardTitle>
         {!!data?.length && (
-          <CardDescription>
-            {props.subtitle || t('expenses-pie-chart.subtitle')}
+          <CardDescription className="font-mono">
+            {props.subtitle || t("expenses-pie-chart.subtitle")}
           </CardDescription>
         )}
         {!data?.length && (
           <CardDescription className="py-4">
-            {t('expenses-pie-chart.no-expenses')}
+            {t("expenses-pie-chart.no-expenses")}
           </CardDescription>
         )}
       </CardHeader>
@@ -104,7 +104,7 @@ export const ExpensesPieChart = (props: Props) => {
                 >
                   <Label
                     content={({ viewBox }) => {
-                      if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
+                      if (viewBox && "cx" in viewBox && "cy" in viewBox) {
                         return (
                           <text
                             x={viewBox.cx}
@@ -124,7 +124,7 @@ export const ExpensesPieChart = (props: Props) => {
                               y={(viewBox.cy || 0) + 24}
                               className="fill-muted-foreground"
                             >
-                              {t('expenses-pie-chart.total')}
+                              {t("expenses-pie-chart.total")}
                             </tspan>
                           </text>
                         );

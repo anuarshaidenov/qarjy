@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <html lang="en">
-      <body className="bg-background dark flex flex-col items-center font-mono justify-center min-h-screen">
+      <body className="bg-background dark flex flex-col items-center  justify-center min-h-screen">
         <h2 className="text-8xl md:text-[30vw] font-bold">404</h2>
         <Button asChild>
           <Link href={"/"}>Go Home</Link>

@@ -221,13 +221,14 @@
   },
   "dashboard-section": {
     "title": "baqylau taqtasynan bastañyz.",
-    "subtitle": "tegın.",
+    "subtitle": " ",
     "description": "intuitivtı ai saiynğy şolu arqyly qarjyñyzdy oñai baqylañyz.",
     "description-2": "ai saiyn büdjetıñızdı avtomatty türde qadağalap, basqaryñyz. ai saiynğy kırısterıñızdı, şyğyndaryñyzdy jäne jinaqtaryñyzdy bır jerden körıñız.",
     "description-3": "anyq jäne qysqa körnekı körınıster negızdelgen şeşımder qabyldauğa kömektesedı.",
     "description-4": "oñai oqylatyn diagramalarmen mañyzdy jäne mañyzdy emes şyğyndaryñyzdy elestetıñız. aqşañyzdyñ qaida ketıp jatqany turaly tüsınık alyñyz jäne qysqartylatyn aimaqtardy anyqtañyz.",
     "description-5": "jeke maqsatty baqylau arqyly qarjylyq armandaryñyzğa tezırek qol jetkızıñız.",
-    "description-6": "6 ai ışınde belgılı bır somany ünemdeu siaqty qarjylyq maqsattar qoiyñyz jäne ülgerımıñızdı qadağalañyz. Motivasiada bolyñyz jäne maqsattaryñyzğa qanşalyqty jaqyn ekenıñızdı körıñız."
+    "description-6": "6 ai ışınde belgılı bır somany ünemdeu siaqty qarjylyq maqsattar qoiyñyz jäne ülgerımıñızdı qadağalañyz. Motivasiada bolyñyz jäne maqsattaryñyzğa qanşalyqty jaqyn ekenıñızdı körıñız.",
+    "subtitle-highlight": " tegın"
   },
   "cta-section": {
     "title": "endı baqylau taqtasynan bastaiyq.",
