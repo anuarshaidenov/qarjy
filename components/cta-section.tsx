@@ -16,7 +16,7 @@ export const CtaSection = async (props: Props) => {
       <p className="text-muted-foreground">{t("cta-section.description")}</p>
 
       <Button asChild>
-        <Link href={"/signup"}>{t("cta-section.button")}</Link>
+        <Link href={"/dashboard"}>{t("cta-section.button")}</Link>
       </Button>
     </section>
   );
