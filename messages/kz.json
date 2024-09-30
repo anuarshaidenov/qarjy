@@ -193,9 +193,7 @@
       "title": "qarjy - қаржыңызды оңай басқарыңыз",
       "description": "бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
@@ -239,7 +237,7 @@
     "day": "künnen",
     "days": "künnen",
     "budget": "büdjet",
-    "from-now": "keiın keledı",
+    "from-now": "keiın daiyn bolady",
     "coming-in": " "
   }
 }
