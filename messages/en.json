@@ -236,5 +236,12 @@
     "title": "start now.",
     "description": "take control of your finances today! start planning your budget easily and effectively with our simple tool.",
     "button": "get started"
+  },
+  "next-budget-card": {
+    "day": "day",
+    "days": "days",
+    "budget": "budget",
+    "coming-in": "coming in",
+    "from-now": " "
   }
 }

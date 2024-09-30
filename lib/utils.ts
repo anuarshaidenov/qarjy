@@ -1,16 +1,16 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export function formatNumberWithCommas(x: number) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 export const formatAmount = (amount: string) => {
-  return parseInt(amount.split(',').join('')) || 0;
+  return parseInt(amount.split(",").join("")) || 0;
 };
 
 export const calculatePecentageBasedOnIncome = (
@@ -48,19 +48,43 @@ export const calculateExpensesRemainder = (spent: number, income: number) => {
   return income - spent;
 };
 
-export const getCurrentMonthName = () => {
+export const getCurrentMonthName = (locale = "default") => {
   const date = new Date();
-  const month = date.toLocaleString('default', { month: 'long' });
+  const month = date.toLocaleString(locale, { month: "long" });
 
-  return month;
+  return month.toLowerCase();
+};
+
+export const getNextMonthName = (locale = "default") => {
+  const date = new Date();
+  if (date.getMonth() === 11) {
+    return new Date(date.getFullYear() + 1, 0, 1).toLocaleString(locale, {
+      month: "long",
+    });
+  }
+
+  return new Date(date.getFullYear(), date.getMonth() + 1, 1)
+    .toLocaleString(locale, {
+      month: "long",
+    })
+    .toLowerCase();
+};
+
+export const daysUntilNextMonth = () => {
+  const now = new Date();
+  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+  const diffDays = Math.ceil(
+    Math.abs(nextMonth.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  return diffDays;
 };
 
 export const getMonthFromDate = (date: Date) => {
-  const month = date.toLocaleString('default', { month: 'long' });
+  const month = date.toLocaleString("default", { month: "long" });
   return month;
 };
 
 export const getYearFromDate = (date: Date) => {
-  const year = date.toLocaleString('default', { year: 'numeric' });
+  const year = date.toLocaleString("default", { year: "numeric" });
   return year;
 };

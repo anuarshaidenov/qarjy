@@ -233,5 +233,12 @@
     "title": "endı baqylau taqtasynan bastaiyq.",
     "description": "bügın qarjyñyzdy baqylauğa alyñyz! qarapaiym qūralymyzben büdjetıñızdı oñai jäne tiımdı josparlaudy bastañyz.",
     "button": "bastau"
+  },
+  "next-budget-card": {
+    "day": "künnen",
+    "days": "künnen",
+    "budget": "büdjet",
+    "from-now": "keiın keledı",
+    "coming-in": " "
   }
 }
