@@ -12,7 +12,7 @@ export const DashboardSection = async (props: Props) => {
         {t("dashboard-section.title")} <br /> {t("dashboard-section.subtitle")}
       </h2>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-bold  font-mono">
             {t("dashboard-section.description")}
@@ -24,7 +24,7 @@ export const DashboardSection = async (props: Props) => {
 
         <DashboardBudgets />
       </div>
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-8">
+      <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-bold  font-mono">
             {t("dashboard-section.description-3")}
@@ -36,9 +36,7 @@ export const DashboardSection = async (props: Props) => {
 
         <Charts />
       </div>
-      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8">
-        <Visualizer />
-
+      <div className="flex flex-col gap-8">
         <div className="mb-8 md:mb-12 flex flex-col gap-4">
           <h3 className="text-2xl md:text-3xl font-bold  font-mono">
             {t("dashboard-section.description-5")}
@@ -47,6 +45,7 @@ export const DashboardSection = async (props: Props) => {
             {t("dashboard-section.description-6")}
           </p>
         </div>
+        <Visualizer />
       </div>
     </section>
   );
@@ -530,7 +529,7 @@ const Visualizer = async () => {
   const t = await getTranslations();
 
   return (
-    <div className="rounded-xl border bg-card text-card-foreground shadow">
+    <div className="rounded-xl border bg-card text-card-foreground shadow  w-full">
       <div className="p-6 h-52 pt-10 flex flex-col gap-8 items-center justify-center">
         <h2 className="font-bold text-green-700 text-3xl sm:text-5xl">
           2,585,000 ₸
