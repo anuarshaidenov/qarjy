@@ -37,7 +37,7 @@ export const HeroSection = async (props: Props) => {
 
   return (
     <section className="py-16 overflow-hidden flex flex-col items-center gap-3 container">
-      <h1 className="flex items-center text-center text-2xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
+      <h1 className="flex items-center text-center text-4xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
         <div className="group relative flex items-center">
           <span className="group-hover:text-primary text-zinc-500">
             {t("title-highlight")}

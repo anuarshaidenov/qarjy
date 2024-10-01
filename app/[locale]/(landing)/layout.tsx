@@ -1,6 +1,5 @@
 import { Footer } from "@/components/footer";
 import { Header, HeaderSkeleton } from "@/components/header";
-import { HomepageSkeleton } from "@/components/homepage-skeleton";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
@@ -17,9 +16,9 @@ const LandingLayout = (props: Props) => {
       <Suspense fallback={<HeaderSkeleton />}>
         <Header />
       </Suspense>
-      <Suspense fallback={<HomepageSkeleton />}>
-        <main className="h-full grow">{props.children}</main>
-      </Suspense>
+
+      <main className="h-full grow">{props.children}</main>
+
       <Footer />
     </>
   );
