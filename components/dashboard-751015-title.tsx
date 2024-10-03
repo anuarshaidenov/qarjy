@@ -21,6 +21,9 @@ export const Dashboard751015CardTitle = (props: Props) => {
       onChange={(e) => {
         setTitle(e.target.value);
       }}
+      onKeyDown={(e) => {
+        e.stopPropagation();
+      }}
     ></Input>
   );
 };

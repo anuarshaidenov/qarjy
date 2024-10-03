@@ -72,6 +72,9 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
                     "home.app.tab-content.503020.add-essentials.placeholder-title"
                   )}
                   className="shrink w-full md:w-[120px]"
+                  onKeyDown={(e) => {
+                    e.stopPropagation();
+                  }}
                   {...field}
                 />
               </FormControl>
@@ -94,6 +97,9 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
                       "home.app.tab-content.503020.add-essentials.placeholder-amount"
                     )}
                     thousandSeparator=","
+                    onKeyDown={(e) => {
+                      e.stopPropagation();
+                    }}
                     {...field}
                   />
                 </FormControl>

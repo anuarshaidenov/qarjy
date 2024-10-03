@@ -21,6 +21,9 @@ export const DashboardExpense = (props: Props) => {
           thousandSeparator=","
           className="md:w-[120px] w-[80px]"
           autoComplete="off"
+          onKeyDown={(e) => {
+            e.stopPropagation();
+          }}
           {...props.inputProps}
         />
         <span className="md:flex hidden md:group-hover:hidden text-lg">

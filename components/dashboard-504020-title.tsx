@@ -19,6 +19,9 @@ export const Dashboard503020Title = (props: Props) => {
       onChange={(e) => {
         setTitle(e.target.value);
       }}
+      onKeyDown={(e) => {
+        e.stopPropagation();
+      }}
     />
   );
 };

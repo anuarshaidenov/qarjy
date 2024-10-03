@@ -50,6 +50,9 @@ export const DashboardMonthlyIncome = (props: Props) => {
       className="md:text-lg font-semibold"
       id="monthly-income"
       thousandSeparator=","
+      onKeyDown={(e) => {
+        e.stopPropagation();
+      }}
     />
   );
 };
