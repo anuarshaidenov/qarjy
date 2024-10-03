@@ -33,7 +33,9 @@ function DashboardPage({}: Props) {
             <Skeleton className="h-[134px]" />
           </>
         ) : (
-          data?.map((budget) => <BudgetCard key={budget.id} budget={budget} />)
+          data?.map((budget, i) => (
+            <BudgetCard key={budget.id} budget={budget} isCurrent={i === 0} />
+          ))
         )}
       </div>
     </section>

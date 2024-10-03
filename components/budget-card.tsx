@@ -2,27 +2,34 @@ import React from "react";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "./ui/card";
 import { Link } from "@/navigation";
 import { Budget } from "@/types/budget";
-import { formatNumberWithCommas } from "@/lib/utils";
+import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useCurrency } from "./currency-provider";
 
 type Props = {
   budget: Budget;
+  isCurrent?: boolean;
 };
 
-export const BudgetCard = ({ budget }: Props) => {
+export const BudgetCard = ({ budget, isCurrent = false }: Props) => {
   const t = useTranslations();
   const { currency } = useCurrency();
 
   return (
     <Link href={"/dashboard/monthly-budget/" + budget.id}>
-      <Card className="hover:border-foreground/50 transition-colors">
+      <Card
+        className={cn(
+          "hover:border-foreground/50 transition-colors",
+          isCurrent && "border-green-700"
+        )}
+      >
         <CardHeader>
           <CardTitle>{budget.title}</CardTitle>
         </CardHeader>
@@ -37,15 +44,13 @@ export const BudgetCard = ({ budget }: Props) => {
           </div>
         </CardContent>
         <CardFooter>
-          {/* {current ? (
+          {isCurrent ? (
             <CardDescription className="text-green-700">
-              Current
+              {t("budget-card.current")}
             </CardDescription>
           ) : (
-            <CardDescription className="text-green-700 hidden md:block opacity-0">
-              Not current
-            </CardDescription>
-          )} */}
+            <CardDescription className="opacity-0">not current</CardDescription>
+          )}
         </CardFooter>
       </Card>
     </Link>

@@ -207,7 +207,8 @@
     "751015": "75-10-15 rule"
   },
   "budget-card": {
-    "monthly-income": "monthly income"
+    "monthly-income": "monthly income",
+    "current": "current"
   },
   "expenses-pie-chart": {
     "no-expenses": "add expenses to see your stats.",

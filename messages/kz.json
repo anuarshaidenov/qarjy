@@ -193,7 +193,9 @@
       "title": "qarjy - қаржыңызды оңай басқарыңыз",
       "description": "бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -202,7 +204,8 @@
     "751015": "75-10-15 erejesı"
   },
   "budget-card": {
-    "monthly-income": "ailyq tabys"
+    "monthly-income": "ailyq tabys",
+    "current": "qazırgı"
   },
   "expenses-pie-chart": {
     "no-expenses": "statistikañyzdy köru üşın şyğyndardy qosyñyz.",
