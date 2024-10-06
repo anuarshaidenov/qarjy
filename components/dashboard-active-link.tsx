@@ -35,9 +35,9 @@ export const DashboardActiveLink = forwardRef<
       variant="ghost"
       size="icon"
       className={cn(
-        "rounded-lg",
+        "rounded-lg hover:bg-transparent md:hover:bg-accent",
         {
-          "bg-accent text-accent-foreground": isActive,
+          "bg-accent text-accent-foreground hover:bg-accent": isActive,
         },
         className
       )}
