@@ -39,6 +39,7 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
   const t = useTranslations();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    form.reset();
     mutate(
       {
         budgetId: params.id as string,
@@ -47,8 +48,11 @@ export const Dashboard503020AddEssentialExpense = (props: Props) => {
         type: "essential",
       },
       {
-        onSuccess: () => {
-          form.reset();
+        onError: (_error, variables) => {
+          form.reset({
+            title: variables.name,
+            amount: variables.amount.toString(),
+          });
         },
       }
     );

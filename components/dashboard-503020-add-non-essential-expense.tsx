@@ -38,6 +38,7 @@ export const Dashboard503020AddNonEssentialExpense = (props: Props) => {
   const { mutate, isPending } = useAddExpense();
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    form.reset();
     mutate(
       {
         budgetId: params.id as string,
@@ -46,8 +47,11 @@ export const Dashboard503020AddNonEssentialExpense = (props: Props) => {
         type: "non-essential",
       },
       {
-        onSuccess: () => {
-          form.reset();
+        onError: (_error, variables) => {
+          form.reset({
+            title: variables.name,
+            amount: variables.amount.toString(),
+          });
         },
       }
     );
