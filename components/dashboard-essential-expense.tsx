@@ -50,6 +50,7 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
+          expenseType: "essential",
         });
       }}
       disabled={isDeletingExpense}

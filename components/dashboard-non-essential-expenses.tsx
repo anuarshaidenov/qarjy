@@ -90,6 +90,7 @@ const DashboardNonEssentialExpense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
+          expenseType: "non-essential",
         })
       }
       inputProps={{

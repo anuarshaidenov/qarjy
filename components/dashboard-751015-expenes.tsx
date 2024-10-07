@@ -91,6 +91,7 @@ const Dashboard751015Expense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
+          expenseType: "overall",
         })
       }
       inputProps={{
