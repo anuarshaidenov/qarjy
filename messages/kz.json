@@ -151,7 +151,10 @@
     },
     "coming-soon": "statistika jaqynda şyğady.",
     "savings-estimate-left": " ",
-    "savings-estimate-right": "aida ünemdeisız"
+    "savings-estimate-right": "aida ünemdeisız",
+    "metadata": {
+      "title": "taqta"
+    }
   },
   "header": {
     "cta": "tırkelıñız"

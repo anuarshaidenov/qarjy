@@ -1,41 +1,48 @@
-import { Home, LogOut } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "@/navigation";
-import { signOut } from "@/actions/sign-out";
-import { LocaleToggle } from "@/components/locale-toggle";
-import { DashboardIcon } from "@radix-ui/react-icons";
+import { Home, LogOut } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from '@/navigation';
+import { signOut } from '@/actions/sign-out';
+import { LocaleToggle } from '@/components/locale-toggle';
+import { DashboardIcon } from '@radix-ui/react-icons';
 import {
   DashboardActiveLink,
   DashboardLink,
-} from "@/components/dashboard-active-link";
+} from '@/components/dashboard-active-link';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Logo } from "@/components/logo";
-import { DashboardLatestBudgetLink } from "@/components/dashboard-latest-budget-link";
-import { unstable_setRequestLocale } from "next-intl/server";
-import { KeyboardShortcutsProvider } from "@/components/keyboard-shortcuts-provider";
-import { CurrencyProvider } from "@/components/currency-provider";
-import { CurrencySelector } from "@/components/currency-selector";
+} from '@/components/ui/tooltip';
+import { ModeToggle } from '@/components/mode-toggle';
+import { Logo } from '@/components/logo';
+import { DashboardLatestBudgetLink } from '@/components/dashboard-latest-budget-link';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { KeyboardShortcutsProvider } from '@/components/keyboard-shortcuts-provider';
+import { CurrencyProvider } from '@/components/currency-provider';
+import { CurrencySelector } from '@/components/currency-selector';
 
 type Props = {
   children: React.ReactNode;
   params: { locale: string };
 };
 
+export const generateMetadata = async ({ params }: Props) => {
+  const t = await getTranslations();
+  return {
+    title: t('dashboard.metadata.title'),
+  };
+};
+
 const DashboardLayout = ({ children, params }: Props) => {
   const links: DashboardLink[] = [
     {
-      href: "/dashboard",
-      name: "Dashboard",
+      href: '/dashboard',
+      name: 'Dashboard',
       icon: <DashboardIcon className="size-6 md:size-5" />,
       tooltip: (
         <span className="flex items-center gap-2">
-          Dashboard{" "}
+          Dashboard{' '}
           <span className="bg-muted rounded size-4 text-muted-foreground flex items-center justify-center">
             d
           </span>
@@ -53,7 +60,7 @@ const DashboardLayout = ({ children, params }: Props) => {
             <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
               <div className="border-b p-2">
                 <Button variant="outline" size="icon" aria-label="Home" asChild>
-                  <Link href={"/"}>
+                  <Link href={'/'}>
                     <Home className="size-5" />
                   </Link>
                 </Button>
