@@ -39,6 +39,8 @@ export const Dashboard751015AddExpense = (props: Props) => {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     form.reset();
+    form.setFocus("title");
+
     mutate(
       {
         budgetId: params.id as string,
