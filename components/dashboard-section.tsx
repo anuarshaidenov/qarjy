@@ -7,41 +7,47 @@ export const DashboardSection = async (props: Props) => {
   const t = await getTranslations();
 
   return (
-    <section className="container py-32 flex flex-col gap-32">
-      <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
-          <h3 className="text-3xl md:text-5xl font-bold  ">
-            {t("dashboard-section.description")}
-          </h3>
-          <p className="text-muted-foreground font-mono">
-            {t("dashboard-section.description-2")}
-          </p>
-        </div>
+    <section className="py-32 flex flex-col">
+      <div className="border-y min-h-screen">
+        <div className="flex flex-col gap-8 py-32 container">
+          <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+            <h3 className="text-3xl md:text-5xl font-bold  ">
+              {t("dashboard-section.description")}
+            </h3>
+            <p className="text-muted-foreground font-mono">
+              {t("dashboard-section.description-2")}
+            </p>
+          </div>
 
-        <DashboardBudgets />
-      </div>
-      <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
-          <h3 className="text-3xl md:text-5xl font-bold  ">
-            {t("dashboard-section.description-3")}
-          </h3>
-          <p className="text-muted-foreground font-mono">
-            {t("dashboard-section.description-4")}
-          </p>
+          <DashboardBudgets />
         </div>
+      </div>
+      <div className="border-b min-h-screen">
+        <div className="container flex flex-col gap-8 py-32">
+          <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+            <h3 className="text-3xl md:text-5xl font-bold  ">
+              {t("dashboard-section.description-3")}
+            </h3>
+            <p className="text-muted-foreground font-mono">
+              {t("dashboard-section.description-4")}
+            </p>
+          </div>
 
-        <Charts />
-      </div>
-      <div className="flex flex-col gap-8">
-        <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
-          <h3 className="text-3xl md:text-5xl font-bold  ">
-            {t("dashboard-section.description-5")}
-          </h3>
-          <p className="text-muted-foreground font-mono">
-            {t("dashboard-section.description-6")}
-          </p>
+          <Charts />
         </div>
-        <Visualizer />
+      </div>
+      <div className="border-b min-h-screen">
+        <div className="container flex flex-col gap-8 py-32">
+          <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
+            <h3 className="text-3xl md:text-5xl font-bold  ">
+              {t("dashboard-section.description-5")}
+            </h3>
+            <p className="text-muted-foreground font-mono">
+              {t("dashboard-section.description-6")}
+            </p>
+          </div>
+          <Visualizer />
+        </div>
       </div>
     </section>
   );

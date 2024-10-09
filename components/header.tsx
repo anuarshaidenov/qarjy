@@ -18,7 +18,7 @@ export const Header = async (props: Props) => {
   const t = await getTranslations();
 
   return (
-    <header className="">
+    <header className="fixed top-0 bg-background left-0 z-50 w-full">
       <div className="container py-4 flex items-center justify-between">
         <Logo />
 
