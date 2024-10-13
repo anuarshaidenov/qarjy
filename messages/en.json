@@ -248,5 +248,7 @@
     "budget": "budget",
     "coming-in": "coming in",
     "from-now": " "
-  }
+  },
+  "draft-budget": "draft a budget?",
+  "draft-budget-link": "use the homepage calculator."
 }

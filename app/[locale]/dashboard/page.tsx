@@ -4,6 +4,7 @@ import { BudgetCard } from "@/components/budget-card";
 import { NextBudgetCountdownCard } from "@/components/next-budget-countdown-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 import React from "react";
 
@@ -38,6 +39,13 @@ function DashboardPage({}: Props) {
           ))
         )}
       </div>
+
+      <p className="text-muted-foreground font-mono mb-8">
+        {t("draft-budget")}{" "}
+        <Link href="/" className="underline">
+          {t("draft-budget-link")}
+        </Link>
+      </p>
     </section>
   );
 }

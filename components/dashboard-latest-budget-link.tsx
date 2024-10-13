@@ -11,12 +11,12 @@ type Props = {};
 export const DashboardLatestBudgetLink = (props: Props) => {
   const { data: budgetId, isLoading } = useGetLatestBudgetId();
   const link = {
-    name: "Current Budget",
+    name: "current budget",
     href: "/dashboard/monthly-budget/" + budgetId,
     icon: <Calendar className="size-6 md:size-5" />,
     tooltip: (
       <span className="flex items-center gap-2">
-        Current Budget{" "}
+        current budget{" "}
         <span className="bg-muted rounded size-4 text-muted-foreground flex items-center justify-center">
           c
         </span>
