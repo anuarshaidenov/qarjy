@@ -120,11 +120,11 @@
       "button": "go home"
     },
     "all-budgets": {
-      "title": "all budgets",
+      "title": "all budgets.",
       "description": "new budgets will be added at the beginning of each month. all you need to do is keep track and update your budgets."
     },
     "monthly-budget": {
-      "title": "monthly budget",
+      "title": "monthly budget.",
       "subtitle": "this is your current monthly budget. choose the method that best suits you. "
     },
     "app": {
