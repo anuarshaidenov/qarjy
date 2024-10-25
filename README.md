@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Qarjy - Simple Budget Planning App
 
-## Getting Started
+Qarjy is an intuitive web application designed to help you easily manage your finances. Whether you’re saving for the future or managing monthly expenses, Qarjy simplifies budgeting by using proven methods like 50/30/20 and 75/10/15. With a beautiful interface and straightforward tools, you can create and track your budget effortlessly.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+•	Budget Planning: Create monthly budgets and manage your income, savings, and expenses.
+  
+•	50/30/20 Rule: Automatically calculate how much you should allocate for needs, wants, and savings.
+ 
+•	75/10/15 Rule: Another budgeting method that emphasizes savings and a cushion fund for unexpected expenses.
+
+•	Dashboard Overview: Get a clear snapshot of your financial health with easy-to-read stats and charts.
+
+•	Localization: Available in both English and Kazakh.
+
+## Demo
+
+You can view the live app at [qarjy.site](https://www.qarjy.site/).
+
+## Tech Stack
+
+•	Frontend: Next.js, Tailwind CSS
+	
+•	Backend: Supabase, PostgresQL
+
+## Installation
+
+### 1. Clone the repository
+ 
+```
+git clone https://github.com/anuarshaidenov/qarjy.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 2. Navigate into the project directory
 
-## Learn More
+```
+cd qarjy
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npm install
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Set up environment variables. Create a .env.local file in the root and add the necessary environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+NODE_ENV=development
+```
+
+
+### 5.	Run the development server
+
+```
+npm run dev
+```
+
+
+### 6.	Open http://localhost:3000 to view it in your browser.
+
+## How It Works
+
+1.	Enter your monthly income: Add your primary income sources like your salary or any side income.
+2.	Set your expenses: Track essential expenses like rent, groceries, and subscriptions.
+3.	Allocate to savings: Dedicate a portion of your income to savings and investments.
+4.	Track your progress: Use the dashboard to monitor your financial health and adjust accordingly.
+
+## Contribution
+
+We welcome contributions! If you’d like to contribute, please fork the repository and submit a pull request with your proposed changes. Be sure to run tests and ensure the app works as expected before submitting.
+
+## License
+
+This project is licensed under the MIT License.
