@@ -25,6 +25,16 @@ export const Footer = async (props: Props) => {
                 <Link href={"#how-it-works"}>{t("footer.how-it-works")}</Link>
               </Button>
             </li>
+            <li>
+              <Button asChild variant={"link"} className="p-0 text-foreground">
+                <Link
+                  target="_blank"
+                  href={"https://github.com/anuarshaidenov/qarjy"}
+                >
+                  {t("footer.contribute")}
+                </Link>
+              </Button>
+            </li>
           </ul>
           <ul className="flex flex-col gap-4">
             <li>
