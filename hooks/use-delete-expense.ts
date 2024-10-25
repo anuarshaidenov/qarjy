@@ -32,8 +32,6 @@ export const useDeleteExpense = () => {
         expense.expenseType,
       ]);
 
-      console.log("previousExpenses", previousExpenses);
-
       queryClient.setQueryData(
         [QUERY_KEYS.EXPENSES, expense.budgetId, expense.expenseType],
         (old: Expense[]) =>

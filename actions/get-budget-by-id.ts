@@ -2,7 +2,6 @@ import { createClient } from "@/lib/supabase/server";
 import { Budget } from "@/types/budget";
 
 export async function getBudgetById(id: string) {
-  console.log("id", id);
   const supabase = createClient();
 
   // Get the authenticated user
