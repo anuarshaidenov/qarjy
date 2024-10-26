@@ -49,6 +49,20 @@ export const Footer = async (props: Props) => {
                 </Link>
               </Button>
             </li>
+            <li>
+              <Button asChild variant={"link"} className="p-0 text-foreground">
+                <Link href={"/privacy-policy"}>
+                  {t("footer.privacy-policy")}
+                </Link>
+              </Button>
+            </li>
+            <li>
+              <Button asChild variant={"link"} className="p-0 text-foreground">
+                <Link href={"/terms-of-service"}>
+                  {t("footer.terms-of-service")}
+                </Link>
+              </Button>
+            </li>
           </ul>
         </nav>
       </div>
