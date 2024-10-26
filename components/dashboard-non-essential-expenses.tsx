@@ -74,6 +74,7 @@ const DashboardNonEssentialExpense = ({
       name: expense.name,
       type: "non-essential",
       amount: amount,
+      budgetId: budgetId,
     });
   });
 

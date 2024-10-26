@@ -74,6 +74,7 @@ const Dashboard751015Expense = ({
       name: expense.name,
       type: "overall",
       amount: amount,
+      budgetId: budgetId,
     });
   });
 

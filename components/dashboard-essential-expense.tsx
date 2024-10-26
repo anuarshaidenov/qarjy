@@ -26,6 +26,7 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
       name: expense.name,
       type: "essential",
       amount: amount,
+      budgetId: budgetId,
     });
   });
 
