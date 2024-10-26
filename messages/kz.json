@@ -1,10 +1,10 @@
 {
   "home": {
     "hero": {
-      "title-highlight": "büdjettı",
+      "title-highlight": "Büdjettı",
       "title": "josparlau oñai",
-      "subtitle": "tabysyñyzdy engızıp, büdjettıñızdı körıñız jäne qarjyñyzdy basqarudy jeñıldetıñız.",
-      "button": "qalai jūmys ısteitının körıñız"
+      "subtitle": "Tabysyñyzdy engızıp, büdjettıñızdı körıñız jäne qarjyñyzdy basqarudy jeñıldetıñız.",
+      "button": "Qalai jūmys ısteitının körıñız"
     },
     "app": {
       "751015": {
@@ -18,51 +18,51 @@
       },
       "tab-content": {
         "503020": {
-          "monthly-income": "ailyq tabysyñyzdy engızıñız",
-          "essential-expenses": "negızgı şyğyndar",
-          "remainder": "qalğan qarajat",
-          "wants": "qalaular",
+          "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+          "essential-expenses": "Negızgı şyğyndar",
+          "remainder": "Qalğan qarajat",
+          "wants": "Qalaular",
           "add-essentials": {
-            "placeholder-title": "atauy",
-            "placeholder-amount": "somasy"
+            "placeholder-title": "Atauy",
+            "placeholder-amount": "Somasy"
           },
           "savings": {
-            "title": "jinaqtar jäne i̇nvestisialar",
-            "sub-title": "būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
+            "title": "Jinaqtar jäne investisialar",
+            "sub-title": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
           },
           "app-data": {
-            "title": "qyrküiek büdjetı",
-            "item-1": "päter",
-            "item-2": "azyq-tülık",
-            "item-3": "netflix"
+            "title": "Qyrküiek büdjetı",
+            "item-1": "Päter",
+            "item-2": "Azyq-tülık",
+            "item-3": "Netflix"
           }
         },
         "751015": {
-          "monthly-income": "ailyq tabysyñyzdy engızıñız",
-          "expenses": "jalpy şyğyndar",
-          "remainder": "qalğan qarajat",
+          "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+          "expenses": "Jalpy şyğyndar",
+          "remainder": "Qalğan qarajat",
           "cushion-fund": {
-            "title": "rezerv qory",
-            "sub-title": "kütpegen şyğyndarğa arnalğan aqşany saqtañyz."
+            "title": "Rezerv qory",
+            "sub-title": "Kütpegen şyğyndarğa arnalğan aqşany saqtañyz."
           },
           "add-expenses": {
-            "placeholder-title": "atauy",
-            "placeholder-amount": "somasy"
+            "placeholder-title": "Atauy",
+            "placeholder-amount": "Somasy"
           },
           "savings": {
-            "title": "jinaqtar jäne i̇nvestisialar",
-            "sub-title": "būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
+            "title": "Jinaqtar jäne investisialar",
+            "sub-title": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz."
           },
           "app-data": {
-            "title": "qyrküiek büdjetı",
-            "item-1": "päter",
-            "item-2": "azyq-tülık"
+            "title": "Qyrküiek büdjetı",
+            "item-1": "Päter",
+            "item-2": "Azyq-tülık"
           }
         }
       }
     },
     "how-it-works": {
-      "title": "mūny är aidyñ basynda jasañyz.",
+      "title": "Mūny är aidyñ basynda jasañyz.",
       "tab-list": {
         "503020": "50-30-20 erejesı",
         "751015": "75-10-15 erejesı"
@@ -70,94 +70,94 @@
       "steps": {
         "503020": {
           "step-1": {
-            "title": "ailyq tabysyñyzdy engızıñız",
-            "description": "ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
+            "title": "Ailyq tabysyñyzdy engızıñız",
+            "description": "Ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
           },
           "step-2": {
-            "title": "negızgı şyğyndardy engızıñız",
-            "description": "üige tölem, komunaldyq qyzmetter, azyq-tülık siaqty negızgı şyğyndaryñyzdy engızıñız."
+            "title": "Negızgı şyğyndardy engızıñız",
+            "description": "Üige tölem, komunaldyq qyzmetter, azyq-tülık siaqty negızgı şyğyndaryñyzdy engızıñız."
           },
           "step-3": {
-            "title": "qalaulardy engızıñız",
-            "description": "köñıl köteru, kiım-keşek, jazylymdar siaqty qajet emes şyğyndardy engızıñız."
+            "title": "Qalaulardy engızıñız",
+            "description": "Köñıl köteru, kiım-keşek, jazylymdar siaqty qajet emes şyğyndardy engızıñız."
           },
           "step-4": {
-            "title": "jinaqtarğa aqşa bölıñız",
-            "description": "tabysyñyzdyñ bır bölıgın jinaqqa nemese investisiağa bölıñız."
+            "title": "Jinaqtarğa aqşa bölıñız",
+            "description": "Tabysyñyzdyñ bır bölıgın jinaqqa nemese investisiağa bölıñız."
           },
           "step-5": {
-            "title": "büdjettı qūra bastañyz jäne qadağalañyz",
-            "description": "aqşañyzdy basqaruğa kömektesemız jäne jeke baqylau taqtasynda progrestı baqylauğa mümkındık beremız.",
-            "button": "bastau"
+            "title": "Büdjettı qūra bastañyz jäne qadağalañyz",
+            "description": "Aqşañyzdy basqaruğa kömektesemız jäne jeke baqylau taqtasynda progrestı baqylauğa mümkındık beremız.",
+            "button": "Bastau"
           }
         },
         "751015": {
           "step-1": {
-            "title": "ailyq tabysyñyzdy engızıñız",
-            "description": "ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
+            "title": "Ailyq tabysyñyzdy engızıñız",
+            "description": "Ailyq jalaqyñyzdy nemese basqa tabys közderın engızıñız."
           },
           "step-2": {
-            "title": "şyğyndaryñyzdy engızıñız",
-            "description": "barlyq şyğyndaryñyzdy, negızgı nemese negızgı emes bolsyn, engızıñız."
+            "title": "Şyğyndaryñyzdy engızıñız",
+            "description": "Barlyq şyğyndaryñyzdy, negızgı nemese negızgı emes bolsyn, engızıñız."
           },
           "step-3": {
-            "title": "qalaulardy engızıñız",
-            "description": "köñıl köteru, kiım-keşek nemese jazylymdar siaqty şyğyndardy engızıñız."
+            "title": "Qalaulardy engızıñız",
+            "description": "Köñıl köteru, kiım-keşek nemese jazylymdar siaqty şyğyndardy engızıñız."
           },
           "step-4": {
-            "title": "büdjettı qūra bastañyz jäne qadağalañyz",
-            "description": "bızdıñ baqylau taqtasyn paidalanyp, şyğyndaryñyz ben jinaqtaryñyzdy baqylañyz.",
-            "button": "bastau"
+            "title": "Büdjettı qūra bastañyz jäne qadağalañyz",
+            "description": "Bızdıñ baqylau taqtasyn paidalanyp, şyğyndaryñyz ben jinaqtaryñyzdy baqylañyz.",
+            "button": "Bastau"
           }
         }
       }
     }
   },
   "signup": {
-    "title": "kıru",
-    "button": "google arqyly kırıñız",
-    "back-button": "üige qait"
+    "title": "Kıru",
+    "button": "Google arqyly kırıñız",
+    "back-button": "Üige qait"
   },
   "dashboard": {
-    "button": "taqta",
+    "button": "Taqta",
     "home": {
-      "title": "bızge qosylğanyñyz üşın rahmet!❤️ baqylau taqtasy jaqynda keledı",
-      "button": "üige qait"
+      "title": "Bızge qosylğanyñyz üşın rahmet!❤️ Baqylau taqtasy jaqynda keledı",
+      "button": "Üige qait"
     },
     "all-budgets": {
-      "title": "barlyq büdjetter.",
-      "description": "jaña büdjetter är aidyñ basynda qosylady. sızge tek büdjetterıñızdı qadağalap, jañartu qajet."
+      "title": "Barlyq büdjetter.",
+      "description": "Jaña büdjetter är aidyñ basynda qosylady. Sızge tek büdjetterıñızdı qadağalap, jañartu qajet."
     },
     "monthly-budget": {
-      "title": "ailyq büdjet.",
-      "subtitle": "būl sızdıñ qazırgı ailyq büdjetıñız. sızge eñ qolaily ädıstı tañdañyz."
+      "title": "Ailyq büdjet.",
+      "subtitle": "Būl sızdıñ qazırgı ailyq büdjetıñız. Sızge eñ qolaily ädıstı tañdañyz."
     },
     "app": {
-      "monthly-income": "ailyq tabysyñyzdy engızıñız",
-      "overall-expenses": "jalpy şyğyndar",
-      "remainder": "qalğan qarajat",
-      "cushion-fund": "rezerv qory",
-      "cushion-fund-description": "kütpegen şyğyndarğa arnalğan aqşany saqtañyz.",
-      "15-savings": "jinaqtar jäne i̇nvestisialar",
-      "15-savings-description": "būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
-      "essential-expenses": "negızgı şyğyndar",
-      "non-essential-expenses": "qalaular",
-      "20-savings": "jinaqtar jäne i̇nvestisialar",
-      "20-savings-description": "būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
+      "monthly-income": "Ailyq tabysyñyzdy engızıñız",
+      "overall-expenses": "Jalpy şyğyndar",
+      "remainder": "Qalğan qarajat",
+      "cushion-fund": "Rezerv qory",
+      "cushion-fund-description": "Kütpegen şyğyndarğa arnalğan aqşany saqtañyz.",
+      "15-savings": "Jinaqtar jäne investisialar",
+      "15-savings-description": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
+      "essential-expenses": "Negızgı şyğyndar",
+      "non-essential-expenses": "Qalaular",
+      "20-savings": "Jinaqtar jäne investisialar",
+      "20-savings-description": "Būl aqşany jinaqqa nemese investisiağa qaldyryñyz.",
       "stats": {
-        "essential-expenses-title": "mañyzdy şyğyndar",
-        "non-essential-expenses-title": "mañyzdy emes şyğyndar"
+        "essential-expenses-title": "Mañyzdy şyğyndar",
+        "non-essential-expenses-title": "Mañyzdy emes şyğyndar"
       }
     },
-    "coming-soon": "statistika jaqynda şyğady.",
+    "coming-soon": "Statistika jaqynda şyğady.",
     "savings-estimate-left": " ",
-    "savings-estimate-right": "aida ünemdeisız",
+    "savings-estimate-right": "Aida ünemdeisız",
     "metadata": {
-      "title": "taqta"
+      "title": "Taqta"
     }
   },
   "header": {
-    "cta": "tırkelıñız"
+    "cta": "Tırkelıñız"
   },
   "metadata": {
     "alternates": {
@@ -167,25 +167,25 @@
         "en": "/en"
       }
     },
-    "title": "qarjy - jai büdjettı josparlau qosymşasy",
-    "description": "qarjyñyzdy bızdıñ intuitivtı büdjettı josparlau qūraly arqyly oñai basqaryñyz. şyğyndaryñyzdy, jinaqtaryñyzdy jäne investisialaryñyzdy ikemdı ädıster arqyly qadağalañyz.",
+    "title": "Qarjy - Jai büdjettı josparlau qosymşasy",
+    "description": "Qarjyñyzdy bızdıñ intuitivtı büdjettı josparlau qūraly arqyly oñai basqaryñyz. Şyğyndaryñyzdy, jinaqtaryñyzdy jäne investisialaryñyzdy ikemdı ädıster arqyly qadağalañyz.",
     "authors": [
       {
-        "name": "anuar shaidenov",
+        "name": "Anuar Shaidenov",
         "url": "https://anuarshaidenov.vercel.app/"
       }
     ],
     "openGraph": {
-      "title": "qarjy - qarjyñyzdy oñai basqaryñyz",
-      "description": "qarjylyq bolaşağyñyzdy bızdıñ paidalanuğa yñğaily büdjettı josparlau qosymşamyzben baqylauğa alyñyz. tabys, şyğyndar jäne jinaqtardy bır jerden baqylañyz.",
+      "title": "Qarjy - Qarjyñyzdy oñai basqaryñyz",
+      "description": "Qarjylyq bolaşağyñyzdy bızdıñ paidalanuğa yñğaily büdjettı josparlau qosymşamyzben baqylauğa alyñyz. Tabys, şyğyndar jäne jinaqtardy bır jerden baqylañyz.",
       "url": "https://qarjy.site/kz",
-      "siteName": "qarjy - jai büdjettı josparlau qosymşasy",
+      "siteName": "Qarjy - Jai büdjettı josparlau qosymşasy",
       "images": [
         {
           "url": "og-image.png",
           "width": 1200,
           "height": 630,
-          "alt": "qarjy қосымшасының скриншоты"
+          "alt": "Qarjy қосымшасының скриншоты"
         }
       ],
       "locale": "kk_kz",
@@ -193,12 +193,10 @@
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "qarjy - қаржыңызды оңай басқарыңыз",
-      "description": "бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
+      "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
+      "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
@@ -207,46 +205,46 @@
     "751015": "75-10-15 erejesı"
   },
   "budget-card": {
-    "monthly-income": "ailyq tabys",
-    "current": "qazırgı"
+    "monthly-income": "Ailyq tabys",
+    "current": "Qazırgı"
   },
   "expenses-pie-chart": {
-    "no-expenses": "statistikañyzdy köru üşın şyğyndardy qosyñyz.",
-    "total": "jalpy şyğyndar.",
-    "subtitle": "şyğyndaryñyzğa şolu.",
-    "title": "şyğyndar"
+    "no-expenses": "Statistikañyzdy köru üşın şyğyndardy qosyñyz.",
+    "total": "Jalpy şyğyndar.",
+    "subtitle": "Şyğyndaryñyzğa şolu.",
+    "title": "Şyğyndar"
   },
   "footer": {
-    "about-us": "turaly",
-    "how-it-works": "qalay jumıs isteydi",
-    "get-help": "kömek alıñız",
-    "contact-us": "bızben habarlasyñy",
-    "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy",
-    "contribute": "contribute"
+    "about-us": "Turaly",
+    "how-it-works": "Qalay jumıs isteydi",
+    "get-help": "Kömek alıñız",
+    "contact-us": "Bızben habarlasyñy",
+    "copyright": "Crafted with ❤️ by the community - copyright © 2024 Qarjy",
+    "contribute": "Contribute"
   },
   "dashboard-section": {
-    "title": "baqylau taqtasynan bastañyz.",
+    "title": "Baqylau taqtasynan bastañyz.",
     "subtitle": " ",
-    "description": "intuitivtı ai saiynğy şolu arqyly qarjyñyzdy oñai baqylañyz.",
-    "description-2": "ai saiyn büdjetıñızdı avtomatty türde qadağalap, basqaryñyz. ai saiynğy kırısterıñızdı, şyğyndaryñyzdy jäne jinaqtaryñyzdy bır jerden körıñız.",
-    "description-3": "anyq jäne qysqa körnekı körınıster negızdelgen şeşımder qabyldauğa kömektesedı.",
-    "description-4": "oñai oqylatyn diagramalarmen mañyzdy jäne mañyzdy emes şyğyndaryñyzdy elestetıñız. aqşañyzdyñ qaida ketıp jatqany turaly tüsınık alyñyz jäne qysqartylatyn aimaqtardy anyqtañyz.",
-    "description-5": "jeke maqsatty baqylau arqyly qarjylyq armandaryñyzğa tezırek qol jetkızıñız.",
+    "description": "Intuitivtı ai saiynğy şolu arqyly qarjyñyzdy oñai baqylañyz.",
+    "description-2": "Ai saiyn büdjetıñızdı avtomatty türde qadağalap, basqaryñyz. Ai saiynğy kırısterıñızdı, şyğyndaryñyzdy jäne jinaqtaryñyzdy bır jerden körıñız.",
+    "description-3": "Anyq jäne qysqa körnekı körınıster negızdelgen şeşımder qabyldauğa kömektesedı.",
+    "description-4": "Oñai oqylatyn diagramalarmen mañyzdy jäne mañyzdy emes şyğyndaryñyzdy elestetıñız. Aqşañyzdyñ qaida ketıp jatqany turaly tüsınık alyñyz jäne qysqartylatyn aimaqtardy anyqtañyz.",
+    "description-5": "Jeke maqsatty baqylau arqyly qarjylyq armandaryñyzğa tezırek qol jetkızıñız.",
     "description-6": "6 ai ışınde belgılı bır somany ünemdeu siaqty qarjylyq maqsattar qoiyñyz jäne ülgerımıñızdı qadağalañyz. Motivasiada bolyñyz jäne maqsattaryñyzğa qanşalyqty jaqyn ekenıñızdı körıñız.",
-    "subtitle-highlight": " tegın"
+    "subtitle-highlight": "Tegın"
   },
   "cta-section": {
-    "title": "endı baqylau taqtasynan bastaiyq.",
-    "description": "bügın qarjyñyzdy baqylauğa alyñyz! qarapaiym qūralymyzben büdjetıñızdı oñai jäne tiımdı josparlaudy bastañyz.",
-    "button": "bastau"
+    "title": "Endı baqylau taqtasynan bastaiyq.",
+    "description": "Bügın qarjyñyzdy baqylauğa alyñyz! Qarapaiym qūralymyzben büdjetıñızdı oñai jäne tiımdı josparlaudy bastañyz.",
+    "button": "Bastau"
   },
   "next-budget-card": {
-    "day": "künnen",
-    "days": "künnen",
-    "budget": "büdjet",
-    "from-now": "keiın daiyn bolady",
+    "day": "Künnen",
+    "days": "Künnen",
+    "budget": "Büdjet",
+    "from-now": "Keiın daiyn bolady",
     "coming-in": " "
   },
-  "draft-budget": "jobany paidalanğyñyz kele me?",
-  "draft-budget-link": "basty bet kälkulätoryn paidalanyñyz."
+  "draft-budget": "Jobany paidalanğyñyz kele me?",
+  "draft-budget-link": "Basty bet kälkulätoryn paidalanyñyz."
 }

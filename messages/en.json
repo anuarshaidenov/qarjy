@@ -1,10 +1,10 @@
 {
   "home": {
     "hero": {
-      "title-highlight": "budgeting",
+      "title-highlight": "Budgeting",
       "title": "made simple",
-      "subtitle": "enter your income, see your budget, and take control of your finances with ease.",
-      "button": "learn how it works"
+      "subtitle": "Enter your income, see your budget, and take control of your finances with ease.",
+      "button": "Learn how it works"
     },
     "app": {
       "tab-list": {
@@ -13,51 +13,51 @@
       },
       "tab-content": {
         "503020": {
-          "monthly-income": "enter your monthly income",
-          "essential-expenses": "essential expenses",
-          "remainder": "remaining balance",
-          "wants": "wants",
+          "monthly-income": "Enter your monthly income",
+          "essential-expenses": "Essential expenses",
+          "remainder": "Remaining balance",
+          "wants": "Wants",
           "add-essentials": {
-            "placeholder-title": "title",
-            "placeholder-amount": "amount"
+            "placeholder-title": "Title",
+            "placeholder-amount": "Amount"
           },
           "savings": {
-            "title": "savings & investments",
-            "sub-title": "set this money aside for savings or investments."
+            "title": "Savings & investments",
+            "sub-title": "Set this money aside for savings or investments."
           },
           "app-data": {
-            "title": "september budget",
-            "item-1": "rent",
-            "item-2": "groceries",
-            "item-3": "netflix"
+            "title": "September budget",
+            "item-1": "Rent",
+            "item-2": "Groceries",
+            "item-3": "Netflix"
           }
         },
         "751015": {
-          "monthly-income": "enter your monthly income",
-          "expenses": "total expenses",
-          "remainder": "remaining balance",
+          "monthly-income": "Enter your monthly income",
+          "expenses": "Total expenses",
+          "remainder": "Remaining balance",
           "cushion-fund": {
-            "title": "cushion fund",
-            "sub-title": "save this for unexpected expenses."
+            "title": "Cushion fund",
+            "sub-title": "Save this for unexpected expenses."
           },
           "add-expenses": {
-            "placeholder-title": "title",
-            "placeholder-amount": "amount"
+            "placeholder-title": "Title",
+            "placeholder-amount": "Amount"
           },
           "savings": {
-            "title": "savings & investments",
-            "sub-title": "set this money aside for savings or investments."
+            "title": "Savings & investments",
+            "sub-title": "Set this money aside for savings or investments."
           },
           "app-data": {
-            "title": "september budget",
-            "item-1": "rent",
-            "item-2": "groceries"
+            "title": "September budget",
+            "item-1": "Rent",
+            "item-2": "Groceries"
           }
         }
       }
     },
     "how-it-works": {
-      "title": "do this at the start of every month.",
+      "title": "Do this at the start of every month.",
       "tab-list": {
         "503020": "50-30-20 rule",
         "751015": "75-10-15 rule"
@@ -65,94 +65,94 @@
       "steps": {
         "503020": {
           "step-1": {
-            "title": "enter your monthly income",
-            "description": "add your total income for the month, including salary or any other sources."
+            "title": "Enter your monthly income",
+            "description": "Add your total income for the month, including salary or any other sources."
           },
           "step-2": {
-            "title": "add your essential expenses",
-            "description": "record your necessary expenses like rent, bills, and groceries."
+            "title": "Add your essential expenses",
+            "description": "Record your necessary expenses like rent, bills, and groceries."
           },
           "step-3": {
-            "title": "add your wants",
-            "description": "enter non-essential expenses such as entertainment, shopping, and subscriptions."
+            "title": "Add your wants",
+            "description": "Enter non-essential expenses such as entertainment, shopping, and subscriptions."
           },
           "step-4": {
-            "title": "set the savings aside",
-            "description": "set aside some of your income for savings or investments."
+            "title": "Set the savings aside",
+            "description": "Set aside some of your income for savings or investments."
           },
           "step-5": {
-            "title": "start budgeting and tracking",
-            "description": "let us help you manage your money and track your progress with a personalized dashboard.",
-            "button": "get started"
+            "title": "Start budgeting and tracking",
+            "description": "Let us help you manage your money and track your progress with a personalized dashboard.",
+            "button": "Get started"
           }
         },
         "751015": {
           "step-1": {
-            "title": "enter your monthly income",
-            "description": "add your total income for the month, including salary or any other sources."
+            "title": "Enter your monthly income",
+            "description": "Add your total income for the month, including salary or any other sources."
           },
           "step-2": {
-            "title": "add your expenses",
-            "description": "record all your expenses, essential or non-essential, in the 'expenses' section."
+            "title": "Add your expenses",
+            "description": "Record all your expenses, essential or non-essential, in the 'expenses' section."
           },
           "step-3": {
-            "title": "add non-essential expenses",
-            "description": "list any additional discretionary spending like outings, clothes, or subscriptions."
+            "title": "Add non-essential expenses",
+            "description": "List any additional discretionary spending like outings, clothes, or subscriptions."
           },
           "step-4": {
-            "title": "start budgeting and tracking",
-            "description": "monitor your spending and savings with our easy-to-use dashboard.",
-            "button": "get started"
+            "title": "Start budgeting and tracking",
+            "description": "Monitor your spending and savings with our easy-to-use dashboard.",
+            "button": "Get started"
           }
         }
       }
     }
   },
   "signup": {
-    "title": "sign in",
-    "button": "sign in with google",
-    "back-button": "go home"
+    "title": "Sign in",
+    "button": "Sign in with Google",
+    "back-button": "Go home"
   },
   "dashboard": {
-    "button": "dashboard",
+    "button": "Dashboard",
     "home": {
-      "title": "thanks for joining us!❤️ the dashboard is coming soon",
-      "button": "go home"
+      "title": "Thanks for joining us!❤️ The dashboard is coming soon",
+      "button": "Go home"
     },
     "all-budgets": {
-      "title": "all budgets.",
-      "description": "new budgets will be added at the beginning of each month. all you need to do is keep track and update your budgets."
+      "title": "All budgets.",
+      "description": "New budgets will be added at the beginning of each month. All you need to do is keep track and update your budgets."
     },
     "monthly-budget": {
-      "title": "monthly budget.",
-      "subtitle": "this is your current monthly budget. choose the method that best suits you. "
+      "title": "Monthly budget.",
+      "subtitle": "This is your current monthly budget. Choose the method that best suits you."
     },
     "app": {
-      "monthly-income": "monthly income",
-      "overall-expenses": "expenses",
-      "remainder": "remainder",
-      "cushion-fund": "cushion fund",
-      "cushion-fund-description": "save this for unexpected expenses.",
-      "15-savings": "savings",
-      "15-savings-description": "set this money aside for savings or investments.",
-      "essential-expenses": "essential expenses",
-      "non-essential-expenses": "non essential expenses (wants)",
-      "20-savings": "savings & investments",
-      "20-savings-description": "set this money aside for savings or investments.",
+      "monthly-income": "Monthly income",
+      "overall-expenses": "Expenses",
+      "remainder": "Remainder",
+      "cushion-fund": "Cushion fund",
+      "cushion-fund-description": "Save this for unexpected expenses.",
+      "15-savings": "Savings",
+      "15-savings-description": "Set this money aside for savings or investments.",
+      "essential-expenses": "Essential expenses",
+      "non-essential-expenses": "Non essential expenses (wants)",
+      "20-savings": "Savings & investments",
+      "20-savings-description": "Set this money aside for savings or investments.",
       "stats": {
-        "essential-expenses-title": "essential expenses",
-        "non-essential-expenses-title": "non-essential expenses"
+        "essential-expenses-title": "Essential expenses",
+        "non-essential-expenses-title": "Non-essential expenses"
       }
     },
-    "coming-soon": "stats are coming soon.",
-    "savings-estimate-left": "is how much you'd save in",
+    "coming-soon": "Stats are coming soon.",
+    "savings-estimate-left": "Is how much you'd save in",
     "savings-estimate-right": "months",
     "metadata": {
-      "title": "dashboard"
+      "title": "Dashboard"
     }
   },
   "header": {
-    "cta": "get started"
+    "cta": "Get started"
   },
   "metadata": {
     "alternates": {
@@ -162,94 +162,92 @@
         "en": "/en"
       }
     },
-    "title": "qarjy - simple, free budgeting app",
-    "description": "easily manage your finances with our intuitive budgeting tool. track your expenses, savings, and investments using flexible methods.",
+    "title": "Qarjy - simple, free budgeting app",
+    "description": "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",
     "keywords": [
-      "budgeting app",
-      "personal finance",
-      "money management",
-      "expense tracking",
-      "savings",
-      "investments"
+      "Budgeting app",
+      "Personal finance",
+      "Money management",
+      "Expense tracking",
+      "Savings",
+      "Investments"
     ],
     "authors": [
       {
-        "name": "anuar shaidenov",
+        "name": "Anuar Shaidenov",
         "url": "https://anuarshaidenov.vercel.app/"
       }
     ],
     "openGraph": {
-      "title": "qarjy - manage your finances easily",
-      "description": "take control of your financial future with our easy-to-use, absolutely free budgeting app. track your income, expenses, and savings all in one place.",
+      "title": "Qarjy - manage your finances easily",
+      "description": "Take control of your financial future with our easy-to-use, absolutely free budgeting app. Track your income, expenses, and savings all in one place.",
       "url": "https://qarjy.site/en",
-      "siteName": "qarjy - simple, free budgeting app",
+      "siteName": "Qarjy - simple, free budgeting app",
       "images": [
         {
           "url": "og-image.png",
           "width": 1200,
           "height": 630,
-          "alt": "qarjy app screenshot"
+          "alt": "Qarjy app screenshot"
         }
       ],
       "locale": "en_us",
-      "type": "website"
+      "type": "Website"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "qarjy - manage your finances easily, for free",
-      "description": "a simple way to plan your budget and manage your money effectively and for free. try our budgeting app today!",
+      "title": "Qarjy - manage your finances easily, for free",
+      "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
-    "robots": "index, follow"
+    "robots": "Index, follow"
   },
   "tab-list": {
     "503020": "50-30-20 rule",
     "751015": "75-10-15 rule"
   },
   "budget-card": {
-    "monthly-income": "monthly income",
-    "current": "current"
+    "monthly-income": "Monthly income",
+    "current": "Current"
   },
   "expenses-pie-chart": {
-    "no-expenses": "add expenses to see your stats.",
-    "total": "total expenses.",
-    "subtitle": "overview of your expenses.",
-    "title": "expenses"
+    "no-expenses": "Add expenses to see your stats.",
+    "total": "Total expenses.",
+    "subtitle": "Overview of your expenses.",
+    "title": "Expenses"
   },
   "footer": {
-    "about-us": "about",
-    "how-it-works": "how it works",
-    "get-help": "get help",
-    "contact-us": "contact us",
-    "copyright": "crafted with ❤️ by the community - copyright © 2024 qarjy",
-    "contribute": "contribute"
+    "about-us": "About",
+    "how-it-works": "How it works",
+    "get-help": "Get help",
+    "contact-us": "Contact us",
+    "copyright": "Crafted with ❤️ by the community - Copyright © 2024 Qarjy",
+    "contribute": "Contribute"
   },
   "dashboard-section": {
-    "title": "get started with your dashboard.",
-    "subtitle": "it's ",
-    "description": "effortlessly stay on top of your finances with an intuitive monthly overview.",
-    "description-2": "automatically track and manage your budget each month. View your monthly income, expenses, and savings all in one place.",
-    "description-3": "clear and concise visual representations help you make informed decisions.",
-    "description-4": "visualize your essential and non-essential expenses with easy-to-read charts. Gain insights into where your money is going and identify areas to cut back.",
-    "description-5": "achieve your financial dreams faster with personalized goal tracking.",
-    "description-6": "set financial goals, like saving a specific amount in 6 months, and track your progress. Stay motivated and see how close you are to reaching your targets.",
-    "subtitle-highlight": "free"
+    "title": "Get started with your dashboard.",
+    "subtitle": "It's ",
+    "description": "Effortlessly stay on top of your finances with an intuitive monthly overview.",
+    "description-2": "Automatically track and manage your budget each month. View your monthly income, expenses, and savings all in one place.",
+    "description-3": "Clear and concise visual representations help you make informed decisions.",
+    "description-4": "Visualize your essential and non-essential expenses with easy-to-read charts. Gain insights into where your money is going and identify areas to cut back.",
+    "description-5": "Achieve your financial dreams faster with personalized goal tracking.",
+    "description-6": "Set financial goals, like saving a specific amount in 6 months, and track your progress. Stay motivated and see how close you are to reaching your targets.",
+    "subtitle-highlight": "Free"
   },
   "cta-section": {
-    "title": "start now.",
-    "description": "take control of your finances today! start planning your budget easily and effectively with our simple tool.",
-    "button": "get started"
+    "title": "Start now.",
+    "description": "Take control of your finances today! Start planning your budget easily and effectively with our simple tool.",
+    "button": "Get started"
   },
   "next-budget-card": {
-    "day": "day",
-    "days": "days",
-    "budget": "budget",
-    "coming-in": "coming in",
+    "day": "Day",
+    "days": "Days",
+    "budget": "Budget",
+    "coming-in": "Coming in",
     "from-now": " "
   },
-  "draft-budget": "draft a budget?",
-  "draft-budget-link": "use the homepage calculator."
+  "draft-budget": "Draft a budget?",
+  "draft-budget-link": "Use the homepage calculator."
 }
