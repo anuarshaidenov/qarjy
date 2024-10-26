@@ -89,7 +89,7 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee-horizontal": "marquee-x var(--duration) infinite linear",
         "marquee-vertical": "marquee-y var(--duration) linear infinite",
-        "text-zinc-primary": "text-zinc-primary 5s ease-out",
+        "text-zinc-primary": "text-zinc-primary 1s ease-out",
       },
     },
   },

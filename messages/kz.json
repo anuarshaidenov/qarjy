@@ -196,7 +196,9 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -220,7 +222,9 @@
     "get-help": "Kömek alıñız",
     "contact-us": "Bızben habarlasyñy",
     "copyright": "Crafted with ❤️ by the community - copyright © 2024 Qarjy",
-    "contribute": "Contribute"
+    "contribute": "Contribute",
+    "privacy-policy": "Privacy policy",
+    "terms-of-service": "Terms of service"
   },
   "dashboard-section": {
     "title": "Baqylau taqtasynan bastañyz.",

@@ -199,7 +199,9 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "Index, follow"
   },
@@ -223,7 +225,9 @@
     "get-help": "Get help",
     "contact-us": "Contact us",
     "copyright": "Crafted with ❤️ by the community - Copyright © 2024 Qarjy",
-    "contribute": "Contribute"
+    "contribute": "Contribute",
+    "privacy-policy": "Privacy policy",
+    "terms-of-service": "Terms of service"
   },
   "dashboard-section": {
     "title": "Get started with your dashboard.",
