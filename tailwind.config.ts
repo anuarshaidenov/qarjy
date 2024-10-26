@@ -79,12 +79,17 @@ const config = {
           from: { transform: "translateY(0)" },
           to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
+        "text-zinc-primary": {
+          "0%, 100%": { color: "rgb(113 113 122 / var(--tw-text-opacity))" },
+          "50%": { color: "hsl(var(--primary))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee-horizontal": "marquee-x var(--duration) infinite linear",
         "marquee-vertical": "marquee-y var(--duration) linear infinite",
+        "text-zinc-primary": "text-zinc-primary 5s ease-out",
       },
     },
   },
