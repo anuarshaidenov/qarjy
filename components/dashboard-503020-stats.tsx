@@ -3,6 +3,7 @@
 import { ExpensesPieChart } from "./expenses-pie-chart";
 import { useTranslations } from "next-intl";
 import { SavingsEstimate20 } from "./savings-estimate-20";
+import { DashboardNotes } from "./dashboard-notes";
 
 type Props = {};
 
@@ -20,6 +21,7 @@ export const Dashboard503020Stats = (props: Props) => {
         title={t("dashboard.app.stats.non-essential-expenses-title")}
       />
       <SavingsEstimate20 />
+      <DashboardNotes />
     </div>
   );
 };
