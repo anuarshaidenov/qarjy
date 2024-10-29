@@ -40,7 +40,7 @@ export const HeroSection = async (props: Props) => {
     <div className="overflow-hidden container sticky top-0 left-0">
       <FloatingSigns />
       <OpacityWrapper className=" pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
-        <h1 className="flex items-center text-center text-4xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
+        <h1 className="flex items-center text-center text-4xl md:text-7xl font-bold justify-center gap-1 flex-wrap md:gap-4">
           <div className="group relative flex items-center">
             <span className="group-hover:text-primary animate-text-zinc-primary text-zinc-500">
               {t("title-highlight")}
