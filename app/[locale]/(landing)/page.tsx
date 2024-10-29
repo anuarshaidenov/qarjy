@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/how-it-works";
 import {
   ScrollOpacityProvider,
   ScrollWrapper,
+  ScrollYProgressProvider,
 } from "@/components/ui/scroll-wrapper";
 import { unstable_setRequestLocale } from "next-intl/server";
 
@@ -16,14 +17,16 @@ export default function Home({
 
   return (
     <>
-      <ScrollOpacityProvider>
-        <ScrollWrapper className="relative">
-          <HeroSection />
-          <section className="pb-72 pt-12 relative container">
-            <AppSection />
-          </section>
-        </ScrollWrapper>
-      </ScrollOpacityProvider>
+      <ScrollYProgressProvider>
+        <ScrollOpacityProvider>
+          <ScrollWrapper className="relative">
+            <HeroSection />
+            <section className="pb-72 pt-12 relative container">
+              <AppSection />
+            </section>
+          </ScrollWrapper>
+        </ScrollOpacityProvider>
+      </ScrollYProgressProvider>
 
       <HowItWorks />
       <DashboardSection />

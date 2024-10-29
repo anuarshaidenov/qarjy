@@ -15,9 +15,19 @@ type ScrollOpacityContextType = {
   setOpacity: React.Dispatch<React.SetStateAction<MotionValue<number>>>;
 };
 
+type ScrollYProgressContextType = {
+  scrollYProgress: MotionValue<number>;
+  setScrollYProgress: React.Dispatch<React.SetStateAction<MotionValue<number>>>;
+};
+
 const ScrollOpacityContext = createContext<ScrollOpacityContextType>({
   opacity: new MotionValue(),
   setOpacity: () => {},
+});
+
+const ScrollYProgressContext = createContext<ScrollYProgressContextType>({
+  scrollYProgress: new MotionValue(),
+  setScrollYProgress: () => {},
 });
 
 export const useScrollOpacity = () => {
@@ -26,6 +36,17 @@ export const useScrollOpacity = () => {
   if (!context) {
     throw new Error(
       "useScrollOpacity must be used within a ScrollOpacityProvider"
+    );
+  }
+  return context;
+};
+
+export const useScrollYProgress = () => {
+  const context = useContext(ScrollYProgressContext);
+
+  if (!context) {
+    throw new Error(
+      "useScrollYProgress must be used within a ScrollYProgressProvider"
     );
   }
   return context;
@@ -42,6 +63,19 @@ export const ScrollOpacityProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
+export const ScrollYProgressProvider: React.FC<{
+  children: React.ReactNode;
+}> = ({ children }) => {
+  const [scrollYProgress, setScrollYProgress] = useState(new MotionValue());
+  return (
+    <ScrollYProgressContext.Provider
+      value={{ scrollYProgress, setScrollYProgress }}
+    >
+      {children}
+    </ScrollYProgressContext.Provider>
+  );
+};
+
 type Props = {
   children: React.ReactNode;
   className?: string;
@@ -55,9 +89,11 @@ export const ScrollWrapper = (props: Props) => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const { setOpacity } = useScrollOpacity();
+  const { setScrollYProgress } = useScrollYProgress();
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setOpacity(opacity);
+    setScrollYProgress(scrollYProgress);
   });
 
   return (
