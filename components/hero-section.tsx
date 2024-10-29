@@ -37,7 +37,7 @@ export const HeroSection = async (props: Props) => {
 
   return (
     <div className="border-b">
-      <section className="min-h-screen pt-32 py-64 overflow-hidden flex flex-col items-center gap-3 container">
+      <section className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
         <h1 className="flex items-center text-center text-4xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
           <div className="group relative flex items-center">
             <span className="group-hover:text-primary animate-text-zinc-primary text-zinc-500">
@@ -61,7 +61,7 @@ export const HeroSection = async (props: Props) => {
           <span className=""> {t("title")}.</span>
         </h1>
 
-        <p className="text-center text-xl font-mono">{t("subtitle")}</p>
+        <p className="text-center max-w-[450px] font-mono">{t("subtitle")}</p>
 
         <Button className="mb-10" asChild>
           <Link href={"#how-it-works"}>{t("button")}</Link>
