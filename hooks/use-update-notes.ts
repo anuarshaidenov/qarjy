@@ -1,18 +1,16 @@
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "./use-toast";
-import { UpdateBudgetParams } from "@/actions/update-budget";
 import axios from "axios";
 
-export const useUpdateBudget = () => {
+export const useUpdateNotes = () => {
   const { toast } = useToast();
 
   return useMutation({
-    mutationFn: (params: UpdateBudgetParams) =>
-      axios.put("/api/budgets/update", params),
-
+    mutationFn: ({ id, text }: { id: number; text: string }) =>
+      axios.put("/api/notes/update", { id, text }),
     onError: (error) => {
       toast({
-        title: "Error updating budget",
+        title: "Error updating notes",
         description: error.message,
         variant: "destructive",
       });

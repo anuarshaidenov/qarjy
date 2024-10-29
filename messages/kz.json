@@ -250,5 +250,8 @@
     "coming-in": " "
   },
   "draft-budget": "Jobany paidalanğyñyz kele me?",
-  "draft-budget-link": "Basty bet kälkulätoryn paidalanyñyz."
+  "draft-budget-link": "Basty bet kälkulätoryn paidalanyñyz.",
+  "dashboard-notes": {
+    "title": "Eskertpeler"
+  }
 }

@@ -253,5 +253,8 @@
     "from-now": " "
   },
   "draft-budget": "Draft a budget?",
-  "draft-budget-link": "Use the homepage calculator."
+  "draft-budget-link": "Use the homepage calculator.",
+  "dashboard-notes": {
+    "title": "Notes"
+  }
 }
