@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { AppSection } from "./app-section";
 import { Button } from "./ui/button";
 import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
+import { OpacityWrapper } from "./ui/scroll-wrapper";
 
 type Props = {};
 interface ItemProps {
@@ -36,39 +36,35 @@ export const HeroSection = async (props: Props) => {
   ];
 
   return (
-    <div className="border-b">
-      <section className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
-        <h1 className="flex items-center text-center text-4xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
-          <div className="group relative flex items-center">
-            <span className="group-hover:text-primary animate-text-zinc-primary text-zinc-500">
-              {t("title-highlight")}
-            </span>
+    <OpacityWrapper className="sticky top-0 left-0 pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
+      <h1 className="flex items-center text-center text-4xl md:text-6xl font-bold justify-center gap-1 flex-wrap md:gap-4">
+        <div className="group relative flex items-center">
+          <span className="group-hover:text-primary animate-text-zinc-primary text-zinc-500">
+            {t("title-highlight")}
+          </span>
 
-            <div className="duration-400 absolute inset-0 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100">
-              {destinations.map((dest, index) => (
-                <span
-                  key={index}
-                  className={cn(
-                    "pointer-events-none absolute transform text-lg transition-transform duration-500 group-hover:scale-110 sm:text-2xl md:text-4xl",
-                    dest.position
-                  )}
-                >
-                  {dest.emoji}
-                </span>
-              ))}
-            </div>
+          <div className="duration-400 absolute inset-0 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100">
+            {destinations.map((dest, index) => (
+              <span
+                key={index}
+                className={cn(
+                  "pointer-events-none absolute transform text-lg transition-transform duration-500 group-hover:scale-110 sm:text-2xl md:text-4xl",
+                  dest.position
+                )}
+              >
+                {dest.emoji}
+              </span>
+            ))}
           </div>
-          <span className=""> {t("title")}.</span>
-        </h1>
+        </div>
+        <span className=""> {t("title")}.</span>
+      </h1>
 
-        <p className="text-center max-w-[450px] font-mono">{t("subtitle")}</p>
+      <p className="text-center max-w-[450px] font-mono">{t("subtitle")}</p>
 
-        <Button className="mb-10" asChild>
-          <Link href={"#how-it-works"}>{t("button")}</Link>
-        </Button>
-
-        <AppSection />
-      </section>
-    </div>
+      <Button className="mb-10" asChild>
+        <Link href={"#how-it-works"}>{t("button")}</Link>
+      </Button>
+    </OpacityWrapper>
   );
 };
