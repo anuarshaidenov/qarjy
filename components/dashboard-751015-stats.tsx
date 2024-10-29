@@ -1,3 +1,4 @@
+import { DashboardNotes } from "./dashboard-notes";
 import { ExpensesPieChart } from "./expenses-pie-chart";
 import { SavingsEstimate15 } from "./savings-estimate-15";
 
@@ -8,6 +9,7 @@ export const Dashboard751015Stats = (props: Props) => {
     <div className="flex flex-col gap-8">
       <ExpensesPieChart expenseType="overall" />
       <SavingsEstimate15 />
+      <DashboardNotes />
     </div>
   );
 };
