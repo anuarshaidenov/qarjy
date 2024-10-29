@@ -11,11 +11,7 @@ export const useUpdateBudget = () => {
   return useMutation({
     mutationFn: (params: UpdateBudgetParams) =>
       axios.put("/api/budgets/update", params),
-    onSuccess: (_res, newBudget) => {
-      queryClient.invalidateQueries({
-        queryKey: [QUERY_KEYS.BUDGET, newBudget.id],
-      });
-    },
+
     onError: (error) => {
       toast({
         title: "Error updating budget",
