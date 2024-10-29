@@ -8,7 +8,7 @@ export const DashboardSection = async (props: Props) => {
 
   return (
     <section className="py-32 flex flex-col relative">
-      <div className="border-y sticky top-0 left-0 bg-background">
+      <div className="border-y min-h-screen sticky top-[-50%] left-0 bg-background">
         <div className="flex flex-col gap-8 py-32 container">
           <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
             <h3 className="text-3xl md:text-5xl font-bold  ">
@@ -22,7 +22,7 @@ export const DashboardSection = async (props: Props) => {
           <DashboardBudgets />
         </div>
       </div>
-      <div className="border-b sticky top-0 left-0 bg-background">
+      <div className="border-b min-h-screen sticky top-[-50%] left-0 bg-background">
         <div className="container flex flex-col gap-8 py-32">
           <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
             <h3 className="text-3xl md:text-5xl font-bold  ">
@@ -36,7 +36,7 @@ export const DashboardSection = async (props: Props) => {
           <Charts />
         </div>
       </div>
-      <div className="border-b sticky top-0 left-0 bg-background">
+      <div className="border-b min-h-screen sticky top-[-50%] left-0 bg-background">
         <div className="container flex flex-col gap-8 py-32">
           <div className="mb-8 md:mb-12 flex flex-col gap-4 max-w-3xl">
             <h3 className="text-3xl md:text-5xl font-bold  ">
