@@ -16,6 +16,7 @@ export async function updateBudget({
   id,
   title,
   monthlyIncome,
+  draftIncome,
   savings,
   cushionFund,
   essentialExpenses,
@@ -29,6 +30,7 @@ export async function updateBudget({
     .update({
       title,
       monthly_income: monthlyIncome,
+      draft_income: draftIncome,
       savings,
       cushion_fund: cushionFund,
     })
