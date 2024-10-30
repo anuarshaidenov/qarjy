@@ -6,7 +6,6 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-  CardFooter,
   CardDescription,
 } from "./ui/card";
 import { useParams } from "next/navigation";
@@ -88,7 +87,7 @@ export const ExpensesPieChart = (props: Props) => {
           <>
             <ChartContainer
               config={chartConfig}
-              className="mx-auto aspect-square h-full max-h-[300px] md:max-h-[290px]"
+              className="mx-auto aspect-square h-full max-h-[400px] md:max-h-[350px]"
             >
               <PieChart>
                 <ChartTooltip
@@ -99,7 +98,7 @@ export const ExpensesPieChart = (props: Props) => {
                   data={dataWithFill}
                   dataKey="amount"
                   nameKey="name"
-                  innerRadius={80}
+                  innerRadius={90}
                   strokeWidth={5}
                 >
                   <Label
