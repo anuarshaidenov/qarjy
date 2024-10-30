@@ -22,6 +22,11 @@ export const HowItWorksWrapper = ({
 
   useEffect(() => {
     if (!localStorage) return;
+    const currentTab = localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab);
+    if (currentTab === "draft") {
+      setTabValue(tabs[0].value);
+      return;
+    }
     setTabValue(
       localStorage.getItem(LOCALSTORAGE_KEYS.currentTab) || tabs[0].value
     );
