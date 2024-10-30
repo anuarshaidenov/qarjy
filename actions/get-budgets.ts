@@ -29,7 +29,8 @@ export async function getBudgets(
       `
       id, 
       title, 
-      monthly_income, 
+      monthly_income,
+      draft_income,
       savings, 
       cushion_fund,
       expenses(id, name, amount, type)
@@ -61,6 +62,7 @@ export async function getBudgets(
       id, 
       title, 
       monthly_income, 
+      draft_income,
       savings, 
       cushion_fund,
       expenses(id, name, amount, type)
@@ -112,6 +114,7 @@ export async function getBudgets(
       id, 
       title, 
       monthly_income, 
+      draft_income,
       savings, 
       cushion_fund,
       expenses(id, name, amount, type)
@@ -140,6 +143,7 @@ export async function getBudgets(
       id: budget.id,
       title: budget.title,
       monthlyIncome: budget.monthly_income,
+      draftIncome: budget.draft_income,
       expenses: budget.expenses.map((exp) => ({
         id: exp.id,
         name: exp.name,
