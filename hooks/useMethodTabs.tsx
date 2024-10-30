@@ -1,7 +1,7 @@
 import { Pencil } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-export const useMethodTabs = () => {
+export const useMethodTabs = (options?: { excludeSections?: string[] }) => {
   const t = useTranslations();
   const methodTabs = [
     {
@@ -19,5 +19,7 @@ export const useMethodTabs = () => {
     },
   ];
 
-  return methodTabs;
+  return methodTabs.filter(
+    (tab) => !options?.excludeSections?.includes(tab.value)
+  );
 };

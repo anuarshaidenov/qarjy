@@ -12,7 +12,9 @@ import { useEffect, useState } from "react";
 type Props = {};
 
 export const AppSection = (props: Props) => {
-  const tabs = useMethodTabs();
+  const tabs = useMethodTabs({
+    excludeSections: ["draft"],
+  });
 
   const [tabValue, setTabValue] = useState(tabs[0].value);
 
