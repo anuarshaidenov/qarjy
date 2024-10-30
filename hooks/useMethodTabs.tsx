@@ -11,6 +11,10 @@ export const useMethodTabs = () => {
       value: "751015",
       name: t("tab-list.751015"),
     },
+    {
+      value: "draft",
+      name: t("draft"),
+    },
   ];
 
   return methodTabs;

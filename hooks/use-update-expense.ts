@@ -19,7 +19,7 @@ export const useUpdateExpense = () => {
       expenseId: string;
       name: string;
       amount: number;
-      type: "essential" | "non-essential" | "overall";
+      type: "essential" | "non-essential" | "overall" | "draft";
       budgetId: string;
     }) => axios.put("/api/expenses/update", { expenseId, name, amount, type }),
     onSettled: () => {

@@ -18,7 +18,7 @@ export const useAddExpense = () => {
       budgetId: string;
       name: string;
       amount: number;
-      type: "essential" | "non-essential" | "overall";
+      type: "essential" | "non-essential" | "overall" | "draft";
     }) => axios.post("/api/expenses/add", { budgetId, name, amount, type }),
     onSuccess: (_data, newExpense, context) => {
       queryClient.invalidateQueries({

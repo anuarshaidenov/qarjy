@@ -142,14 +142,17 @@
       "stats": {
         "essential-expenses-title": "Essential expenses",
         "non-essential-expenses-title": "Non-essential expenses"
-      }
+      },
+      "draft-expenses": "Expenses"
     },
     "coming-soon": "Stats are coming soon.",
     "savings-estimate-left": "Is how much you'd save in",
     "savings-estimate-right": "months",
     "metadata": {
       "title": "Dashboard"
-    }
+    },
+    "title": "Draft",
+    "draft-title": "Draft"
   },
   "header": {
     "cta": "Get started"
@@ -199,7 +202,9 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "Index, follow"
   },
@@ -254,5 +259,9 @@
   "draft-budget-link": "Use the homepage calculator.",
   "dashboard-notes": {
     "title": "Notes"
-  }
+  },
+  "dashboard-draft-expenses": {
+    "no-expenses": "Add an expense"
+  },
+  "draft": "Draft"
 }

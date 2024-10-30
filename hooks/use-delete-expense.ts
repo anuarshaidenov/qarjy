@@ -16,7 +16,7 @@ export const useDeleteExpense = () => {
     }: {
       budgetId: string;
       expenseId: string;
-      expenseType: "essential" | "non-essential" | "overall";
+      expenseType: "essential" | "non-essential" | "overall" | "draft";
     }) =>
       axios.delete("/api/expenses/delete", { data: { budgetId, expenseId } }),
     onSuccess: () => {

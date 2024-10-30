@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 type ExpensesSumContextType = {
   essentialExpensesSum: number | null;
@@ -11,6 +11,8 @@ type ExpensesSumContextType = {
   >;
   overallExpensesSum: number | null;
   setOverallExpensesSum: React.Dispatch<React.SetStateAction<number | null>>;
+  draftExpensesSum: number | null;
+  setDraftExpensesSum: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
 export const ExpensesSumContext = createContext<ExpensesSumContextType>({
@@ -20,6 +22,8 @@ export const ExpensesSumContext = createContext<ExpensesSumContextType>({
   setNonEssentialExpensesSum: () => {},
   overallExpensesSum: null,
   setOverallExpensesSum: () => {},
+  draftExpensesSum: null,
+  setDraftExpensesSum: () => {},
 });
 
 export const useExpensesSum = () => {
@@ -27,7 +31,7 @@ export const useExpensesSum = () => {
 
   if (!context) {
     throw new Error(
-      'useExpensesSum must be used within an ExpensesSumProvider'
+      "useExpensesSum must be used within an ExpensesSumProvider"
     );
   }
 
@@ -48,6 +52,7 @@ export const ExpensesSumProvider = ({
   const [overallExpensesSum, setOverallExpensesSum] = useState<number | null>(
     null
   );
+  const [draftExpensesSum, setDraftExpensesSum] = useState<number | null>(null);
 
   return (
     <ExpensesSumContext.Provider
@@ -58,6 +63,8 @@ export const ExpensesSumProvider = ({
         setNonEssentialExpensesSum,
         overallExpensesSum,
         setOverallExpensesSum,
+        draftExpensesSum,
+        setDraftExpensesSum,
       }}
     >
       {children}
