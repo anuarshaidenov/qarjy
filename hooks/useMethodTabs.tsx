@@ -1,3 +1,4 @@
+import { Pencil } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export const useMethodTabs = () => {
@@ -14,6 +15,7 @@ export const useMethodTabs = () => {
     {
       value: "draft",
       name: t("draft"),
+      icon: <Pencil className="w-4 h-4" />,
     },
   ];
 

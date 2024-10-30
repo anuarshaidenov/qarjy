@@ -39,7 +39,10 @@ export const DashboardApp = (props: Props) => {
                 key={tab.value}
                 value={tab.value}
               >
-                <span className="truncate">{tab.name}</span>
+                <div className="flex items-center gap-2">
+                  {tab?.icon}
+                  <span className="truncate">{tab.name}</span>
+                </div>
               </TabsTrigger>
             ))}
           </TabsList>
