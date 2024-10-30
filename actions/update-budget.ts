@@ -5,6 +5,7 @@ export interface UpdateBudgetParams {
   id: string;
   title: string;
   monthlyIncome: number;
+  draftIncome: number;
   savings: number;
   cushionFund: number;
   essentialExpenses: Expense[];

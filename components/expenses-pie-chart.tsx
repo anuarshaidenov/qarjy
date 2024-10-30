@@ -24,7 +24,7 @@ import { useTranslations } from "next-intl";
 type Props = {
   title?: string;
   subtitle?: string;
-  expenseType: "essential" | "non-essential" | "overall";
+  expenseType: "essential" | "non-essential" | "overall" | "draft";
 };
 
 export const ExpensesPieChart = (props: Props) => {

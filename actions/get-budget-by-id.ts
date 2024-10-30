@@ -24,6 +24,7 @@ export async function getBudgetById(id: string) {
         id,
         title,
         monthly_income,
+        draft_income,
         savings,
         cushion_fund,
         expenses(id, name, amount, type)
@@ -74,6 +75,7 @@ export async function getBudgetById(id: string) {
       name: exp.name,
       amount: exp.amount,
     })),
+    draftIncome: data.draft_income,
     savings: data.savings,
     cushionFund: data.cushion_fund,
   };

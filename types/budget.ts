@@ -8,6 +8,7 @@ export type Budget = {
   id: string;
   title: string;
   monthlyIncome: number;
+  draftIncome: number;
   expenses: Expense[];
   essentialExpenses: Expense[];
   nonEssentialExpenses: Expense[];

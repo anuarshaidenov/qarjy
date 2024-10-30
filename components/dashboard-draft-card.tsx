@@ -8,6 +8,7 @@ import { DashboardMonthlyIncome } from "./dashboard-503020-monthly-income";
 import { DashboardDraftExpenses } from "./dashboard-draft-expenses";
 import { DashboardDraftAddExpense } from "./dashboard-draft-add-expense";
 import { DashboardDraftExpensesRemainder } from "./dashboard-draft-expenses-remainder";
+import { DashboardDraftMonthlyIncome } from "./dashboard-draft-monthly-income";
 
 type Props = {};
 
@@ -30,7 +31,7 @@ export const DashboardDraftCard = (props: Props) => {
             {t("dashboard.app.monthly-income")}
           </Label>
           <div className="shrink max-w-[180px] flex items-center gap-2">
-            <DashboardMonthlyIncome />
+            <DashboardDraftMonthlyIncome />
             <span>{currency.symbol}</span>
           </div>
         </div>

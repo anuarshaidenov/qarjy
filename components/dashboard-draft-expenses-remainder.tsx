@@ -11,11 +11,12 @@ import { useMonthlyIncome } from "./monthly-income-context-provider";
 import { useExpensesSum } from "./expenses-sum-provider";
 import { useMemo } from "react";
 import { useCurrency } from "./currency-provider";
+import { useDraftIncome } from "./draft-income-context-provider";
 
 type Props = {};
 
 export const DashboardDraftExpensesRemainder = (props: Props) => {
-  const { monthlyIncome } = useMonthlyIncome();
+  const { monthlyIncome } = useDraftIncome();
   const { draftExpensesSum } = useExpensesSum();
 
   const remainder = useMemo(() => {
