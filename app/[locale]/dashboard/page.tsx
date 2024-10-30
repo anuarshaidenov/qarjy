@@ -39,13 +39,6 @@ function DashboardPage({}: Props) {
           ))
         )}
       </div>
-
-      <p className="text-muted-foreground font-mono mb-8">
-        {t("draft-budget")}{" "}
-        <Link href="/" className="underline">
-          {t("draft-budget-link")}
-        </Link>
-      </p>
     </section>
   );
 }
