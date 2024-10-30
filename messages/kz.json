@@ -147,14 +147,17 @@
       "stats": {
         "essential-expenses-title": "Mañyzdy şyğyndar",
         "non-essential-expenses-title": "Mañyzdy emes şyğyndar"
-      }
+      },
+      "draft-expenses": "Şyğyndar"
     },
     "coming-soon": "Statistika jaqynda şyğady.",
     "savings-estimate-left": " ",
     "savings-estimate-right": "Aida ünemdeisız",
     "metadata": {
       "title": "Taqta"
-    }
+    },
+    "title": "Joba",
+    "draft-title": "Joba"
   },
   "header": {
     "cta": "Tırkelıñız"
@@ -196,7 +199,9 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -251,5 +256,9 @@
   "draft-budget-link": "Basty bet kälkulätoryn paidalanyñyz.",
   "dashboard-notes": {
     "title": "Eskertpeler"
-  }
+  },
+  "dashboard-draft-expenses": {
+    "no-expenses": "Şyğyn qosyñyz"
+  },
+  "draft": "Joba"
 }

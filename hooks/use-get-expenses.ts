@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const useGetExpensesByTypeAndBudgetId = (
   budgetId: string,
-  type: "essential" | "non-essential" | "overall"
+  type: "essential" | "non-essential" | "overall" | "draft"
 ) => {
   return useQuery({
     queryKey: [QUERY_KEYS.EXPENSES, budgetId, type],

@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
-import { useMethodTabs } from '@/hooks/useMethodTabs';
-import { Dashboard503020Card } from './dashboard-503020-card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { Dashboard751015Card } from './dashboard-751015-card';
-import { LOCALSTORAGE_KEYS } from '@/lib/constants';
-import { MonthlyIncomeProvider } from './monthly-income-context-provider';
-import { ExpensesSumProvider } from './expenses-sum-provider';
-import { Dashboard751015Stats } from './dashboard-751015-stats';
-import { Dashboard503020Stats } from './dashboard-503020-stats';
-import { useEffect, useState } from 'react';
+import { useMethodTabs } from "@/hooks/useMethodTabs";
+import { Dashboard503020Card } from "./dashboard-503020-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { Dashboard751015Card } from "./dashboard-751015-card";
+import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+import { MonthlyIncomeProvider } from "./monthly-income-context-provider";
+import { ExpensesSumProvider } from "./expenses-sum-provider";
+import { Dashboard751015Stats } from "./dashboard-751015-stats";
+import { Dashboard503020Stats } from "./dashboard-503020-stats";
+import { useEffect, useState } from "react";
+import { DashboardDraftCard } from "./dashboard-draft-card";
+import { DashboardNotes } from "./dashboard-notes";
 
 type Props = {};
 
@@ -27,7 +29,7 @@ export const DashboardApp = (props: Props) => {
     <MonthlyIncomeProvider>
       <ExpensesSumProvider>
         <Tabs value={tabValue}>
-          <TabsList className="grid grid-cols-2">
+          <TabsList className="grid grid-cols-3">
             {tabs.map((tab) => (
               <TabsTrigger
                 onClick={() => {
@@ -37,7 +39,10 @@ export const DashboardApp = (props: Props) => {
                 key={tab.value}
                 value={tab.value}
               >
-                {tab.name}
+                <div className="flex items-center gap-2">
+                  {tab?.icon}
+                  <span className="truncate">{tab.name}</span>
+                </div>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -51,6 +56,12 @@ export const DashboardApp = (props: Props) => {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               <Dashboard751015Card />
               <Dashboard751015Stats />
+            </div>
+          </TabsContent>
+          <TabsContent value={tabs[2].value}>
+            <div className="grid grid-cols-1 gap-8  md:grid-cols-2">
+              <DashboardDraftCard />
+              <DashboardNotes />
             </div>
           </TabsContent>
         </Tabs>
