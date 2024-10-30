@@ -38,11 +38,7 @@ export const DashboardNotes = (props: Props) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>
-          <h2 className="text-lg font-semibold">
-            {t("dashboard-notes.title")}
-          </h2>
-        </CardTitle>
+        <CardTitle>{t("dashboard-notes.title")}</CardTitle>
       </CardHeader>
       <CardContent>
         <Textarea
