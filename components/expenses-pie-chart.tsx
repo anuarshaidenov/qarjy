@@ -34,24 +34,32 @@ export const ExpensesPieChart = (props: Props) => {
     props.expenseType
   );
 
+  const dataWithoutNegativeValues = useMemo(
+    () => data?.filter((item) => item.amount > 0),
+    [data]
+  );
+
   const totalAmount = useMemo(() => {
-    return data?.reduce((acc, curr) => acc + curr.amount, 0);
-  }, [data]);
+    return dataWithoutNegativeValues?.reduce(
+      (acc, curr) => acc + curr.amount,
+      0
+    );
+  }, [dataWithoutNegativeValues]);
 
   const chartConfig = useMemo(
     () =>
-      data?.reduce((acc: ChartConfig, item) => {
+      dataWithoutNegativeValues?.reduce((acc: ChartConfig, item) => {
         acc[item.name] = {
           label: item.name,
         };
         return acc;
       }, {}) as ChartConfig,
-    [data]
+    [dataWithoutNegativeValues]
   );
 
   const dataWithFill = useMemo(
     () =>
-      data
+      dataWithoutNegativeValues
         ?.filter((item) => item.amount > 0)
         .map((item, index) => {
           return {
@@ -61,7 +69,7 @@ export const ExpensesPieChart = (props: Props) => {
         })
 
         .sort((a, b) => b.amount - a.amount),
-    [data]
+    [dataWithoutNegativeValues]
   );
 
   const t = useTranslations();
