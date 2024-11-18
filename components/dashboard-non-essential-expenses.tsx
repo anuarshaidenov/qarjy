@@ -1,17 +1,18 @@
-"use client";
+'use client';
 
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { Skeleton } from "./ui/skeleton";
-import { Expense } from "@/types/seventyfive-10-15-budget";
-import { DashboardExpense } from "./ui/dashboard-expense";
-import { useDeleteExpense } from "@/hooks/use-delete-expense";
-import { useDebouncedCallback } from "use-debounce";
-import { formatAmount } from "@/lib/utils";
-import { useUpdateExpense } from "@/hooks/use-update-expense";
-import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
-import { useExpensesSum } from "./expenses-sum-provider";
-import { useCurrency } from "./currency-provider";
+import { useParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { Skeleton } from './ui/skeleton';
+import { Expense } from '@/types/seventyfive-10-15-budget';
+import { DashboardExpense } from './ui/dashboard-expense';
+import { useDeleteExpense } from '@/hooks/use-delete-expense';
+import { useDebouncedCallback } from 'use-debounce';
+import { formatAmount } from '@/lib/utils';
+import { useUpdateExpense } from '@/hooks/use-update-expense';
+import { useGetExpensesByTypeAndBudgetId } from '@/hooks/use-get-expenses';
+import { useExpensesSum } from './expenses-sum-provider';
+import { useCurrency } from './currency-provider';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {};
 
@@ -19,14 +20,14 @@ export const DashboardNonEssentialExpenses = (props: Props) => {
   const params = useParams();
   const { data, isLoading } = useGetExpensesByTypeAndBudgetId(
     params.id as string,
-    "non-essential"
+    'non-essential'
   );
   const { setNonEssentialExpensesSum } = useExpensesSum();
   useEffect(() => {
     setNonEssentialExpensesSum(
       data?.reduce((sum, expense) => sum + expense.amount, 0) || 0
     );
-  }, [data]);
+  }, [data, setNonEssentialExpensesSum]);
 
   if (isLoading) {
     return (
@@ -41,13 +42,21 @@ export const DashboardNonEssentialExpenses = (props: Props) => {
 
   return (
     <ul className="text-sm w-full">
-      {data?.map((expense) => (
-        <DashboardNonEssentialExpense
-          key={expense.id}
-          expense={expense}
-          budgetId={params.id as string}
-        />
-      ))}
+      <AnimatePresence>
+        {data?.map((expense, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
+            <DashboardNonEssentialExpense
+              expense={expense}
+              budgetId={params.id as string}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </ul>
   );
 };
@@ -72,7 +81,7 @@ const DashboardNonEssentialExpense = ({
     updateExpense({
       expenseId: expense.id,
       name: expense.name,
-      type: "non-essential",
+      type: 'non-essential',
       amount: amount,
       budgetId: budgetId,
     });
@@ -91,7 +100,7 @@ const DashboardNonEssentialExpense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
-          expenseType: "non-essential",
+          expenseType: 'non-essential',
         })
       }
       inputProps={{

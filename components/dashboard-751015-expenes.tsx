@@ -1,17 +1,18 @@
-"use client";
+'use client';
 
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
-import { Skeleton } from "./ui/skeleton";
-import { Expense } from "@/types/seventyfive-10-15-budget";
-import { DashboardExpense } from "./ui/dashboard-expense";
-import { useDeleteExpense } from "@/hooks/use-delete-expense";
-import { useDebouncedCallback } from "use-debounce";
-import { formatAmount } from "@/lib/utils";
-import { useUpdateExpense } from "@/hooks/use-update-expense";
-import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
-import { useExpensesSum } from "./expenses-sum-provider";
-import { useCurrency } from "./currency-provider";
+import { useParams } from 'next/navigation';
+import React, { useMemo } from 'react';
+import { Skeleton } from './ui/skeleton';
+import { Expense } from '@/types/seventyfive-10-15-budget';
+import { DashboardExpense } from './ui/dashboard-expense';
+import { useDeleteExpense } from '@/hooks/use-delete-expense';
+import { useDebouncedCallback } from 'use-debounce';
+import { formatAmount } from '@/lib/utils';
+import { useUpdateExpense } from '@/hooks/use-update-expense';
+import { useGetExpensesByTypeAndBudgetId } from '@/hooks/use-get-expenses';
+import { useExpensesSum } from './expenses-sum-provider';
+import { useCurrency } from './currency-provider';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {};
 
@@ -19,14 +20,15 @@ export const Dashboard751015Expenses = (props: Props) => {
   const params = useParams();
   const { data, isLoading } = useGetExpensesByTypeAndBudgetId(
     params.id as string,
-    "overall"
+    'overall'
   );
   const { setOverallExpensesSum } = useExpensesSum();
-  useEffect(() => {
+
+  useMemo(() => {
     setOverallExpensesSum(
       data?.reduce((sum, expense) => sum + expense.amount, 0) || 0
     );
-  }, [data]);
+  }, [data, setOverallExpensesSum]);
 
   if (isLoading) {
     return (
@@ -41,13 +43,21 @@ export const Dashboard751015Expenses = (props: Props) => {
 
   return (
     <ul className="text-sm w-full">
-      {data?.map((expense) => (
-        <Dashboard751015Expense
-          key={expense.id}
-          expense={expense}
-          budgetId={params.id as string}
-        />
-      ))}
+      <AnimatePresence>
+        {data?.map((expense, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
+            <Dashboard751015Expense
+              expense={expense}
+              budgetId={params.id as string}
+            />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </ul>
   );
 };
@@ -59,9 +69,7 @@ const Dashboard751015Expense = ({
   expense: Expense;
   budgetId: string;
 }) => {
-  const [amount, setAmount] = useState(0);
-  const { mutate: updateExpense, isPending: isUpdatingBudget } =
-    useUpdateExpense();
+  const { mutate: updateExpense } = useUpdateExpense();
 
   const { mutate: deleteExpense, isPending: isDeletingExpense } =
     useDeleteExpense();
@@ -72,17 +80,13 @@ const Dashboard751015Expense = ({
     updateExpense({
       expenseId: expense.id,
       name: expense.name,
-      type: "overall",
+      type: 'overall',
       amount: amount,
       budgetId: budgetId,
     });
-  });
+  }, 500);
 
   const { currency } = useCurrency();
-
-  useEffect(() => {
-    setAmount(expense.amount || 0);
-  }, [expense]);
 
   return (
     <DashboardExpense
@@ -92,14 +96,13 @@ const Dashboard751015Expense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
-          expenseType: "overall",
+          expenseType: 'overall',
         })
       }
       inputProps={{
-        value: amount,
+        value: expense.amount || 0,
         onChange: (e) => {
           const amount = formatAmount(e.target.value);
-          setAmount(amount);
           debouncedAmount(amount);
         },
       }}
