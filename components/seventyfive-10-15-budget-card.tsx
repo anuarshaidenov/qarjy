@@ -9,6 +9,7 @@ import { Seventyfive1015ExpenseEditable } from "./seventyfive-10-15-expense-edit
 import { Seventyfive1015AddExpense } from "./seventyfive-10-15-add-expense";
 import { SeventyFive1015BudgetTitle } from "./seventyfive-10-15-budget-title";
 import { useTranslations } from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {};
 
@@ -38,12 +39,18 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               </p>
             </div>
             <ul className="text-sm w-full">
-              {budget.expenses.map((expense) => (
-                <Seventyfive1015ExpenseEditable
-                  key={expense.id}
-                  expense={expense}
-                />
-              ))}
+              <AnimatePresence>
+                {budget.expenses.map((expense, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                  >
+                    <Seventyfive1015ExpenseEditable expense={expense} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </ul>
             <Seventyfive1015AddExpense />
           </div>

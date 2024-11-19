@@ -11,6 +11,7 @@ import { AddEssentialExpense } from "./fifty-30-20-add-essential-expense";
 import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense";
 import { Fifty3020BudgetTitle } from "./fifty-30-20-budget-title";
 import { useTranslations } from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {};
 
@@ -45,12 +46,18 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
               </p>
             </div>
             <ul className="text-sm w-full">
-              {budget.essentialExpenses.map((essentialExpense) => (
-                <EssentialExpenseEditable
-                  key={essentialExpense.id}
-                  expense={essentialExpense}
-                />
-              ))}
+              <AnimatePresence>
+                {budget.essentialExpenses.map((essentialExpense, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                  >
+                    <EssentialExpenseEditable expense={essentialExpense} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </ul>
             <AddEssentialExpense />
           </div>
@@ -77,12 +84,20 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
               </p>
             </div>
             <ul className="text-sm w-full">
-              {budget.nonEssentialExpenses.map((nonEssentialExpense) => (
-                <NonEssentialExpenseEditable
-                  key={nonEssentialExpense.id}
-                  expense={nonEssentialExpense}
-                />
-              ))}
+              <AnimatePresence>
+                {budget.nonEssentialExpenses.map((nonEssentialExpense, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 20 }}
+                  >
+                    <NonEssentialExpenseEditable
+                      expense={nonEssentialExpense}
+                    />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
             </ul>
             <AddNonEssentialExpense />
           </div>
