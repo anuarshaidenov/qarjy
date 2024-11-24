@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import React, { useMemo } from 'react';
-import { Skeleton } from './ui/skeleton';
-import { Expense } from '@/types/seventyfive-10-15-budget';
-import { DashboardExpense } from './ui/dashboard-expense';
-import { useDeleteExpense } from '@/hooks/use-delete-expense';
-import { useDebouncedCallback } from 'use-debounce';
-import { formatAmount } from '@/lib/utils';
-import { useUpdateExpense } from '@/hooks/use-update-expense';
-import { useGetExpensesByTypeAndBudgetId } from '@/hooks/use-get-expenses';
-import { useExpensesSum } from './expenses-sum-provider';
-import { useCurrency } from './currency-provider';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useParams } from "next/navigation";
+import React, { useEffect } from "react";
+import { Skeleton } from "./ui/skeleton";
+import { Expense } from "@/types/seventyfive-10-15-budget";
+import { DashboardExpense } from "./ui/dashboard-expense";
+import { useDeleteExpense } from "@/hooks/use-delete-expense";
+import { useDebouncedCallback } from "use-debounce";
+import { formatAmount } from "@/lib/utils";
+import { useUpdateExpense } from "@/hooks/use-update-expense";
+import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
+import { useExpensesSum } from "./expenses-sum-provider";
+import { useCurrency } from "./currency-provider";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {};
 
@@ -20,11 +20,11 @@ export const Dashboard751015Expenses = (props: Props) => {
   const params = useParams();
   const { data, isLoading } = useGetExpensesByTypeAndBudgetId(
     params.id as string,
-    'overall'
+    "overall"
   );
   const { setOverallExpensesSum } = useExpensesSum();
 
-  useMemo(() => {
+  useEffect(() => {
     setOverallExpensesSum(
       data?.reduce((sum, expense) => sum + expense.amount, 0) || 0
     );
@@ -80,7 +80,7 @@ const Dashboard751015Expense = ({
     updateExpense({
       expenseId: expense.id,
       name: expense.name,
-      type: 'overall',
+      type: "overall",
       amount: amount,
       budgetId: budgetId,
     });
@@ -96,7 +96,7 @@ const Dashboard751015Expense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
-          expenseType: 'overall',
+          expenseType: "overall",
         })
       }
       inputProps={{

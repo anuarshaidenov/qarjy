@@ -11,7 +11,15 @@ const MonthlyBudgetLoading = (props: Props) => {
 
         <Skeleton className="w-full h-[36px] md:h-[24px] mb-8" />
 
-        <Skeleton className="w-full h-[1000px]" />
+        <Skeleton className="w-full h-[36px] mb-2" />
+        <div className="grid md:grid-cols-2 gap-8">
+          <Skeleton className="h-[700px]" />
+          <div className="flex flex-col gap-8">
+            <Skeleton className="h-[200px]" />
+            <Skeleton className="h-[200px]" />
+            <Skeleton className="h-[200px]" />
+          </div>
+        </div>
       </div>
     </section>
   );

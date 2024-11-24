@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 type Props = {};
 
-function DashboardLoading({}: Props) {
+function DashboardLoading(props: Props) {
   return (
     <section className="h-full">
       <div className="py-8 px-4 container flex flex-col gap-4">

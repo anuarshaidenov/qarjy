@@ -4,9 +4,7 @@ import { BudgetCard } from "@/components/budget-card";
 import { NextBudgetCountdownCard } from "@/components/next-budget-countdown-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
-import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
-import React from "react";
 
 type Props = {};
 
