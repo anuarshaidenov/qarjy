@@ -152,7 +152,9 @@
       "title": "Dashboard"
     },
     "title": "Draft",
-    "draft-title": "Draft"
+    "draft-title": "Draft",
+    "expenses-chart-overview-title": "Expenses overview",
+    "expenses-chart-overview-description": "Overview of your expenses for each budget over time."
   },
   "header": {
     "cta": "Get started"
