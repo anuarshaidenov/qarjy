@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import { useTranslations } from "next-intl";
-import { ExpensesChartOverview } from "./expenses-chart-overview";
+import { useTranslations } from 'next-intl';
+import { ExpensesChartOverview } from './expenses-chart-overview';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { useEffect, useState } from "react";
-import { LOCALSTORAGE_KEYS } from "@/lib/constants";
+} from '@/components/ui/select';
+import { useEffect, useState } from 'react';
+import { LOCALSTORAGE_KEYS } from '@/lib/constants';
 
 type Props = {};
 
 export const ExpensesOverviewSection = (props: Props) => {
   const t = useTranslations();
-  const [selectedBudgetType, setSelectedBudgetType] = useState("751015");
+  const [selectedBudgetType, setSelectedBudgetType] = useState('751015');
   useEffect(() => {
     if (!localStorage) return;
     setSelectedBudgetType(
-      localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || "751015"
+      localStorage?.getItem(LOCALSTORAGE_KEYS.currentTab) || '751015'
     );
   }, [selectedBudgetType]);
 
   return (
-    <div className="flex flex-col gap-8 mt-8">
+    <div className="flex flex-col gap-8 mt-36">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl md:text-3xl font-bold">
-          {t("dashboard.expenses-chart-overview-title")}
+        <h2 className="text-3xl md:text-4xl font-bold">
+          {t('dashboard.expenses-chart-overview-title')}.
         </h2>
 
         <Select
@@ -38,7 +38,7 @@ export const ExpensesOverviewSection = (props: Props) => {
           }}
           value={selectedBudgetType}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[120px]">
             <SelectValue placeholder="Budget type" />
           </SelectTrigger>
           <SelectContent>
@@ -49,27 +49,27 @@ export const ExpensesOverviewSection = (props: Props) => {
       </div>
 
       <p className="text-muted-foreground font-mono">
-        {t("dashboard.expenses-chart-overview-description")}
+        {t('dashboard.expenses-chart-overview-description')}
       </p>
 
       <div className="grid lg:grid-cols-3 gap-8">
-        {selectedBudgetType === "503020" && (
+        {selectedBudgetType === '503020' && (
           <>
             <ExpensesChartOverview
-              title={t("dashboard.app.essential-expenses")}
+              title={t('dashboard.app.essential-expenses')}
               expenseType="essential"
             />
             <ExpensesChartOverview
-              title={t("dashboard.app.non-essential-expenses")}
+              title={t('dashboard.app.non-essential-expenses')}
               expenseType="non-essential"
             />
           </>
         )}
 
-        {selectedBudgetType === "751015" && (
+        {selectedBudgetType === '751015' && (
           <>
             <ExpensesChartOverview
-              title={t("dashboard.app.overall-expenses")}
+              title={t('dashboard.app.overall-expenses')}
               expenseType="overall"
             />
           </>
