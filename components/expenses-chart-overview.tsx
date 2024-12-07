@@ -1,34 +1,32 @@
-"use client";
+'use client';
 
-import { TrendingUp } from "lucide-react";
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart";
-import { useGetExpensesOverview } from "@/hooks/use-get-exenses-overview";
-import { Skeleton } from "./ui/skeleton";
-import { formatNumberWithCommas } from "@/lib/utils";
+} from '@/components/ui/chart';
+import { useGetExpensesOverview } from '@/hooks/use-get-exenses-overview';
+import { Skeleton } from './ui/skeleton';
+import { formatNumberWithCommas } from '@/lib/utils';
 
 type Props = {
-  expenseType?: "essential" | "non-essential" | "overall" | "draft";
+  expenseType?: 'essential' | 'non-essential' | 'overall' | 'draft';
   title?: string;
 };
 
 const chartConfig = {
   desktop: {
-    label: "Spent",
-    color: "hsl(var(--chart-1))",
+    label: 'Spent',
+    color: 'hsl(var(--chart-1))',
   },
 } satisfies ChartConfig;
 
@@ -58,7 +56,7 @@ export const ExpensesChartOverview = ({ expenseType, title }: Props) => {
             data={chartData}
             margin={{
               left: 12,
-              right: 12,
+              right: 10,
             }}
           >
             <CartesianGrid vertical={false} />
@@ -72,7 +70,7 @@ export const ExpensesChartOverview = ({ expenseType, title }: Props) => {
               tickLine={false}
               axisLine={false}
               tickFormatter={(x) => formatNumberWithCommas(x)}
-              tickSize={2}
+              tickSize={1}
             />
             <Line
               dataKey="spent"
@@ -80,6 +78,7 @@ export const ExpensesChartOverview = ({ expenseType, title }: Props) => {
               strokeWidth={2}
               dot={false}
             />
+            <ChartTooltip content={<ChartTooltipContent />} cursor={false} />
           </LineChart>
         </ChartContainer>
       </CardContent>
