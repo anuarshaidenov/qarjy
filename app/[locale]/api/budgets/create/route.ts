@@ -25,14 +25,17 @@ export async function POST(request: NextRequest) {
     .limit(1)
     .order("created_at", { ascending: false });
 
-  const { error } = await supabase.from("budgets").insert([
-    {
-      user_id: userData.user.id,
-      title: t("new-budget"),
-      monthly_income: latestBudgetData?.[0]?.monthly_income,
-      draft_income: 1000000,
-    },
-  ]);
+  const { data, error } = await supabase
+    .from("budgets")
+    .insert([
+      {
+        user_id: userData.user.id,
+        title: t("new-budget"),
+        monthly_income: latestBudgetData?.[0]?.monthly_income,
+        draft_income: 1000000,
+      },
+    ])
+    .select("id");
 
   if (error) {
     console.error("Error creating budget:", error);
@@ -44,6 +47,6 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({
     success: true,
-    data: { id: latestBudgetData?.[0]?.id },
+    data: { id: data?.[0]?.id },
   });
 }
