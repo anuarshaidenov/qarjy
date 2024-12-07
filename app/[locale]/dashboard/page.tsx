@@ -1,7 +1,6 @@
 "use client";
 
 import { BudgetCard } from "@/components/budget-card";
-import { ExpensesOverviewSection } from "@/components/expenses-overview-section";
 import { NextBudgetCountdownCard } from "@/components/next-budget-countdown-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
@@ -33,13 +32,11 @@ function DashboardPage({}: Props) {
             <Skeleton className="h-[134px]" />
           </>
         ) : (
-          data?.map((budget, i) => (
+          data?.data?.map((budget, i) => (
             <BudgetCard key={budget.id} budget={budget} isCurrent={i === 0} />
           ))
         )}
       </div>
-
-      <ExpensesOverviewSection />
     </section>
   );
 }

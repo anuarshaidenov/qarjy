@@ -6,6 +6,11 @@ import axios from "axios";
 export const useGetBudgets = () => {
   return useQuery({
     queryKey: [QUERY_KEYS.BUDGETS],
-    queryFn: () => axios.get<Budget[]>("/api/budgets").then((res) => res.data),
+    queryFn: () =>
+      axios
+        .get<{
+          data: Budget[];
+        }>("/api/budgets")
+        .then((res) => res.data),
   });
 };
