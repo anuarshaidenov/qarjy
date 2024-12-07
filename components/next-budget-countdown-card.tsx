@@ -3,9 +3,8 @@
 import { daysUntilNextMonth, getNextMonthName } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { useTranslations } from "next-intl";
-import { locales } from "@/navigation";
 import { useParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {};
 

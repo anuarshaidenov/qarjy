@@ -154,7 +154,8 @@
     "title": "Draft",
     "draft-title": "Draft",
     "expenses-chart-overview-title": "Expenses overview",
-    "expenses-chart-overview-description": "Overview of your expenses for each budget over time."
+    "expenses-chart-overview-description": "Overview of your expenses for each budget over time.",
+    "dashboard-title": "Dashboard."
   },
   "header": {
     "cta": "Get started"
@@ -265,5 +266,6 @@
   "dashboard-draft-expenses": {
     "no-expenses": "Add an expense"
   },
-  "draft": "Draft"
+  "draft": "Draft",
+  "new-budget": "New budget"
 }

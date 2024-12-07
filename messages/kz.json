@@ -159,7 +159,8 @@
     "title": "Joba",
     "draft-title": "Joba",
     "expenses-chart-overview-title": "Şyğyndar",
-    "expenses-chart-overview-description": "Uaqyt boiynşa ärbır büdjetke arnalğan şyğyndaryñyzğa şolu."
+    "expenses-chart-overview-description": "Uaqyt boiynşa ärbır büdjetke arnalğan şyğyndaryñyzğa şolu.",
+    "dashboard-title": "Taqta."
   },
   "header": {
     "cta": "Tırkelıñız"
@@ -262,5 +263,6 @@
   "dashboard-draft-expenses": {
     "no-expenses": "Şyğyn qosyñyz"
   },
-  "draft": "Joba"
+  "draft": "Joba",
+  "new-budget": "jaña büdjet"
 }
