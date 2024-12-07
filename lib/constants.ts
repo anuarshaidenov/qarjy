@@ -36,6 +36,7 @@ export const currencies = [
 ];
 
 export const QUERY_KEYS = {
+  AUTH: "auth",
   BUDGET: "budget",
   BUDGETS: "budgets",
   EXPENSES: "expenses",
