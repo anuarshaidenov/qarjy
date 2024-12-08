@@ -11,7 +11,7 @@ export async function generateMetadata(props: Props) {
   const data = await getBudgetById(props.params.id);
 
   const metadata: Metadata = {
-    title: data?.title,
+    title: data?.title || "Qarjy",
   };
 
   return metadata;

@@ -36,12 +36,12 @@ export async function getBudgetById(id: string) {
 
   if (error) {
     console.error("Error fetching budget by id:", error);
-    throw new Error("Error fetching budget. Please try again later.");
+    return null;
   }
 
   if (!data) {
     console.error("Budget not found:", data);
-    throw new Error("Budget not found.");
+    return null;
   }
 
   // Classify expenses by type
