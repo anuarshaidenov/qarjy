@@ -13,7 +13,7 @@
       },
       "tab-content": {
         "503020": {
-          "monthly-income": "Enter your monthly income",
+          "monthly-income": "Enter your income",
           "essential-expenses": "Essential expenses",
           "remainder": "Remaining balance",
           "wants": "Wants",
@@ -33,7 +33,7 @@
           }
         },
         "751015": {
-          "monthly-income": "Enter your monthly income",
+          "monthly-income": "Enter your income",
           "expenses": "Total expenses",
           "remainder": "Remaining balance",
           "cushion-fund": {
@@ -128,7 +128,7 @@
       "subtitle": "This is your current monthly budget. Choose the method that best suits you."
     },
     "app": {
-      "monthly-income": "Monthly income",
+      "monthly-income": "Income",
       "overall-expenses": "Expenses",
       "remainder": "Remainder",
       "cushion-fund": "Cushion fund",
