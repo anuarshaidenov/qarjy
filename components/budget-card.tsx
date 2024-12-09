@@ -35,7 +35,7 @@ export const BudgetCard = ({ budget }: Props) => {
         <CardContent className="text-sm">
           <div className="space-y-1">
             <p>
-              {t("budget-card.monthly-income")}:{" "}
+              {t("budget-card.income")}:{" "}
               <span className="font-bold">
                 {formatNumberWithCommas(budget.monthlyIncome)} {currency.symbol}
               </span>

@@ -218,7 +218,8 @@
   },
   "budget-card": {
     "monthly-income": "Monthly income",
-    "current": "Current"
+    "current": "Current",
+    "income": "Income"
   },
   "expenses-pie-chart": {
     "no-expenses": "Add expenses to see your stats.",

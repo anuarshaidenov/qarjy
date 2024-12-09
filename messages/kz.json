@@ -215,7 +215,8 @@
   },
   "budget-card": {
     "monthly-income": "Ailyq tabys",
-    "current": "Qazırgı"
+    "current": "Qazırgı",
+    "income": "Tabys"
   },
   "expenses-pie-chart": {
     "no-expenses": "Statistikañyzdy köru üşın şyğyndardy qosyñyz.",
