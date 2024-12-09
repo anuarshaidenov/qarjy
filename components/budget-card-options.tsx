@@ -38,7 +38,7 @@ export const BudgetCardOptions = (props: Props) => {
       <DropdownMenuContent>
         <DropdownMenuItem
           onClick={handleDelete}
-          className="bg-red-600 hover:bg-red-700 focus:bg-red-700 cursor-pointer text-white hover:text-white flex items-center justify-between"
+          className="bg-red-600 hover:bg-red-700 focus:bg-red-700 cursor-pointer text-white hover:text-white focus:text-white flex items-center justify-between"
         >
           Delete <Trash className="size-4" />
         </DropdownMenuItem>
