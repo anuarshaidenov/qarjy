@@ -10,6 +10,7 @@ import { Dashboard15SavingsAmount } from "./dashboard-15-savings-amount";
 import { DashboardOverallExpensesRemainder } from "./dashboard-overall-expenses-remainder";
 import { useTranslations } from "next-intl";
 import { useCurrency } from "./currency-provider";
+import { SuggestedExpenses } from "./suggested-expenses";
 
 type Props = {};
 
@@ -45,6 +46,7 @@ export const Dashboard751015Card = (props: Props) => {
             <Dashboard751015Expenses />
 
             <Dashboard751015AddExpense />
+            <SuggestedExpenses expenseType="overall" />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">
