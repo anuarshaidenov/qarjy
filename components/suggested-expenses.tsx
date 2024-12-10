@@ -6,6 +6,7 @@ import { formatNumberWithCommas } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useAddExpense } from "@/hooks/use-add-expense";
 import { useParams } from "next/navigation";
+import { Skeleton } from "./ui/skeleton";
 
 type Props = {
   expenseType: "essential" | "non-essential" | "overall" | "draft";
@@ -54,6 +55,23 @@ export const SuggestedExpenses = (props: Props) => {
     });
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center gap-2 flex-wrap">
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-2 flex-wrap">
       {filteredExpenses.map((expense, i) => (
@@ -66,22 +84,6 @@ export const SuggestedExpenses = (props: Props) => {
           {currency.symbol}
         </button>
       ))}
-      {/* {
-        // if has more
-        data?.hasMore && (
-          <button
-            className="p-1 cursor-pointer text-xs rounded-lg border bg-card text-card-foreground shadow hover:border-foreground/50 transition-colors"
-            onClick={() =>
-              setPageOptions((prev) => ({
-                ...prev,
-                pageSize: prev.pageSize + 10,
-              }))
-            }
-          >
-            Show more
-          </button>
-        )
-      } */}
     </div>
   );
 };

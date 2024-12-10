@@ -9,6 +9,7 @@ import { DashboardDraftExpenses } from "./dashboard-draft-expenses";
 import { DashboardDraftAddExpense } from "./dashboard-draft-add-expense";
 import { DashboardDraftExpensesRemainder } from "./dashboard-draft-expenses-remainder";
 import { DashboardDraftMonthlyIncome } from "./dashboard-draft-monthly-income";
+import { SuggestedExpenses } from "./suggested-expenses";
 
 type Props = {};
 
@@ -45,6 +46,7 @@ export const DashboardDraftCard = (props: Props) => {
             <DashboardDraftExpenses />
 
             <DashboardDraftAddExpense />
+            <SuggestedExpenses expenseType="draft" />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">

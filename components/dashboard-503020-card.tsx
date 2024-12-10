@@ -13,6 +13,7 @@ import { DashboardEssentialsRemainder } from "./dashboard-essentials-remainder";
 import { DashboardNonEssentialsRemainder } from "./dashboard-non-essentials-remainder";
 import { useTranslations } from "next-intl";
 import { useCurrency } from "./currency-provider";
+import { SuggestedExpenses } from "./suggested-expenses";
 
 type Props = {};
 
@@ -45,6 +46,7 @@ export const Dashboard503020Card = (props: Props) => {
             </div>
             <DashboardEssentialExpenses />
             <Dashboard503020AddEssentialExpense />
+            <SuggestedExpenses expenseType="essential" />
           </div>
 
           <div className="w-full flex items-center justify-between">
@@ -66,6 +68,7 @@ export const Dashboard503020Card = (props: Props) => {
             <DashboardNonEssentialExpenses />
 
             <Dashboard503020AddNonEssentialExpense />
+            <SuggestedExpenses expenseType="non-essential" />
           </div>
           <div className="w-full flex items-center justify-between">
             <span className="md:text-lg font-semibold">
