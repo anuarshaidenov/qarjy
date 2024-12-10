@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
 import { Expense } from "@/types/seventyfive-10-15-budget";
 import { DashboardExpense } from "./ui/dashboard-expense";
@@ -69,6 +69,8 @@ const Dashboard751015Expense = ({
   expense: Expense;
   budgetId: string;
 }) => {
+  const [amount, setAmount] = useState(0);
+  const [title, setTitle] = useState("");
   const { mutate: updateExpense } = useUpdateExpense();
 
   const { mutate: deleteExpense, isPending: isDeletingExpense } =
@@ -79,12 +81,27 @@ const Dashboard751015Expense = ({
 
     updateExpense({
       expenseId: expense.id,
-      name: expense.name,
+      name: title,
       type: "overall",
       amount: amount,
       budgetId: budgetId,
     });
   }, 500);
+  const debouncedTitle = useDebouncedCallback((title: string) => {
+    if (!expense) return;
+    updateExpense({
+      expenseId: expense.id,
+      name: title,
+      type: "overall",
+      amount: amount,
+      budgetId: budgetId,
+    });
+  }, 500);
+
+  useEffect(() => {
+    setAmount(expense.amount || 0);
+    setTitle(expense.name);
+  }, [expense]);
 
   const { currency } = useCurrency();
 
@@ -99,10 +116,18 @@ const Dashboard751015Expense = ({
           expenseType: "overall",
         })
       }
+      textInputProps={{
+        value: title,
+        onChange: (e) => {
+          setTitle(e.target.value);
+          debouncedTitle(e.target.value);
+        },
+      }}
       inputProps={{
-        value: expense.amount || 0,
+        value: amount,
         onChange: (e) => {
           const amount = formatAmount(e.target.value);
+          setAmount(amount);
           debouncedAmount(amount);
         },
       }}

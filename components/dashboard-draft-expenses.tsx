@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import { DashboardExpense } from './ui/dashboard-expense';
-import { Expense } from '@/types/budget';
-import { useEffect, useState } from 'react';
-import { useDebouncedCallback } from 'use-debounce';
-import { formatAmount } from '@/lib/utils';
-import { useDeleteExpense } from '@/hooks/use-delete-expense';
-import { useUpdateExpense } from '@/hooks/use-update-expense';
-import { useCurrency } from './currency-provider';
-import { Skeleton } from './ui/skeleton';
-import { useExpensesSum } from './expenses-sum-provider';
-import { useGetExpensesByTypeAndBudgetId } from '@/hooks/use-get-expenses';
-import { useParams } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { AnimatePresence, motion } from 'framer-motion';
+import { DashboardExpense } from "./ui/dashboard-expense";
+import { Expense } from "@/types/budget";
+import { useEffect, useState } from "react";
+import { useDebouncedCallback } from "use-debounce";
+import { formatAmount } from "@/lib/utils";
+import { useDeleteExpense } from "@/hooks/use-delete-expense";
+import { useUpdateExpense } from "@/hooks/use-update-expense";
+import { useCurrency } from "./currency-provider";
+import { Skeleton } from "./ui/skeleton";
+import { useExpensesSum } from "./expenses-sum-provider";
+import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
+import { useParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const DashboardDraftExpenses = () => {
   const params = useParams();
   const { data, isLoading } = useGetExpensesByTypeAndBudgetId(
     params.id as string,
-    'draft'
+    "draft"
   );
   const { setDraftExpensesSum } = useExpensesSum();
   useEffect(() => {
@@ -43,7 +43,7 @@ export const DashboardDraftExpenses = () => {
 
   if (!data?.length) {
     return (
-      <p className="text-sm">{t('dashboard-draft-expenses.no-expenses')}</p>
+      <p className="text-sm">{t("dashboard-draft-expenses.no-expenses")}</p>
     );
   }
 
@@ -76,6 +76,7 @@ const DashboardDraftExpense = ({
   budgetId: string;
 }) => {
   const [amount, setAmount] = useState(0);
+  const [title, setTitle] = useState("");
   const { mutate: updateExpense } = useUpdateExpense();
   const { mutate: deleteExpense, isPending: isDeletingExpense } =
     useDeleteExpense();
@@ -83,15 +84,27 @@ const DashboardDraftExpense = ({
     if (!expense) return;
     updateExpense({
       expenseId: expense.id,
-      name: expense.name,
-      type: 'draft',
+      name: title,
+      type: "draft",
       amount: amount,
       budgetId: budgetId,
     });
-  });
+  }, 500);
+
+  const debouncedTitle = useDebouncedCallback((title: string) => {
+    if (!expense) return;
+    updateExpense({
+      expenseId: expense.id,
+      name: title,
+      type: "draft",
+      amount: amount,
+      budgetId: budgetId,
+    });
+  }, 500);
 
   useEffect(() => {
     setAmount(expense.amount || 0);
+    setTitle(expense.name);
   }, [expense]);
   const { currency } = useCurrency();
 
@@ -99,6 +112,13 @@ const DashboardDraftExpense = ({
     <DashboardExpense
       currencySymbol={currency.symbol}
       title={expense.name}
+      textInputProps={{
+        value: title,
+        onChange: (e) => {
+          setTitle(e.target.value);
+          debouncedTitle(e.target.value);
+        },
+      }}
       inputProps={{
         value: amount,
         onChange: (e) => {
@@ -111,7 +131,7 @@ const DashboardDraftExpense = ({
         deleteExpense({
           budgetId: budgetId,
           expenseId: expense.id,
-          expenseType: 'draft',
+          expenseType: "draft",
         });
       }}
       disabled={isDeletingExpense}

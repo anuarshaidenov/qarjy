@@ -16,6 +16,7 @@ type Props = {
 
 export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
   const [amount, setAmount] = useState(0);
+  const [title, setTitle] = useState("");
   const { mutate: updateExpense } = useUpdateExpense();
   const { mutate: deleteExpense, isPending: isDeletingExpense } =
     useDeleteExpense();
@@ -23,15 +24,26 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
     if (!expense) return;
     updateExpense({
       expenseId: expense.id,
-      name: expense.name,
+      name: title,
       type: "essential",
       amount: amount,
       budgetId: budgetId,
     });
-  });
+  }, 500);
+  const debouncedTitle = useDebouncedCallback((title: string) => {
+    if (!expense) return;
+    updateExpense({
+      expenseId: expense.id,
+      name: title,
+      type: "essential",
+      amount: expense.amount,
+      budgetId: budgetId,
+    });
+  }, 500);
 
   useEffect(() => {
     setAmount(expense.amount || 0);
+    setTitle(expense.name);
   }, [expense]);
   const { currency } = useCurrency();
 
@@ -45,6 +57,13 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
           const amount = formatAmount(e.target.value);
           setAmount(amount);
           debouncedAmount(amount);
+        },
+      }}
+      textInputProps={{
+        value: title,
+        onChange: (e) => {
+          setTitle(e.target.value);
+          debouncedTitle(e.target.value);
         },
       }}
       onDeleteClick={() => {

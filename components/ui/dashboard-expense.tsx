@@ -3,6 +3,7 @@ import { NumericFormat } from "./numeric-format";
 import { Button } from "./button";
 import { CircleBackslashIcon } from "@radix-ui/react-icons";
 import { NumericFormatProps } from "react-number-format";
+import { Input } from "./input";
 
 type Props = {
   title: string;
@@ -10,12 +11,20 @@ type Props = {
   inputProps: NumericFormatProps;
   onDeleteClick: () => void;
   disabled?: boolean;
+  textInputProps?: React.ComponentProps<"input">;
 };
 
 export const DashboardExpense = (props: Props) => {
   return (
     <li className="flex items-center py-1 justify-between w-full group">
-      <span>{props.title}</span>
+      <Input
+        className="md:w-[120px] w-[80px]"
+        autoComplete="off"
+        onKeyDown={(e) => {
+          e.stopPropagation();
+        }}
+        {...props.textInputProps}
+      />
       <div className="flex shrink grow-0 items-center  gap-2">
         <NumericFormat
           thousandSeparator=","

@@ -22,9 +22,6 @@ export const useUpdateExpense = () => {
       type: "essential" | "non-essential" | "overall" | "draft";
       budgetId: string;
     }) => axios.put("/api/expenses/update", { expenseId, name, amount, type }),
-    onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
-    },
     onMutate: async (expense) => {
       await queryClient.cancelQueries({ queryKey: [QUERY_KEYS.EXPENSES] });
       const previousExpenses = queryClient.getQueryData<Expense[]>([
