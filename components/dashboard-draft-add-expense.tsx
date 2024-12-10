@@ -20,7 +20,7 @@ import { formatAmount } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
-  title: z.string().max(14, "Title is too long").min(1, "Title is required"),
+  title: z.string().min(1, "Title is required"),
   amount: z.string(),
 });
 

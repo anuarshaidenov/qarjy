@@ -18,7 +18,7 @@ export const DashboardExpense = (props: Props) => {
   return (
     <li className="flex items-center py-1 justify-between w-full group">
       <Input
-        className="md:w-[120px] w-[80px]"
+        className="max-w-[120px]"
         autoComplete="off"
         onKeyDown={(e) => {
           e.stopPropagation();
@@ -28,7 +28,7 @@ export const DashboardExpense = (props: Props) => {
       <div className="flex shrink grow-0 items-center  gap-2">
         <NumericFormat
           thousandSeparator=","
-          className="md:w-[120px] w-[80px]"
+          className="max-w-[120px]"
           autoComplete="off"
           onKeyDown={(e) => {
             e.stopPropagation();
