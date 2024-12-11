@@ -2,11 +2,12 @@
 
 import { useGetSuggestedExpenses } from "@/hooks/use-get-suggested-expenes";
 import { useCurrency } from "./currency-provider";
-import { formatNumberWithCommas } from "@/lib/utils";
+import { cn, formatNumberWithCommas } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useAddExpense } from "@/hooks/use-add-expense";
 import { useParams } from "next/navigation";
-import { Skeleton } from "./ui/skeleton";
+import { Button } from "./ui/button";
+import { ChevronDown } from "lucide-react";
 
 type Props = {
   expenseType: "essential" | "non-essential" | "overall" | "draft";
@@ -28,6 +29,7 @@ export const SuggestedExpenses = (props: Props) => {
       amount: number;
     }[]
   >([]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     if (!data) {
@@ -56,34 +58,38 @@ export const SuggestedExpenses = (props: Props) => {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center gap-2 flex-wrap">
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-        <Skeleton className="h-[26px] w-[80px] rounded-lg" />
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className="flex items-center gap-2 flex-wrap">
-      {filteredExpenses.map((expense, i) => (
-        <button
-          key={i}
-          onClick={() => handleClick(expense)}
-          className="p-1 text-xs rounded-lg border bg-card text-card-foreground shadow hover:border-foreground/50 transition-colors"
-        >
-          {expense.name} {formatNumberWithCommas(expense.amount)}{" "}
-          {currency.symbol}
-        </button>
-      ))}
-    </div>
+    <>
+      <Button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="p-0"
+        variant={"link"}
+      >
+        <span>Suggestions</span>{" "}
+        <ChevronDown
+          className={cn(
+            "w-4 h-4 transition-transform",
+            isExpanded && "rotate-180"
+          )}
+        />
+      </Button>
+      {isExpanded && (
+        <div className="flex items-center gap-2 flex-wrap">
+          {filteredExpenses.map((expense, i) => (
+            <button
+              key={i}
+              onClick={() => handleClick(expense)}
+              className="p-1 text-xs rounded-lg border bg-card text-card-foreground shadow hover:border-foreground/50 transition-colors"
+            >
+              {expense.name} {formatNumberWithCommas(expense.amount)}{" "}
+              {currency.symbol}
+            </button>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
