@@ -28,7 +28,8 @@ export async function GET(request: NextRequest) {
     .from("budgets")
     .select("expenses(id, name, amount, type)")
     .eq("user_id", userData.user.id)
-    .order("created_at", { ascending: true, referencedTable: "expenses" });
+    .order("created_at", { ascending: true, referencedTable: "expenses" })
+    .limit(1);
 
   if (error) {
     console.error("Error fetching expenses:", error);
@@ -38,32 +39,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const flattenedAllExpenses = data.reduce(
-    (
-      acc: {
-        id: string;
-        name: string;
-        amount: number;
-        type: string;
-      }[],
-      budget: {
-        expenses: { id: string; name: string; amount: number; type: string }[];
-      }
-    ) => {
-      return [...acc, ...budget.expenses];
-    },
-    []
-  );
-
-  const startIndex = (Number(page) - 1) * Number(pageSize);
-  const endIndex = Number(pageSize) * Number(page);
-  const paginatedExpenses = flattenedAllExpenses.slice(startIndex, endIndex);
-
-  const hasMore = endIndex < flattenedAllExpenses.length;
-
   return NextResponse.json({
-    data: paginatedExpenses,
-    count: flattenedAllExpenses.length,
-    hasMore,
+    data: data[0].expenses,
   });
 }

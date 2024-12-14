@@ -20,8 +20,6 @@ export const useGetSuggestedExpenses = ({
             amount: number;
             type: string;
           }[];
-          count: number;
-          hasMore: boolean;
         }>(`/api/expenses/suggested`, {
           params: {
             page,
