@@ -25,11 +25,18 @@ export async function GET(request: NextRequest) {
   }
 
   const { data, error } = await supabase
-    .from("budgets")
-    .select("expenses(id, name, amount, type)")
-    .eq("user_id", userData.user.id)
-    .order("created_at", { ascending: true, referencedTable: "expenses" })
-    .limit(1);
+    .from("expenses")
+    .select(
+      `
+      id,
+      name,
+      amount,
+      type
+    `
+    )
+    .eq("created_by", userData.user.id)
+    .order("created_at", { ascending: false })
+    .range((+page - 1) * +pageSize, +page * +pageSize - 1);
 
   if (error) {
     console.error("Error fetching expenses:", error);
@@ -39,7 +46,9 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  const sortedDataByAmount = data.sort((a, b) => b.amount - a.amount);
+
   return NextResponse.json({
-    data: data[0].expenses,
+    data: sortedDataByAmount,
   });
 }

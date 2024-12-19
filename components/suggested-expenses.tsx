@@ -16,7 +16,7 @@ type Props = {
 export const SuggestedExpenses = (props: Props) => {
   const [pageOptions, setPageOptions] = useState({
     page: 1,
-    pageSize: 10,
+    pageSize: 20,
   });
   const { data, isLoading } = useGetSuggestedExpenses(pageOptions);
   const params = useParams();
