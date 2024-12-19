@@ -5,9 +5,11 @@ import axios from "axios";
 export const useGetSuggestedExpenses = ({
   page,
   pageSize,
+  budgetId,
 }: {
   page: number;
   pageSize: number;
+  budgetId: string;
 }) => {
   return useQuery({
     queryKey: [QUERY_KEYS.SUGGESTED_EXPENSES, page, pageSize],
@@ -24,6 +26,7 @@ export const useGetSuggestedExpenses = ({
           params: {
             page,
             pageSize,
+            budgetId,
           },
         })
         .then((res) => res.data),

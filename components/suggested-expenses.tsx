@@ -18,9 +18,13 @@ export const SuggestedExpenses = (props: Props) => {
     page: 1,
     pageSize: 20,
   });
-  const { data, isLoading } = useGetSuggestedExpenses(pageOptions);
+
   const params = useParams();
   const budgetId = params.id as string;
+  const { data, isLoading } = useGetSuggestedExpenses({
+    ...pageOptions,
+    budgetId,
+  });
   const { mutate } = useAddExpense();
   const [filteredExpenses, setFilteredExpenses] = useState<
     {

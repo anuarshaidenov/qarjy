@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
   } = request;
   const page = searchParams.get("page") || "1";
   const pageSize = searchParams.get("pageSize") || "10";
+  const currentBudgetId = searchParams.get("budgetId") as string;
 
   const supabase = createClient();
 
@@ -35,6 +36,7 @@ export async function GET(request: NextRequest) {
     `
     )
     .eq("created_by", userData.user.id)
+    .neq("budget_id", currentBudgetId)
     .order("created_at", { ascending: false })
     .range((+page - 1) * +pageSize, +page * +pageSize - 1);
 
