@@ -49,8 +49,11 @@ export async function GET(request: NextRequest) {
   }
 
   const sortedDataByAmount = data.sort((a, b) => b.amount - a.amount);
+  const uniqueExpenses = Array.from(
+    new Map(sortedDataByAmount.map((item) => [item.name, item])).values()
+  );
 
   return NextResponse.json({
-    data: sortedDataByAmount,
+    data: uniqueExpenses,
   });
 }
