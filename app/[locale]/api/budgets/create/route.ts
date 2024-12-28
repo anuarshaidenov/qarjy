@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
       {
         user_id: userData.user.id,
         title: t("new-budget"),
-        monthly_income: latestBudgetData?.[0]?.monthly_income,
+        monthly_income: latestBudgetData?.[0]?.monthly_income || 1000000,
         draft_income: 1000000,
       },
     ])

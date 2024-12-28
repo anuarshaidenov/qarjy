@@ -17,7 +17,9 @@ function DashboardPage({}: Props) {
   return (
     <section className="py-8 px-4 container flex flex-col gap-4">
       <h2 className="text-2xl md:text-3xl font-bold">
-        {t("hello")} {auth?.data.user?.user_metadata?.full_name.split(" ")[0]}{" "}
+        {t("hello")}{" "}
+        {auth?.data.user?.user_metadata?.full_name?.split(" ")[0] ||
+          auth?.data?.user?.email}
       </h2>
 
       <h1 className="my-3 text-xl text-muted-foreground font-mono">
