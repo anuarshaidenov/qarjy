@@ -267,5 +267,8 @@
   },
   "draft": "Joba",
   "new-budget": "jaña büdjet",
-  "hello": "Sälem,"
+  "hello": "Sälem,",
+  "signup-github": {
+    "button": "Github arqyly kırıñız"
+  }
 }

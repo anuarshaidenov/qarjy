@@ -270,5 +270,8 @@
   },
   "draft": "Draft",
   "new-budget": "New budget",
-  "hello": "Hello,"
+  "hello": "Hello,",
+  "signup-github": {
+    "button": "Sign in with Github"
+  }
 }
