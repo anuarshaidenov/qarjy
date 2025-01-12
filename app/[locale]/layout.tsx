@@ -81,7 +81,7 @@ export default async function RootLayout({
     <html lang={params.locale === "kz" ? "kk" : params.locale}>
       <body
         className={cn(
-          "min-h-screen flex flex-col font-sans antialiased",
+          "min-h-screen flex flex-col font-sans antialiased selection:bg-foreground selection:text-background",
           GeistSans.variable,
           GeistMono.variable
         )}
