@@ -16,15 +16,15 @@ function DashboardPage({}: Props) {
 
   return (
     <section className="py-8 px-4 container flex flex-col gap-4">
-      <h2 className="text-2xl md:text-3xl font-bold">
+      <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
         {t("hello")}{" "}
         {auth?.data.user?.user_metadata?.full_name?.split(" ")[0] ||
           auth?.data?.user?.email}
-      </h2>
-
-      <h1 className="my-3 text-xl text-muted-foreground font-mono">
-        💸 {t("dashboard.description")}{" "}
       </h1>
+
+      <p className="text-sm font-light text-foreground mb-8">
+        {t("dashboard.description")}
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 lg:grid-cols-4">
         <NewBudgetButton />

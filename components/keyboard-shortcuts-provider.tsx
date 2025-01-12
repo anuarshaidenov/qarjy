@@ -18,7 +18,7 @@ export const KeyboardShortcutsProvider = (props: Props) => {
   const navigateToCurrentMonthBudget = () => {
     if (!budgetId) return;
 
-    router.push("/dashboard/monthly-budget/" + budgetId);
+    router.push("/dashboard/budget/" + budgetId);
   };
 
   useKey("c", navigateToCurrentMonthBudget, undefined, [budgetId]);

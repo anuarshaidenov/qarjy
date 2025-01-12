@@ -15,11 +15,11 @@ export const NewBudgetButton = (props: Props) => {
   const router = useRouter();
 
   const handleClick = async () => {
-    router.push(`dashboard/monthly-budget/loading`);
+    router.push(`dashboard/budget/loading`);
 
     const { data } = await mutateAsync();
 
-    router.push(`/dashboard/monthly-budget/${data.data.id}`);
+    router.push(`/dashboard/budget/${data.data.id}`);
   };
 
   return (
