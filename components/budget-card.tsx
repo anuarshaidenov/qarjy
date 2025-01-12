@@ -23,7 +23,7 @@ export const BudgetCard = ({ budget }: Props) => {
   const { currency } = useCurrency();
 
   return (
-    <Link href={"/dashboard/monthly-budget/" + budget.id}>
+    <Link href={"/dashboard/budget/" + budget.id}>
       <Card
         className={cn(
           "hover:border-foreground/50 transition-colors min-h-36 relative"
