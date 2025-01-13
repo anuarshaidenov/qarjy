@@ -22,7 +22,7 @@ function DashboardPage({}: Props) {
           auth?.data?.user?.email}
       </h1>
 
-      <p className="text-sm font-light text-foreground mb-8">
+      <p className="text-xs md:text-sm font-light text-muted-foreground mb-8">
         {t("dashboard.description")}
       </p>
 
