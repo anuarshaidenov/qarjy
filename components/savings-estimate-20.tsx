@@ -14,11 +14,13 @@ import { useCurrency } from "./currency-provider";
 type Props = {};
 
 export const SavingsEstimate20 = (props: Props) => {
-  const [value, setValue] = useState(6);
+  const [value, setValue] = useState("6");
   const { monthlyIncome } = useMonthlyIncome();
 
   const savingsAmount = useMemo(() => {
-    return calculate20SavingsBasedOnIncome(monthlyIncome as number) * value;
+    return (
+      calculate20SavingsBasedOnIncome(monthlyIncome as number) * (+value || 0)
+    );
   }, [monthlyIncome, value]);
 
   const t = useTranslations();
@@ -35,7 +37,7 @@ export const SavingsEstimate20 = (props: Props) => {
           <NumericFormat
             className="w-8 h-8 block p-0 pl-2"
             value={value}
-            onChange={(e) => setValue(Number(e.target.value))}
+            onChange={(e) => setValue(e.target.value)}
           />
           <p>{t("dashboard.savings-estimate-right")} ✨</p>
         </div>
