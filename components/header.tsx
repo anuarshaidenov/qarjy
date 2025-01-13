@@ -20,8 +20,8 @@ export const Header = async (props: Props) => {
 
   return (
     <header className="fixed top-0 bg-background left-0 z-50 w-full">
-      <div className="container py-4 flex items-center justify-between flex-wrap gap-4">
-        <Logo />
+      <div className="container py-4 flex items-center justify-center md:justify-between flex-wrap gap-4">
+        <Logo className="hidden md:flex" />
 
         <div className="flex gap-4 items-center">
           <ModeToggle />
