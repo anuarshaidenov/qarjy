@@ -10,12 +10,15 @@ import { Seventyfive1015AddExpense } from "./seventyfive-10-15-add-expense";
 import { SeventyFive1015BudgetTitle } from "./seventyfive-10-15-budget-title";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
 export const SeventyFive1015BudgetCard = (props: Props) => {
   const { budget, essentialsBudget, cushionFund, savings, expensesDifference } =
     useSeventyFive1015();
+
+  const { currency } = useCurrency();
 
   const t = useTranslations("home.app.tab-content.751015");
 
@@ -35,7 +38,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
                 {t("expenses")}
               </Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(essentialsBudget)} ₸
+                {formatNumberWithCommas(essentialsBudget)} {currency.symbol}
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -62,7 +65,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
                 "text-destructive": expensesDifference < 0,
               })}
             >
-              {formatNumberWithCommas(expensesDifference)} ₸
+              {formatNumberWithCommas(expensesDifference)} {currency.symbol}
             </span>
           </div>
         </div>
@@ -72,7 +75,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               {t("cushion-fund.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(cushionFund)} ₸
+              {formatNumberWithCommas(cushionFund)} {currency.symbol}
             </p>
           </div>
           <p className="text-sm">{t("cushion-fund.sub-title")}</p>
@@ -83,7 +86,7 @@ export const SeventyFive1015BudgetCard = (props: Props) => {
               {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(savings)} ₸
+              {formatNumberWithCommas(savings)} {currency.symbol}
             </p>
           </div>
           <p className="text-sm">{t("savings.sub-title")}</p>

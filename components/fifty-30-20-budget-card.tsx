@@ -12,6 +12,7 @@ import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense"
 import { Fifty3020BudgetTitle } from "./fifty-30-20-budget-title";
 import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
@@ -25,6 +26,8 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
     investmentsBudget,
   } = useFifty2030();
   const t = useTranslations("home.app.tab-content.503020");
+
+  const { currency } = useCurrency();
 
   return (
     <Card className="h-full">
@@ -42,7 +45,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 {t("essential-expenses")}
               </Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(essentialsBudget)} ₸
+                {formatNumberWithCommas(essentialsBudget)} {currency.symbol}
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -70,7 +73,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 "text-destructive": essentialsDifference < 0,
               })}
             >
-              {formatNumberWithCommas(essentialsDifference)} ₸
+              {formatNumberWithCommas(essentialsDifference)} {currency.symbol}
             </span>
           </div>
         </div>
@@ -80,7 +83,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
             <div className="flex items-center justify-between w-full">
               <Label className="md:text-lg font-semibold">{t("wants")}</Label>
               <p className="font-semibold shrink-0">
-                {formatNumberWithCommas(nonEssentialsBudget)} ₸
+                {formatNumberWithCommas(nonEssentialsBudget)} {currency.symbol}
               </p>
             </div>
             <ul className="text-sm w-full">
@@ -109,7 +112,8 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
                 "text-destructive": nonEssentialsDifference < 0,
               })}
             >
-              {formatNumberWithCommas(nonEssentialsDifference)} ₸
+              {formatNumberWithCommas(nonEssentialsDifference)}{" "}
+              {currency.symbol}
             </span>
           </div>
         </div>
@@ -120,7 +124,7 @@ export const Fifty3020BudgetCardLocal = (props: Props) => {
               {t("savings.title")}
             </Label>
             <p className="font-semibold shrink-0">
-              {formatNumberWithCommas(investmentsBudget)} ₸
+              {formatNumberWithCommas(investmentsBudget)} {currency.symbol}
             </p>
           </div>
           <p className="text-sm">{t("savings.sub-title")}</p>

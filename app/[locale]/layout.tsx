@@ -15,6 +15,7 @@ import { QueryClientProvider } from "@/components/query-client-provider";
 import { Toaster } from "@/components/ui/toaster";
 
 import { routing } from "@/i18n/routing";
+import { CurrencyProvider } from "@/components/currency-provider";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -93,7 +94,9 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <QueryClientProvider>{children}</QueryClientProvider>
+            <QueryClientProvider>
+              <CurrencyProvider>{children}</CurrencyProvider>
+            </QueryClientProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
         <Toaster />

@@ -7,12 +7,14 @@ import { NumericFormat } from "react-number-format";
 import { formatAmount } from "@/lib/utils";
 import { LOCALSTORAGE_KEYS } from "@/lib/constants";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
 export const MonthlyIncomeEditableSection = (props: Props) => {
   const { budget, setBudget } = useFifty2030();
   const t = useTranslations("home.app.tab-content.503020");
+  const { currency } = useCurrency();
 
   const handleMonthlyIncomeChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -46,7 +48,7 @@ export const MonthlyIncomeEditableSection = (props: Props) => {
           value={budget?.monthlyIncome}
           onChange={handleMonthlyIncomeChange}
         />
-        <span>₸</span>
+        <span>{currency.symbol}</span>
       </div>
     </div>
   );

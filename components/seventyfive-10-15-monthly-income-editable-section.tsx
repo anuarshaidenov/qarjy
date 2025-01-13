@@ -7,6 +7,7 @@ import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Input } from "./ui/input";
 import { NumericFormat } from "react-number-format";
 import { useTranslations } from "next-intl";
+import { useCurrency } from "./currency-provider";
 
 type Props = {};
 
@@ -25,6 +26,7 @@ export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
   };
 
   const t = useTranslations("home.app.tab-content.751015");
+  const { currency } = useCurrency();
 
   return (
     <div className="flex items-center w-full border-b pb-4">
@@ -41,7 +43,7 @@ export const Seventyfive1015MonthlyIncomeEditableSection = (props: Props) => {
           value={budget?.monthlyIncome}
           onChange={handleChange}
         />
-        <span>₸</span>
+        <span>{currency.symbol}</span>
       </div>
     </div>
   );
