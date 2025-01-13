@@ -6,6 +6,7 @@ import { NumericFormat } from "react-number-format";
 import { useFifty2030 } from "@/hooks/use-fifty-20-30";
 import { Button } from "./ui/button";
 import { CircleBackslashIcon } from "@radix-ui/react-icons";
+import { useCurrency } from "./currency-provider";
 
 type Props = {
   expense: EssentialExpense;
@@ -14,6 +15,8 @@ type Props = {
 export const EssentialExpenseEditable = ({ expense }: Props) => {
   const { handleEditEssentialExpenseById, handleDeleteEssentialExpenseById } =
     useFifty2030();
+  const { currency } = useCurrency();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount = formatAmount(e.target.value);
     handleEditEssentialExpenseById(expense.id, amount);
@@ -38,7 +41,9 @@ export const EssentialExpenseEditable = ({ expense }: Props) => {
           className="md:w-[120px] w-[80px]"
           autoComplete="off"
         />
-        <span className="md:flex hidden md:group-hover:hidden text-lg">₸</span>
+        <span className="md:flex hidden md:group-hover:hidden text-lg">
+          {currency.symbol}
+        </span>
         <Button
           className="shrink-0 md:hidden group-hover:flex transition-opacity"
           variant={"destructive"}

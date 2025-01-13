@@ -7,6 +7,7 @@ import { Button } from "./ui/button";
 import { CircleBackslashIcon } from "@radix-ui/react-icons";
 import { formatAmount } from "@/lib/utils";
 import { useSeventyFive1015 } from "@/hooks/use-seventyfive-10-15";
+import { useCurrency } from "./currency-provider";
 
 type Props = {
   expense: Expense;
@@ -14,6 +15,7 @@ type Props = {
 
 export const Seventyfive1015ExpenseEditable = ({ expense }: Props) => {
   const { budget, setBudget, setBudgetToLocalStorage } = useSeventyFive1015();
+  const { currency } = useCurrency();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const amount = formatAmount(e.target.value);
@@ -59,7 +61,9 @@ export const Seventyfive1015ExpenseEditable = ({ expense }: Props) => {
           className="md:w-[120px] w-[80px]"
           autoComplete="off"
         />
-        <span className="md:flex hidden md:group-hover:hidden text-lg">₸</span>
+        <span className="md:flex hidden md:group-hover:hidden text-lg">
+          {currency.symbol}
+        </span>
         <Button
           className="shrink-0 md:hidden md:group-hover:flex transition-opacity"
           variant={"destructive"}
