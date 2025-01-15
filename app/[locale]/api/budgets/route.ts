@@ -7,6 +7,11 @@ export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
   const sortBy = params.get("sortBy") || "created_at";
   const sortDirection = params.get("sortDirection") || "desc";
+  const page = parseInt(params.get("page") || "1", 10);
+  const pageSize = parseInt(params.get("pageSize") || "10", 10);
+
+  const offset = (page - 1) * pageSize;
+  const limit = pageSize;
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
 
@@ -14,7 +19,7 @@ export async function GET(request: NextRequest) {
     throw new Error(authError.message);
   }
 
-  const { data, error } = await supabase
+  const { data, error, count } = await supabase
     .from("budgets")
     .select(
       `
@@ -25,10 +30,12 @@ export async function GET(request: NextRequest) {
       savings, 
       cushion_fund,
       expenses(id, name, amount, type)
-    `
+    `,
+      { count: "exact" }
     )
     .eq("user_id", userData.user.id)
-    .order(sortBy, { ascending: sortDirection === "asc" });
+    .order(sortBy, { ascending: sortDirection === "asc" })
+    .range(offset, offset + limit - 1);
 
   if (error) {
     return NextResponse.json(
@@ -72,5 +79,11 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     data: formattedBudgets,
+    meta: {
+      totalItems: count || 0,
+      page,
+      pageSize,
+      totalPages: Math.ceil((count || 0) / pageSize),
+    },
   });
 }

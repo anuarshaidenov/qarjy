@@ -1,4 +1,8 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  InfiniteData,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import axios from "axios";
 import { useToast } from "./use-toast";
 import { QUERY_KEYS } from "@/lib/constants";
@@ -15,12 +19,16 @@ export const useDeleteBudget = () => {
     },
     onMutate: async (id) => {
       await queryClient.cancelQueries({ queryKey: [QUERY_KEYS.BUDGETS] });
-      const previousBudgets = queryClient.getQueryData<{
-        data: Budget[];
-      }>([QUERY_KEYS.BUDGETS]);
+      const previousBudgets = queryClient.getQueryData<
+        InfiniteData<{ data: Budget[] }>
+      >([QUERY_KEYS.BUDGETS]);
 
       queryClient.setQueryData([QUERY_KEYS.BUDGETS], {
-        data: previousBudgets?.data.filter((budget) => budget.id !== id),
+        ...previousBudgets,
+        pages: previousBudgets?.pages.map((page) => ({
+          ...page,
+          data: page.data.filter((budget) => budget.id !== id),
+        })),
       });
 
       return { previousBudgets };
