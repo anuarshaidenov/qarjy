@@ -1,18 +1,21 @@
 "use client";
 
 import { BudgetCard } from "@/components/budget-card";
+import { LoadMoreBudgetsButton } from "@/components/load-more-budgets-button";
 import { NewBudgetButton } from "@/components/new-budget-button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/hooks/use-auth";
-import { useGetBudgets } from "@/hooks/use-get-budgets";
+import { useGetBudgetsInifinite } from "@/hooks/use-get-budgets";
 import { useTranslations } from "next-intl";
+import { Fragment } from "react";
 
 type Props = {};
 
 function DashboardPage({}: Props) {
   const t = useTranslations();
-  const { data, isLoading } = useGetBudgets();
   const { data: auth } = useAuth();
+  const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } =
+    useGetBudgetsInifinite({ pageSize: 10 });
 
   return (
     <section className="py-8 px-4 container flex flex-col gap-4">
@@ -38,9 +41,19 @@ function DashboardPage({}: Props) {
             <Skeleton className="h-[134px]" />
           </>
         ) : (
-          data?.data?.map((budget, i) => (
-            <BudgetCard key={budget.id} budget={budget} />
+          data?.pages.map((page, i) => (
+            <Fragment key={i}>
+              {page.data.map((budget, i) => (
+                <BudgetCard key={budget.id} budget={budget} />
+              ))}
+            </Fragment>
           ))
+        )}
+        {hasNextPage && (
+          <LoadMoreBudgetsButton
+            isLoading={isFetchingNextPage}
+            onClick={fetchNextPage}
+          />
         )}
       </div>
     </section>

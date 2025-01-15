@@ -17,7 +17,7 @@ type Props = {
 };
 
 export const BudgetCardOptions = (props: Props) => {
-  const { mutate, isPending } = useDeleteBudget();
+  const { mutate } = useDeleteBudget();
 
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();

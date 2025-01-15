@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Link } from "@/navigation";
 import { Budget } from "@/types/budget";
 import { cn, formatNumberWithCommas } from "@/lib/utils";
