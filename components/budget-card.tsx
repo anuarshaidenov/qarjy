@@ -30,7 +30,7 @@ export const BudgetCard = ({ budget }: Props) => {
         )}
       >
         <CardHeader>
-          <CardTitle>{budget.title}</CardTitle>
+          <CardTitle className="w-[80%] truncate">{budget.title}</CardTitle>
         </CardHeader>
         <CardContent className="text-sm">
           <div className="space-y-1">
