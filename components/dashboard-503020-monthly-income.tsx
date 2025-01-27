@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NumericFormat } from "./ui/numeric-format";
 import { useParams } from "next/navigation";
 import { useGetBudgetById } from "@/hooks/use-get-budget-by-id";
@@ -9,7 +9,6 @@ import { useDebouncedCallback } from "use-debounce";
 import { Skeleton } from "./ui/skeleton";
 import { formatAmount } from "@/lib/utils";
 import { useMonthlyIncome } from "./monthly-income-context-provider";
-import { CalculatorInput } from "./ui/calculator-input";
 
 type Props = {};
 
@@ -39,8 +38,6 @@ export const DashboardMonthlyIncome = (props: Props) => {
   if (isLoading) {
     return <Skeleton className="h-9 inline-block" />;
   }
-
-  return <CalculatorInput />;
 
   return (
     <NumericFormat
