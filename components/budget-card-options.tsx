@@ -19,9 +19,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Ellipsis, Trash } from "lucide-react";
+import { Copy, Ellipsis, Trash } from "lucide-react";
 import { Button } from "./ui/button";
 import { useDeleteBudget } from "@/hooks/use-delete-budget";
+import { useDuplicateBudget } from "@/hooks/use-duplicate-budget";
 
 type Props = {
   triggerClassname?: string;
@@ -29,11 +30,17 @@ type Props = {
 };
 
 export const BudgetCardOptions = (props: Props) => {
-  const { mutate } = useDeleteBudget();
+  const { mutate: deleteBudget } = useDeleteBudget();
+  const { mutate: duplicateBudget } = useDuplicateBudget();
 
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
-    mutate(props.budgetId);
+    deleteBudget(props.budgetId);
+  };
+
+  const handleDuplicate = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    duplicateBudget(props.budgetId);
   };
 
   return (
@@ -50,8 +57,15 @@ export const BudgetCardOptions = (props: Props) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem
+            onClick={handleDuplicate}
+            className="w-full justify-between"
+          >
+            Duplicate <Copy className="size-4" />
+          </DropdownMenuItem>
+
+          <DropdownMenuItem
             asChild
-            className="bg-red-600 hover:bg-red-700 focus:bg-red-700 cursor-pointer text-white hover:text-white focus:text-white flex items-center justify-between"
+            className="hover:bg-red-700 focus:bg-red-700 cursor-pointer text-white hover:text-white focus:text-white flex items-center justify-between"
           >
             <AlertDialogTrigger
               className="w-full"

@@ -273,5 +273,6 @@
   "hello": "Hello,",
   "signup-github": {
     "button": "Sign in with Github"
-  }
+  },
+  "copy": "copy"
 }

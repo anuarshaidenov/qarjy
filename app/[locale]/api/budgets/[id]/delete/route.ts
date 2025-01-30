@@ -21,8 +21,6 @@ export async function DELETE(
     );
   }
 
-  console.log("Deleting budget with ID:", params.id);
-
   const { error } = await supabase
     .from("budgets")
     .delete()
