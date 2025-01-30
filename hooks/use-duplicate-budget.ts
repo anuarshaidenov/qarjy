@@ -10,6 +10,12 @@ export const useDuplicateBudget = () => {
   return useMutation({
     mutationFn: (budgetId: string) =>
       axios.post(`/api/budgets/${budgetId}/duplicate`),
+    onMutate: () => {
+      toast({
+        title: "Duplicating budget",
+        description: "Please wait...",
+      });
+    },
     onSuccess: () => {
       toast({
         title: "Success",
