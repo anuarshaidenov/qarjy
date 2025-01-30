@@ -73,7 +73,7 @@ export const BudgetCardOptions = (props: Props) => {
             <AlertDialogCancel>Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleDelete}
-              className="bg-red-600 text-foreground hover:bg-red-700"
+              className="bg-red-600 text-white hover:bg-red-700"
             >
               Continue
             </AlertDialogAction>
