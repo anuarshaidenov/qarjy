@@ -39,10 +39,10 @@ export const HeroSection = async (props: Props) => {
   return (
     <div className="overflow-hidden container sticky top-0 left-0">
       <FloatingSigns />
-      <OpacityWrapper className=" pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
-        <h1 className="flex items-center text-center text-4xl md:text-7xl font-bold justify-center gap-1 flex-wrap md:gap-4">
+      <OpacityWrapper className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
+        <h1 className="flex flex-col items-center text-center text-5xl md:text-8xl font-bold justify-center gap-1 flex-wrap md:gap-4">
           <div className="group relative flex items-center">
-            <span className="group-hover:text-primary animate-text-zinc-primary text-zinc-500">
+            <span className="group-hover:text-primary/70 transition-colors text-primary">
               {t("title-highlight")}
             </span>
 
@@ -63,11 +63,16 @@ export const HeroSection = async (props: Props) => {
           <span className=""> {t("title")}.</span>
         </h1>
 
-        <p className="text-center max-w-[450px] font-mono">{t("subtitle")}</p>
+        <p className="text-center max-w-[450px]">{t("subtitle")}</p>
 
-        <Button className="mb-10" asChild>
-          <Link href={"#how-it-works"}>{t("button")}</Link>
-        </Button>
+        <div className="flex flex-col mt-4 gap-2">
+          <Button className="w-56" asChild>
+            <Link href={"/signup"}>{t("button-get-started")}</Link>
+          </Button>
+          <Button className="w-56" variant={"secondary"} asChild>
+            <Link href={"#how-it-works"}>{t("button")}</Link>
+          </Button>
+        </div>
       </OpacityWrapper>
     </div>
   );

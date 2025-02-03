@@ -4,7 +4,8 @@
       "title-highlight": "Budgeting",
       "title": "made simple",
       "subtitle": "Enter your income, see your budget, and take control of your finances with ease.",
-      "button": "Learn how it works"
+      "button": "Learn how it works",
+      "button-get-started": "Get started"
     },
     "app": {
       "tab-list": {
