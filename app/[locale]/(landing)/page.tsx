@@ -3,6 +3,7 @@ import { CtaSection } from "@/components/cta-section";
 import { DashboardSection } from "@/components/dashboard-section";
 import { HeroSection } from "@/components/hero-section";
 import { HowItWorks } from "@/components/how-it-works";
+import { TrustedBySection } from "@/components/trusted-by-section";
 import {
   ScrollOpacityProvider,
   ScrollWrapper,
@@ -28,6 +29,7 @@ export default function Home({
         </ScrollOpacityProvider>
       </ScrollYProgressProvider>
 
+      <TrustedBySection />
       <HowItWorks />
       <DashboardSection />
       <CtaSection />
