@@ -15,7 +15,10 @@ export const TrustedBySection = (props: Props) => {
   const x = useTransform(scrollYProgress, [0, 0.5, 1], [-1000, 0, 1000]);
 
   return (
-    <section ref={ref} className="py-12 pb-32 md:pb-64 md:py-32">
+    <section
+      ref={ref}
+      className="py-12 pb-32 md:pb-64 md:py-32 overflow-hidden"
+    >
       <div className="container flex items-center justify-center">
         <motion.div
           style={{ x }}
