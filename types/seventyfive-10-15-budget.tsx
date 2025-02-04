@@ -11,4 +11,5 @@ export type Expense = {
   id: string;
   name: string;
   amount: number;
+  sort_order: number;
 };

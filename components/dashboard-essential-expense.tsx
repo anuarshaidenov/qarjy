@@ -23,6 +23,7 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
   const debouncedAmount = useDebouncedCallback((amount: number) => {
     if (!expense) return;
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "essential",
@@ -33,6 +34,7 @@ export const DashboardEssentialExpense = ({ expense, budgetId }: Props) => {
   const debouncedTitle = useDebouncedCallback((title: string) => {
     if (!expense) return;
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "essential",

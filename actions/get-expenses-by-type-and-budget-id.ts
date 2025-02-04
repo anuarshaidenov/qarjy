@@ -17,10 +17,10 @@ export async function getExpensesByTypeAndBudgetId(
 
   const { data, error } = await supabase
     .from("expenses")
-    .select("id, name, amount")
+    .select("id, name, amount, sort_order")
     .eq("budget_id", budgetId)
     .eq("type", type)
-    .order("created_at", { ascending: true });
+    .order("sort_order", { ascending: true });
 
   if (error) {
     console.error("Error fetching expenses:", error);

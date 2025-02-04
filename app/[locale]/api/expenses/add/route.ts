@@ -19,6 +19,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const { data: lastExpense } = await supabase
+    .from("expenses")
+    .select("sort_order")
+    .eq("budget_id", budgetId)
+    .order("sort_order", { ascending: false })
+    .limit(1)
+    .single();
+
+  const newSortOrder = lastExpense ? lastExpense.sort_order + 1 : 0;
+
   const { data, error } = await supabase
     .from("expenses")
     .insert([
@@ -28,6 +38,7 @@ export async function POST(request: NextRequest) {
         amount,
         type,
         created_by: userData.user.id,
+        sort_order: newSortOrder,
       },
     ])
     .single();

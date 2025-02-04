@@ -13,6 +13,8 @@ import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 import { useExpensesSum } from "./expenses-sum-provider";
 import { useCurrency } from "./currency-provider";
 import { AnimatePresence, motion } from "framer-motion";
+import { SortableContainer } from "./ui/sortable-container";
+import { SortableItem } from "./ui/sortable-item";
 
 type Props = {};
 
@@ -23,6 +25,7 @@ export const Dashboard751015Expenses = (props: Props) => {
     "overall"
   );
   const { setOverallExpensesSum } = useExpensesSum();
+  const { mutate } = useUpdateExpense();
 
   useEffect(() => {
     setOverallExpensesSum(
@@ -43,21 +46,30 @@ export const Dashboard751015Expenses = (props: Props) => {
 
   return (
     <ul className="text-sm w-full">
-      <AnimatePresence>
-        {data?.map((expense, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-          >
-            <Dashboard751015Expense
-              expense={expense}
-              budgetId={params.id as string}
-            />
-          </motion.div>
-        ))}
-      </AnimatePresence>
+      <SortableContainer
+        items={data || []}
+        onDragEnd={(event) => {
+          const { active, over } = event;
+          const activeItem = data?.find((item) => item.id === active.id);
+          const overItem = data?.find((item) => item.id === over?.id);
+        }}
+      >
+        <AnimatePresence>
+          {data?.map((expense, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
+              <Dashboard751015Expense
+                expense={expense}
+                budgetId={params.id as string}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </SortableContainer>
     </ul>
   );
 };
@@ -80,6 +92,7 @@ const Dashboard751015Expense = ({
     if (!expense) return;
 
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "overall",
@@ -90,6 +103,7 @@ const Dashboard751015Expense = ({
   const debouncedTitle = useDebouncedCallback((title: string) => {
     if (!expense) return;
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "overall",
@@ -106,32 +120,34 @@ const Dashboard751015Expense = ({
   const { currency } = useCurrency();
 
   return (
-    <DashboardExpense
-      currencySymbol={currency.symbol}
-      title={expense.name}
-      onDeleteClick={() =>
-        deleteExpense({
-          budgetId: budgetId,
-          expenseId: expense.id,
-          expenseType: "overall",
-        })
-      }
-      textInputProps={{
-        value: title,
-        onChange: (e) => {
-          setTitle(e.target.value);
-          debouncedTitle(e.target.value);
-        },
-      }}
-      inputProps={{
-        value: amount,
-        onChange: (e) => {
-          const amount = formatAmount(e.target.value);
-          setAmount(amount);
-          debouncedAmount(amount);
-        },
-      }}
-      disabled={isDeletingExpense}
-    />
+    <SortableItem id={expense.id}>
+      <DashboardExpense
+        currencySymbol={currency.symbol}
+        title={expense.name}
+        onDeleteClick={() =>
+          deleteExpense({
+            budgetId: budgetId,
+            expenseId: expense.id,
+            expenseType: "overall",
+          })
+        }
+        textInputProps={{
+          value: title,
+          onChange: (e) => {
+            setTitle(e.target.value);
+            debouncedTitle(e.target.value);
+          },
+        }}
+        inputProps={{
+          value: amount,
+          onChange: (e) => {
+            const amount = formatAmount(e.target.value);
+            setAmount(amount);
+            debouncedAmount(amount);
+          },
+        }}
+        disabled={isDeletingExpense}
+      />
+    </SortableItem>
   );
 };

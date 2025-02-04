@@ -80,6 +80,7 @@ const DashboardNonEssentialExpense = ({
     if (!expense) return;
 
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "non-essential",
@@ -91,6 +92,7 @@ const DashboardNonEssentialExpense = ({
   const debouncedTitle = useDebouncedCallback((title: string) => {
     if (!expense) return;
     updateExpense({
+      ...expense,
       expenseId: expense.id,
       name: title,
       type: "non-essential",
