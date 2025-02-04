@@ -63,7 +63,9 @@ export const HeroSection = async (props: Props) => {
           <span className=""> {t("title")}.</span>
         </h1>
 
-        <p className="text-center md:text-xl max-w-[450px]">{t("subtitle")}</p>
+        <p className="text-center text-slate-300 text-lg md:text-2xl max-w-[450px]">
+          {t("subtitle")}
+        </p>
 
         <div className="flex flex-col mt-4 gap-2">
           <Button className="w-56" asChild>
