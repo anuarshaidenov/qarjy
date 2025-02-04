@@ -12,9 +12,10 @@ export const TrustedBySection = (props: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
+    offset: ["center end", "end center"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 0.5, 1], [-1000, 0, 1000]);
+  const x = useTransform(scrollYProgress, [0, 0.5], [1000, 0]);
 
   return (
     <section
