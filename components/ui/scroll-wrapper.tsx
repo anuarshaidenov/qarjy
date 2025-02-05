@@ -6,8 +6,8 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
-} from "framer-motion";
-import { useEffect, useRef } from "react";
+} from "motion/react";
+import { useRef } from "react";
 import React, { createContext, useContext, useState } from "react";
 
 type ScrollOpacityContextType = {

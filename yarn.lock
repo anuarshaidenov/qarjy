@@ -2191,11 +2191,13 @@ fraction.js@^5.2.1:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-5.2.1.tgz#93ffc9507b1a68a1271883aa28e98f58a1c0c6b3"
   integrity sha512-Ah6t/7YCYjrPUFUFsOsRLMXAdnYM+aQwmojD2Ayb/Ezr82SwES0vuyQ8qZ3QO8n9j7W14VJuVZZet8U3bhSdQQ==
 
-framer-motion@^11.3.31:
-  version "11.3.31"
-  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-11.3.31.tgz"
-  integrity sha512-Xmxs08WBXnc2tNzNZbFSpquI33lvleJg4Y+hmZ+vFkn+laN9ZnR3gbZnNGKDtuz7c/x3u8dLg05OU3EhLobCsg==
+framer-motion@^12.2.0:
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.2.0.tgz#a6d54d973bd6b18300880537a25ea2f37b5577ba"
+  integrity sha512-sYzL4obvn6KH/keIxcgUaXlWoOpkWejI228NMSr57hBunzvUNQD+rP/7I35CY1ciE8r9LjuItOalD+m51urBkg==
   dependencies:
+    motion-dom "^12.0.0"
+    motion-utils "^12.0.0"
     tslib "^2.4.0"
 
 fs.realpath@^1.0.0:
@@ -2943,6 +2945,26 @@ minimist@^1.2.0, minimist@^1.2.6:
   version "7.1.2"
   resolved "https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz"
   integrity sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==
+
+motion-dom@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.0.0.tgz#7045c63642eecbcc04c40b4457ebb07b3c2b3d0c"
+  integrity sha512-CvYd15OeIR6kHgMdonCc1ihsaUG4MYh/wrkz8gZ3hBX/uamyZCXN9S9qJoYF03GqfTt7thTV/dxnHYX4+55vDg==
+  dependencies:
+    motion-utils "^12.0.0"
+
+motion-utils@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.0.0.tgz#fabf79f4f1c818720a1b70f615e2a1768f396ac0"
+  integrity sha512-MNFiBKbbqnmvOjkPyOKgHUp3Q6oiokLkI1bEwm5QA28cxMZrv0CbbBGDNmhF6DIXsi1pCQBSs0dX8xjeER1tmA==
+
+motion@^12.2.0:
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-12.2.0.tgz#581af2e535d29dba68826ae3595c9872fe95ebad"
+  integrity sha512-xa00pwM37TVtIGpc0J+VfgQj/KjiOogVD3XUaJb28Xuo23X3nb051PGMEJFk2rOzHZgp+dVx9uk1gxnS5rkeKw==
+  dependencies:
+    framer-motion "^12.2.0"
+    tslib "^2.4.0"
 
 ms@2.1.2:
   version "2.1.2"

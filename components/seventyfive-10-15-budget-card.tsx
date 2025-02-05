@@ -9,7 +9,7 @@ import { Seventyfive1015ExpenseEditable } from "./seventyfive-10-15-expense-edit
 import { Seventyfive1015AddExpense } from "./seventyfive-10-15-add-expense";
 import { SeventyFive1015BudgetTitle } from "./seventyfive-10-15-budget-title";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useCurrency } from "./currency-provider";
 
 type Props = {};

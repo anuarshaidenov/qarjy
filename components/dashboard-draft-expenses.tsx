@@ -13,7 +13,7 @@ import { useExpensesSum } from "./expenses-sum-provider";
 import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 export const DashboardDraftExpenses = () => {
   const params = useParams();

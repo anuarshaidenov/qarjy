@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useScrollYProgress } from "./ui/scroll-wrapper";
-import { motion, useMotionTemplate, useTransform } from "framer-motion";
+import { motion, useMotionTemplate, useTransform } from "motion/react";
 
 type Props = {
   className?: string;

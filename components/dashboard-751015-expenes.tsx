@@ -12,7 +12,7 @@ import { useUpdateExpense } from "@/hooks/use-update-expense";
 import { useGetExpensesByTypeAndBudgetId } from "@/hooks/use-get-expenses";
 import { useExpensesSum } from "./expenses-sum-provider";
 import { useCurrency } from "./currency-provider";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 type Props = {};
 

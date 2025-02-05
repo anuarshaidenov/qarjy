@@ -11,7 +11,7 @@ import { AddEssentialExpense } from "./fifty-30-20-add-essential-expense";
 import { AddNonEssentialExpense } from "./fifty-30-20-add-non-essential-expense";
 import { Fifty3020BudgetTitle } from "./fifty-30-20-budget-title";
 import { useTranslations } from "next-intl";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useCurrency } from "./currency-provider";
 
 type Props = {};
