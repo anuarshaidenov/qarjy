@@ -4,6 +4,7 @@ import { Link } from "@/navigation";
 import { getTranslations } from "next-intl/server";
 import { OpacityWrapper } from "./ui/scroll-wrapper";
 import { FloatingSigns } from "./ui/floating-signs";
+import { BlurFade } from "./ui/blur-fade";
 
 type Props = {};
 interface ItemProps {
@@ -40,41 +41,47 @@ export const HeroSection = async (props: Props) => {
     <div className="overflow-hidden container sticky top-0 left-0">
       <FloatingSigns />
       <OpacityWrapper className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
-        <h1 className="flex flex-col items-center text-center text-5xl md:text-8xl font-bold justify-center gap-1 flex-wrap md:gap-4">
-          <div className="group relative flex items-center">
-            <span className="group-hover:text-primary/70 transition-colors text-primary">
-              {t("title-highlight")}
-            </span>
+        <BlurFade inView delay={0}>
+          <h1 className="flex flex-col items-center text-center text-5xl md:text-8xl font-bold justify-center gap-1 flex-wrap md:gap-4">
+            <div className="group relative flex items-center">
+              <span className="group-hover:text-primary/70 transition-colors text-primary">
+                {t("title-highlight")}
+              </span>
 
-            <div className="duration-400 absolute inset-0 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100">
-              {destinations.map((dest, index) => (
-                <span
-                  key={index}
-                  className={cn(
-                    "pointer-events-none absolute transform text-lg transition-transform duration-500 group-hover:scale-110 sm:text-2xl md:text-4xl",
-                    dest.position
-                  )}
-                >
-                  {dest.emoji}
-                </span>
-              ))}
+              <div className="duration-400 absolute inset-0 cursor-pointer opacity-0 transition-opacity group-hover:opacity-100">
+                {destinations.map((dest, index) => (
+                  <span
+                    key={index}
+                    className={cn(
+                      "pointer-events-none absolute transform text-lg transition-transform duration-500 group-hover:scale-110 sm:text-2xl md:text-4xl",
+                      dest.position
+                    )}
+                  >
+                    {dest.emoji}
+                  </span>
+                ))}
+              </div>
             </div>
+            <span className=""> {t("title")}.</span>
+          </h1>
+        </BlurFade>
+
+        <BlurFade inView delay={0.2}>
+          <p className="text-center text-slate-300 text-lg md:text-2xl max-w-[450px]">
+            {t("subtitle")}
+          </p>
+        </BlurFade>
+
+        <BlurFade inView delay={0.4}>
+          <div className="flex flex-col mt-4 gap-2">
+            <Button className="w-56" asChild>
+              <Link href={"/signup"}>{t("button-get-started")}</Link>
+            </Button>
+            <Button className="w-56" variant={"secondary"} asChild>
+              <Link href={"#how-it-works"}>{t("button")}</Link>
+            </Button>
           </div>
-          <span className=""> {t("title")}.</span>
-        </h1>
-
-        <p className="text-center text-slate-300 text-lg md:text-2xl max-w-[450px]">
-          {t("subtitle")}
-        </p>
-
-        <div className="flex flex-col mt-4 gap-2">
-          <Button className="w-56" asChild>
-            <Link href={"/signup"}>{t("button-get-started")}</Link>
-          </Button>
-          <Button className="w-56" variant={"secondary"} asChild>
-            <Link href={"#how-it-works"}>{t("button")}</Link>
-          </Button>
-        </div>
+        </BlurFade>
       </OpacityWrapper>
     </div>
   );
