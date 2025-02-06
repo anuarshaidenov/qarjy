@@ -66,22 +66,6 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  *::-webkit-scrollbar {
-    width: 12px;
-    @apply bg-background;
-  }
-  *::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    background-clip: content-box;
-    border: 2px solid;
-    @apply bg-foreground/30 border-background;
-  }
-  body[scroll],
-  *::-webkit-scrollbar-thumb:hover {
-    @apply bg-foreground/50 transition-colors;
-  }
-
   html,
   body {
     @apply scroll-smooth;
