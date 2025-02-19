@@ -67,7 +67,7 @@ export const HeroSection = async (props: Props) => {
         </BlurFade>
 
         <BlurFade inView delay={0.2}>
-          <p className="text-center text-slate-300 text-lg md:text-2xl max-w-[450px]">
+          <p className="text-center text-muted-foreground text-lg md:text-2xl max-w-[450px]">
             {t("subtitle")}
           </p>
         </BlurFade>
