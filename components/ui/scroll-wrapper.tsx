@@ -87,7 +87,7 @@ export const ScrollWrapper = (props: Props) => {
     target: ref,
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.24], [1, 0]);
   const { setOpacity } = useScrollOpacity();
   const { setScrollYProgress } = useScrollYProgress();
 

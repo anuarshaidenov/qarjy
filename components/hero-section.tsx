@@ -38,7 +38,7 @@ export const HeroSection = async (props: Props) => {
   ];
 
   return (
-    <div className="overflow-hidden container sticky top-0 left-0">
+    <div className="container relative top-0 left-0">
       <FloatingSigns />
       <OpacityWrapper className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
         <BlurFade inView delay={0}>
