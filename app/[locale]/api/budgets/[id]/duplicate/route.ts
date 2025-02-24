@@ -8,9 +8,7 @@ export async function POST(
 ) {
   const supabase = await createClient();
   const t = await getTranslations();
-  const {
-    params: { id },
-  } = context;
+  const { id } = await context.params;
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
 

@@ -24,7 +24,7 @@ export async function DELETE(
   const { error } = await supabase
     .from("budgets")
     .delete()
-    .eq("id", params.id)
+    .eq("id", (await params).id)
     .eq("user_id", userData.user.id);
 
   if (error) {

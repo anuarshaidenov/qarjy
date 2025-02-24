@@ -12,7 +12,7 @@ import {
 import { setRequestLocale } from "next-intl/server";
 
 export default async function Home(
-  props: Readonly<{ params: { locale: string } }>
+  props: Readonly<{ params: Promise<{ locale: string }> }>
 ) {
   const params = await props.params;
 
