@@ -11,13 +11,13 @@ import {
 
 import { ModeToggle } from "@/components/mode-toggle";
 import { Logo } from "@/components/logo";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CurrencySelector } from "@/components/currency-selector";
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export const generateMetadata = async ({ params }: Props) => {
@@ -27,7 +27,11 @@ export const generateMetadata = async ({ params }: Props) => {
   };
 };
 
-const DashboardLayout = ({ children, params }: Props) => {
+const DashboardLayout = async (props: Props) => {
+  const params = await props.params;
+
+  const { children } = props;
+
   const links: DashboardLink[] = [
     {
       href: "/dashboard",
@@ -35,7 +39,7 @@ const DashboardLayout = ({ children, params }: Props) => {
       icon: <DashboardIcon className="size-6 md:size-5" />,
     },
   ];
-  unstable_setRequestLocale(params.locale);
+  setRequestLocale(params.locale);
 
   return (
     <div className="grid h-screen w-full md:pl-[53px]">

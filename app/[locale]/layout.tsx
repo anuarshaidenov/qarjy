@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
-  unstable_setRequestLocale,
+  setRequestLocale,
 } from "next-intl/server";
 import { Analytics } from "@vercel/analytics/react";
 import { QueryClientProvider } from "@/components/query-client-provider";
@@ -21,9 +21,10 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: Readonly<{ params: { locale: string } }>) {
+export async function generateMetadata(
+  props: Readonly<{ params: { locale: string } }>
+) {
+  const params = await props.params;
   const t = await getTranslations({
     locale: params.locale,
   });
@@ -68,15 +69,18 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { locale: string };
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+  }>
+) {
+  const params = await props.params;
+
+  const { children } = props;
+
   const messages = await getMessages();
-  unstable_setRequestLocale(params.locale);
+  setRequestLocale(params.locale);
 
   return (
     <html lang={params.locale === "kz" ? "kk" : params.locale}>

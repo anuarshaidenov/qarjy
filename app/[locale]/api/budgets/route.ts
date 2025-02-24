@@ -3,7 +3,7 @@ import { Budget } from "@/types/budget";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  const supabase = createClient();
+  const supabase = await createClient();
   const params = request.nextUrl.searchParams;
   const sortBy = params.get("sortBy") || "created_at";
   const sortDirection = params.get("sortDirection") || "desc";

@@ -1,14 +1,14 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
-import { redirect } from "@/navigation";
 import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const signUpWithGoogle = async () => {
-  const header = headers();
+  const header = await headers();
   const host = header.get("host");
   const isLocalEnv = process.env.NODE_ENV === "development";
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
@@ -27,5 +27,5 @@ export const signUpWithGoogle = async () => {
     throw new Error("No redirect URL provided");
   }
 
-  redirect(data.url); // use the redirect API for your server framework
+  redirect(data.url);
 };

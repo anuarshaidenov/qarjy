@@ -5,15 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "@/navigation";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import React from "react";
 
 type Props = {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 const LoginPage = async (props: Props) => {
-  unstable_setRequestLocale(props.params.locale);
+  setRequestLocale((await props.params).locale);
   const t = await getTranslations();
 
   return (

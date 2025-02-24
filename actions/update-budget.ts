@@ -22,7 +22,7 @@ export async function updateBudget({
   essentialExpenses,
   nonEssentialExpenses,
 }: UpdateBudgetParams) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Update the budget details in the budgets table
   const { error: budgetError } = await supabase

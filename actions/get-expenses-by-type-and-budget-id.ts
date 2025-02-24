@@ -5,7 +5,7 @@ export async function getExpensesByTypeAndBudgetId(
   budgetId: string,
   type: "essential" | "non-essential" | "overall"
 ): Promise<Expense[]> {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: userData, error: authError } = await supabase.auth.getUser();
 
   if (authError || !userData?.user) {

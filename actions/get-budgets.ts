@@ -11,7 +11,7 @@ export async function getBudgets(
   sortBy = "created_at",
   sortDirection: "asc" | "desc" = "desc"
 ) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Get the authenticated user
   const { data: userData, error: authError } = await supabase.auth.getUser();

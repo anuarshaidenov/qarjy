@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 
 export async function getNotesByBudgetId(budgetId: string) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
 

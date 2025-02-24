@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const supabase = createClient();
+  const supabase = await createClient();
   const t = await getTranslations();
 
   const { data: userData, error: authError } = await supabase.auth.getUser();

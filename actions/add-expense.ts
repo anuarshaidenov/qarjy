@@ -7,7 +7,7 @@ export async function addExpense(
   amount: number,
   type: "essential" | "non-essential" | "overall"
 ) {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
 
   if (!userData.user) {

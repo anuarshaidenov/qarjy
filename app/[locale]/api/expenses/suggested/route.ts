@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   const pageSize = searchParams.get("pageSize") || "10";
   const currentBudgetId = searchParams.get("budgetId") as string;
 
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
 

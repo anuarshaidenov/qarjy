@@ -21,7 +21,7 @@ export async function addBudget({
   savings?: number;
   cushionFund?: number;
 }) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Get the authenticated user
   const { data: userData, error: authError } = await supabase.auth.getUser();

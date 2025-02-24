@@ -9,12 +9,16 @@ import {
   ScrollWrapper,
   ScrollYProgressProvider,
 } from "@/components/ui/scroll-wrapper";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
-export default function Home({
-  params: { locale },
-}: Readonly<{ params: { locale: string } }>) {
-  unstable_setRequestLocale(locale);
+export default async function Home(
+  props: Readonly<{ params: { locale: string } }>
+) {
+  const params = await props.params;
+
+  const { locale } = params;
+
+  setRequestLocale(locale);
 
   return (
     <>

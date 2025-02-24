@@ -5,10 +5,10 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function signInWithGithub() {
-  const header = headers();
+  const header = await headers();
   const host = header.get("host");
   const isLocalEnv = process.env.NODE_ENV === "development";
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "github",
     options: {

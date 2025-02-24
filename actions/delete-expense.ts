@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { verifyBudgetOwnership } from "./verify-budget-ownership";
 
 export async function deleteExpense(budgetId: string, expenseId: string) {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
 
   if (!userData.user) {

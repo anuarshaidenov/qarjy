@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 
 export async function UpdateNotes(id: number, text: string) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase
     .from("notes")

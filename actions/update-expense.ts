@@ -6,7 +6,7 @@ export async function updateExpense(
   amount: number,
   type: "essential" | "non-essential" | "overall"
 ) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase
     .from("expenses")

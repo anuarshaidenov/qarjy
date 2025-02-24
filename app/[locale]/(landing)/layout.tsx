@@ -1,15 +1,15 @@
 import { Footer } from "@/components/footer";
 import { Header, HeaderSkeleton } from "@/components/header";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { Suspense } from "react";
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-const LandingLayout = (props: Props) => {
-  unstable_setRequestLocale(props.params.locale);
+const LandingLayout = async (props: Props) => {
+  setRequestLocale((await props.params).locale);
 
   return (
     <>

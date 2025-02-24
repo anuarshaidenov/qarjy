@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const expenseType = searchParams.get("expenseType") || "";
 
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data: userData, error: userError } = await supabase.auth.getUser();
 

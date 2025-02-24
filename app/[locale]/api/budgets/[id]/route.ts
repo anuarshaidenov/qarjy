@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  context: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   const { params } = context;
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
   if (authError || !userData?.user) {
@@ -34,7 +34,7 @@ export async function GET(
         expenses(id, name, amount, type)
       `
     )
-    .eq("id", params.id)
+    .eq("id", (await params).id)
     .eq("user_id", userData.user.id)
     .single();
 

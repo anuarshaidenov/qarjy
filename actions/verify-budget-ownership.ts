@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 
 // Helper function to check if the budget belongs to the user
 export async function verifyBudgetOwnership(userId: string, budgetId: string) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Fetch the budget and check the user_id
   const { data: budget, error: budgetError } = await supabase

@@ -11,7 +11,7 @@ import { CurrencySelector } from "./currency-selector";
 type Props = {};
 
 export const Header = async (props: Props) => {
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data, error } = await supabase.auth.getUser();
 
   const user = data.user;

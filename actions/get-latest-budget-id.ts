@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 
 export async function getLatestBudgetId() {
-  const supabase = createClient();
+  const supabase = await createClient();
   // Get the authenticated user
   const { data: userData, error: authError } = await supabase.auth.getUser();
 
