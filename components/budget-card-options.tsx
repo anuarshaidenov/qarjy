@@ -23,6 +23,7 @@ import { Copy, Ellipsis, Trash } from 'lucide-react';
 import { Button } from './ui/button';
 import { deleteBudget } from '@/actions/delete-budget';
 import { duplicateBudget } from '@/actions/duplicate-budget';
+import { useToast } from '@/hooks/use-toast';
 
 type Props = {
   triggerClassname?: string;
@@ -30,14 +31,61 @@ type Props = {
 };
 
 export const BudgetCardOptions = (props: Props) => {
-  const handleDelete = (e: React.MouseEvent) => {
+  const { toast } = useToast();
+
+  const handleDelete = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    deleteBudget(props.budgetId);
+    toast({
+      title: 'Deleting budget',
+      description: 'Please wait',
+      variant: 'default',
+    });
+
+    const { data, error } = await deleteBudget(props.budgetId);
+
+    if (data) {
+      toast({
+        title: 'Budget deleted',
+        description: 'Your budget has been deleted',
+        variant: 'default',
+      });
+    }
+
+    if (error) {
+      toast({
+        title: 'Error deleting budget',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
   };
 
-  const handleDuplicate = (e: React.MouseEvent) => {
+  const handleDuplicate = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    duplicateBudget(props.budgetId);
+
+    toast({
+      title: 'Duplicating budget',
+      description: 'Please wait',
+      variant: 'default',
+    });
+
+    const { data, error } = await duplicateBudget(props.budgetId);
+
+    if (data) {
+      toast({
+        title: 'Budget duplicated',
+        description: 'Your budget has been duplicated',
+        variant: 'default',
+      });
+    }
+
+    if (error) {
+      toast({
+        title: 'Error duplicating budget',
+        description: error.message,
+        variant: 'destructive',
+      });
+    }
   };
 
   return (
