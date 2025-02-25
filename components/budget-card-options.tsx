@@ -21,9 +21,8 @@ import {
 import { cn } from '@/lib/utils';
 import { Copy, Ellipsis, Trash } from 'lucide-react';
 import { Button } from './ui/button';
-import { useDeleteBudget } from '@/hooks/use-delete-budget';
-import { useDuplicateBudget } from '@/hooks/use-duplicate-budget';
 import { deleteBudget } from '@/actions/delete-budget';
+import { duplicateBudget } from '@/actions/duplicate-budget';
 
 type Props = {
   triggerClassname?: string;
@@ -31,8 +30,6 @@ type Props = {
 };
 
 export const BudgetCardOptions = (props: Props) => {
-  const { mutate: duplicateBudget } = useDuplicateBudget();
-
   const handleDelete = (e: React.MouseEvent) => {
     e.stopPropagation();
     deleteBudget(props.budgetId);
