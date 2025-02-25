@@ -17,11 +17,14 @@ export const BudgetCard = ({ budget }: Props) => {
   const t = useTranslations();
   const { currency } = useCurrency();
 
+  const [loading, setLoading] = React.useState(false);
+
   return (
     <Link href={'/dashboard/budget/' + budget.id}>
       <Card
         className={cn(
-          'hover:border-foreground/50 transition-colors min-h-36 relative'
+          'hover:border-foreground/50 transition-colors min-h-36 relative',
+          loading && 'animate-pulse'
         )}
       >
         <CardHeader>
@@ -40,6 +43,8 @@ export const BudgetCard = ({ budget }: Props) => {
         <BudgetCardOptions
           budgetId={budget.id}
           triggerClassname="absolute top-2 right-2"
+          onLoadStart={() => setLoading(true)}
+          onLoad={() => setLoading(false)}
         />
       </Card>
     </Link>

@@ -28,6 +28,8 @@ import { useToast } from '@/hooks/use-toast';
 type Props = {
   triggerClassname?: string;
   budgetId: string;
+  onLoadStart?: () => void;
+  onLoad?: () => void;
 };
 
 export const BudgetCardOptions = (props: Props) => {
@@ -40,6 +42,8 @@ export const BudgetCardOptions = (props: Props) => {
       description: 'Please wait',
       variant: 'default',
     });
+
+    props.onLoadStart?.();
 
     const { data, error } = await deleteBudget(props.budgetId);
 
@@ -58,6 +62,8 @@ export const BudgetCardOptions = (props: Props) => {
         variant: 'destructive',
       });
     }
+
+    props.onLoad?.();
   };
 
   const handleDuplicate = async (e: React.MouseEvent) => {
@@ -68,6 +74,8 @@ export const BudgetCardOptions = (props: Props) => {
       description: 'Please wait',
       variant: 'default',
     });
+
+    props.onLoadStart?.();
 
     const { data, error } = await duplicateBudget(props.budgetId);
 
@@ -86,6 +94,8 @@ export const BudgetCardOptions = (props: Props) => {
         variant: 'destructive',
       });
     }
+
+    props.onLoad?.();
   };
 
   return (
