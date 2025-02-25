@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   AlertDialog,
@@ -10,19 +10,20 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+} from '@/components/ui/alert-dialog';
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
-import { Copy, Ellipsis, Trash } from "lucide-react";
-import { Button } from "./ui/button";
-import { useDeleteBudget } from "@/hooks/use-delete-budget";
-import { useDuplicateBudget } from "@/hooks/use-duplicate-budget";
+} from '@/components/ui/dropdown-menu';
+import { cn } from '@/lib/utils';
+import { Copy, Ellipsis, Trash } from 'lucide-react';
+import { Button } from './ui/button';
+import { useDeleteBudget } from '@/hooks/use-delete-budget';
+import { useDuplicateBudget } from '@/hooks/use-duplicate-budget';
+import { deleteBudget } from '@/actions/delete-budget';
 
 type Props = {
   triggerClassname?: string;
@@ -30,7 +31,6 @@ type Props = {
 };
 
 export const BudgetCardOptions = (props: Props) => {
-  const { mutate: deleteBudget } = useDeleteBudget();
   const { mutate: duplicateBudget } = useDuplicateBudget();
 
   const handleDelete = (e: React.MouseEvent) => {
@@ -48,8 +48,8 @@ export const BudgetCardOptions = (props: Props) => {
       <AlertDialog>
         <DropdownMenuTrigger asChild>
           <Button
-            size={"icon"}
-            variant={"ghost"}
+            size={'icon'}
+            variant={'ghost'}
             className={cn(props.triggerClassname)}
           >
             <Ellipsis className="size-5" />
