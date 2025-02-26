@@ -31,6 +31,7 @@ export async function generateMetadata(
 
   return {
     title: t("metadata.title"),
+    applicationName: t("metadata.title"),
     description: t("metadata.description"),
     authors: [
       {
@@ -38,6 +39,12 @@ export async function generateMetadata(
         url: "https://anuarshaidenov.vercel.app/",
       },
     ],
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: t("metadata.openGraph.title"),
+    },
     openGraph: {
       title: t("metadata.openGraph.title"),
       description: t("metadata.openGraph.description"),
@@ -67,6 +74,7 @@ export async function generateMetadata(
 
 export const viewport: Viewport = {
   maximumScale: 1,
+  themeColor: "#3b82f6",
 };
 
 export default async function RootLayout(
