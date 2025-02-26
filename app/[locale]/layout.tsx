@@ -44,6 +44,7 @@ export async function generateMetadata(
       capable: true,
       statusBarStyle: "default",
       title: t("metadata.openGraph.title"),
+      startupImage: "/apple-touch-icon.png",
     },
     openGraph: {
       title: t("metadata.openGraph.title"),
