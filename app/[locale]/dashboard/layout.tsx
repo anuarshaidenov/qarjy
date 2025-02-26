@@ -1,4 +1,4 @@
-import { Home, LogOut } from "lucide-react";
+import { Home, HomeIcon, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { signOut } from "@/actions/sign-out";
@@ -36,6 +36,11 @@ const DashboardLayout = async (props: Props) => {
     {
       href: "/dashboard",
       name: "dashboard",
+      icon: <HomeIcon className="size-6 md:size-5" />,
+    },
+    {
+      href: "/dashboard/budgets",
+      name: "dashboard",
       icon: <DashboardIcon className="size-6 md:size-5" />,
     },
   ];
@@ -46,9 +51,7 @@ const DashboardLayout = async (props: Props) => {
       <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
         <div className="border-b p-2">
           <Button variant="outline" size="icon" aria-label="Home" asChild>
-            <Link href={"/"}>
-              <Home className="size-5" />
-            </Link>
+            <Link href={"/"}>💸</Link>
           </Button>
         </div>
         <nav className="grid gap-1 p-2">
