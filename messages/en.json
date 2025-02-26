@@ -276,5 +276,8 @@
     "button": "Sign in with Github"
   },
   "copy": "copy",
-  "trusted-by-text": "500+ users improved their finances with qarjy.\n"
+  "trusted-by-text": "500+ users improved their finances with qarjy.\n",
+  "budgets": {
+    "title": "Budgets"
+  }
 }
