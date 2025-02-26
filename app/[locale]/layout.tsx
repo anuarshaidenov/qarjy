@@ -74,7 +74,6 @@ export async function generateMetadata(
 
 export const viewport: Viewport = {
   maximumScale: 1,
-  themeColor: "#3b82f6",
 };
 
 export default async function RootLayout(
