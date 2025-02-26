@@ -1,58 +1,44 @@
+"use server";
+
 import { createClient } from "@/lib/supabase/server";
-import { Budget, Expense } from "@/types/budget";
+import { getTranslations } from "next-intl/server";
+import { revalidatePath } from "next/cache";
 
-interface CreateBudgetParams {
-  title: string;
-  monthlyIncome: number;
-  savings: number;
-  cushionFund: number;
-  essentialExpenses: Expense[];
-  nonEssentialExpenses: Expense[];
-}
-
-export async function addBudget({
-  title,
-  monthlyIncome,
-  savings = 0,
-  cushionFund = 0,
-}: {
-  title: string;
-  monthlyIncome: number;
-  savings?: number;
-  cushionFund?: number;
-}) {
+export const createBudget = async () => {
   const supabase = await createClient();
+  const t = await getTranslations();
 
-  // Get the authenticated user
   const { data: userData, error: authError } = await supabase.auth.getUser();
 
   if (authError || !userData?.user) {
-    console.error("Error fetching user:", authError);
-    throw new Error(
-      "User not authenticated. Please log in to create a budget."
-    );
+    return {
+      data: null,
+      error: authError,
+    };
   }
 
-  const userId = userData.user.id;
+  const { data: latestBudgetData } = await supabase
+    .from("budgets")
+    .select("*")
+    .limit(1)
+    .order("created_at", { ascending: false });
 
-  // Insert the new budget associated with the authenticated user
   const { data, error } = await supabase
     .from("budgets")
     .insert([
       {
-        title,
-        monthly_income: monthlyIncome,
-        savings,
-        cushion_fund: cushionFund,
-        user_id: userId,
+        user_id: userData.user.id,
+        title: t("new-budget"),
+        monthly_income: latestBudgetData?.[0]?.monthly_income || 1000000,
+        draft_income: 1000000,
       },
     ])
-    .single(); // Return the inserted row
+    .select("id");
 
-  if (error) {
-    console.error("Error adding new budget:", error);
-    throw new Error("Failed to create a budget. Please try again later.");
-  }
+  revalidatePath("/dashboard");
 
-  return data;
-}
+  return {
+    data,
+    error,
+  };
+};

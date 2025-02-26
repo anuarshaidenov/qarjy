@@ -2,36 +2,49 @@
 
 import { useTranslations } from "next-intl";
 import { Card } from "./ui/card";
-import { Plus } from "lucide-react";
-import { useCreateBudget } from "@/hooks/use-create-budget";
+import { Loader2, Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { createBudget } from "@/actions/create-budget";
+import { useToast } from "@/hooks/use-toast";
+import React from "react";
 
 type Props = {};
 
 export const NewBudgetButton = (props: Props) => {
   const t = useTranslations();
-  const { mutateAsync, isPending } = useCreateBudget();
   const router = useRouter();
+  const { toast } = useToast();
+  const [isPending, startTransition] = React.useTransition();
 
   const handleClick = async () => {
-    router.push(`dashboard/budget/loading`);
+    startTransition(async () => {
+      const { data, error } = await createBudget();
 
-    const { data } = await mutateAsync();
+      if (error || !data) {
+        toast({
+          title: "Error creating budget",
+          description: error?.message,
+          variant: "destructive",
+        });
+        return;
+      }
 
-    router.push(`/dashboard/budget/${data.data.id}`);
+      router.push(`/dashboard/budget/${data[0].id}`);
+    });
   };
 
   return (
-    <button onClick={handleClick}>
+    <button disabled={isPending} onClick={handleClick}>
       <Card
-        className={cn(
-          "flex items-center h-full justify-center min-h-36",
-          isPending && "animate-pulse"
-        )}
+        className={cn("flex items-center h-full justify-center min-h-36")}
         aria-label="New Budget"
       >
-        <Plus className="size-8" />
+        {isPending ? (
+          <Loader2 className="size-8 animate-spin" />
+        ) : (
+          <Plus className="size-8" />
+        )}
       </Card>
     </button>
   );
