@@ -6,7 +6,6 @@ import { Budget } from "@/types/budget";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import axios from "axios";
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -24,11 +23,7 @@ export async function generateMetadata(props: Props) {
 
 async function MonthlyBudgetPage(props: Props) {
   const params = await props.params;
-
   const { id } = params;
-
-  const t = await getTranslations();
-
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({

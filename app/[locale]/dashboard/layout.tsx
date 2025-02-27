@@ -14,6 +14,7 @@ import { Logo } from "@/components/logo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CurrencySelector } from "@/components/currency-selector";
+import { BudgetBreadcrumbs } from "@/components/budget-breadcrumbs";
 
 type Props = {
   children: React.ReactNode;
@@ -75,7 +76,7 @@ const DashboardLayout = async (props: Props) => {
       </aside>
       <div className="">
         <header className="flex sticky z-10 left-0 w-full top-0 h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
-          <Logo href="/dashboard" />
+          <BudgetBreadcrumbs currentPageTitle="Dashboard" />
           <nav className="md:hidden flex items-center gap-4">
             <LocaleToggle />
             <ModeToggle />
