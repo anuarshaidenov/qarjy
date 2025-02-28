@@ -14,6 +14,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CurrencySelector } from "@/components/currency-selector";
 import { BudgetBreadcrumbs } from "@/components/budget-breadcrumbs";
+import { CommandDialogProvider } from "@/components/command-dialog-provider";
+import { SearchDialog } from "@/components/search-dialog";
 
 type Props = {
   children: React.ReactNode;
@@ -42,68 +44,71 @@ const DashboardLayout = async (props: Props) => {
   setRequestLocale(params.locale);
 
   return (
-    <div className="grid h-screen w-full md:pl-[53px]">
-      <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
-        <div className="border-b p-2">
-          <Button variant="outline" size="icon" aria-label="Home" asChild>
-            <Link href={"/"}>
-              <Home className="size-5" />
-            </Link>
-          </Button>
-        </div>
-        <nav className="grid gap-1 p-2">
-          {links.map((link) => (
-            <DashboardActiveLink key={link.href} route={link} />
-          ))}
-        </nav>
-        <nav className="mt-auto grid gap-1 p-2">
-          <LocaleToggle />
-          <ModeToggle />
-          <CurrencySelector />
-
-          <form action={signOut}>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="mt-auto rounded-lg"
-              aria-label="Help"
-            >
-              <LogOut className="size-5" />
+    <CommandDialogProvider>
+      <div className="grid h-screen w-full md:pl-[53px]">
+        <SearchDialog />
+        <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
+          <div className="border-b p-2">
+            <Button variant="outline" size="icon" aria-label="Home" asChild>
+              <Link href={"/"}>
+                <Home className="size-5" />
+              </Link>
             </Button>
-          </form>
-        </nav>
-      </aside>
-      <div className="">
-        <header className="flex sticky z-10 left-0 w-full top-0 h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
-          <BudgetBreadcrumbs currentPageTitle="Dashboard" />
-          <nav className="md:hidden flex items-center gap-4">
+          </div>
+          <nav className="grid gap-1 p-2">
+            {links.map((link) => (
+              <DashboardActiveLink key={link.href} route={link} />
+            ))}
+          </nav>
+          <nav className="mt-auto grid gap-1 p-2">
             <LocaleToggle />
             <ModeToggle />
             <CurrencySelector />
 
             <form action={signOut}>
-              <Button variant="ghost" size="icon" aria-label="Help">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="mt-auto rounded-lg"
+                aria-label="Help"
+              >
                 <LogOut className="size-5" />
               </Button>
             </form>
           </nav>
-        </header>
-        <main className="h-full">{children}</main>
-        <footer className="md:hidden bg-background sticky bottom-0 left-0 border-t">
-          <div className="container py-2 flex items-center justify-center gap-4">
-            <nav className="flex items-center gap-4">
-              {links.map((link) => (
-                <DashboardActiveLink
-                  className="h-12 w-12"
-                  key={link.href}
-                  route={link}
-                />
-              ))}
+        </aside>
+        <div className="">
+          <header className="flex sticky z-10 left-0 w-full top-0 h-[53px] items-center justify-between gap-1 border-b bg-background px-4">
+            <BudgetBreadcrumbs currentPageTitle="Dashboard" />
+            <nav className="md:hidden flex items-center gap-4">
+              <LocaleToggle />
+              <ModeToggle />
+              <CurrencySelector />
+
+              <form action={signOut}>
+                <Button variant="ghost" size="icon" aria-label="Help">
+                  <LogOut className="size-5" />
+                </Button>
+              </form>
             </nav>
-          </div>
-        </footer>
+          </header>
+          <main className="h-full">{children}</main>
+          <footer className="md:hidden bg-background sticky bottom-0 left-0 border-t">
+            <div className="container py-2 flex items-center justify-center gap-4">
+              <nav className="flex items-center gap-4">
+                {links.map((link) => (
+                  <DashboardActiveLink
+                    className="h-12 w-12"
+                    key={link.href}
+                    route={link}
+                  />
+                ))}
+              </nav>
+            </div>
+          </footer>
+        </div>
       </div>
-    </div>
+    </CommandDialogProvider>
   );
 };
 
