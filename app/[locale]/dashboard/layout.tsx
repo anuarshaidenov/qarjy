@@ -16,6 +16,7 @@ import { CurrencySelector } from "@/components/currency-selector";
 import { BudgetBreadcrumbs } from "@/components/budget-breadcrumbs";
 import { CommandDialogProvider } from "@/components/command-dialog-provider";
 import { SearchDialog } from "@/components/search-dialog";
+import { CommandButton } from "@/components/command-button";
 
 type Props = {
   children: React.ReactNode;
@@ -56,6 +57,7 @@ const DashboardLayout = async (props: Props) => {
             </Button>
           </div>
           <nav className="grid gap-1 p-2">
+            <CommandButton />
             {links.map((link) => (
               <DashboardActiveLink key={link.href} route={link} />
             ))}

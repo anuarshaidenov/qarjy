@@ -17,6 +17,7 @@ import { createBudget } from "@/actions/create-budget";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
+import Link from "next/link";
 
 type Props = {};
 
@@ -25,7 +26,7 @@ export const SearchDialog = (props: Props) => {
   const [isPending, startTransition] = React.useTransition();
   const { toast } = useToast();
   const router = useRouter();
-  const { data, isLoading } = useGetBudgets({ page: 1, pageSize: 5 });
+  const { data } = useGetBudgets({ page: 1, pageSize: 5 });
 
   const handleCreateBudget = () => {
     startTransition(async () => {
@@ -61,11 +62,6 @@ export const SearchDialog = (props: Props) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
-  const handleOpenBudget = (url: string) => {
-    router.push(url);
-    setOpen(false);
-  };
-
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
       <CommandInput placeholder="Type a command or search..." />
@@ -73,14 +69,15 @@ export const SearchDialog = (props: Props) => {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           {data?.data.map((budget) => (
-            <CommandItem
+            <CommandLink
               key={budget.id}
-              onSelect={() =>
-                handleOpenBudget(`/dashboard/budget/${budget.id}`)
-              }
+              onSelect={() => {
+                setOpen(false);
+              }}
+              href={`/dashboard/budget/${budget.id}`}
             >
-              <span>{budget.title}</span>
-            </CommandItem>
+              {budget.title}
+            </CommandLink>
           ))}
         </CommandGroup>
         <CommandSeparator />
@@ -93,5 +90,29 @@ export const SearchDialog = (props: Props) => {
         </CommandGroup>
       </CommandList>
     </CommandDialog>
+  );
+};
+
+const CommandLink = ({
+  onSelect,
+  href,
+  children,
+}: {
+  onSelect: () => void;
+  href: string;
+  children: React.ReactNode;
+}) => {
+  const ref = React.useRef<HTMLAnchorElement>(null);
+
+  const handleOpenBudget = () => {
+    ref.current?.click();
+    onSelect();
+  };
+  return (
+    <CommandItem onSelect={handleOpenBudget}>
+      <Link ref={ref} href={href}>
+        {children}
+      </Link>
+    </CommandItem>
   );
 };
