@@ -19,6 +19,7 @@ import { useRouter } from "next/navigation";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
 import Link from "next/link";
 import { DashboardIcon } from "@radix-ui/react-icons";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -28,6 +29,7 @@ export const SearchDialog = (props: Props) => {
   const { toast } = useToast();
   const router = useRouter();
   const { data } = useGetBudgets({ page: 1, pageSize: 5 });
+  const t = useTranslations();
 
   const handleCreateBudget = () => {
     startTransition(async () => {
@@ -74,10 +76,10 @@ export const SearchDialog = (props: Props) => {
 
   return (
     <CommandDialog open={open} onOpenChange={setOpen}>
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput placeholder={t("search.placeholder")} />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Suggestions">
+        <CommandEmpty>{t("search.empty")}</CommandEmpty>
+        <CommandGroup heading={t("search.suggestions")}>
           {data?.data.map((budget) => (
             <CommandLink
               key={budget.id}
@@ -91,15 +93,15 @@ export const SearchDialog = (props: Props) => {
           ))}
         </CommandGroup>
         <CommandSeparator />
-        <CommandGroup heading="Commands">
+        <CommandGroup heading={t("search.commands")}>
           <CommandItem onSelect={handleCreateBudget}>
             {isPending ? <Loader className="animate-spin" /> : <Plus />}
-            <span>Create Budget</span>
+            <span>{t("search.new")}</span>
             <CommandShortcut>⌘N</CommandShortcut>
           </CommandItem>
           <CommandItem onSelect={handleOpenDashboard}>
             <DashboardIcon />
-            <span>Open Dashboard</span>
+            <span>{t("search.dashboard")}</span>
             <CommandShortcut>⌘D</CommandShortcut>
           </CommandItem>
         </CommandGroup>

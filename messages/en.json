@@ -276,5 +276,13 @@
     "button": "Sign in with Github"
   },
   "copy": "copy",
-  "trusted-by-text": "500+ users improved their finances with qarjy.\n"
+  "trusted-by-text": "500+ users improved their finances with qarjy.\n",
+  "search": {
+    "empty": "No results found.",
+    "new": "Create Budget",
+    "dashboard": "Open Dashboard",
+    "placeholder": "Type a command or search...",
+    "suggestions": "Suggestions",
+    "commands": "Commands"
+  }
 }

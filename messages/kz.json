@@ -273,5 +273,13 @@
     "button": "Github arqyly kırıñız"
   },
   "copy": "köşırmesı",
-  "trusted-by-text": "Bızben bırge 500-den astam adam qarjylyq jağdaiyn jaqsartty"
+  "trusted-by-text": "Bızben bırge 500-den astam adam qarjylyq jağdaiyn jaqsartty",
+  "search": {
+    "empty": "Nätije tabylmady.",
+    "new": "Büdjettı qūru",
+    "dashboard": "Basqaru taqtasyn aşyñyz",
+    "placeholder": "Pärmendı terıñız nemese ızdeñız...",
+    "suggestions": "Ūsynystar",
+    "commands": "Komandalar"
+  }
 }
