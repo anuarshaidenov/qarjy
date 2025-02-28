@@ -31,7 +31,7 @@ export async function generateMetadata(
 
   return {
     title: t("metadata.title"),
-    applicationName: t("metadata.title"),
+    applicationName: "Qarjy",
     description: t("metadata.description"),
     authors: [
       {
@@ -43,7 +43,7 @@ export async function generateMetadata(
     appleWebApp: {
       capable: true,
       statusBarStyle: "default",
-      title: t("metadata.openGraph.title"),
+      title: "Qarjy",
       startupImage: "/apple-touch-icon.png",
     },
     openGraph: {

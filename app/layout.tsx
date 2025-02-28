@@ -40,6 +40,14 @@ export const metadata: Metadata = {
       en: "/en",
     },
   },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Qarjy - Simple, Free budgeting app.",
+    startupImage: "/apple-touch-icon.png",
+  },
+  applicationName: "Qarjy",
 };
 
 // Since we have a `not-found.tsx` page on the root, a layout file

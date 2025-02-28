@@ -10,7 +10,6 @@ import {
 } from "@/components/dashboard-active-link";
 
 import { ModeToggle } from "@/components/mode-toggle";
-import { Logo } from "@/components/logo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { CurrencySelector } from "@/components/currency-selector";
