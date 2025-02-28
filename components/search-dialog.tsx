@@ -18,6 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { useGetBudgets } from "@/hooks/use-get-budgets";
 import Link from "next/link";
+import { DashboardIcon } from "@radix-ui/react-icons";
 
 type Props = {};
 
@@ -47,6 +48,11 @@ export const SearchDialog = (props: Props) => {
     });
   };
 
+  const handleOpenDashboard = () => {
+    router.push("/dashboard");
+    setOpen(false);
+  };
+
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -56,6 +62,10 @@ export const SearchDialog = (props: Props) => {
       if (e.key === "n" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         handleCreateBudget();
+      }
+      if (e.key === "d" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        handleOpenDashboard();
       }
     };
     document.addEventListener("keydown", down);
@@ -86,6 +96,11 @@ export const SearchDialog = (props: Props) => {
             {isPending ? <Loader className="animate-spin" /> : <Plus />}
             <span>Create Budget</span>
             <CommandShortcut>⌘N</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={handleOpenDashboard}>
+            <DashboardIcon />
+            <span>Open Dashboard</span>
+            <CommandShortcut>⌘D</CommandShortcut>
           </CommandItem>
         </CommandGroup>
       </CommandList>
