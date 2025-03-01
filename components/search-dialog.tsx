@@ -28,7 +28,7 @@ export const SearchDialog = (props: Props) => {
   const [isPending, startTransition] = React.useTransition();
   const { toast } = useToast();
   const router = useRouter();
-  const { data } = useGetBudgets({ page: 1, pageSize: 5 });
+  const { data } = useGetBudgets({ page: 1, pageSize: 30 });
   const t = useTranslations();
 
   const handleCreateBudget = () => {
@@ -91,6 +91,19 @@ export const SearchDialog = (props: Props) => {
       <CommandInput placeholder={t('search.placeholder')} />
       <CommandList>
         <CommandEmpty>{t('search.empty')}</CommandEmpty>
+        <CommandGroup heading={t('search.commands')}>
+          <CommandItem onSelect={handleCreateBudget}>
+            {isPending ? <Loader className="animate-spin" /> : <Plus />}
+            <span>{t('search.new')}</span>
+            <CommandShortcut>⌘N</CommandShortcut>
+          </CommandItem>
+          <CommandItem onSelect={handleOpenDashboard}>
+            <DashboardIcon />
+            <span>{t('search.dashboard')}</span>
+            <CommandShortcut>⌘D</CommandShortcut>
+          </CommandItem>
+        </CommandGroup>
+        <CommandSeparator />
         <CommandGroup heading={t('search.suggestions')}>
           {data?.data.map((budget) => (
             <CommandLink
@@ -103,19 +116,6 @@ export const SearchDialog = (props: Props) => {
               {budget.title}
             </CommandLink>
           ))}
-        </CommandGroup>
-        <CommandSeparator />
-        <CommandGroup heading={t('search.commands')}>
-          <CommandItem onSelect={handleCreateBudget}>
-            {isPending ? <Loader className="animate-spin" /> : <Plus />}
-            <span>{t('search.new')}</span>
-            <CommandShortcut>⌘N</CommandShortcut>
-          </CommandItem>
-          <CommandItem onSelect={handleOpenDashboard}>
-            <DashboardIcon />
-            <span>{t('search.dashboard')}</span>
-            <CommandShortcut>⌘D</CommandShortcut>
-          </CommandItem>
         </CommandGroup>
       </CommandList>
     </CommandDialog>
