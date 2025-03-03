@@ -283,6 +283,7 @@
     "dashboard": "Open Dashboard",
     "placeholder": "Type a command or search...",
     "suggestions": "Suggestions",
-    "commands": "Commands"
+    "commands": "Commands",
+    "theme": "Swtich theme"
   }
 }
