@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   AlertDialog,
@@ -10,20 +10,20 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog';
+} from "@/components/ui/alert-dialog";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { cn } from '@/lib/utils';
-import { Copy, Ellipsis, Trash } from 'lucide-react';
-import { Button } from './ui/button';
-import { deleteBudget } from '@/actions/delete-budget';
-import { duplicateBudget } from '@/actions/duplicate-budget';
-import { useToast } from '@/hooks/use-toast';
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
+import { Copy, Ellipsis, Trash } from "lucide-react";
+import { Button } from "./ui/button";
+import { deleteBudget } from "@/actions/delete-budget";
+import { duplicateBudget } from "@/actions/duplicate-budget";
+import { useToast } from "@/hooks/use-toast";
 
 type Props = {
   triggerClassname?: string;
@@ -38,9 +38,9 @@ export const BudgetCardOptions = (props: Props) => {
   const handleDelete = async (e: React.MouseEvent) => {
     e.stopPropagation();
     toast({
-      title: 'Deleting budget',
-      description: 'Please wait',
-      variant: 'default',
+      title: "Deleting budget",
+      description: "Please wait",
+      variant: "default",
     });
 
     props.onLoadStart?.();
@@ -49,17 +49,17 @@ export const BudgetCardOptions = (props: Props) => {
 
     if (data) {
       toast({
-        title: 'Budget deleted',
-        description: 'Your budget has been deleted',
-        variant: 'default',
+        title: "Budget deleted",
+        description: "Your budget has been deleted",
+        variant: "default",
       });
     }
 
     if (error) {
       toast({
-        title: 'Error deleting budget',
+        title: "Error deleting budget",
         description: error.message,
-        variant: 'destructive',
+        variant: "destructive",
       });
     }
 
@@ -70,9 +70,9 @@ export const BudgetCardOptions = (props: Props) => {
     e.stopPropagation();
 
     toast({
-      title: 'Duplicating budget',
-      description: 'Please wait',
-      variant: 'default',
+      title: "Duplicating budget",
+      description: "Please wait",
+      variant: "default",
     });
 
     props.onLoadStart?.();
@@ -81,17 +81,17 @@ export const BudgetCardOptions = (props: Props) => {
 
     if (data) {
       toast({
-        title: 'Budget duplicated',
-        description: 'Your budget has been duplicated',
-        variant: 'default',
+        title: "Budget duplicated",
+        description: "Your budget has been duplicated",
+        variant: "default",
       });
     }
 
     if (error) {
       toast({
-        title: 'Error duplicating budget',
+        title: "Error duplicating budget",
         description: error.message,
-        variant: 'destructive',
+        variant: "destructive",
       });
     }
 
@@ -103,8 +103,8 @@ export const BudgetCardOptions = (props: Props) => {
       <AlertDialog>
         <DropdownMenuTrigger asChild>
           <Button
-            size={'icon'}
-            variant={'ghost'}
+            size={"icon"}
+            variant={"ghost"}
             className={cn(props.triggerClassname)}
           >
             <Ellipsis className="size-5" />
@@ -113,14 +113,14 @@ export const BudgetCardOptions = (props: Props) => {
         <DropdownMenuContent>
           <DropdownMenuItem
             onClick={handleDuplicate}
-            className="w-full justify-between"
+            className="w-full justify-between cursor-pointer"
           >
             Duplicate <Copy className="size-4" />
           </DropdownMenuItem>
 
           <DropdownMenuItem
             asChild
-            className="hover:bg-red-700 focus:bg-red-700 cursor-pointer text-white hover:text-white focus:text-white flex items-center justify-between"
+            className="hover:bg-red-700 focus:bg-red-700 cursor-pointer hover:text-white focus:text-white flex items-center justify-between"
           >
             <AlertDialogTrigger
               className="w-full"
