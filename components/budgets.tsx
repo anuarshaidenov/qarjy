@@ -18,14 +18,15 @@ export const Budgets = async (props: Props) => {
     <p className="text-red-400">{error.message}</p>;
   }
 
-  return data?.map((budget) => (
+  return (
     <>
-      <BudgetCard key={budget.id} budget={budget} />
+      {data?.map((budget) => (
+        <BudgetCard key={budget.id} budget={budget} />
+      ))}
       {hasMoreBudgets && <LoadMoreBudgetsButton />}
     </>
-  ));
+  );
 };
-
 export const BudgetsSkeleton = () => (
   <>
     <Skeleton className="h-[134px]" />
