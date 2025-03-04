@@ -1,13 +1,9 @@
-import { getPaginatedBudgets } from "@/actions/get-paginated-budgets";
 import { Budgets, BudgetsSkeleton } from "@/components/budgets";
 import {
   DashboardAuthInfo,
   DashboardAuthInfoSkeleton,
 } from "@/components/dashboard-auth-info";
-import { LoadMoreBudgetsButton } from "@/components/load-more-budgets-button";
 import { NewBudgetButton } from "@/components/new-budget-button";
-import { createClient } from "@/lib/supabase/server";
-import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 
 type Props = {
@@ -15,10 +11,8 @@ type Props = {
 };
 
 async function DashboardPage({ searchParams }: Props) {
-  const t = await getTranslations();
-  const supabase = await createClient();
-  const { data: userData } = await supabase.auth.getUser();
   const page = (await searchParams)?.["page"] || "1";
+  const query = ((await searchParams)?.["query"] || "") as string;
 
   return (
     <section className="py-8 px-4 container flex flex-col gap-4">
@@ -30,7 +24,7 @@ async function DashboardPage({ searchParams }: Props) {
         <NewBudgetButton />
 
         <Suspense key={+page} fallback={<BudgetsSkeleton />}>
-          <Budgets page={+page} />
+          <Budgets query={query} page={+page} />
         </Suspense>
       </div>
     </section>

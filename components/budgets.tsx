@@ -5,12 +5,14 @@ import { Skeleton } from "./ui/skeleton";
 import { LoadMoreBudgetsButton } from "./load-more-budgets-button";
 
 type Props = {
+  query: string;
   page: number;
 };
 
 export const Budgets = async (props: Props) => {
   const { data, error, count } = await getPaginatedBudgets({
     pageSize: props.page * 10,
+    query: props.query,
   });
   const hasMoreBudgets = (count || 0) > (data?.length || 0);
 

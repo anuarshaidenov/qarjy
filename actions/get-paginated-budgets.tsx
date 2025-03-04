@@ -7,14 +7,16 @@ type Params = {
   pageSize?: number;
   sortDirection?: string;
   sortBy?: string;
+  query?: string;
 };
 
-export const getPaginatedBudgets = cache(async (params?: Params) => {
+export const getPaginatedBudgets = async (params?: Params) => {
   const {
     page = 1,
     pageSize = 10,
     sortDirection = "desc",
     sortBy = "created_at",
+    query = "",
   } = params || {};
   const offset = (page - 1) * pageSize;
   const limit = pageSize;
@@ -45,6 +47,7 @@ export const getPaginatedBudgets = cache(async (params?: Params) => {
       { count: "exact" }
     )
     .eq("user_id", userData.user.id)
+    .ilike("title", `%${query}%`)
     .order(sortBy, { ascending: sortDirection === "asc" })
     .range(offset, offset + limit - 1);
 
@@ -86,4 +89,4 @@ export const getPaginatedBudgets = cache(async (params?: Params) => {
     error,
     count,
   };
-});
+};
