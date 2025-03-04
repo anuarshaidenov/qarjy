@@ -39,10 +39,7 @@ export async function GET(
     .single();
 
   if (error) {
-    return NextResponse.json(
-      { error: "Error fetching budget" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error }, { status: 500 });
   }
 
   const essentialExpenses = data.expenses.filter(

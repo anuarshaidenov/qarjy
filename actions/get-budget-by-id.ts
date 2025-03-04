@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { Budget } from "@/types/budget";
+import { notFound } from "next/navigation";
 
 export async function getBudgetById(id: string) {
   const supabase = await createClient();
@@ -36,12 +37,16 @@ export async function getBudgetById(id: string) {
 
   if (error) {
     console.error("Error fetching budget by id:", error);
+    if (error.code === "22P02") {
+      return notFound();
+    }
+
     return null;
   }
 
   if (!data) {
     console.error("Budget not found:", data);
-    return null;
+    return notFound();
   }
 
   // Classify expenses by type
