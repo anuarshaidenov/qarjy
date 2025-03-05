@@ -204,9 +204,7 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
@@ -281,6 +279,7 @@
     "placeholder": "Pärmendı terıñız nemese ızdeñız...",
     "suggestions": "Ūsynystar",
     "commands": "Komandalar",
-    "theme": "Tüstı auystyru"
+    "theme": "Tüstı auystyru",
+    "currency": "Valütany {currency} ornatyñyz"
   }
 }

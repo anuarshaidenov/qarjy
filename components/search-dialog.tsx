@@ -21,6 +21,8 @@ import Link from "next/link";
 import { DashboardIcon } from "@radix-ui/react-icons";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import { useCurrency } from "./currency-provider";
+import { currencies } from "@/lib/constants";
 
 type Props = {};
 
@@ -32,6 +34,7 @@ export const SearchDialog = (props: Props) => {
   const { data } = useGetBudgets({ page: 1, pageSize: 30 });
   const t = useTranslations();
   const { theme, setTheme } = useTheme();
+  const { setCurrency } = useCurrency();
 
   const handleCreateBudget = () => {
     startTransition(async () => {
@@ -118,6 +121,18 @@ export const SearchDialog = (props: Props) => {
             <span>{t("search.theme")}</span>
             <CommandShortcut>⌘T</CommandShortcut>
           </CommandItem>
+          {currencies.map((currency) => (
+            <CommandItem
+              key={currency.code}
+              onSelect={() => {
+                setCurrency(currency);
+                setOpen(false);
+              }}
+            >
+              <span className="ml-1">{currency.symbol}</span>
+              <span>{t("search.currency", { currency: currency.name })}</span>
+            </CommandItem>
+          ))}
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading={t("search.suggestions")}>
