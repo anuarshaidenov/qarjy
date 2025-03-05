@@ -11,6 +11,7 @@ import {
 import { useGetBudgetById } from "@/hooks/use-get-budget-by-id";
 import { useParams } from "next/navigation";
 import { Logo } from "./logo";
+import Link from "next/link";
 
 type Props = {
   currentPageTitle: string;
@@ -32,7 +33,9 @@ export const BudgetBreadcrumbs = (props: Props) => {
       <Breadcrumb className="py-8 px-4 container hidden sm:flex">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/dashboard">Dashboard</BreadcrumbLink>
+            <BreadcrumbLink asChild>
+              <Link href="/dashboard">Dashboard</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
