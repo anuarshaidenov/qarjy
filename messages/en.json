@@ -207,7 +207,9 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "Index, follow"
   },
@@ -283,6 +285,7 @@
     "suggestions": "Suggestions",
     "commands": "Commands",
     "theme": "Swtich theme",
-    "currency": "Set currency to {currency}"
+    "currency": "Set currency to {currency}",
+    "currencies-heading": "Currencies"
   }
 }

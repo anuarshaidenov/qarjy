@@ -12,7 +12,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "./ui/command";
-import { Loader, MoonIcon, Plus, SunIcon } from "lucide-react";
+import { Command, Loader, MoonIcon, Plus, SunIcon } from "lucide-react";
 import { createBudget } from "@/actions/create-budget";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
@@ -121,18 +121,6 @@ export const SearchDialog = (props: Props) => {
             <span>{t("search.theme")}</span>
             <CommandShortcut>⌘T</CommandShortcut>
           </CommandItem>
-          {currencies.map((currency) => (
-            <CommandItem
-              key={currency.code}
-              onSelect={() => {
-                setCurrency(currency);
-                setOpen(false);
-              }}
-            >
-              <span className="ml-1">{currency.symbol}</span>
-              <span>{t("search.currency", { currency: currency.name })}</span>
-            </CommandItem>
-          ))}
         </CommandGroup>
         <CommandSeparator />
         <CommandGroup heading={t("search.suggestions")}>
@@ -146,6 +134,21 @@ export const SearchDialog = (props: Props) => {
             >
               {budget.title}
             </CommandLink>
+          ))}
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup heading={t("search.currencies-heading")}>
+          {currencies.map((currency) => (
+            <CommandItem
+              key={currency.code}
+              onSelect={() => {
+                setCurrency(currency);
+                setOpen(false);
+              }}
+            >
+              <span className="ml-1">{currency.symbol}</span>
+              <span>{t("search.currency", { currency: currency.name })}</span>
+            </CommandItem>
           ))}
         </CommandGroup>
       </CommandList>
