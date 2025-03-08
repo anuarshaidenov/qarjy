@@ -171,7 +171,7 @@
       }
     },
     "title": "Qarjy - simple, free budgeting app",
-    "description": "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",
+    "description": "The simplest way to manage your finances. Say goodbye to boring and overpriced budgeting tools. Take control of your money with Qarjy - the free budgeting app that's easy and free to use.",
     "keywords": [
       "Budgeting app",
       "Personal finance",
@@ -207,9 +207,7 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "Index, follow"
   },
