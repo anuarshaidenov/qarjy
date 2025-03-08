@@ -77,7 +77,7 @@ export const HeroSection = async (props: Props) => {
           <div className="flex flex-col mt-4 gap-2">
             <Button className="w-56" asChild>
               <Link href={"/signup"}>
-                {t("button-get-started")} <ArrowRight className="ml-2" />
+                {t("button-get-started")} <ArrowRight className="size-5 ml-2" />
               </Link>
             </Button>
             <Button className="w-56" variant={"secondary"} asChild>
