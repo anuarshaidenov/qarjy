@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import { OpacityWrapper } from "./ui/scroll-wrapper";
 import { FloatingSigns } from "./ui/floating-signs";
 import { BlurFade } from "./ui/blur-fade";
+import { ArrowRight } from "lucide-react";
 
 type Props = {};
 interface ItemProps {
@@ -40,7 +41,7 @@ export const HeroSection = async (props: Props) => {
   return (
     <div className="container relative top-0 left-0 overflow-hidden">
       <FloatingSigns />
-      <OpacityWrapper className="pt-32 py-64 overflow-hidden flex flex-col items-center gap-6 container">
+      <OpacityWrapper className="py-32 overflow-hidden flex flex-col items-center gap-6 container">
         <BlurFade inView delay={0}>
           <h1 className="flex flex-col items-center text-center text-5xl md:text-8xl font-bold justify-center gap-1 flex-wrap md:gap-4">
             <div className="group relative flex items-center">
@@ -75,7 +76,9 @@ export const HeroSection = async (props: Props) => {
         <BlurFade inView delay={0.4}>
           <div className="flex flex-col mt-4 gap-2">
             <Button className="w-56" asChild>
-              <Link href={"/signup"}>{t("button-get-started")}</Link>
+              <Link href={"/signup"}>
+                {t("button-get-started")} <ArrowRight className="ml-2" />
+              </Link>
             </Button>
             <Button className="w-56" variant={"secondary"} asChild>
               <Link href={"#how-it-works"}>{t("button")}</Link>
