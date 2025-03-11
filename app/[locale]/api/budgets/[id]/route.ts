@@ -74,6 +74,18 @@ export async function GET(
     draftIncome: data.draft_income,
     savings: data.savings,
     cushionFund: data.cushion_fund,
+    expensesTotal: overallExpenses.reduce(
+      (total, exp) => total + exp.amount,
+      0
+    ),
+    essentialExpensesTotal: essentialExpenses.reduce(
+      (total, exp) => total + exp.amount,
+      0
+    ),
+    nonEssentialExpensesTotal: nonEssentialExpenses.reduce(
+      (total, exp) => total + exp.amount,
+      0
+    ),
   };
 
   return NextResponse.json(budget);

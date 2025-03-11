@@ -83,6 +83,18 @@ export async function getBudgetById(id: string) {
     draftIncome: data.draft_income,
     savings: data.savings,
     cushionFund: data.cushion_fund,
+    expensesTotal: overallExpenses.reduce(
+      (total, expense) => total + expense.amount,
+      0
+    ),
+    essentialExpensesTotal: essentialExpenses.reduce(
+      (total, expense) => total + expense.amount,
+      0
+    ),
+    nonEssentialExpensesTotal: nonEssentialExpenses.reduce(
+      (total, expense) => total + expense.amount,
+      0
+    ),
   };
 
   return budget;

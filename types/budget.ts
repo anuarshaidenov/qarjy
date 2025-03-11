@@ -14,4 +14,7 @@ export type Budget = {
   nonEssentialExpenses: Expense[];
   savings: number;
   cushionFund: number;
+  expensesTotal: number;
+  essentialExpensesTotal: number;
+  nonEssentialExpensesTotal: number;
 };

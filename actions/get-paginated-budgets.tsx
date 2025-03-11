@@ -79,6 +79,18 @@ export const getPaginatedBudgets = async (params?: Params) => {
         name: exp.name,
         amount: exp.amount,
       })),
+      essentialExpensesTotal: essentialExpenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
+      nonEssentialExpensesTotal: nonEssentialExpenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
+      expensesTotal: budget.expenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
       savings: budget.savings,
       cushionFund: budget.cushion_fund,
     };

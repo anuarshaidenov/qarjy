@@ -74,6 +74,18 @@ export async function GET(request: NextRequest) {
       })),
       savings: budget.savings,
       cushionFund: budget.cushion_fund,
+      expensesTotal: budget.expenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
+      essentialExpensesTotal: essentialExpenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
+      nonEssentialExpensesTotal: nonEssentialExpenses.reduce(
+        (total, expense) => total + expense.amount,
+        0
+      ),
     };
   });
 
