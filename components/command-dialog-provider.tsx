@@ -1,6 +1,7 @@
-"use client";
+'use client';
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from 'react';
+import { SearchDialog } from './search-dialog';
 
 type CommandDialogContextType = {
   open: boolean;
@@ -16,7 +17,7 @@ export const useCommandDialog = () => useContext(CommandDialogContext);
 
 export const CommandDialogProvider = ({
   children,
-  key = "k",
+  key = 'k',
 }: {
   children: React.ReactNode;
   key?: string;
@@ -26,6 +27,7 @@ export const CommandDialogProvider = ({
   return (
     <CommandDialogContext.Provider value={{ open, setOpen }}>
       {children}
+      <SearchDialog />
     </CommandDialogContext.Provider>
   );
 };

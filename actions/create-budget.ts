@@ -1,10 +1,14 @@
-"use server";
+'use server';
 
-import { createClient } from "@/lib/supabase/server";
-import { getTranslations } from "next-intl/server";
-import { revalidatePath } from "next/cache";
+import { createClient } from '@/lib/supabase/server';
+import { getTranslations } from 'next-intl/server';
+import { revalidatePath } from 'next/cache';
 
-export const createBudget = async () => {
+type Props = {
+  type?: string;
+};
+
+export const createBudget = async (props?: Props) => {
   const supabase = await createClient();
   const t = await getTranslations();
 
@@ -18,24 +22,27 @@ export const createBudget = async () => {
   }
 
   const { data: latestBudgetData } = await supabase
-    .from("budgets")
-    .select("*")
+    .from('budgets')
+    .select('*')
     .limit(1)
-    .order("created_at", { ascending: false });
+    .order('created_at', { ascending: false });
+
+  const newBudgetType = props?.type || '50-30-20';
 
   const { data, error } = await supabase
-    .from("budgets")
+    .from('budgets')
     .insert([
       {
         user_id: userData.user.id,
-        title: t("new-budget"),
+        title: t('new-budget'),
         monthly_income: latestBudgetData?.[0]?.monthly_income || 1000000,
         draft_income: 1000000,
+        type: newBudgetType,
       },
     ])
-    .select("id");
+    .select('id');
 
-  revalidatePath("/dashboard");
+  revalidatePath('/dashboard');
 
   return {
     data,
