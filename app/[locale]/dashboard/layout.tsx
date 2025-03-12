@@ -45,8 +45,8 @@ const DashboardLayout = async (props: Props) => {
   setRequestLocale(params.locale);
 
   return (
-    <CommandDialogProvider>
-      <CreateBudgetDialogProvider>
+    <CreateBudgetDialogProvider>
+      <CommandDialogProvider>
         <div className="grid h-screen w-full md:pl-[53px]">
           <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
             <div className="border-b p-2">
@@ -110,8 +110,8 @@ const DashboardLayout = async (props: Props) => {
             </footer>
           </div>
         </div>
-      </CreateBudgetDialogProvider>
-    </CommandDialogProvider>
+      </CommandDialogProvider>
+    </CreateBudgetDialogProvider>
   );
 };
 

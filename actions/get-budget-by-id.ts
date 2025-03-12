@@ -1,6 +1,6 @@
-import { createClient } from "@/lib/supabase/server";
-import { Budget } from "@/types/budget";
-import { notFound } from "next/navigation";
+import { createClient } from '@/lib/supabase/server';
+import { Budget } from '@/types/budget';
+import { notFound } from 'next/navigation';
 
 export async function getBudgetById(id: string) {
   const supabase = await createClient();
@@ -9,9 +9,9 @@ export async function getBudgetById(id: string) {
   const { data: userData, error: authError } = await supabase.auth.getUser();
 
   if (authError || !userData?.user) {
-    console.error("Error fetching user:", authError);
+    console.error('Error fetching user:', authError);
     throw new Error(
-      "User not authenticated. Please log in to access your budget."
+      'User not authenticated. Please log in to access your budget.'
     );
   }
 
@@ -19,7 +19,7 @@ export async function getBudgetById(id: string) {
 
   // Fetch the budget that matches both the id and the user's id
   const { data, error } = await supabase
-    .from("budgets")
+    .from('budgets')
     .select(
       `
         id,
@@ -28,16 +28,17 @@ export async function getBudgetById(id: string) {
         draft_income,
         savings,
         cushion_fund,
-        expenses(id, name, amount, type)
+        expenses(id, name, amount, type),
+        type
       `
     )
-    .eq("id", id)
-    .eq("user_id", userId) // Ensure the budget belongs to the authenticated user
+    .eq('id', id)
+    .eq('user_id', userId) // Ensure the budget belongs to the authenticated user
     .single();
 
   if (error) {
-    console.error("Error fetching budget by id:", error);
-    if (error.code === "22P02") {
+    console.error('Error fetching budget by id:', error);
+    if (error.code === '22P02') {
       return notFound();
     }
 
@@ -45,19 +46,19 @@ export async function getBudgetById(id: string) {
   }
 
   if (!data) {
-    console.error("Budget not found:", data);
+    console.error('Budget not found:', data);
     return notFound();
   }
 
   // Classify expenses by type
   const essentialExpenses = data.expenses.filter(
-    (expense) => expense.type === "essential"
+    (expense) => expense.type === 'essential'
   );
   const nonEssentialExpenses = data.expenses.filter(
-    (expense) => expense.type === "non-essential"
+    (expense) => expense.type === 'non-essential'
   );
   const overallExpenses = data.expenses.filter(
-    (expense) => expense.type === "overall"
+    (expense) => expense.type === 'overall'
   );
 
   // Construct the budget object
@@ -95,6 +96,7 @@ export async function getBudgetById(id: string) {
       (total, expense) => total + expense.amount,
       0
     ),
+    type: data.type,
   };
 
   return budget;

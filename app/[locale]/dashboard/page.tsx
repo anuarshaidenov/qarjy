@@ -25,7 +25,7 @@ async function DashboardPage({ searchParams }: Props) {
         {/* <NewBudgetButton /> */}
         <CreateBudgetButton />
 
-        <Suspense key={+page} fallback={<BudgetsSkeleton />}>
+        <Suspense fallback={<BudgetsSkeleton />}>
           <Budgets query={query} page={+page} />
         </Suspense>
       </div>

@@ -41,6 +41,7 @@ export const duplicateBudget = async (budgetId: string) => {
         draft_income: budget.draft_income,
         savings: budget.savings,
         cushion_fund: budget.cushion_fund,
+        type: budget.type,
       },
     ])
     .select('id');

@@ -1,4 +1,6 @@
-import { createContext, useContext, useState } from "react";
+'use client';
+
+import { createContext, useContext, useState } from 'react';
 
 type ExpensesSumContextType = {
   essentialExpensesSum: number | null;
@@ -29,7 +31,7 @@ export const useExpensesSum = () => {
 
   if (!context) {
     throw new Error(
-      "useExpensesSum must be used within an ExpensesSumProvider"
+      'useExpensesSum must be used within an ExpensesSumProvider'
     );
   }
 

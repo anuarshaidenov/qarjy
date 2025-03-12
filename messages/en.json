@@ -288,5 +288,7 @@
     "theme": "Swtich theme",
     "currency": "Set currency to {currency}",
     "currencies-heading": "Currencies"
-  }
+  },
+  "create-budget": "Create budget",
+  "create-budget-description": "Select a budget type to create a new budget"
 }

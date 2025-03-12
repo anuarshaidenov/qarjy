@@ -1,6 +1,6 @@
-import { createClient } from "@/lib/supabase/server";
-import { Budget } from "@/types/budget";
-import { NextRequest, NextResponse } from "next/server";
+import { createClient } from '@/lib/supabase/server';
+import { Budget } from '@/types/budget';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
   request: NextRequest,
@@ -11,18 +11,18 @@ export async function GET(
 
   const { data: userData, error: authError } = await supabase.auth.getUser();
   if (authError || !userData?.user) {
-    console.error("Error fetching user:", authError);
+    console.error('Error fetching user:', authError);
 
     return NextResponse.json(
       {
-        error: "User not authenticated. Please log in to create a budget.",
+        error: 'User not authenticated. Please log in to create a budget.',
       },
       { status: 401 }
     );
   }
 
   const { data, error } = await supabase
-    .from("budgets")
+    .from('budgets')
     .select(
       `
         id,
@@ -31,11 +31,12 @@ export async function GET(
         draft_income,
         savings,
         cushion_fund,
-        expenses(id, name, amount, type)
+        expenses(id, name, amount, type),
+        type
       `
     )
-    .eq("id", (await params).id)
-    .eq("user_id", userData.user.id)
+    .eq('id', (await params).id)
+    .eq('user_id', userData.user.id)
     .single();
 
   if (error) {
@@ -43,13 +44,13 @@ export async function GET(
   }
 
   const essentialExpenses = data.expenses.filter(
-    (expense) => expense.type === "essential"
+    (expense) => expense.type === 'essential'
   );
   const nonEssentialExpenses = data.expenses.filter(
-    (expense) => expense.type === "non-essential"
+    (expense) => expense.type === 'non-essential'
   );
   const overallExpenses = data.expenses.filter(
-    (expense) => expense.type === "overall"
+    (expense) => expense.type === 'overall'
   );
 
   const budget: Budget = {
@@ -86,6 +87,7 @@ export async function GET(
       (total, exp) => total + exp.amount,
       0
     ),
+    type: data.type,
   };
 
   return NextResponse.json(budget);

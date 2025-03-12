@@ -12,8 +12,9 @@ import { useCreateBudgetDialog } from './create-budget-dialog-provider';
 import { useToast } from '@/hooks/use-toast';
 import { createBudget } from '@/actions/create-budget';
 import { useRouter } from 'next/navigation';
-import { Card, CardContent } from './ui/card';
+import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 type Props = {};
 
@@ -22,8 +23,9 @@ export const CreateBudgetDialog = (props: Props) => {
   const [isPending, startTransition] = React.useTransition();
   const { toast } = useToast();
   const router = useRouter();
+  const t = useTranslations();
 
-  const handleClick = async (type: '50-30-20' | '75-15-10') => {
+  const handleClick = async (type: '50-30-20' | '75-10-15') => {
     startTransition(async () => {
       const { data, error } = await createBudget({ type });
 
@@ -46,20 +48,20 @@ export const CreateBudgetDialog = (props: Props) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent>
         <DialogHeader className="mb-4">
-          <DialogTitle>Create budget</DialogTitle>
+          <DialogTitle>{t('create-budget')}</DialogTitle>
           <DialogDescription>
-            Select a budget type to create a new budget
+            {t('create-budget-description')}
           </DialogDescription>
         </DialogHeader>
         <div className="grid sm:grid-cols-2 gap-4">
           <button
             disabled={isPending}
             className={cn(isPending && 'animate-pulse')}
+            onClick={() => handleClick('50-30-20')}
           >
             <Card
               className={'flex items-center h-full justify-center min-h-36'}
               aria-label="New Budget"
-              onClick={() => handleClick('50-30-20')}
             >
               <span className="font-bold md:text-2xl">50-30-20</span>
             </Card>
@@ -67,13 +69,13 @@ export const CreateBudgetDialog = (props: Props) => {
           <button
             disabled={isPending}
             className={cn(isPending && 'animate-pulse')}
+            onClick={() => handleClick('75-10-15')}
           >
             <Card
               className={'flex items-center h-full justify-center min-h-36'}
               aria-label="New Budget"
-              onClick={() => handleClick('75-15-10')}
             >
-              <span className="font-bold md:text-2xl">75-15-10</span>
+              <span className="font-bold md:text-2xl">75-10-15</span>
             </Card>
           </button>
         </div>

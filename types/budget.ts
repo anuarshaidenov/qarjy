@@ -17,4 +17,5 @@ export type Budget = {
   expensesTotal: number;
   essentialExpensesTotal: number;
   nonEssentialExpensesTotal: number;
+  type: string;
 };

@@ -285,5 +285,7 @@
     "theme": "Tüstı auystyru",
     "currency": "Valütany {currency} ornatyñyz",
     "currencies-heading": "Valütalar"
-  }
+  },
+  "create-budget": "Büdjettı qūru",
+  "create-budget-description": "Jaña büdjet jasau üşın büdjet türın tañdañyz"
 }
