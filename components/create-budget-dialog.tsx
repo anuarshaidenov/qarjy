@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation';
 import { Card } from './ui/card';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
+import { BUDGET_TYPES } from '@/lib/constants';
 
 type Props = {};
 
@@ -25,7 +26,7 @@ export const CreateBudgetDialog = (props: Props) => {
   const router = useRouter();
   const t = useTranslations();
 
-  const handleClick = async (type: '50-30-20' | '75-10-15') => {
+  const handleClick = async (type: string) => {
     startTransition(async () => {
       const { data, error } = await createBudget({ type });
 
@@ -57,7 +58,7 @@ export const CreateBudgetDialog = (props: Props) => {
           <button
             disabled={isPending}
             className={cn(isPending && 'animate-pulse')}
-            onClick={() => handleClick('50-30-20')}
+            onClick={() => handleClick(BUDGET_TYPES['50-30-20'])}
           >
             <Card
               className={'flex items-center h-full justify-center min-h-36'}

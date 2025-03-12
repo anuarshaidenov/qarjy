@@ -1,6 +1,6 @@
-import { createClient } from "@/lib/supabase/server";
-import { Budget } from "@/types/budget";
-import { cache } from "react";
+import { createClient } from '@/lib/supabase/server';
+import { Budget } from '@/types/budget';
+import { cache } from 'react';
 
 type Params = {
   page?: number;
@@ -14,9 +14,9 @@ export const getPaginatedBudgets = async (params?: Params) => {
   const {
     page = 1,
     pageSize = 10,
-    sortDirection = "desc",
-    sortBy = "created_at",
-    query = "",
+    sortDirection = 'desc',
+    sortBy = 'created_at',
+    query = '',
   } = params || {};
   const offset = (page - 1) * pageSize;
   const limit = pageSize;
@@ -33,7 +33,7 @@ export const getPaginatedBudgets = async (params?: Params) => {
   }
 
   const { data, error, count } = await supabase
-    .from("budgets")
+    .from('budgets')
     .select(
       `
         id, 
@@ -42,21 +42,22 @@ export const getPaginatedBudgets = async (params?: Params) => {
         draft_income,
         savings, 
         cushion_fund,
-        expenses(id, name, amount, type)
+        expenses(id, name, amount, type),
+        type
       `,
-      { count: "exact" }
+      { count: 'exact' }
     )
-    .eq("user_id", userData.user.id)
-    .ilike("title", `%${query}%`)
-    .order(sortBy, { ascending: sortDirection === "asc" })
+    .eq('user_id', userData.user.id)
+    .ilike('title', `%${query}%`)
+    .order(sortBy, { ascending: sortDirection === 'asc' })
     .range(offset, offset + limit - 1);
 
   const formattedBudgets: Budget[] | undefined = data?.map((budget) => {
     const essentialExpenses = budget.expenses.filter(
-      (expense) => expense.type === "essential"
+      (expense) => expense.type === 'essential'
     );
     const nonEssentialExpenses = budget.expenses.filter(
-      (expense) => expense.type === "non-essential"
+      (expense) => expense.type === 'non-essential'
     );
 
     return {
@@ -93,6 +94,7 @@ export const getPaginatedBudgets = async (params?: Params) => {
       ),
       savings: budget.savings,
       cushionFund: budget.cushion_fund,
+      type: budget.type,
     };
   });
 

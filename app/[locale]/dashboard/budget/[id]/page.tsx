@@ -7,7 +7,7 @@ import { Dashboard751015Stats } from '@/components/dashboard-751015-stats';
 import { DraftIncomeContextProvider } from '@/components/draft-income-context-provider';
 import { ExpensesSumProvider } from '@/components/expenses-sum-provider';
 import { MonthlyIncomeProvider } from '@/components/monthly-income-context-provider';
-import { QUERY_KEYS } from '@/lib/constants';
+import { BUDGET_TYPES, QUERY_KEYS } from '@/lib/constants';
 import { Budget } from '@/types/budget';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import axios from 'axios';
@@ -49,14 +49,14 @@ async function MonthlyBudgetPage(props: Props) {
           <ExpensesSumProvider>
             <section className="h-full">
               <div className="py-8 px-4 container flex flex-col gap-4">
-                {budgetType === '50-30-20' && (
+                {budgetType === BUDGET_TYPES['50-30-20'] && (
                   <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                     <Dashboard503020Card />
                     <Dashboard503020Stats />
                   </div>
                 )}
 
-                {budgetType === '75-10-15' && (
+                {budgetType === BUDGET_TYPES['75-10-15'] && (
                   <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                     <Dashboard751015Card />
                     <Dashboard751015Stats />

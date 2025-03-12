@@ -1,14 +1,14 @@
-import { createClient } from "@/lib/supabase/server";
-import { Budget } from "@/types/budget";
-import { NextRequest, NextResponse } from "next/server";
+import { createClient } from '@/lib/supabase/server';
+import { Budget } from '@/types/budget';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   const supabase = await createClient();
   const params = request.nextUrl.searchParams;
-  const sortBy = params.get("sortBy") || "created_at";
-  const sortDirection = params.get("sortDirection") || "desc";
-  const page = parseInt(params.get("page") || "1", 10);
-  const pageSize = parseInt(params.get("pageSize") || "10", 10);
+  const sortBy = params.get('sortBy') || 'created_at';
+  const sortDirection = params.get('sortDirection') || 'desc';
+  const page = parseInt(params.get('page') || '1', 10);
+  const pageSize = parseInt(params.get('pageSize') || '10', 10);
 
   const offset = (page - 1) * pageSize;
   const limit = pageSize;
@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
   }
 
   const { data, error, count } = await supabase
-    .from("budgets")
+    .from('budgets')
     .select(
       `
       id, 
@@ -29,27 +29,28 @@ export async function GET(request: NextRequest) {
       draft_income,
       savings, 
       cushion_fund,
-      expenses(id, name, amount, type)
+      expenses(id, name, amount, type),
+      type
     `,
-      { count: "exact" }
+      { count: 'exact' }
     )
-    .eq("user_id", userData.user.id)
-    .order(sortBy, { ascending: sortDirection === "asc" })
+    .eq('user_id', userData.user.id)
+    .order(sortBy, { ascending: sortDirection === 'asc' })
     .range(offset, offset + limit - 1);
 
   if (error) {
     return NextResponse.json(
-      { error: "Error fetching budgets" },
+      { error: 'Error fetching budgets' },
       { status: 500 }
     );
   }
 
   const formattedBudgets: Budget[] = data.map((budget) => {
     const essentialExpenses = budget.expenses.filter(
-      (expense) => expense.type === "essential"
+      (expense) => expense.type === 'essential'
     );
     const nonEssentialExpenses = budget.expenses.filter(
-      (expense) => expense.type === "non-essential"
+      (expense) => expense.type === 'non-essential'
     );
 
     return {
@@ -86,6 +87,7 @@ export async function GET(request: NextRequest) {
         (total, expense) => total + expense.amount,
         0
       ),
+      type: budget.type,
     };
   });
 

@@ -1,5 +1,6 @@
 'use server';
 
+import { BUDGET_TYPES } from '@/lib/constants';
 import { createClient } from '@/lib/supabase/server';
 import { getTranslations } from 'next-intl/server';
 import { revalidatePath } from 'next/cache';
@@ -27,7 +28,7 @@ export const createBudget = async (props?: Props) => {
     .limit(1)
     .order('created_at', { ascending: false });
 
-  const newBudgetType = props?.type || '50-30-20';
+  const newBudgetType = props?.type || BUDGET_TYPES['50-30-20'];
 
   const { data, error } = await supabase
     .from('budgets')
