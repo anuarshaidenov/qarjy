@@ -15,8 +15,7 @@ import { useRouter } from "next/navigation";
 import { Card } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
-import { BUDGET_TYPES } from "@/lib/constants";
-import { Loader, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 
 type Props = {};
 
