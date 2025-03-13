@@ -290,5 +290,8 @@
     "currencies-heading": "Currencies"
   },
   "create-budget": "Create budget",
-  "create-budget-description": "Select a budget type to create a new budget"
+  "create-budget-description": "Select a budget type to create a new budget",
+  "50-30-20-description": "Simple budgeting method that helps you manage your money by allocating 50% to needs, 30% to wants, and 20% to savings—great for balanced financial planning",
+  "75-10-15-description": "Prioritizes disciplined saving, directing 75% to expenses, 10% to savings, and 15% to investments—perfect if you want to grow your wealth while covering essentials",
+  "most-popular": "Most popular"
 }
