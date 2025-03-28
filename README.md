@@ -1,6 +1,6 @@
 # Qarjy - Simple Budget Planning App
 
-Qarjy is an intuitive web application designed to help you easily manage your finances. Whether you’re saving for the future or managing monthly expenses, Qarjy simplifies budgeting by using proven methods like 50/30/20 and 75/10/15. With a beautiful interface and straightforward tools, you can create and track your budget effortlessly.
+Qarjy is an intuitive web application designed to help you easily manage your finances. Whether you’re saving for the future or managing monthly expenses, Qarjy simplifies budgeting by using proven methods like 50/30/20 and 75/10/15 and more. With a beautiful interface and straightforward tools, you can create and track your budget effortlessly.
 
 ## Features
 
@@ -14,58 +14,6 @@ Qarjy is an intuitive web application designed to help you easily manage your fi
 
 •	Localization: Available in both English and Kazakh.
 
-## Demo
-
-You can view the live app at [qarjy.site](https://www.qarjy.site/).
-
-## Tech Stack
-
-•	Frontend: Next.js, Tailwind CSS
-	
-•	Backend: Supabase, PostgresQL
-
-## Installation
-
-### 1. Clone the repository
- 
-```
-git clone https://github.com/anuarshaidenov/qarjy.git
-```
-
-
-
-### 2. Navigate into the project directory
-
-```
-cd qarjy
-```
-
-
-### 3. Install dependencies
-
-```
-npm install
-```
-
-
-### 4. Set up environment variables. Create a .env.local file in the root and add the necessary environment variables
-
-```
-NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
-NODE_ENV=development
-```
-
-
-### 5.	Run the development server
-
-```
-npm run dev
-```
-
-
-### 6.	Open http://localhost:3000 to view it in your browser.
-
 ## How It Works
 
 1.	Enter your monthly income: Add your primary income sources like your salary or any side income.
@@ -75,7 +23,7 @@ npm run dev
 
 ## Contribution
 
-We welcome contributions! If you’d like to contribute, please fork the repository and submit a pull request with your proposed changes. Be sure to run tests and ensure the app works as expected before submitting.
+If you’d like to contribute, please fork the repository and submit a pull request with your proposed changes. Be sure to run tests and ensure the app works as expected before submitting.
 
 ## License
 
