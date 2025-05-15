@@ -41,7 +41,7 @@ export const HeroSection = async (props: Props) => {
   return (
     <div className="container relative top-0 left-0 overflow-hidden">
       <FloatingSigns />
-      <OpacityWrapper className="py-32 overflow-hidden flex flex-col items-center gap-6 container">
+      <OpacityWrapper className="pt-32 pb-8 overflow-hidden flex flex-col items-center gap-6 container">
         <BlurFade inView delay={0}>
           <h1 className="flex flex-col items-center text-center text-5xl md:text-8xl font-bold justify-center gap-1 flex-wrap md:gap-4">
             <div className="group relative flex items-center">
