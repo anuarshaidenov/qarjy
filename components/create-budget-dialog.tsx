@@ -38,13 +38,13 @@ export const CreateBudgetDialog = (props: Props) => {
         <div className="grid sm:grid-cols-2 gap-4">
           <CreateBudgetButton
             type="50-30-20"
-            heading="50-30-20"
+            heading="Balanced Budget"
             description={description503020}
             highlight
           />
           <CreateBudgetButton
             type="75-10-15"
-            heading="75-10-15"
+            heading="Wealth Builder"
             description={description751015}
           />
         </div>

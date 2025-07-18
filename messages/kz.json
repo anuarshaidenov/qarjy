@@ -14,8 +14,8 @@
         }
       },
       "tab-list": {
-        "503020": "50-30-20 erejesı",
-        "751015": "75-10-15 erejesı"
+        "503020": "Teñestırılgen Büdjet",
+        "751015": "Bailyq Qūrastyruşy"
       },
       "tab-content": {
         "503020": {
@@ -65,8 +65,8 @@
     "how-it-works": {
       "title": "Mūny är aidyñ basynda jasañyz.",
       "tab-list": {
-        "503020": "50-30-20 erejesı",
-        "751015": "75-10-15 erejesı"
+        "503020": "Teñestırılgen Büdjet",
+        "751015": "Bailyq Qūrastyruşy"
       },
       "steps": {
         "503020": {
@@ -204,15 +204,13 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },
   "tab-list": {
-    "503020": "50-30-20 erejesı",
-    "751015": "75-10-15 erejesı"
+    "503020": "Teñestırılgen Büdjet",
+    "751015": "Bailyq Qūrastyruşy"
   },
   "budget-card": {
     "monthly-income": "Ailyq tabys",

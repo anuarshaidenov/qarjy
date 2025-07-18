@@ -9,8 +9,8 @@
     },
     "app": {
       "tab-list": {
-        "503020": "50-30-20 rule",
-        "751015": "75-10-15 rule"
+        "503020": "Balanced Budget",
+        "751015": "Wealth Builder"
       },
       "tab-content": {
         "503020": {
@@ -60,8 +60,8 @@
     "how-it-works": {
       "title": "Do this at the start of every month.",
       "tab-list": {
-        "503020": "50-30-20 rule",
-        "751015": "75-10-15 rule"
+        "503020": "Balanced Budget",
+        "751015": "Wealth Builder"
       },
       "steps": {
         "503020": {
@@ -207,15 +207,13 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "Index, follow"
   },
   "tab-list": {
-    "503020": "50-30-20 rule",
-    "751015": "75-10-15 rule"
+    "503020": "Balanced Budget",
+    "751015": "Wealth Builder"
   },
   "budget-card": {
     "monthly-income": "Monthly income",
