@@ -109,7 +109,7 @@ const CreateBudgetButton = ({
         )}
         {!isPending && (
           <>
-            <span className="font-bold md:text-2xl">{heading}</span>
+            <span className="font-bold">{heading}</span>
             <p className="text-muted-foreground text-xs">{description}</p>
           </>
         )}
