@@ -28,7 +28,7 @@ export const CreateBudgetDialog = (props: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
+      <DialogContent>
         <DialogHeader className="mb-4">
           <DialogTitle>{t("create-budget")}</DialogTitle>
           <DialogDescription>
