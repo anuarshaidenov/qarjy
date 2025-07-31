@@ -207,7 +207,9 @@
       "title": "Qarjy - manage your finances easily, for free",
       "description": "A simple way to plan your budget and manage your money effectively and for free. Try our budgeting app today!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "Index, follow"
   },
@@ -291,5 +293,13 @@
   "create-budget-description": "Select a budget type to create a new budget",
   "50-30-20-description": "Simple budgeting method that helps you manage your money by allocating 50% to needs, 30% to wants, and 20% to savings—great for balanced financial planning",
   "75-10-15-description": "Prioritizes disciplined saving, directing 75% to expenses, 10% to savings, and 15% to investments—perfect if you want to grow your wealth while covering essentials",
-  "most-popular": "Most popular"
+  "most-popular": "Most popular",
+  "pricing": "Pricing",
+  "pricing-page-title": "Take control of your finances with ease.",
+  "pricing-page-description": "Start budgeting smarter without the hassle. Choose the free plan to get going, or unlock powerful features with our pro plan — designed to keep your finances simple and stress‑free.",
+  "pricing-card-basic": "Basic",
+  "pricing-card-basic-description": "Create and track unlimited budgets, view history, estimate savings.",
+  "pricing-card-basic-price": "Free forever",
+  "pricing-card-pro": "Professional",
+  "pricing-card-pro-price": "Coming soon"
 }

@@ -24,6 +24,13 @@ export const Header = async (props: Props) => {
         <Logo className="hidden md:flex" />
 
         <div className="flex gap-4 items-center">
+          <ul className="flex items-center gap-1 md:mr-6">
+            <li>
+              <Link href="/pricing" className="text-sm font-semibold">
+                {t("pricing")}
+              </Link>
+            </li>
+          </ul>
           <ModeToggle />
           <LocaleToggle />
           <CurrencySelector />

@@ -204,7 +204,9 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": ["og-image.png"]
+      "images": [
+        "og-image.png"
+      ]
     },
     "robots": "index, follow"
   },
@@ -288,5 +290,13 @@
   "create-budget-description": "Jaña büdjet jasau üşın büdjet türın tañdañyz",
   "75-10-15-description": "Tärtıptı ünemdeuge basymdyq beredı, 75% şyğyndarğa, 10% ünemdeuge jäne 15% investisialarğa bağyttaidy - eger sız mañyzdy närselerdı jabu kezınde bailyğyñyzdy ösırgıñız kelse tamaşa.",
   "50-30-20-description": "50% qajettılıkterge, 30% qajettılıkterge jäne 20% jinaqtarğa bölu arqyly aqşañyzdy basqaruğa kömektesetın qarapaiym büdjetteu ädısı - teñgerımdı qarjylyq josparlau üşın tamaşa",
-  "most-popular": "Eñ köp qoldanylatyn"
+  "most-popular": "Eñ köp qoldanylatyn",
+  "pricing": "Bağa",
+  "pricing-page-title": "Qarjyñyzdy basqarudy jeñıldetıñız.",
+  "pricing-page-description": "Aqyldyraq büdjetteudı eş qiyndyqsyz bastañyz. Jūmysqa kırısu üşın tegın jospardy tañdañyz nemese qarjyñyzdy qarapaiym jäne stressız ūstauğa arnalğan käsıbi josparymyzben quatty mümkındıkterdıñ qūlpyn aşyñyz.",
+  "pricing-card-basic": "Negizgi",
+  "pricing-card-basic-description": "Şeksız büdjetter jasañyz jäne baqylañyz, tarihty qarañyz, ünemdeudı esepteñız.",
+  "pricing-card-basic-price": "Tegın",
+  "pricing-card-pro": "Käsıbi",
+  "pricing-card-pro-price": "Jaqynda"
 }
