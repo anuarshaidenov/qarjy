@@ -7,6 +7,8 @@ import { createClient } from "@/lib/supabase/server";
 import { getTranslations } from "next-intl/server";
 import { Skeleton } from "./ui/skeleton";
 import { CurrencySelector } from "./currency-selector";
+import { Menu } from "lucide-react";
+import { MobileMenu } from "./mobile-menu";
 
 type Props = {};
 
@@ -20,10 +22,12 @@ export const Header = async (props: Props) => {
 
   return (
     <header className="fixed top-0 bg-background left-0 z-50 w-full">
-      <div className="container py-4 flex items-center justify-center md:justify-between flex-wrap gap-4">
-        <Logo className="hidden md:flex" />
+      <div className="container py-4 flex items-center justify-between flex-wrap gap-4">
+        <Logo className="flex" />
 
-        <div className="flex gap-4 items-center">
+        <MobileMenu />
+
+        <div className="gap-4 items-center hidden md:flex">
           <ul className="flex items-center gap-1 md:mr-6">
             <li>
               <Link href="/pricing" className="text-sm font-semibold">
