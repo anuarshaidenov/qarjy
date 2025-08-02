@@ -8,6 +8,7 @@ import { CurrencySelector } from "./currency-selector";
 import Link from "next/link";
 import {
   Drawer,
+  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerTitle,
@@ -37,9 +38,11 @@ export const MobileMenu = async (props: Props) => {
         </DrawerDescription>
 
         <div className="flex items-center w-full justify-center gap-4 py-10">
-          <Link href="/pricing" className="text-sm font-semibold">
-            {t("pricing")}
-          </Link>
+          <DrawerClose asChild>
+            <Link href="/pricing" className="text-sm font-semibold">
+              {t("pricing")}
+            </Link>
+          </DrawerClose>
           <ModeToggle />
           <LocaleToggle />
           <CurrencySelector />

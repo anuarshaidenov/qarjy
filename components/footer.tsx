@@ -22,6 +22,11 @@ export const Footer = async (props: Props) => {
             </li>
             <li>
               <Button asChild variant={"link"} className="p-0 text-foreground">
+                <Link href={"/pricing"}>{t("pricing")}</Link>
+              </Button>
+            </li>
+            <li>
+              <Button asChild variant={"link"} className="p-0 text-foreground">
                 <Link href={"#how-it-works"}>{t("footer.how-it-works")}</Link>
               </Button>
             </li>
