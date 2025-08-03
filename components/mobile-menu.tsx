@@ -39,9 +39,11 @@ export const MobileMenu = async (props: Props) => {
 
         <div className="flex items-center w-full justify-center gap-4 py-10">
           <DrawerClose asChild>
-            <Link href="/pricing" className="text-sm font-semibold">
-              {t("pricing")}
-            </Link>
+            <Button asChild variant={"link"} className="text-foreground">
+              <Link href="/pricing" className="text-sm font-semibold">
+                {t("pricing")}
+              </Link>
+            </Button>
           </DrawerClose>
           <ModeToggle />
           <LocaleToggle />

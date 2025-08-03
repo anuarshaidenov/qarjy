@@ -30,9 +30,11 @@ export const Header = async (props: Props) => {
         <div className="gap-4 items-center hidden md:flex">
           <ul className="flex items-center gap-1 md:mr-6">
             <li>
-              <Link href="/pricing" className="text-sm font-semibold">
-                {t("pricing")}
-              </Link>
+              <Button asChild variant={"link"} className="text-foreground">
+                <Link href="/pricing" className="text-sm font-semibold">
+                  {t("pricing")}
+                </Link>
+              </Button>
             </li>
           </ul>
           <ModeToggle />
