@@ -1,22 +1,22 @@
-import { Home, LogOut } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Link } from '@/navigation';
-import { signOut } from '@/actions/sign-out';
-import { LocaleToggle } from '@/components/locale-toggle';
-import { DashboardIcon } from '@radix-ui/react-icons';
+import { Home, LogOut, User } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "@/navigation";
+import { signOut } from "@/actions/sign-out";
+import { LocaleToggle } from "@/components/locale-toggle";
+import { DashboardIcon } from "@radix-ui/react-icons";
 import {
   DashboardActiveLink,
   DashboardLink,
-} from '@/components/dashboard-active-link';
+} from "@/components/dashboard-active-link";
 
-import { ModeToggle } from '@/components/mode-toggle';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { ModeToggle } from "@/components/mode-toggle";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import { CurrencySelector } from '@/components/currency-selector';
-import { BudgetBreadcrumbs } from '@/components/budget-breadcrumbs';
-import { CommandDialogProvider } from '@/components/command-dialog-provider';
-import { CommandButton } from '@/components/command-button';
-import { CreateBudgetDialogProvider } from '@/components/create-budget-dialog-provider';
+import { CurrencySelector } from "@/components/currency-selector";
+import { BudgetBreadcrumbs } from "@/components/budget-breadcrumbs";
+import { CommandDialogProvider } from "@/components/command-dialog-provider";
+import { CommandButton } from "@/components/command-button";
+import { CreateBudgetDialogProvider } from "@/components/create-budget-dialog-provider";
 
 type Props = {
   children: React.ReactNode;
@@ -26,7 +26,7 @@ type Props = {
 export const generateMetadata = async ({ params }: Props) => {
   const t = await getTranslations();
   return {
-    title: t('dashboard.metadata.title'),
+    title: t("dashboard.metadata.title"),
   };
 };
 
@@ -37,8 +37,8 @@ const DashboardLayout = async (props: Props) => {
 
   const links: DashboardLink[] = [
     {
-      href: '/dashboard',
-      name: 'dashboard',
+      href: "/dashboard",
+      name: "dashboard",
       icon: <DashboardIcon className="size-6 md:size-5" />,
     },
   ];
@@ -51,7 +51,7 @@ const DashboardLayout = async (props: Props) => {
           <aside className="inset-y fixed left-0 z-20 hidden md:flex h-full flex-col border-r">
             <div className="border-b p-2">
               <Button variant="outline" size="icon" aria-label="Home" asChild>
-                <Link href={'/'}>
+                <Link href={"/"}>
                   <Home className="size-5" />
                 </Link>
               </Button>
@@ -63,6 +63,11 @@ const DashboardLayout = async (props: Props) => {
               ))}
             </nav>
             <nav className="mt-auto grid gap-1 p-2">
+              <Button variant={"outline"} size={"icon"}>
+                <Link href={"/dashboard/profile"}>
+                  <User className="size-5" />
+                </Link>
+              </Button>
               <LocaleToggle />
               <ModeToggle />
               <CurrencySelector />
@@ -105,6 +110,14 @@ const DashboardLayout = async (props: Props) => {
                       route={link}
                     />
                   ))}
+                  <DashboardActiveLink
+                    className="h-12 w-12"
+                    route={{
+                      href: "/dashboard/profile",
+                      name: "profile",
+                      icon: <User className="size-6 md:size-5" />,
+                    }}
+                  />
                 </nav>
               </div>
             </footer>
