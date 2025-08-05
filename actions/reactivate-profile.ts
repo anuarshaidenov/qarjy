@@ -2,37 +2,33 @@
 
 import { UserStatus } from "@/lib/constants";
 import { createClient } from "@/lib/supabase/server";
-import { AuthError, PostgrestError } from "@supabase/supabase-js";
 import { revalidatePath } from "next/cache";
 
-export async function deleteProfile(): Promise<{
-  data: any;
-  error: PostgrestError | null;
-}> {
+export const reactivateProfile = async () => {
   const supabase = await createClient();
   const { data: userData, error: userError } = await supabase.auth.getUser();
 
   if (!userData.user) {
-    throw {
+    return {
       data: userData.user,
-      error: userError,
+      error: userError || null,
     };
   }
 
-  const { data: profileDeleteData, error: profileDeleteError } = await supabase
+  const { data: profileUpdateData, error: profileUpdateError } = await supabase
     .from("profiles")
     .update({
-      status: UserStatus.DELETED,
+      status: UserStatus.ACTIVE,
     })
     .eq("user_id", userData.user.id)
     .single();
 
-  if (!profileDeleteError) {
+  if (!profileUpdateError) {
     revalidatePath("/dashboard/profile");
   }
 
   return {
-    data: profileDeleteData,
-    error: profileDeleteError,
+    data: profileUpdateData,
+    error: profileUpdateError || null,
   };
-}
+};

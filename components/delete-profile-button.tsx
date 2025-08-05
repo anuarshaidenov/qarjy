@@ -22,27 +22,9 @@ type Props = {};
 
 export const DeleteProfileButton = (props: Props) => {
   const [state, action, pending] = useActionState(deleteProfile, {
-    success: false,
     error: null,
     data: null,
   });
-
-  const router = useRouter();
-
-  if (state.success) {
-    toast({
-      title: "Profile deleted",
-      description: "Your profile has been successfully deleted.",
-    });
-    router.push("/");
-  } else if (state.error) {
-    toast({
-      title: "Error deleting profile",
-      description:
-        state.error.message || "An error occurred while deleting your profile.",
-      variant: "destructive",
-    });
-  }
 
   return (
     <AlertDialog>
@@ -51,6 +33,7 @@ export const DeleteProfileButton = (props: Props) => {
           className="text-destructive hover:text-destructive"
           variant={"outline"}
         >
+          {pending ? <Loader2 className="animate-spin size-4 mr-2" /> : null}
           Delete my account
         </Button>
       </AlertDialogTrigger>
@@ -69,9 +52,25 @@ export const DeleteProfileButton = (props: Props) => {
               disabled={pending}
               onClick={() => {
                 startTransition(action);
+                if (!state.error) {
+                  toast({
+                    title: "Profile deleted",
+                    description: "Your profile has been successfully deleted.",
+                  });
+                } else if (!!state.error) {
+                  toast({
+                    title: "Error deleting profile",
+                    description:
+                      state.error.message ||
+                      "An error occurred while deleting your profile.",
+                    variant: "destructive",
+                  });
+                }
               }}
             >
-              {pending ? <Loader2 className="animate-spin" /> : null}
+              {pending ? (
+                <Loader2 className="animate-spin size-4 mr-2" />
+              ) : null}
               Continue
             </Button>
           </AlertDialogAction>
