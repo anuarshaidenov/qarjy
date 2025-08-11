@@ -7,13 +7,13 @@ import { LocaleToggle } from "./locale-toggle";
 import { CurrencySelector } from "./currency-selector";
 import Link from "next/link";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 type Props = {};
 
@@ -25,41 +25,63 @@ export const MobileMenu = async (props: Props) => {
   const t = await getTranslations();
 
   return (
-    <Drawer>
-      <DrawerTrigger asChild>
+    <Sheet>
+      <SheetTrigger asChild>
         <Button className="md:hidden" variant="ghost" size="icon">
           <Menu className="h-5 w-5" />
         </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerTitle className="sr-only">Are you absolutely sure?</DrawerTitle>
-        <DrawerDescription className="sr-only">
-          This action cannot be undone.
-        </DrawerDescription>
-
-        <div className="flex items-center w-full justify-center gap-4 py-10">
-          <DrawerClose asChild>
-            <Button asChild variant={"link"} className="text-foreground">
-              <Link href="/pricing" className="text-sm font-semibold">
-                {t("pricing")}
-              </Link>
-            </Button>
-          </DrawerClose>
-          <ModeToggle />
-          <LocaleToggle />
-          <CurrencySelector />
-          {(!user || !!error) && (
-            <Button asChild>
-              <Link href={"/signup"}>{t("header.cta")}</Link>
-            </Button>
-          )}
-          {!!user && (
-            <Button asChild>
-              <Link href={"/dashboard"}>{t("dashboard.button")}</Link>
-            </Button>
-          )}
-        </div>
-      </DrawerContent>
-    </Drawer>
+      </SheetTrigger>
+      <SheetContent className="pt-12">
+        <SheetHeader>
+          <SheetTitle className="sr-only">Mobile menu</SheetTitle>
+        </SheetHeader>
+        <ul className="flex items-start flex-col gap-8">
+          <li className="flex items-center gap-2">
+            <ModeToggle />
+            <LocaleToggle />
+            <CurrencySelector />
+            {(!user || !!error) && (
+              <SheetClose asChild>
+                <Button asChild>
+                  <Link href={"/signup"}>{t("header.cta")}</Link>
+                </Button>
+              </SheetClose>
+            )}
+            {!!user && (
+              <SheetClose asChild>
+                <Button asChild>
+                  <Link href={"/dashboard"}>{t("dashboard.button")}</Link>
+                </Button>
+              </SheetClose>
+            )}
+          </li>
+          <li>
+            <ul className="flex flex-col items-start gap-2">
+              <li>
+                <SheetClose asChild>
+                  <Button asChild variant={"link"} className="text-foreground">
+                    <Link href="/pricing" className="text-xl font-semibold">
+                      {t("pricing")}
+                    </Link>
+                  </Button>
+                </SheetClose>
+              </li>
+              <li className="w-full">
+                <SheetClose asChild>
+                  <Button asChild variant={"link"} className="text-foreground">
+                    <Link
+                      href="/#how-it-works"
+                      className="text-xl font-semibold"
+                    >
+                      {t("how-it-works")}
+                    </Link>
+                  </Button>
+                </SheetClose>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </SheetContent>
+    </Sheet>
   );
 };

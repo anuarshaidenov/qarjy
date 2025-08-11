@@ -36,6 +36,13 @@ export const Header = async (props: Props) => {
                 </Link>
               </Button>
             </li>
+            <li>
+              <Button asChild variant={"link"} className="text-foreground">
+                <Link href="#how-it-works" className="text-sm font-semibold">
+                  {t("how-it-works")}
+                </Link>
+              </Button>
+            </li>
           </ul>
           <ModeToggle />
           <LocaleToggle />
