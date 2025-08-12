@@ -78,7 +78,12 @@ const ProfilePage = async (props: Props) => {
           </ul>
         </CardContent>
         <CardFooter>
-          {status === UserStatus.ACTIVE && <DeleteProfileButton />}
+          {status === UserStatus.ACTIVE && (
+            <div className="flex flex-col gap-2 border-t w-full items-start pt-2">
+              <h2 className="text-lg font-bold">Danger zone</h2>
+              <DeleteProfileButton />
+            </div>
+          )}
         </CardFooter>
       </Card>
     </section>

@@ -41,14 +41,16 @@ export const DeleteProfileButton = (props: Props) => {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This will set your account to be deleted and remove your data from
+            our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction asChild>
             <Button
+              variant={"destructive"}
+              className="bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90"
               disabled={pending}
               onClick={() => {
                 startTransition(action);
