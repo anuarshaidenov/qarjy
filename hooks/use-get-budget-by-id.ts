@@ -9,5 +9,6 @@ export const useGetBudgetById = ({ id }: { id: string }) => {
     queryFn: async () => {
       return axios.get<Budget>(`/api/budgets/${id}`).then((res) => res.data);
     },
+    enabled: !!id,
   });
 };
