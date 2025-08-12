@@ -8,6 +8,7 @@ import { useMonthlyIncome } from "./monthly-income-context-provider";
 import { useExpensesSum } from "./expenses-sum-provider";
 import { useMemo } from "react";
 import { useCurrency } from "./currency-provider";
+import { CopyToClipboard } from "./copy-to-clipboard";
 
 type Props = {};
 
@@ -27,7 +28,8 @@ export const DashboardNonEssentialsRemainder = (props: Props) => {
   const { currency } = useCurrency();
 
   return (
-    <span
+    <CopyToClipboard asChild text={remainder.toString()}>
+      <span
       className={cn("text-end font-semibold shrink-0", {
         "text-muted": remainder === 0,
         "text-destructive": remainder < 0,
@@ -36,5 +38,6 @@ export const DashboardNonEssentialsRemainder = (props: Props) => {
     >
       {formatNumberWithCommas(remainder)} {currency.symbol}
     </span>
+    </CopyToClipboard>
   );
 };

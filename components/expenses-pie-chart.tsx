@@ -20,6 +20,7 @@ import { useMemo } from "react";
 import { formatNumberWithCommas } from "@/lib/utils";
 import { Skeleton } from "./ui/skeleton";
 import { useTranslations } from "next-intl";
+import { CopyToClipboard } from "./copy-to-clipboard";
 
 type Props = {
   title?: string;
@@ -119,6 +120,7 @@ export const ExpensesPieChart = (props: Props) => {
                             textAnchor="middle"
                             dominantBaseline="middle"
                           >
+                            <CopyToClipboard asChild text={totalAmount?.toString() || "0"}>
                             <tspan
                               x={viewBox.cx}
                               y={viewBox.cy}
@@ -126,6 +128,7 @@ export const ExpensesPieChart = (props: Props) => {
                             >
                               {formatNumberWithCommas(totalAmount as number)}
                             </tspan>
+                            </CopyToClipboard>
                             <tspan
                               x={viewBox.cx}
                               y={(viewBox.cy || 0) + 24}
