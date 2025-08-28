@@ -180,13 +180,13 @@
     "authors": [
       {
         "name": "Anuar Shaidenov",
-        "url": "https://anuarshaidenov.vercel.app/"
+        "url": "https://anuar.xyz/"
       }
     ],
     "openGraph": {
       "title": "Qarjy - Qarjyñyzdy oñai basqaryñyz",
       "description": "Qarjylyq bolaşağyñyzdy bızdıñ paidalanuğa yñğaily büdjettı josparlau qosymşamyzben baqylauğa alyñyz. Tabys, şyğyndar jäne jinaqtardy bır jerden baqylañyz.",
-      "url": "https://qarjy.site/kz",
+      "url": "https://qarjy.xyz/kz",
       "siteName": "Qarjy - Jai büdjettı josparlau qosymşasy",
       "images": [
         {
@@ -204,9 +204,7 @@
       "title": "Qarjy - Қаржыңызды оңай басқарыңыз",
       "description": "Бюджетті жоспарлаудың және ақшаңызды тиімді басқарудың қарапайым тәсілі. Біздің бюджетті жоспарлау қосымшамызды бүгіннен бастап көріңіз!",
       "creator": "@anuarnyi",
-      "images": [
-        "og-image.png"
-      ]
+      "images": ["og-image.png"]
     },
     "robots": "index, follow"
   },

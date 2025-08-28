@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Qarjy - Simple, Free budgeting app.",
     description:
       "Take control of your financial future with our easy-to-use, absolutely free budgeting app. Track your income, expenses, and savings all in one place.",
-    url: "https://qarjy.site",
+    url: "https://qarjy.xyz",
     siteName: "Qarjy - Simple, Free budgeting app.",
     images: [
       {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     creator: "anuarnyi",
     images: ["og-image.png"],
   },
-  metadataBase: new URL("https://qarjy.site"),
+  metadataBase: new URL("https://qarjy.xyz"),
   alternates: {
     canonical: "/",
     languages: {

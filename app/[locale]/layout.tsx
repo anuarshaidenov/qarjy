@@ -36,7 +36,7 @@ export async function generateMetadata(
     authors: [
       {
         name: "Anuar Shaidenov",
-        url: "https://anuarshaidenov.vercel.app/",
+        url: "https://anuar.xyz/",
       },
     ],
     manifest: "/manifest.json",
