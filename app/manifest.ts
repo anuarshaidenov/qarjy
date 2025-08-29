@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",
     display: "standalone",
     background_color: "#191919",
-    start_url: "/dashboard",
+    start_url: "/en/dashboard",
     theme_color: "#3b82f6",
     icons: [
       {
