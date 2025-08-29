@@ -6,9 +6,9 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Qarjy",
     description:
       "Easily manage your finances with our intuitive budgeting tool. Track your expenses, savings, and investments using flexible methods.",
-    start_url: "/dashboard",
     display: "standalone",
     background_color: "#191919",
+    start_url: "/dashboard",
     theme_color: "#3b82f6",
     icons: [
       {
